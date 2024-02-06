@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747324865}
     m_Modifications:
+    - target: {fileID: 360710116967381030, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
     - target: {fileID: 2521000652114301879, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
       propertyPath: m_Name
       value: Platform (3)
@@ -188,6 +192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747324865}
     m_Modifications:
+    - target: {fileID: 360710116967381030, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
     - target: {fileID: 2521000652114301879, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
       propertyPath: m_Name
       value: Platform (6)
@@ -264,7 +272,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 271303364}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -375,6 +383,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747324865}
     m_Modifications:
+    - target: {fileID: 360710116967381030, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
     - target: {fileID: 2521000652114301879, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
       propertyPath: m_Name
       value: Platform (8)
@@ -620,7 +632,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1.25
-  m_Material: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -643,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f96cccdf60f459bbf871f5e1daf4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3.45
   jumpPower: 7
   rb: {fileID: 607647670}
   groundCheck: {fileID: 453331580}
@@ -749,6 +762,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747324865}
     m_Modifications:
+    - target: {fileID: 360710116967381030, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
     - target: {fileID: 2521000652114301879, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
       propertyPath: m_Name
       value: Platform (4)
@@ -834,7 +851,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 741824491}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -950,6 +967,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747324865}
     m_Modifications:
+    - target: {fileID: 360710116967381030, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
     - target: {fileID: 2521000652114301879, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
       propertyPath: m_Name
       value: Platform (2)
@@ -1017,6 +1038,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747324865}
     m_Modifications:
+    - target: {fileID: 360710116967381030, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
     - target: {fileID: 2521000652114301879, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
       propertyPath: m_Name
       value: Platform (5)
@@ -1260,6 +1285,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747324865}
     m_Modifications:
+    - target: {fileID: 360710116967381030, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
     - target: {fileID: 2521000652114301879, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
       propertyPath: m_Name
       value: Platform (1)
@@ -1327,6 +1356,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747324865}
     m_Modifications:
+    - target: {fileID: 360710116967381030, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
     - target: {fileID: 2521000652114301879, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
       propertyPath: m_Name
       value: Platform (7)
@@ -1384,6 +1417,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747324865}
     m_Modifications:
+    - target: {fileID: 360710116967381030, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 576a5a3a1672c431d82299c59c9e9888, type: 2}
     - target: {fileID: 2521000652114301879, guid: 860304ffab98f4ff181f041c7425e4a0, type: 3}
       propertyPath: m_Name
       value: Platform
