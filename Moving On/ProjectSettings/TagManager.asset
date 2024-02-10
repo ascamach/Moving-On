@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ladder
+  - Platform
+  - OneWayPlatform
   layers:
   - Default
   - TransparentFX
@@ -40,4 +43,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 505372779
+    locked: 0
+  - name: Platforms
+    uniqueID: 1187407849
+    locked: 0
+  - name: Borders
+    uniqueID: 2000251123
+    locked: 0
+  - name: Player
+    uniqueID: 3731135449
     locked: 0
