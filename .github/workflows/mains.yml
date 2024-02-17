@@ -7,16 +7,16 @@ env:
 
 jobs:
   checkLicense:
-    name: Chheck for Unity License :heavy_check_mark:
+    name: Chheck for Unity License ✔️
     runs-on: ubuntu-latest
     steps: 
-      - name: Fail - No license :skull:
+      - name: Fail - No license 💀
         if: ${{ !startsWith(env.UNITY_LICENSE, '<'( }}
         run: exit 1
 
   testRunner:
-    needs: checkLicense:
-    name: Test all modes :pencil:
+    needs: checkLicense
+    name: Test all modes 📝
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
