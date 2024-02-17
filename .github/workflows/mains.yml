@@ -22,7 +22,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Create LFS file LIst
+      - name: Create LFS file List
         run: git lfs ls-files -l | cut -d' ' -fl | sort > .lfs-assets-id
 
       - name: Restore LFS cache
@@ -61,3 +61,47 @@ jobs:
         with:
           name: Test Results (all modes)
           path: ${{ steps.testRunner.outputs.artifactsPath }}
+
+  buildWebGL:
+    name: Builds game in WebGL format 📐
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create LFS file List
+        run: git lfs ls-files -l | cut -d' ' -fl | sort > .lfs-assets-id
+
+      - name: Restore LFS cache
+        uses: actions/cache@v2
+        id: lfs-cache
+        with:
+          path: .git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets.id') }}
+
+      - name: Git LFS Pull
+        run: |
+          git lfs pull
+          git add .
+          git reset --hard
+
+      - name: Restore Library cache
+        uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-test-project
+          restore-keys: |
+            Library-build-WebGL
+            Library-
+
+      - name: Build game
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Build
+          path: build/WebGLBuild
