@@ -67,6 +67,9 @@ jobs:
     name: Builds game in WebGL format 📐
     runs-on: ubuntu-latest
     steps:
+      - name: Cehckout code
+        uses: actions/checkout@v2
+    
       - name: Create LFS file List
         run: git lfs ls-files -l | cut -d' ' -fl | sort > .lfs-assets-id
 
@@ -87,9 +90,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: Library
-          key: Library-test-project
+          key: Library-build-WebGL
           restore-keys: |
-            Library-build-WebGL
+            Library-build-
             Library-
 
       - name: Build game
