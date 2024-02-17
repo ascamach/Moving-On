@@ -111,4 +111,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Build-WebGLBuild
-          path: DeployedBuilds/WebGLBuild
+          path: DeployedBuilds/
