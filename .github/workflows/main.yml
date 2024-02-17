@@ -39,6 +39,7 @@ jobs:
           with:
             projectPath: Moving On/
             targetPlatform: WebGL
+            allowDirtyBuild: true
         
         - name: Deploy built project
           uses: actions/upload-artifact@v3
