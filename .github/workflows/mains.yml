@@ -65,6 +65,9 @@ jobs:
   buildWebGL:
     name: Builds game in WebGL format 📐
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Builds
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -108,4 +111,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Build-WebGLBuild
-          path: frontend/build/WebGLBuild
+          path: Builds/WebGLBuild
