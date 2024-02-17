@@ -107,5 +107,5 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
         with:
-          name: build-WebGLBuild
+          name: Build-WebGLBuild
           path: build/WebGLBuild
