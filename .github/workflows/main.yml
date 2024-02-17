@@ -46,3 +46,4 @@ jobs:
             projectPath: Moving On/
             name: Build
             path: DeployedBuilds/
+            allowDirtyBuild: true
