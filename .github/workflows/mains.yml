@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Builds
+        working-directory: ./DeployedBuilds
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -111,4 +111,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Build-WebGLBuild
-          path: Builds/WebGLBuild
+          path: DeployedBuilds/WebGLBuild
