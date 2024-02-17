@@ -7,7 +7,7 @@ env:
 
 jobs:
   checkLicense:
-    name: Chheck for Unity License ✔️
+    name: Check for Unity License ✔️
     runs-on: ubuntu-latest
     steps: 
       - name: Fail - No license 💀
@@ -31,3 +31,29 @@ jobs:
         with:
           path: .git/lfs
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets.id') }}
+
+      - name: Git LFS Pull
+        run: |
+          git lfs pull
+          git add .
+          git reset --hard
+
+      - name: Restore Library cache
+        uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-test-project
+          restore-keys: |
+            Library-test-project-
+            Library-
+
+      - uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Test Results (all modes)
+          path: ${{ steps.testRunner.outputs.artifactPaths }}
