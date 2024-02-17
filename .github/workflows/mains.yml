@@ -63,6 +63,7 @@ jobs:
           path: ${{ steps.testRunner.outputs.artifactsPath }}
 
   buildWebGL:
+    needs: testRunner
     name: Builds game in WebGL format 📐
     runs-on: ubuntu-latest
     steps:
