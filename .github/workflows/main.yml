@@ -1,6 +1,6 @@
 name: Game CI Template
 run-name: ${{ github.actor }} is using Game CI 🚀
-on: [push]
+on: workflow_dispatch
 
 jobs:
   test:
@@ -29,6 +29,7 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
+          projectPath: Moving On
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
   buildProject:
