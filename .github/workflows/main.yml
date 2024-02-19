@@ -67,3 +67,24 @@ jobs:
         with:
           name: Build
           path: build
+  
+  deployItchIO:
+    name: Deploy to Itch.io ✈️
+    needs: buildProject
+    runs-on: ubuntu-latest
+    env:
+      ITCH_USERNAME: ascamach
+      ITCH_GAME_ID: cmpm-171-hifi-deployment-prototype
+    steps:
+      - name: Download artifact ⏬
+        uses: actions/download-artifact@v2.0.8
+        with:
+          path: build/WebGL
+      - name: Deploy to Itch.io website
+        uses: KikimoraGames/itch-publish@v0.0.3
+        with:
+          butlerApiKey: ${{ secrets.BUTLER_API_KEY }}
+          gameData: ./build/WebGL
+          itchUsername: ${{ env.ITCH_USERNAME }}
+          itchGameId: ${{ env.ITCH_GAME_ID }}
+          buildChannel: WebGL
