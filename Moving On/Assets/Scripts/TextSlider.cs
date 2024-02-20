@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+// https://www.youtube.com/watch?v=FfaG9TvCe5g - menu ui tutorial that was followed
+
 public class TextSlider : MonoBehaviour
 {
     public TextMeshProUGUI numberText;
