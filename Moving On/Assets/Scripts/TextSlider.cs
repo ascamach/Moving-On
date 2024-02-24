@@ -20,5 +20,4 @@ public class TextSlider : MonoBehaviour
     {
         numberText.text = value.ToString();
     }
-    
 }
