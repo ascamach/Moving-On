@@ -10,8 +10,6 @@ public class RoomTrigger : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkText;
 
-    private bool playerInRange;
-
     private void Awake()
     {
         firstTime = false;
@@ -22,6 +20,7 @@ public class RoomTrigger : MonoBehaviour
         if (!firstTime)
         {
             DialogueManager.GetInstance().EnterDialogueMode(inkText);
+            firstTime = true;
         }
     }
 }
