@@ -15,6 +15,11 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (DialogueManager.GetInstance().dialoguePlaying)
+        {
+            return;
+        }
+
         horizontal = Input.GetAxis("Horizontal");
 
         if (Input.GetButtonDown("Jump") && isGrounded())
@@ -31,6 +36,11 @@ public class playerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (DialogueManager.GetInstance().dialoguePlaying)
+        {
+            return;
+        }
+
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 

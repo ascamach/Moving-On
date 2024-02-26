@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory;
 
     private static DialogueManager instance;
-    private bool dialoguePlaying;
+    public bool dialoguePlaying { get; private set; }
 
     private void Awake()
     {
