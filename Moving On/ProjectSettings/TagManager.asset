@@ -53,6 +53,9 @@ TagManager:
   - name: Borders
     uniqueID: 2000251123
     locked: 0
+  - name: Background Image
+    uniqueID: 2884289565
+    locked: 0
   - name: NPC
     uniqueID: 517290589
     locked: 0
