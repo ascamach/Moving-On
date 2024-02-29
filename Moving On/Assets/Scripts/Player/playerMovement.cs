@@ -36,8 +36,11 @@ public class playerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Check if a Dialogue Instance is playing
         if (DialogueManager.GetInstance().dialoguePlaying)
         {
+            // If so, deccelerate player
+            rb.velocity -= 0.1f * rb.velocity;
             return;
         }
 
