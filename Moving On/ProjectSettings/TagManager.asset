@@ -57,6 +57,9 @@ TagManager:
   - name: Background Image
     uniqueID: 2884289565
     locked: 0
+  - name: UI
+    uniqueID: 2536743113
+    locked: 0
   - name: NPC
     uniqueID: 517290589
     locked: 0
