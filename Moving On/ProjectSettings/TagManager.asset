@@ -63,6 +63,9 @@ TagManager:
   - name: NPC
     uniqueID: 517290589
     locked: 0
+  - name: Exit or Entrance
+    uniqueID: 215601959
+    locked: 0
   - name: Player
     uniqueID: 3731135449
     locked: 0

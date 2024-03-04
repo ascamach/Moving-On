@@ -12,13 +12,19 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private bool dialogueInScene = true;
 
     private void Update()
     {
-        if (DialogueManager.GetInstance().dialoguePlaying)
+        if (dialogueInScene == true)
         {
-            return;
+            if (DialogueManager.GetInstance().dialoguePlaying)
+            {
+                return;
+            }
         }
+
+        
 
         horizontal = Input.GetAxis("Horizontal");
 
@@ -37,11 +43,16 @@ public class playerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Check if a Dialogue Instance is playing
-        if (DialogueManager.GetInstance().dialoguePlaying)
+        
+
+        if(dialogueInScene == true)
         {
-            // If so, deccelerate player
-            rb.velocity -= 0.1f * rb.velocity;
-            return;
+            if (DialogueManager.GetInstance().dialoguePlaying)
+            {
+                // If so, deccelerate player
+                rb.velocity -= 0.1f * rb.velocity;
+                return;
+            }
         }
 
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);

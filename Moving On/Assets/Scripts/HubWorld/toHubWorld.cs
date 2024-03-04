@@ -1,33 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MovePlayer : MonoBehaviour
+public class toHubWorld : MonoBehaviour
 {
-    public GameObject player;
-
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
 
-    [Header("New Position")]
-    [SerializeField] private Vector3 newPosition;
-
     private bool playerInRange;
 
-    private void Awake()
+    private SpriteRenderer rend;
+    // Start is called before the first frame update
+    void Start()
     {
-        playerInRange = false;
+        rend = GetComponent<SpriteRenderer>();
+        rend.color = new Color32(144, 81, 21, 255);
         visualCue.SetActive(false);
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         if (playerInRange)
         {
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
-                player.transform.position = newPosition;
+                Debug.Log("Entering Hub World...");
+                levelManager.Instance.tutorialCompleted = true;
+                SceneManager.LoadSceneAsync("hubWorld");
             }
         }
         else
@@ -38,15 +40,14 @@ public class MovePlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
+        if (collision.gameObject.tag == "Player"){
             playerInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player")
         {
             playerInRange = false;
         }
