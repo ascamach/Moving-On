@@ -7,6 +7,7 @@ public class levelManager : MonoBehaviour
     public static levelManager Instance;
     public bool[] levelsCompleted = new bool[] { false, false};
     public bool[] levelsUnlocked = new bool[] { true, false};
+    public bool tutorialCompleted = false;
     private void Awake()
     {
         if (Instance != null)
