@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/hubWorld.unity
     guid: abf0817e4f98741c199538fcca4cab41
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 0f07d1f87a21246f79aa5dc4bcdd1afc
   m_configObjects: {}
