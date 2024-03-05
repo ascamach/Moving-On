@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomTrigger : MonoBehaviour
 {
     [Header("First Check")]
-    [SerializeField] private bool firstTime;
+    [SerializeField] public bool firstTime;
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkText;
