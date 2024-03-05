@@ -4,30 +4,13 @@ using UnityEngine;
 
 public class NPCTrigger : MonoBehaviour
 {
-    [Header("First Check")]
-    [SerializeField] private bool firstTime;
-
-    [Header("Ink JSON")]
-    [SerializeField] private TextAsset inkText;
-
-    private void Awake()
-    {
-        firstTime = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!firstTime)
-        {
-            DialogueManager.GetInstance().EnterDialogueMode(inkText);
-            firstTime = true;
-        }
-    }
-    /*[Header("Visual Cue")]
+    [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
+
+    private int count = 0;
 
     private bool playerInRange;
 
@@ -42,8 +25,9 @@ public class NPCTrigger : MonoBehaviour
         if (playerInRange && !DialogueManager.GetInstance().dialoguePlaying)
         {
             visualCue.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.F))
             {
+                
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
         } else
@@ -66,5 +50,5 @@ public class NPCTrigger : MonoBehaviour
         {
             playerInRange = false;
         }
-    }*/
+    }
 }
