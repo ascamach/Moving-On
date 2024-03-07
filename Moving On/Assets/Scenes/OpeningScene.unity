@@ -1412,18 +1412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 413145493}
   dialogueText: {fileID: 494474866}
-  globalsInkFile:
-    inkAsset: {fileID: 102900000, guid: 6bc471609ceab124398e5f2a9103022f, type: 3}
-    jsonAssetDirectory: {fileID: 0}
-    jsonAsset: {fileID: 0}
-    unhandledCompileErrors: []
-    recursiveIncludeErrorPaths: []
-    errors: []
-    warnings: []
-    todos: []
-    masterInkAssets: []
-    localIncludePaths: []
-    includes: []
+  loadGlobalsJSON: {fileID: 4900000, guid: e4c6163ed7975674daf45924049f85d1, type: 3}
   choices:
   - {fileID: 763038968}
   - {fileID: 1686646977}
