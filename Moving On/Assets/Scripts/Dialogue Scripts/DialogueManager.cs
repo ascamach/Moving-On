@@ -4,8 +4,6 @@ using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
-using Ink.UnityIntegration;
-using System.Security.Cryptography.X509Certificates;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,7 +16,8 @@ public class DialogueManager : MonoBehaviour
 
     public Story currentStory;
 
-    [SerializeField] private InkFile globalsInkFile;
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
 
     // Variables needed for Choices UI
     [Header("Choices UI")]
@@ -42,7 +41,7 @@ public class DialogueManager : MonoBehaviour
         }
         instance = this;
 
-        dialogueVariables = new DialogueVariables(globalsInkFile.filePath);
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
 
     public static DialogueManager GetInstance()
