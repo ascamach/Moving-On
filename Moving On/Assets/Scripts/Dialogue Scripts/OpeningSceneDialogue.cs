@@ -8,6 +8,8 @@ public class OpeningSceneDialogue : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
+    public string scene;
+
     private bool firstCheck = false;
 
     public GameObject dialogueUI;
@@ -28,7 +30,7 @@ public class OpeningSceneDialogue : MonoBehaviour
         if (DialogueManager.GetInstance().dialogueFinished)
         {
             dialogueUI.SetActive(false);
-            SceneManager.LoadScene("tutorialScene");
+            SceneManager.LoadScene(scene);
         }
     }
 }

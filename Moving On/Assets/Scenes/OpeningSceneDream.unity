@@ -2128,6 +2128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: e95846cb75ef3447595f8e4eada06ccf, type: 3}
+  scene: OpeningScene
   dialogueUI: {fileID: 458242970}
 --- !u!4 &1133288559
 Transform:
