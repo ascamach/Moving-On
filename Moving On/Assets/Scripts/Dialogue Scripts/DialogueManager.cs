@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 public class DialogueManager : MonoBehaviour
 {
     // Variables needed for Dialogue UI
+    // dialogueUI: UI game object
+    // dialogueText: TMP text associated with the UI
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialogueUI;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -130,6 +132,8 @@ public class DialogueManager : MonoBehaviour
             choices[i].gameObject.SetActive(false);
         }
 
+        // Starts the function to have the first choice be defaulted.
+        // This allows the player to move between the choices when dialogue is playing.
         StartCoroutine(selectFirstChoice());
     }
 
@@ -143,6 +147,7 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
+        // Function that takes the index and links it to the button used in the choices
         currentStory.ChooseChoiceIndex(choiceIndex);
     } 
 }
