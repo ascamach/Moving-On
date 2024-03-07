@@ -11,6 +11,7 @@ public class NPCTrigger : MonoBehaviour
     [SerializeField] private TextAsset inkJSON;
 
     private int count = 0;
+    private int timesInteracted = 0;
 
     private bool playerInRange;
 
@@ -27,8 +28,8 @@ public class NPCTrigger : MonoBehaviour
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
-                
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                timesInteracted++;
             }
         } else
         {

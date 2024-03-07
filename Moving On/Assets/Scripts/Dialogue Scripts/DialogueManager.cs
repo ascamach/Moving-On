@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using Ink.UnityIntegration;
+using System.Security.Cryptography.X509Certificates;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,7 +16,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogueUI;
     [SerializeField] private TextMeshProUGUI dialogueText;
 
-    private Story currentStory;
+    public Story currentStory;
+
+    [SerializeField] private InkFile globalsInkFile;
 
     // Variables needed for Choices UI
     [Header("Choices UI")]
@@ -25,6 +29,8 @@ public class DialogueManager : MonoBehaviour
     private static DialogueManager instance;
     public bool dialoguePlaying { get; private set; }
 
+    private DialogueVariables dialogueVariables;
+
     private void Awake()
     {
         // Checks if there is more than one dialogue manager in the scene
@@ -33,6 +39,8 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("More than one instance of Dialogue Manager found in the scene.");
         }
         instance = this;
+
+        dialogueVariables = new DialogueVariables(globalsInkFile.filePath);
     }
 
     public static DialogueManager GetInstance()
@@ -81,11 +89,14 @@ public class DialogueManager : MonoBehaviour
         dialoguePlaying = true;
         dialogueUI.SetActive(true);
 
+        dialogueVariables.StartListening(currentStory);
+
         ContinueStory();
     }
 
     private void ExitDialogueMode()
     {
+        dialogueVariables.StopListening(currentStory);
         // After dialogue is finished, hide the Dialogue UI again
         // and set the dialogue text to nothing.
         dialoguePlaying = false;
@@ -150,4 +161,15 @@ public class DialogueManager : MonoBehaviour
         // Function that takes the index and links it to the button used in the choices
         currentStory.ChooseChoiceIndex(choiceIndex);
     } 
+
+    public Ink.Runtime.Object GetVariableState (string variableName)
+    {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue); 
+        if (variableValue == null)
+        {
+            Debug.LogWarning("Ink variable not found: " + variableName);
+        }
+        return variableValue;
+    }
 }
