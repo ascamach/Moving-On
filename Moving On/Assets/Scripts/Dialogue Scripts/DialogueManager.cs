@@ -29,6 +29,8 @@ public class DialogueManager : MonoBehaviour
     private static DialogueManager instance;
     public bool dialoguePlaying { get; private set; }
 
+    public bool dialogueFinished { get; private set; }
+
     private DialogueVariables dialogueVariables;
 
     private void Awake()
@@ -102,6 +104,8 @@ public class DialogueManager : MonoBehaviour
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
         dialogueText.text = "";
+
+        dialogueFinished = true;
     }
 
     private void ContinueStory()
