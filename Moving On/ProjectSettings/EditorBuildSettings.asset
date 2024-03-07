@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OpeningScene.unity
     guid: 3ebad6d2333844d7c9209597ae06ccc6
+  - enabled: 1
+    path: Assets/Scenes/OpeningSceneDream.unity
+    guid: 57d917e07061a46e1af38978b498075c
   m_configObjects: {}
