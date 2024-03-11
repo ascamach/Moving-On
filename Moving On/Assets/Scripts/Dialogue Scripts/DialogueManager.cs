@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialogueUI;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI nameplateText;
 
     public Story currentStory;
 
@@ -31,6 +32,8 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueFinished { get; private set; }
 
     private DialogueVariables dialogueVariables;
+
+    private const string speaker_tag = "speaker";
 
     private void Awake()
     {
@@ -114,11 +117,37 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = currentStory.Continue();
             DisplayChoices();
+
+            HandleTags(currentStory.currentTags);
         }
         // If the next line in the Ink file is END, end the dialogue mode.
         else
         {
             ExitDialogueMode();
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach (string tag in currentTags)
+        {
+            string[] splitTag = tag.Split(":");
+            if (splitTag.Length != 2)
+            {
+                Debug.Log("Tag could not be properly parsed:" + tag);
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagKey)
+            {
+                case speaker_tag:
+                    nameplateText.text = tagValue;
+                    break;
+                default:
+                    Debug.Log("Tag parsed but not implemented.");
+                    break;
+            }
         }
     }
 

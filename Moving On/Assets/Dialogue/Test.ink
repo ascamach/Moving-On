@@ -1,9 +1,9 @@
-[Mom]: _____, you’ve been staying in bed for so long. It’s time to get up now. 
+_____, you’ve been staying in bed for so long. It’s time to get up now. #speaker: Mom 
 
-[Player]: I don’t want to. I just want to be a sad potato and stay here.
+I don’t want to. I just want to be a sad potato and stay here. #speaker: Player
 
-[Mom]: Come on now, the early bird gets the worm and we’re in a time crunch. I don’t want to fade away. 
+Come on now, the early bird gets the worm and we’re in a time crunch. I don’t want to fade away. # speaker: Mom
 
-[Player]: Fine.
+Fine. #speaker: Player
 
-[Mom]: Why don’t you come with me to the kitchen? You need to eat a good hearty meal before we leave on this journey.
+Why don’t you come with me to the kitchen? You need to eat a good hearty meal before we leave on this journey. #speaker: Mom
