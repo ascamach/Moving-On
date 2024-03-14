@@ -10,6 +10,7 @@ public class playSoundRoomMusic : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource1;
     [SerializeField] private AudioSource audioSource2;
+    [SerializeField] private AudioSource audioSource3;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +27,13 @@ public class playSoundRoomMusic : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("Playing Sound...");
+                audioSource3.Play();
                 audioSource1.Pause();
-                audioSource2.Play();
-
                 
+                StartCoroutine(musicStartup());
+                
+
+
             }
         }
         else
@@ -52,5 +56,11 @@ public class playSoundRoomMusic : MonoBehaviour
         {
             playerInRange = false;
         }
+    }
+
+    IEnumerator musicStartup()
+    {
+        yield return new WaitForSeconds(1);
+        audioSource2.Play();
     }
 }
