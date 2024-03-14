@@ -5,7 +5,7 @@
 
 [Mom] Oh, sweetheart, if only I could cry with you. But this ghost form won’t let me. I wish I could give you a big hug. 
 
-[Player] I wAnT a HuG. I MIsS YoUUUUUUUU
+[Player] I wAnT a HuG. I MIsS YoUuuu
 
 [Mom] It will be ok. I will always be by your side, don’t forget that. Since you can still see me, that’s good right! Even though I look different, my love for you remains unchanged.
 

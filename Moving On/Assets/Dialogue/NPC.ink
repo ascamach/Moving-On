@@ -19,7 +19,7 @@ VAR times_interacted = 0
 }
 
 === log1 ===
-[Player] ______??? What are you doing here boy!
+[Player] Sparky??? What are you doing here boy!
 
 [Dog] Woof wooff
 
@@ -27,18 +27,18 @@ VAR times_interacted = 0
 
 [Dog] Woof!
 
-[Player] Oh right, lemme go into the kitchen to look for food. Maybe I’ll find a bone for you ___!
+[Player] Oh right, lemme go into the kitchen to look for food. Maybe I’ll find a bone for you Sparky!
 
 ~ times_interacted = 1
 ~ dog_interactions = times_interacted
 -> DONE
 
 === log2 ===
-[Player] Sorry ___, I couldn’t find any food for you. But I was wondering if you could even eat the food I gave you.
+[Player] Sorry Sparky, I couldn’t find any food for you. But I was wondering if you could even eat the food I gave you.
 
 [Dog] Grrrrr, woof
 
-[Player] I wish I could give you belly rubs. I miss you ______.
+[Player] I wish I could give you belly rubs. I miss you Sparky.
 
 ~ times_interacted = 2
 ~ dog_interactions = times_interacted
