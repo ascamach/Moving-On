@@ -86,7 +86,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // If dialogue is playing, the player can press space to progress through dialogue
-        if (canContinueLines == true
+        if (canContinueLines
             && currentStory.currentChoices.Count == 0 
             && Input.GetKeyDown(KeyCode.F))
         {
@@ -135,6 +135,7 @@ public class DialogueManager : MonoBehaviour
                 StopCoroutine(displayLineCoroutine);
             }
 
+            // Check if the next line is empty (end of the story)
             string nextLine = currentStory.Continue();
 
             if (nextLine.Equals("") && !currentStory.canContinue)
@@ -154,6 +155,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DisplayLine(string line)
     {
+        int i = 0;
         // Clear previous dialogue
         dialogueText.text = "";
 
@@ -161,14 +163,21 @@ public class DialogueManager : MonoBehaviour
 
         HideChoices();
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("I am pressing space here.");
+        }
+
         continueIcon.SetActive(false);
 
         // Display each letter in the current line
         foreach (char letter in line.ToCharArray())
         {
+            Debug.Log("i's current value: " + i);
+            i++;
             // Display whole line if the player presses the interact button
             // during the typing effect.
-            if (Input.GetKey(KeyCode.G))
+            if (Input.GetKey(KeyCode.F) && i > 3)
             {
                 Debug.Log("Pressing G here.");
                 dialogueText.text = line;
@@ -188,7 +197,7 @@ public class DialogueManager : MonoBehaviour
     private void HandleTags(List<string> currentTags)
     {
         foreach (string tag in currentTags)
-        {
+        { 
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
             {
