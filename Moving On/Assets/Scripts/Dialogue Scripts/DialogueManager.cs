@@ -88,7 +88,7 @@ public class DialogueManager : MonoBehaviour
         // If dialogue is playing, the player can press space to progress through dialogue
         if (canContinueLines == true
             && currentStory.currentChoices.Count == 0 
-            && Input.GetKeyDown(KeyCode.Space))
+            && Input.GetKeyDown(KeyCode.F))
         {
             // Debug.Log("Moving to next dialogue");
             canContinueLines = false;
@@ -109,14 +109,17 @@ public class DialogueManager : MonoBehaviour
         ContinueStory();
     }
 
-    private void ExitDialogueMode()
+    private IEnumerator ExitDialogueMode()
     {
+        yield return new WaitForSeconds(0.2f);
         dialogueVariables.StopListening(currentStory);
         // After dialogue is finished, hide the Dialogue UI again
         // and set the dialogue text to nothing.
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
         dialogueText.text = "";
+
+        nameplateText.text = "???";
 
         dialogueFinished = true;
     }
@@ -126,60 +129,74 @@ public class DialogueManager : MonoBehaviour
         // If the dialogue is NOT on the last line, we can continue the story.
         if (currentStory.canContinue)
         {
-            // Set text of current line
+            // 
             if (displayLineCoroutine != null)
             {
                 StopCoroutine(displayLineCoroutine);
             }
-            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
-            HandleTags(currentStory.currentTags);
+            string nextLine = currentStory.Continue();
+
+            if (nextLine.Equals("") && !currentStory.canContinue)
+            {
+                StartCoroutine(ExitDialogueMode());
+            } else
+            {
+                HandleTags(currentStory.currentTags);
+                displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+            }
         }
-        // If the next line in the Ink file is END, end the dialogue mode.
         else
         {
-            ExitDialogueMode();
+            StartCoroutine(ExitDialogueMode());
         }
     }
 
     private IEnumerator DisplayLine(string line)
     {
-        Debug.Log("-------------------------");
-
-        Debug.Log("Start DisplayLine coroutine. State of canContinue Lines:" + canContinueLines);
-        // Clear previous dialogue
-        dialogueText.text = "";
+        // set the text to the full line, but set the visible characters to 0
+        dialogueText.text = line;
+        dialogueText.maxVisibleCharacters = 0;
+        // hide items while text is typing
+        continueIcon.SetActive(false);
+        HideChoices();
 
         canContinueLines = false;
 
-        Debug.Log("Changing canContinueLines here. State of canContinue Lines:" + canContinueLines);
-        HideChoices();
+        bool isAddingRichTextTag = false;
 
-        continueIcon.SetActive(false);
-
-        // Display each letter in the current line
-        foreach(char letter in line.ToCharArray())
+        // display each letter one at a time
+        foreach (char letter in line.ToCharArray())
         {
-            // Display whole line if the player presses the interact button
-            // during the typing effect.
-            if (Input.GetKeyDown(KeyCode.F))
+            // if the submit button is pressed, finish up displaying the line right away
+            if (Input.GetKey(KeyCode.G))
             {
-                Debug.Log("Pressing F here.");
-                dialogueText.text = line;
+                dialogueText.maxVisibleCharacters = line.Length;
                 break;
-            } 
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-            // Debug.Log("Dialogue Finished");
+            }
+
+            // check for rich text tag, if found, add it without waiting
+            if (letter == '<' || isAddingRichTextTag)
+            {
+                isAddingRichTextTag = true;
+                if (letter == '>')
+                {
+                    isAddingRichTextTag = false;
+                }
+            }
+            // if not rich text, add the next letter and wait a small time
+            else
+            {
+                dialogueText.maxVisibleCharacters++;
+                yield return new WaitForSeconds(typingSpeed);
+            }
         }
 
+        // actions to take after the entire line has finished displaying
         continueIcon.SetActive(true);
-        // If choices are available, show all available choices
         DisplayChoices();
-        canContinueLines = true;
 
-        Debug.Log("End DisplayLine coroutine. State of canContinue Lines:" + canContinueLines);
-        Debug.Log("Dialogue Finished.\n-------------------------");
+        canContinueLines = true;
     }
 
     private void HandleTags(List<string> currentTags)
