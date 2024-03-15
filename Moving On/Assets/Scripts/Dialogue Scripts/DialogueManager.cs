@@ -154,48 +154,34 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DisplayLine(string line)
     {
-        // set the text to the full line, but set the visible characters to 0
-        dialogueText.text = line;
-        dialogueText.maxVisibleCharacters = 0;
-        // hide items while text is typing
-        continueIcon.SetActive(false);
-        HideChoices();
+        // Clear previous dialogue
+        dialogueText.text = "";
 
         canContinueLines = false;
 
-        bool isAddingRichTextTag = false;
+        HideChoices();
 
-        // display each letter one at a time
+        continueIcon.SetActive(false);
+
+        // Display each letter in the current line
         foreach (char letter in line.ToCharArray())
         {
-            // if the submit button is pressed, finish up displaying the line right away
+            // Display whole line if the player presses the interact button
+            // during the typing effect.
             if (Input.GetKey(KeyCode.G))
             {
-                dialogueText.maxVisibleCharacters = line.Length;
+                Debug.Log("Pressing G here.");
+                dialogueText.text = line;
                 break;
             }
-
-            // check for rich text tag, if found, add it without waiting
-            if (letter == '<' || isAddingRichTextTag)
-            {
-                isAddingRichTextTag = true;
-                if (letter == '>')
-                {
-                    isAddingRichTextTag = false;
-                }
-            }
-            // if not rich text, add the next letter and wait a small time
-            else
-            {
-                dialogueText.maxVisibleCharacters++;
-                yield return new WaitForSeconds(typingSpeed);
-            }
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+            // Debug.Log("Dialogue Finished");
         }
 
-        // actions to take after the entire line has finished displaying
         continueIcon.SetActive(true);
+        // If choices are available, show all available choices
         DisplayChoices();
-
         canContinueLines = true;
     }
 
