@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogueUI;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI nameplateText;
+    [SerializeField] private GameObject continueIcon;
 
     public Story currentStory;
 
@@ -34,6 +35,13 @@ public class DialogueManager : MonoBehaviour
     private DialogueVariables dialogueVariables;
 
     private const string speaker_tag = "speaker";
+
+    private Coroutine displayLineCoroutine;
+
+    private bool canContinueLines = false;
+
+    [Header("Dialogue Typing Speed")]
+    [SerializeField] private float typingSpeed = 0.04f;
 
     private void Awake()
     {
@@ -78,11 +86,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         // If dialogue is playing, the player can press space to progress through dialogue
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (canContinueLines == true
+            && currentStory.currentChoices.Count == 0 
+            && Input.GetKeyDown(KeyCode.Space))
         {
+            // Debug.Log("Moving to next dialogue");
+            canContinueLines = false;
             ContinueStory();
         }
-        
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -115,8 +126,12 @@ public class DialogueManager : MonoBehaviour
         // If the dialogue is NOT on the last line, we can continue the story.
         if (currentStory.canContinue)
         {
-            dialogueText.text = currentStory.Continue();
-            DisplayChoices();
+            // Set text of current line
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
             HandleTags(currentStory.currentTags);
         }
@@ -125,6 +140,46 @@ public class DialogueManager : MonoBehaviour
         {
             ExitDialogueMode();
         }
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        Debug.Log("-------------------------");
+
+        Debug.Log("Start DisplayLine coroutine. State of canContinue Lines:" + canContinueLines);
+        // Clear previous dialogue
+        dialogueText.text = "";
+
+        canContinueLines = false;
+
+        Debug.Log("Changing canContinueLines here. State of canContinue Lines:" + canContinueLines);
+        HideChoices();
+
+        continueIcon.SetActive(false);
+
+        // Display each letter in the current line
+        foreach(char letter in line.ToCharArray())
+        {
+            // Display whole line if the player presses the interact button
+            // during the typing effect.
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("Pressing F here.");
+                dialogueText.text = line;
+                break;
+            } 
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+            // Debug.Log("Dialogue Finished");
+        }
+
+        continueIcon.SetActive(true);
+        // If choices are available, show all available choices
+        DisplayChoices();
+        canContinueLines = true;
+
+        Debug.Log("End DisplayLine coroutine. State of canContinue Lines:" + canContinueLines);
+        Debug.Log("Dialogue Finished.\n-------------------------");
     }
 
     private void HandleTags(List<string> currentTags)
@@ -180,6 +235,14 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(selectFirstChoice());
     }
 
+    private void HideChoices()
+    {
+        foreach(GameObject choice in choices)
+        {
+            choice.SetActive(false);
+        }
+    }
+
     private IEnumerator selectFirstChoice()
     {
         // Defaults the first selected choice as the first choice in our list
@@ -191,7 +254,12 @@ public class DialogueManager : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         // Function that takes the index and links it to the button used in the choices
-        currentStory.ChooseChoiceIndex(choiceIndex);
+        if (canContinueLines)
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+
+            ContinueStory();
+        }
     } 
 
     public Ink.Runtime.Object GetVariableState (string variableName)

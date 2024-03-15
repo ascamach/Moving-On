@@ -24,11 +24,9 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        
-
         horizontal = Input.GetAxis("Horizontal");
 
-        Debug.Log("Player X Velocity: " + rb.velocity.x);
+        // Debug.Log("Player X Velocity: " + rb.velocity.x);
 
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
