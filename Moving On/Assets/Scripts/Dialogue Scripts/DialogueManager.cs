@@ -163,23 +163,18 @@ public class DialogueManager : MonoBehaviour
 
         HideChoices();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("I am pressing space here.");
-        }
-
         continueIcon.SetActive(false);
 
         // Display each letter in the current line
         foreach (char letter in line.ToCharArray())
         {
-            Debug.Log("i's current value: " + i);
+            // Debug.Log("i's current value: " + i);
             i++;
             // Display whole line if the player presses the interact button
             // during the typing effect.
             if (Input.GetKey(KeyCode.F) && i > 3)
             {
-                Debug.Log("Pressing G here.");
+                // Debug.Log("Pressing G here.");
                 dialogueText.text = line;
                 break;
             }
