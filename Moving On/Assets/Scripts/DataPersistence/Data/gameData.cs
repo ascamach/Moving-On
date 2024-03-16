@@ -10,11 +10,13 @@ public class gameData
     public serializableDictionary<string, bool> collectablesCollected;
     public bool[] levelsUnlock;
     public bool[] levelsCompleted;
+    public bool tutorialCompleted;
 
     public gameData()
     {
         levelsUnlock = new bool[] { true, false, false };
         levelsCompleted = new bool[] { false, false, false };
         collectablesCollected = new serializableDictionary<string, bool>();
+        tutorialCompleted = false;
     }
 }

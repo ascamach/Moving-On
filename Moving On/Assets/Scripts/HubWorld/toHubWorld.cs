@@ -17,6 +17,8 @@ public class toHubWorld : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         rend.color = new Color32(144, 81, 21, 255);
         visualCue.SetActive(false);
+
+        
     }
 
     // Update is called once per frame
