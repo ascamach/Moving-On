@@ -1,0 +1,1 @@
+[Rowan] I wish this rain would stop soon, it’s driving away my customers!! #speaker: Rowan
