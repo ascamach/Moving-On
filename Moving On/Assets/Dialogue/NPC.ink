@@ -19,31 +19,31 @@ VAR times_interacted = 0
 }
 
 === log1 ===
-[Addison] Sparky??? What are you doing here boy!
+Sparky??? What are you doing here boy! #speaker: Addison
 
-[Dog] Woof wooff
+Woof wooff #speaker: Sparky
 
-[Addison] I can’t believe I can see you!! You passed away years ago! Have you been a good doggy?
+I can’t believe I can see you!! You passed away years ago! Have you been a good doggy? #speaker: Addison
 
-[Dog] Woof!
+Woof! #speaker: Sparky
 
-[Addison] Oh right, lemme go into the kitchen to look for food. Maybe I’ll find a bone for you Sparky!
+Oh right, lemme go into the kitchen to look for food. Maybe I’ll find a bone for you Sparky! #speaker: Addison
 
 ~ times_interacted = 1
 ~ dog_interactions = times_interacted
 -> DONE
 
 === log2 ===
-[Addison] Sorry Sparky, I couldn’t find any food for you. But I was wondering if you could even eat the food I gave you.
+Sorry Sparky, I couldn’t find any food for you. But I was wondering if you could even eat the food I gave you. #speaker: Addison
 
-[Dog] Grrrrr, woof
+Grrrrr, woof #speaker: Sparky
 
-[Addison] I wish I could give you belly rubs. I miss you Sparky.
+I wish I could give you belly rubs. I miss you Sparky. #speaker: Addison
 
 ~ times_interacted = 2
 ~ dog_interactions = times_interacted
 -> DONE
 
 === log3 ===
-[Dog] Woof woof!
+Woof woof! #speaker: Sparky
 -> DONE

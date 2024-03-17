@@ -1,4 +1,4 @@
-[Addison] Mom, don't leave this world yet. Please don’t leave…
+Mom, don't leave this world yet. Please don’t leave… #speaker: Addison
 
 There’s still so much for us to do together!
 
