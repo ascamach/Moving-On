@@ -6,6 +6,6 @@
 
 [Mom]: ...Are you ok?
 
-[Player]: I'm okay... It's just... I remembered something... Never mind.
+[Addison]: I'm okay... It's just... I remembered something... Never mind.
 
 [Mom]: You're as pale as the moonlight. Sit down, take a moment to breathe. Perhaps some music in the living room will soothe your spirit.

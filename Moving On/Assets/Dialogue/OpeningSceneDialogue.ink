@@ -2,21 +2,21 @@
 (Player notices their mom in ghost form from across the room)
 
 
-[Player] HuhHHHuHHHH? MoM????? 
+[Addison] HuhHHHuHHHH? MoM????? 
 
-[Player] HOw aRe YoU HeRE? Wait, hoW cAn I SeE YoU?! Wait, aM I deAd?
+[Addison] HOw aRe YoU HeRE? Wait, hoW cAn I SeE YoU?! Wait, aM I deAd?
 
-[Mom] Calm down ______
+[Mom] Calm down Addison.
 
-[Player] Wait, Is ThiS a DrEam??
+[Addison] Wait, Is ThiS a DrEam??
 
 [Mom] It’s not a dream sweetie..
 
-[Player] IS ThiS the EnD foR Me??? I cAn SeE GhOsts!!!
+[Addison] IS ThiS the EnD foR Me??? I cAn SeE GhOsts!!!
 
 [Mom] CALM DOWN!
 
-[Player] … MOM 
+[Addison] … MOM 
 
 ^^ (Player crying)
 //STRETCH GOAL: Have the player get up and go to their mom to hug
@@ -27,7 +27,7 @@
 
 (Player is still crying but a little less now)
 
-[Player] What (sniffle) do you need help (sniffle) with? 
+[Addison] What (sniffle) do you need help (sniffle) with? 
 
 [Mom] When I passed away, I instantly came back to the world as a ghost. No one could see me though except this hooded figure that kept following me. 
 
@@ -43,8 +43,8 @@
 
 [Mom] Can you help me sweetie? We can spend more time together!
 
-[Player] If it’s to help you not be stuck in limbo and not disappear, I’ll help you.
+[Addison] If it’s to help you not be stuck in limbo and not disappear, I’ll help you.
 
-[Player] I'll do anything for you mom. I love you.
+[Addison] I'll do anything for you mom. I love you.
 
 -> END
