@@ -56,6 +56,7 @@ public class dataPersistenceManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded Called");
+        
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
