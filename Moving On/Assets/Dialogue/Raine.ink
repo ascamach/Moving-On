@@ -35,7 +35,7 @@ VAR times_interacted = 0
 
 [Raine] I just know one day I was having a tea party here, but my friend— Mr. Teetee— he almost fell off the roof, so I tried to catch him. #speaker: Raine
 
-[Raine] I don’t remember what happened after I tried to catch him, but I found myself floating around and glowing! #speaker: Raine
+[Raine] I don’t remember what happened, but I found myself floating around and glowing! #speaker: Raine
 
 [Mom] Oh dear… #speaker: Mom
 
@@ -45,7 +45,7 @@ VAR times_interacted = 0
 
 [Raine] Have you seen mama? #speaker: Raine
 
-[Mom] I don’t think I have, darling.  #speaker: Mom
+[Mom] I don’t think I have, darling. #speaker: Mom
 
 [Raine] Oh... That’s okay. Thanks anyway! I’ll keep waiting for her! #speaker: Raine
 
@@ -61,7 +61,7 @@ VAR times_interacted = 0
 
 [Addison] Hm… I think you must have drank tea with magical abilities. Maybe your mama will drink the same tea as you and float and glow like you. #speaker: Addison
 
-[Raine] Really? I want that! I hope she’ll drink the magical tea so I can see her clearly! It’s hard to find her when she’s not floaty and glowy. #speaker: Raine 
+[Raine] Really? I want that! I hope she’ll drink the magical tea so I can see her clearly! It’s hard to find her when she’s not floaty and glowy. #speaker: Raine
 
 ~ times_interacted = 2
 ~ raine_interactions = times_interacted
