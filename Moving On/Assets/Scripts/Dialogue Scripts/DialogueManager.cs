@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogueUI;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI nameplateText;
+    [SerializeField] private GameObject continueIcon;
 
     public Story currentStory;
 
@@ -34,6 +35,13 @@ public class DialogueManager : MonoBehaviour
     private DialogueVariables dialogueVariables;
 
     private const string speaker_tag = "speaker";
+
+    private Coroutine displayLineCoroutine;
+
+    private bool canContinueLines = false;
+
+    [Header("Dialogue Typing Speed")]
+    [SerializeField] private float typingSpeed = 0.04f;
 
     private void Awake()
     {
@@ -78,11 +86,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         // If dialogue is playing, the player can press space to progress through dialogue
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (canContinueLines
+            && currentStory.currentChoices.Count == 0 
+            && Input.GetKeyDown(KeyCode.F))
         {
+            // Debug.Log("Moving to next dialogue");
+            canContinueLines = false;
             ContinueStory();
         }
-        
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -98,14 +109,17 @@ public class DialogueManager : MonoBehaviour
         ContinueStory();
     }
 
-    private void ExitDialogueMode()
+    private IEnumerator ExitDialogueMode()
     {
+        yield return new WaitForSeconds(0.2f);
         dialogueVariables.StopListening(currentStory);
         // After dialogue is finished, hide the Dialogue UI again
         // and set the dialogue text to nothing.
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
         dialogueText.text = "";
+
+        nameplateText.text = "???";
 
         dialogueFinished = true;
     }
@@ -115,22 +129,70 @@ public class DialogueManager : MonoBehaviour
         // If the dialogue is NOT on the last line, we can continue the story.
         if (currentStory.canContinue)
         {
-            dialogueText.text = currentStory.Continue();
-            DisplayChoices();
+            // 
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
 
-            HandleTags(currentStory.currentTags);
+            // Check if the next line is empty (end of the story)
+            string nextLine = currentStory.Continue();
+
+            if (nextLine.Equals("") && !currentStory.canContinue)
+            {
+                StartCoroutine(ExitDialogueMode());
+            } else
+            {
+                HandleTags(currentStory.currentTags);
+                displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+            }
         }
-        // If the next line in the Ink file is END, end the dialogue mode.
         else
         {
-            ExitDialogueMode();
+            StartCoroutine(ExitDialogueMode());
         }
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        int i = 0;
+        // Clear previous dialogue
+        dialogueText.text = "";
+
+        canContinueLines = false;
+
+        HideChoices();
+
+        continueIcon.SetActive(false);
+
+        // Display each letter in the current line
+        foreach (char letter in line.ToCharArray())
+        {
+            // Debug.Log("i's current value: " + i);
+            i++;
+            // Display whole line if the player presses the interact button
+            // during the typing effect.
+            if (Input.GetKey(KeyCode.F) && i > 3)
+            {
+                // Debug.Log("Pressing G here.");
+                dialogueText.text = line;
+                break;
+            }
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+            // Debug.Log("Dialogue Finished");
+        }
+
+        continueIcon.SetActive(true);
+        // If choices are available, show all available choices
+        DisplayChoices();
+        canContinueLines = true;
     }
 
     private void HandleTags(List<string> currentTags)
     {
         foreach (string tag in currentTags)
-        {
+        { 
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
             {
@@ -180,6 +242,14 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(selectFirstChoice());
     }
 
+    private void HideChoices()
+    {
+        foreach(GameObject choice in choices)
+        {
+            choice.SetActive(false);
+        }
+    }
+
     private IEnumerator selectFirstChoice()
     {
         // Defaults the first selected choice as the first choice in our list
@@ -191,7 +261,12 @@ public class DialogueManager : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         // Function that takes the index and links it to the button used in the choices
-        currentStory.ChooseChoiceIndex(choiceIndex);
+        if (canContinueLines)
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+
+            ContinueStory();
+        }
     } 
 
     public Ink.Runtime.Object GetVariableState (string variableName)
