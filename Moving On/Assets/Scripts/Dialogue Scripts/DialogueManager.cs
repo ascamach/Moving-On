@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameplateText;
     [SerializeField] private GameObject continueIcon;
 
+    [SerializeField] private Animator playerAnimator;
+
     public Story currentStory;
 
     [Header("Load Globals JSON")]
@@ -34,7 +36,9 @@ public class DialogueManager : MonoBehaviour
 
     private DialogueVariables dialogueVariables;
 
+    // Tags for Ink
     private const string speaker_tag = "speaker";
+    private const string portrait_tag = "portrait";
 
     private Coroutine displayLineCoroutine;
 
@@ -120,6 +124,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
 
         nameplateText.text = "???";
+        playerAnimator.Play("default");
 
         dialogueFinished = true;
     }
@@ -205,6 +210,9 @@ public class DialogueManager : MonoBehaviour
             {
                 case speaker_tag:
                     nameplateText.text = tagValue;
+                    break;
+                case portrait_tag:
+                    playerAnimator.Play(tagValue);
                     break;
                 default:
                     Debug.Log("Tag parsed but not implemented.");
