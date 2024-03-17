@@ -4,8 +4,12 @@
 
 [Addison] Eh, I dunno. Everything is alright. #speaker: Addison
 
-[Rowan] You know, we all miss your mom. She would come in every morning for a cup of coffee and a sugar donut. Her presence was very well-known. #speaker: Rowan
+[Rowan] You know, we all miss your mom.
+
+[Rowan] She would come in every morning for a cup of coffee and a sugar donut. Her presence was very well-known. #speaker: Rowan
 
 [Addison] Yeah, I know… #speaker: Addison
 
-[Rowan] I’m sorry… I realized I made you a bit sad. If you need anything from us, feel free to drop by. Free donuts on the house. #speaker: Rowan
+[Rowan] I’m sorry… I realized I made you a bit sad. 
+
+[Rowan] If you need anything from us, feel free to drop by. Free donuts on the house. #speaker: Rowan
