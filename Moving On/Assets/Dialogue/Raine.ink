@@ -64,7 +64,7 @@ VAR times_interacted = 0
 [Raine] Really? I want that! I hope she’ll drink the magical tea so I can see her clearly! It’s hard to find her when she’s not floaty and glowy. #speaker: Raine 
 
 ~ times_interacted = 2
-~ dog_interactions = times_interacted
+~ raine_interactions = times_interacted
 -> DONE
 
 === log3 ===
