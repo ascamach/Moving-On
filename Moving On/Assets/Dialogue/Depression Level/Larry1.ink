@@ -26,8 +26,13 @@ VAR currentLocale = ""
     -> DONE
 }
 
-{ dog_interactions >= 2:
+{ dog_interactions == 2:
     -> log3_fa
+    -> DONE
+}
+
+{ dog_interactions >= 2:
+    -> log4_fa
     -> DONE
 }
 
@@ -61,8 +66,13 @@ VAR currentLocale = ""
 
 === log3_fa ===
 هاپ هاپ #speaker: جرقه ای
-
+~ times_interacted = 3
+~ dog_interactions = times_interacted
 -> DONE
+
+=== log4_fa ===
+OK!
+-> DONE 
 
 
 === main_en ===
@@ -77,8 +87,12 @@ VAR currentLocale = ""
     -> DONE
 }
 
-{ dog_interactions >= 2:
+{ dog_interactions == 2:
     -> log3
+    -> DONE
+}
+{ dog_interactions >= 3:
+    -> log4
     -> DONE
 }
 
@@ -126,6 +140,6 @@ VAR currentLocale = ""
 ~ dog_interactions = times_interacted
 -> DONE
 === log4 ===
-[Larry the Fisherman] Sigh... One more fish to go. 
+[Larry the Fisherman] Sigh... One more fish to go. #speaker: Larry
 -> DONE
 
