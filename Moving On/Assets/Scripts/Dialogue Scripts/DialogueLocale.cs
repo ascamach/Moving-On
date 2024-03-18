@@ -9,8 +9,6 @@ public class DialogueLocale : MonoBehaviour
     [SerializeField] private TextAsset globalsJSON;
 
     private Story globalsFile;
-
-    public string localeID;
     private DialogueVariables dialogueVariables;
 
     private void Awake()

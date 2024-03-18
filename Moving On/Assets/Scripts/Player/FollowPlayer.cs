@@ -28,6 +28,7 @@ public class FollowPlayer : MonoBehaviour
     private void FixedUpdate()
     {
         Follow();
+        Flip();
     }
 
     public void Follow()
@@ -43,10 +44,27 @@ public class FollowPlayer : MonoBehaviour
         {
             agent.SetDestination(new Vector3(target.x - 1, target.y, transform.position.z));
             transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f);
-        } else
+        }
+        else
         {
             agent.SetDestination(new Vector3(target.x + 1, target.y, transform.position.z));
             transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f);
+        }
+    }
+
+    private void Flip()
+    {
+        Vector3 ghostScale = transform.localScale;
+
+        if (transform.position.x > target.x)
+        {
+            ghostScale.x = -1;
+            transform.localScale = ghostScale;
+        }
+        else if (transform.position.x < target.x)
+        {
+            ghostScale.x = 1;
+            transform.localScale = ghostScale;
         }
     }
 }
