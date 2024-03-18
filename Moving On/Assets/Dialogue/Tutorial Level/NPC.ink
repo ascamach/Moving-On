@@ -1,27 +1,34 @@
 INCLUDE ../globals.ink
 
 VAR times_interacted = 0
+VAR currentLocale = ""
 
-{ localeID == "en":
+~ currentLocale = localeID
+
+{
+- currentLocale == "en":
     -> main_en
-} 
-
-{ localeID == "fa":
+    -> DONE
+- currentLocale == "fa":
     -> main_fa
+    -> DONE
 }
 
 === main_fa === 
 
 { dog_interactions == "":
     -> log1_fa
+    -> DONE
 }
 
 { dog_interactions == 1:
     -> log2_fa
+    -> DONE
 }
 
 { dog_interactions >= 2:
     -> log3_fa
+    -> DONE
 }
 
 -> DONE
@@ -37,6 +44,8 @@ VAR times_interacted = 0
 
 اوه، بذار برم آشپزخونه ببینم غذا چی داریم. شاید یه جایزه هم برای تو پیدا کنم! #speaker: ادیسون
 
+~ times_interacted = 1
+~ dog_interactions = times_interacted
 -> DONE
 
 === log2_fa ===
@@ -46,6 +55,8 @@ VAR times_interacted = 0
 
 ای کاش میتونستن حداقل نازت کنم. خیلی دلم برات تنگ شده. #speaker: ادیسون
 
+~ times_interacted = 2
+~ dog_interactions = times_interacted
 -> DONE
 
 === log3_fa ===
@@ -58,14 +69,17 @@ VAR times_interacted = 0
 
 { dog_interactions == "":
     -> log1
+    -> DONE
 }
 
 { dog_interactions == 1:
     -> log2
+    -> DONE
 }
 
 { dog_interactions >= 2:
     -> log3
+    -> DONE
 }
 
 -> DONE

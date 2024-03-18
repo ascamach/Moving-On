@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.Localization.Settings;
 using UnityEngine.Localization;
+using UnityEngine.Localization.SmartFormat.Utilities;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -57,18 +58,6 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("More than one instance of Dialogue Manager found in the scene.");
         }
         instance = this;
-
-        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
-
-        currentStory = new Story(loadGlobalsJSON.text);
-
-        dialogueVariables.StartListening(currentStory);
-
-        string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
-
-        currentStory.variablesState["localeID"] = localeID;
-
-        dialogueVariables.StopListening(currentStory);
     }
 
     public static DialogueManager GetInstance()
@@ -91,6 +80,18 @@ public class DialogueManager : MonoBehaviour
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
+
+        // Grab current locale ID        
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+
+        currentStory = new Story(loadGlobalsJSON.text);
+
+        dialogueVariables.StartListening(currentStory);
+
+        string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
+        currentStory.variablesState["localeID"] = localeID;
+
+        dialogueVariables.StopListening(currentStory);
     }
 
     private void Update()
@@ -121,6 +122,9 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.SetActive(true);
 
         dialogueVariables.StartListening(currentStory);
+
+        string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
+        currentStory.variablesState["localeID"] = localeID;
 
         ContinueStory();
     }
