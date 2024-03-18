@@ -1,19 +1,43 @@
 INCLUDE ../globals.ink
 
-{ localeID == "fa":
-    -> test
+VAR currentLocale = ""
+
+~ currentLocale = localeID
+
+{
+- currentLocale == "en":
+    -> main_en
+    -> DONE
+- currentLocale == "fa":
+    -> main_fa
+    -> DONE
 }
 
-{ localeID == "en":
-    -> main
-}
+// Mom:
+// روح
+// Addison:
+// ادیسون
 
-=== test ===
-Farsi text goes here.
+=== main_fa ===
+#speaker: ادیسون
+
+مامان، لطفا از پیشم نرو
+
+هنوز خیلی چیز ها مونده که باید ازت یاد بگیرم.
+
+خیلی جاها مونده که قول دادی بهم نشون بدی.
+
+هنوز هتل مورد علاقه تو بهم نشون ندادی.
+
+قول داده بودی جشن فارغ التحصیلیم کنارم باشی.
+
+لطفا از پیشم نرو.
+
+من بی تو نمی تونم.
 
 -> DONE
 
-=== main ===
+=== main_en ===
 
 Mom, don't leave this world yet. Please don’t leave… #speaker: Addison
 
