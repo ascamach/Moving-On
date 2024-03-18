@@ -1,3 +1,5 @@
+INCLUDE ../globals.ink
+
 [Rowan] Oh, it’s Addison! #speaker: Rowan
 
 [Rowan] How have you been? Long time no see! Have you been hanging in there? #speaker: Rowan
@@ -13,3 +15,4 @@
 [Rowan] I’m sorry… I realized I made you a bit sad. 
 
 [Rowan] If you need anything from us, feel free to drop by. Free donuts on the house. #speaker: Rowan
+
