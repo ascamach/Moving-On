@@ -1,3 +1,20 @@
+INCLUDE globals.ink
+
+{ localeID == "fa":
+    -> test
+}
+
+{ localeID == "en":
+    -> main
+}
+
+=== test ===
+Farsi text goes here.
+
+-> DONE
+
+=== main ===
+
 Mom, don't leave this world yet. Please don’t leave… #speaker: Addison
 
 There’s still so much for us to do together!
@@ -9,3 +26,5 @@ You always wanted to try that cafe down by the corner right? You want to see me 
 I don’t know what I’ll do without you. 
 
 Please don't leave. 
+
+-> DONE

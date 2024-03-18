@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -57,6 +59,16 @@ public class DialogueManager : MonoBehaviour
         instance = this;
 
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+
+        currentStory = new Story(loadGlobalsJSON.text);
+
+        dialogueVariables.StartListening(currentStory);
+
+        string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
+
+        currentStory.variablesState["localeID"] = localeID;
+
+        dialogueVariables.StopListening(currentStory);
     }
 
     public static DialogueManager GetInstance()
