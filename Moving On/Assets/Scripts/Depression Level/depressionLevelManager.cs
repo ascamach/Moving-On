@@ -6,6 +6,7 @@ public class depressionLevelManager : MonoBehaviour
 {
     public static depressionLevelManager Instance;
     public int playerSpawn = 0;
+    public bool keyObtained = false;
 
     private void Awake()
     {
