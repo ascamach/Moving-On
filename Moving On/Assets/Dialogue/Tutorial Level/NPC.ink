@@ -2,9 +2,59 @@ INCLUDE ../globals.ink
 
 VAR times_interacted = 0
 
--> main
+{ localeID == "en":
+    -> main_en
+} 
 
-=== main ===
+{ localeID == "fa":
+    -> main_fa
+}
+
+=== main_fa === 
+
+{ dog_interactions == "":
+    -> log1_fa
+}
+
+{ dog_interactions == 1:
+    -> log2_fa
+}
+
+{ dog_interactions >= 2:
+    -> log3_fa
+}
+
+-> DONE
+
+=== log1_fa ===
+اسپارکی؟؟ تو اینجا چیکار می‌کنی؟#speaker: ادیسون
+
+هاپ هاپ #speaker: جرقه ای
+
+باورم نمیشه دوباره میتونم میبینمت!#speaker: ادیسون
+
+هاپ #speaker: جرقه ای
+
+اوه، بذار برم آشپزخونه ببینم غذا چی داریم. شاید یه جایزه هم برای تو پیدا کنم! #speaker: ادیسون
+
+-> DONE
+
+=== log2_fa ===
+اسپارکی ، نتونستم برات چیزی پیدا کنم. ولی اصلا چیزی میتونی بخوری؟  #speaker:ادیسون
+
+هاپ هاپ #speaker: جرقه ای
+
+ای کاش میتونستن حداقل نازت کنم. خیلی دلم برات تنگ شده. #speaker: ادیسون
+
+-> DONE
+
+=== log3_fa ===
+هاپ هاپ #speaker: جرقه ای
+
+-> DONE
+
+
+=== main_en ===
 
 { dog_interactions == "":
     -> log1
@@ -17,6 +67,8 @@ VAR times_interacted = 0
 { dog_interactions >= 2:
     -> log3
 }
+
+-> DONE
 
 === log1 ===
 Sparky??? What are you doing here boy! #speaker: Addison
