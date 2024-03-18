@@ -76,3 +76,4 @@ Nothing matters since I can’t hug you and can’t feel your physical presence.
 میدونم عزیزم. منم همینطور
 
 برای من تو این دنیا و اون دنیا به غیر از تو هیچ چیز دیگه ای مهم نیست.
+-> DONE
