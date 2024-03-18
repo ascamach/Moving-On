@@ -18,16 +18,16 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 312353884114944
-    m_Localized: 842c9ad355d9cfa4c8421d9625551533
+  - m_Id: 492133459857408
+    m_Localized: 94505d8fe736b5243bfc103e592a25b1[How to play - Farsi]
     m_Metadata:
       m_Items: []
-  - m_Id: 312865975078912
-    m_Localized: 2a54d4a4034670641900c4afa1151674
+  - m_Id: 491966547529728
+    m_Localized: 842c9ad355d9cfa4c8421d9625551533[Continue_Farsi]
     m_Metadata:
       m_Items: []
-  - m_Id: 313140265783296
-    m_Localized: 94505d8fe736b5243bfc103e592a25b1
+  - m_Id: 491657666400256
+    m_Localized: 2a54d4a4034670641900c4afa1151674[New Game - Farsi]
     m_Metadata:
       m_Items: []
   references:

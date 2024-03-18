@@ -15,43 +15,43 @@ MonoBehaviour:
   m_TableCollectionName: AssetLocalization
   m_TableCollectionNameGuidString: 0703bb3c5f0ff485f82388961fc2306d
   m_Entries:
-  - m_Id: 312353884114944
-    m_Key: Continue
-    m_Metadata:
-      m_Items: []
-  - m_Id: 312865975078912
+  - m_Id: 491657666400256
     m_Key: New Game
     m_Metadata:
       m_Items: []
-  - m_Id: 313140265783296
+  - m_Id: 491966547529728
+    m_Key: Continue Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 492133459857408
     m_Key: How2Play
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items:
-    - rid: 1528102767195324426
+    - rid: 1528102779119730759
   m_KeyGenerator:
     rid: 6838522909076750361
   references:
     version: 2
     RefIds:
-    - rid: 1528102767195324426
+    - rid: 1528102779119730759
       type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_Entries:
-        - m_KeyId: 312353884114944
+        - m_KeyId: 491657666400256
           m_TableCodes:
           - en
           - fa
-        - m_KeyId: 312865975078912
-          m_TableCodes:
-          - fa
-          - en
-        - m_KeyId: 313140265783296
+        - m_KeyId: 491966547529728
           m_TableCodes:
           - en
           - fa
-        m_TypeString: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+        - m_KeyId: 492133459857408
+          m_TableCodes:
+          - fa
+          - en
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - rid: 6838522909076750361
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}

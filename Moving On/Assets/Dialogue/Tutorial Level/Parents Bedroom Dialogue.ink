@@ -24,7 +24,9 @@ Oh, sweetheart, if only I could cry with you. But this ghost form won’t let me
 
 I wAnT a HuG. I MIsS YoUUUUUUUU #speaker: Addison
 
-It will be ok. I will always be by your side, don’t forget that. Since you can still see me, that’s good right! Even though I look different, my love for you remains unchanged. #speaker: Mom
+It will be ok. I will always be by your side, don’t forget that. #speaker: Mom
+
+Since you can still see me, that’s good right! Even though I look different, my love for you remains unchanged.
 
 It's not the same. I miss your warmth, your smell.. #speaker: Addison
 
