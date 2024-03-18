@@ -40,6 +40,7 @@ public class playerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
         Flip();
+        //Debug.Log(rb.position);
     }
 
     private void FixedUpdate()
