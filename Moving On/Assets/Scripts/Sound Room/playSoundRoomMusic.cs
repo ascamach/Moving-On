@@ -23,6 +23,11 @@ public class playSoundRoomMusic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DialogueManager.GetInstance().dialoguePlaying)
+        {
+            return;
+        }
+
         if (playerInRange)
         {
             visualCue.SetActive(true);

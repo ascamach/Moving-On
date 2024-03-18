@@ -5,7 +5,6 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     public GameObject player;
-    public GameObject ghost;
 
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
@@ -29,7 +28,6 @@ public class MovePlayer : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 player.transform.position = newPosition;
-                ghost.transform.position = newPosition;
             }
         }
         else
