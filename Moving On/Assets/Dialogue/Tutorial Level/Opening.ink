@@ -1,3 +1,7 @@
+INCLUDE ../globals.ink
+
+VAR currentLocale = ""
+
 Addison, you’ve been staying in bed for so long. It’s time to get up now. #speaker: Mom 
 
 I don’t want to. I just want to be a sad potato and stay here. #speaker: Addison

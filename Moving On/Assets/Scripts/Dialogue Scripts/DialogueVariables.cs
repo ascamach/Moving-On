@@ -49,7 +49,7 @@ public class DialogueVariables
             variables.Add(name, value);
         }
 
-        Debug.Log("Variable change: " + name + "=" + value);
+        Debug.Log("Variable changed: " + name + "=" + value);
     }
  
     // Function for different stories to reference the dictionary

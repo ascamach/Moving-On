@@ -9,21 +9,19 @@ public class DialogueLocale : MonoBehaviour
     [SerializeField] private TextAsset globalsJSON;
 
     private Story globalsFile;
-    private DialogueVariables dialogueVariables;
 
-    private void Awake()
-    {
-        dialogueVariables = new DialogueVariables(globalsJSON);
-    }
+    private Ink.Runtime.Object test;
 
-    public void ChangeLocaleID(string localeID)
+    public void ChangeLocaleID()
     {
         globalsFile = new Story(globalsJSON.text);
 
-        dialogueVariables.StartListening(globalsFile);
+        string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
 
         globalsFile.variablesState["localeID"] = localeID;
 
-        dialogueVariables.StopListening(globalsFile);
+        test = DialogueManager.GetInstance().GetVariableState("localeID");
+
+        Debug.Log(test);
     }
 }
