@@ -112,7 +112,7 @@ VAR currentLocale = ""
 === log1_en ===
 Hey there sonny! Long time no see hehe. #speaker: Grandma
 
-Grandma?! How can I see you? I just saw _____ [dog] in the hallway. What’s going on? #speaker: Addison
+Grandma?! How can I see you? I just saw Sparky in the hallway. What’s going on? #speaker: Addison
 
 I don’t know sonny but I’ve been watching you from this ghost world for quite some time. #speaker: Grandma
 
@@ -139,7 +139,7 @@ Ok grandma.. #speaker: Addison
 -> DONE
 
 === log3_en ===
-[Grandma] Back in my day, I used to go outside and play with my friends. You youngins just stay in and play video games all day.
+Back in my day, I used to go outside and play with my friends. You youngins just stay in and play video games all day.
  #speaker: Grandma
 
 I play with my friends on the computer. #speaker: Addison

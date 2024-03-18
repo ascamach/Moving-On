@@ -8,6 +8,8 @@ public class playSoundRoomMusic : MonoBehaviour
     [SerializeField] private GameObject visualCue;
     private bool playerInRange;
 
+    [SerializeField] public GameObject livingRoomTrigger;
+
     [SerializeField] private AudioSource audioSource1;
     [SerializeField] private AudioSource audioSource2;
     [SerializeField] private AudioSource audioSource3;
@@ -24,16 +26,18 @@ public class playSoundRoomMusic : MonoBehaviour
         if (playerInRange)
         {
             visualCue.SetActive(true);
+
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("Playing Sound...");
                 audioSource3.Play();
                 audioSource1.Pause();
-                
+
                 StartCoroutine(musicStartup());
-                
-
-
+                if (!livingRoomTrigger.activeSelf)
+                {
+                    livingRoomTrigger.SetActive(true);
+                }
             }
         }
         else

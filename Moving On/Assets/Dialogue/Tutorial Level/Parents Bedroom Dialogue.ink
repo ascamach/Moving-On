@@ -19,11 +19,7 @@ VAR currentLocale = ""
 // ادیسون
 
 === main_en ===
-(Player interacts with jacket on bed)
 //Flashback to a black screen that will have dialogue
-
-(Player crying face)
-
 Oh, sweetheart, if only I could cry with you. But this ghost form won’t let me. I wish I could give you a big hug. #speaker: Mom
 
 I wAnT a HuG. I MIsS YoUUUUUUUU #speaker: Addison

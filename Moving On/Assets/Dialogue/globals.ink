@@ -5,6 +5,7 @@ VAR localeID = ""
 VAR number_chosen = ""
 VAR dog_interactions = ""
 VAR gma_interactions = ""
+VAR fridgeInteraction =  false
 
 // Depression Level
 VAR raine_interactions = ""

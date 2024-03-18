@@ -37,8 +37,6 @@ Don’t make me have to use my stern voice on you.
 // Addison
 Alright, I'll go.. #speaker: Addison
 
-(Player goes back upstairs and into the parent's bedroom)	
-
 -> DONE
 
 === main_fa ===
