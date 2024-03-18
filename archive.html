@@ -63,9 +63,15 @@
           text-align: left;
         }
       }
-      h1 {
+      h1, h2, p{
             text-align: center;
         }
+
+      .video {
+        text-align: center;
+  
+      }
+      
       </style>
     </head>
     <body>
@@ -86,8 +92,6 @@
       </a>
     </div>
     
-   
-    
     <script>
     function myFunction() {
       var x = document.getElementById("myTopnav");
@@ -99,17 +103,35 @@
     }
     </script>
         <h1>Welcome to our archive page! Throughout this class, we created multiple prototypes and here are some of our prototypes and summaries of our sprints:</h1>
-        <div>
-          <iframe src="lofivideo.mp4"></iframe>
-        </div>
-            
-        <div>
-            
-        </div>
         
+        <section>
+          <div class="hVid">
+            <div>
+              <h2>Sprint 2: Hifi Video Montage</h2>
+              <div class="video">
+              <iframe src="lofivideo.mp4" width="640" height="480" allow="autoplay"></iframe>
+              </div>
+              <div>
+                <p>This video highlights the second sprint, where we started a lot of work on the Unity project itself. After playtests with our LoFi prototypes, our job was now to implement all of our collective ideas into a solid project.</p>
+              </div>
+            </div>
+          </section>
         
+        <section>
+        <div class="lVid">
+          <div>
+            <h2>Sprint 1: Lofi Video Montage</h2>
+            <div class="video">
+            <iframe src="lofivideo.mp4" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+            <div>
+              <p>For our first sprint, we had to create a structure for Moving On. This involved figuring out the core gameplay loop, the artstyle, and the process of deployment. This video shows our first steps into working on this game.</p>
+            </div>
+          </div>
+        </section>
+
         <div>
-            LoFi Video Montage: Amir's Video
+            
         </div>
         
         
@@ -121,6 +143,6 @@
         <div>
             LoFi Prototype #2: Tristyn's Practicing Core Mechanics
         </div>
-        
+      </div>
     </body>
 </html>
