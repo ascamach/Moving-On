@@ -7,9 +7,11 @@ VAR currentLocale = ""
 
 VAR larryConditional = ""
 VAR raineConditional = ""
+VAR rowanConditional = ""
 
 ~ larryConditional = larry_interactions
 ~ raineConditional = raine_interactions
+~ rowanConditional = rowan_interactions
 
 {
 - currentLocale == "en":
@@ -20,32 +22,37 @@ VAR raineConditional = ""
     -> DONE
 }
 
+// Rowan:
+// روون
+// Addison:
+// ادیسون
+
 === main_fa === 
 
-{ dog_interactions == "":
+{ rowanConditional == "":
     -> log1_fa
     -> DONE
 }
 
 { 
-    - dog_interactions == 1 && raineConditional >= 1:
+    - larry_interactions == 1 && raineConditional >= 1:
     -> log2_fa
     -> DONE
-    - dog_interactions == 1:
+    - rowanConditional == 1:
     -> log4_fa
     -> DONE
 }
 
 { 
-    - dog_interactions == 2 && larryConditional >= 4:
+    - rowanConditional == 2 && larryConditional >= 4:
     -> log3_fa
     -> DONE
-    - dog_interactions == 2:
+    - rowanConditional == 2:
     -> log4_fa
     -> DONE
 }
 
-{ dog_interactions >= 3:
+{ rowanConditional >= 3:
     -> log4_fa
     -> DONE
 }
@@ -53,133 +60,163 @@ VAR raineConditional = ""
 -> DONE
 
 === log1_fa ===
-اسپارکی؟؟ تو اینجا چیکار می‌کنی؟#speaker: ادیسون
+#speaker: روون
+اوه اَدیسون جان تویی!
 
-هاپ هاپ #speaker: جرقه ای
+حالت چطوره؟ کم پیدایی عمو جان؟
 
-باورم نمیشه دوباره میتونم میبینمت!#speaker: ادیسون
+#speaker: ادیسون
+هییی نمی‌دونم عمو جان. سعی می‌کنم خوب باشم. 
 
-هاپ #speaker: جرقه ای
+#speaker: روون
+خودت بهتر میدونی که همه ما دلمون برای مادرت خیلی تنگ شده. مادرت یکی از مشتری های ثابت من بود.
 
-اوه، بذار برم آشپزخونه ببینم غذا چی داریم. شاید یه جایزه هم برای تو پیدا کنم! #speaker: ادیسون
+#speaker: ادیسون
+بله میدونم…
+
+#speaker: روون
+شرمنده عزیزم، حاله تورو هم خراب کردم. نباید یادت می آوردم. اینجا بیشتر بیا، پیراشکی همیشه مهمونه منی.
 
 ~ times_interacted = 1
-~ dog_interactions = times_interacted
+~ rowan_interactions = times_interacted
 -> DONE
 
 === log2_fa ===
-اسپارکی ، نتونستم برات چیزی پیدا کنم. ولی اصلا چیزی میتونی بخوری؟  #speaker:ادیسون
+#speaker: روون
+بیشتر حواستو جمع کن عمو جان. دیدم داشتی از درو دیوار میرفتی بالا نگران شدم. مامانتم اگه اینجا بود همینو می گفت.
 
-هاپ هاپ #speaker: جرقه ای
+#speaker: ادیسون
+اون بالا یه در هست که قفله. شما میدونین چطوری میشه بازش کرد؟
 
-ای کاش میتونستن حداقل نازت کنم. خیلی دلم برات تنگ شده. #speaker: ادیسون
+#speaker: روون
+اونجا می‌خوای بری چیکار؟
+
+#speaker: ادیسون
+اونجا یه چیزی هست که لازم دارم.
+
+#speaker: روون
+والله یادم نیست.
+
+#speaker: ادیسون
+چطوری میتونم برم توش؟
+
+#speaker: روون
+اَدیسون جان فکر کنم بار آخر لَری کلید اونجا رو داشت.
+
+برو ببین پیشه اونه؟
 
 ~ times_interacted = 2
-~ dog_interactions = times_interacted
+~ rowan_interactions = times_interacted
 -> DONE
 
 === log3_fa ===
-هاپ هاپ #speaker: جرقه ای
+#speaker: روون
+کیلید رو پیدا کردی؟
+
+#speaker: ادیسون
+بله، ممنون
+
+#speaker: روون
+خدارو شکر، باز اگه کمکی خواستی بیا پیشم عمو.
+
 ~ times_interacted = 3
-~ dog_interactions = times_interacted
+~ rowan_interactions = times_interacted
 -> DONE
 
 === log4_fa ===
-idk
+#speaker: روون
+ای کاش این بارون بند بیاد یکم دیگه، هوای بد مشتری ها رو می‌ پرونه!
 -> DONE
-
 
 === main_en ===
 
-{ dog_interactions == "":
+{ rowanConditional == "":
     -> log1
     -> DONE
 }
 
 { 
-    - dog_interactions == 1 && raineConditional >= 1:
+    - larry_interactions == 1 && raineConditional >= 1:
     -> log2
     -> DONE
-    - dog_interactions == 1:
+    - rowanConditional == 1:
     -> log4
     -> DONE
 }
 
 { 
-    - dog_interactions == 2 && larryConditional >= 4:
+    - rowanConditional == 2 && larryConditional >= 4:
     -> log3
     -> DONE
-    - dog_interactions == 2:
+    - rowanConditional == 2:
     -> log4
     -> DONE
 }
 
-{ dog_interactions >= 3:
+{ rowanConditional >= 3:
     -> log4
     -> DONE
 }
+
+-> DONE
 
 
 
 -> DONE
 
 === log1 ===
-[Rowan] Oh, it’s Addison! #speaker: Rowan
+Oh, it’s Addison! #speaker: Rowan
 
-[Rowan] How have you been? Long time no see! Have you been hanging in there? #speaker: Rowan
+How have you been? Long time no see! Have you been hanging in there? #speaker: Rowan
 
-[Addison] Eh, I dunno. Everything is alright. #speaker: Addison
+Eh, I dunno. Everything is alright. #speaker: Addison
 
-[Rowan] You know, we all miss your mom.
+You know, we all miss your mom.
 
-[Rowan] She would come in every morning for a cup of coffee and a sugar donut. Her presence was very well-known. #speaker: Rowan
+She would come in every morning for a cup of coffee and a sugar donut. Her presence was very well-known. #speaker: Rowan
 
-[Addison] Yeah, I know… #speaker: Addison
+Yeah, I know… #speaker: Addison
 
-[Rowan] I’m sorry… I realized I made you a bit sad. 
+I’m sorry… I realized I made you a bit sad. 
 
-[Rowan] If you need anything from us, feel free to drop by. Free donuts on the house. #speaker: Rowan
+If you need anything from us, feel free to drop by. Free donuts on the house. #speaker: Rowan
 
 ~ times_interacted = 1
 ~ dog_interactions = times_interacted
 -> DONE
 
 === log2 ===
-[Rowan] You should be careful! I saw you climbing to the roof over there. Your mom would agree with what I have to say. #speaker: Rowan
+You should be careful! I saw you climbing to the roof over there. Your mom would agree with what I have to say. #speaker: Rowan
 
-[Addison] I saw that there’s a locked gate up there. Is there a key to unlock it? #speaker: Addison
+I saw that there’s a locked gate up there. Is there a key to unlock it? #speaker: Addison
 
-[Rowan] Why do you need to unlock that gate? #speaker: Rowan
+Why do you need to unlock that gate? #speaker: Rowan
 
-[Addison] Oh, I saw something behind the gate and I wanted to see it. #speaker: Addison
+Oh, I saw something behind the gate and I wanted to see it. #speaker: Addison
 
-[Rowan] Hm… I can’t remember who last opened the gate or who even has the key. #speaker: Rowan 
+Hm… I can’t remember who last opened the gate or who even has the key. #speaker: Rowan 
 
-[Addison] Is there anything I can do to break the gate? #speaker: Addison
+Is there anything I can do to break the gate? #speaker: Addison
 
-[Rowan] Addison! Good grief, don’t you become a vandalizer now. Let me— OH I remember! Larry last had the key because he needed to store his fishing gear. #speaker: Rowan
+Addison! Good grief, don’t you become a vandalizer now. Let me— OH I remember! Larry last had the key because he needed to store his fishing gear. #speaker: Rowan
 
-[Rowan] Why don’t you ask him? #speaker: Rowan
+Why don’t you ask him? #speaker: Rowan
 
 ~ times_interacted = 2
 ~ dog_interactions = times_interacted
 -> DONE
 
 === log3 ===
-[Rowan] Did you get the key? #speaker: Rowan
+Did you get the key? #speaker: Rowan
 
-[Addison] Yes I did, thank you Rowan! #speaker: Addison
+Yes I did, thank you Rowan! #speaker: Addison
 
-[Rowan] I’m glad! Now off you go. Remember Addison, the village is always there for you. #speaker: Rowan
+I’m glad! Now off you go. Remember Addison, the village is always there for you. #speaker: Rowan
 
 ~ times_interacted = 3
 ~ dog_interactions = times_interacted
 -> DONE
 
 === log4 === 
-[Rowan] I wish this rain would stop soon, it’s driving away my customers!! #speaker: Rowan
+I wish this rain would stop soon, it’s driving away my customers!! #speaker: Rowan
 -> DONE
-
-
-
-
