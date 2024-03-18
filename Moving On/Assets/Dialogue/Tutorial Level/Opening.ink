@@ -30,6 +30,8 @@ Fine. #speaker: Addison #portrait: player_sad
 
 Why don’t you come with me to the kitchen? You need to eat a good hearty meal before we leave on this journey. #speaker: Mom
 
+-> DONE
+
 === main_fa ===
 #speaker: روح
 روح: کله روز تو تختت بودی. وقتشه پاشی.
