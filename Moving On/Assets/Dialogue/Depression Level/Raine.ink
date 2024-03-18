@@ -1,4 +1,4 @@
-INCLUDE globals.ink
+INCLUDE ../globals.ink
 
 VAR times_interacted = 0
 
