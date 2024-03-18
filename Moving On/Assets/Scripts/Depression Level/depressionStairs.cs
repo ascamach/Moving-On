@@ -7,6 +7,8 @@ public class depressionStairs : MonoBehaviour
 {
     [Header("Visual Cue")]
     [SerializeField] public GameObject visualCue;
+    [Header("Put Canvas Animator Here for Fade In: ")]
+    [SerializeField] private Animator animator;
 
 
     private bool playerInRange;
@@ -24,7 +26,8 @@ public class depressionStairs : MonoBehaviour
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
-                SceneManager.LoadScene("depressionScene");
+                animator.SetTrigger("playFadeIn");
+                StartCoroutine(sceneTransition());
             }
         } else
         {
@@ -46,5 +49,11 @@ public class depressionStairs : MonoBehaviour
         {
             playerInRange = false;
         }
+    }
+
+    IEnumerator sceneTransition()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadSceneAsync("depressionScene");
     }
 }
