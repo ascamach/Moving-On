@@ -1,54 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private Vector3 target;
-    [SerializeField] private GameObject player;
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private Transform player;
     [SerializeField] private playerMovement playerDirection;
-    NavMeshAgent agent;
 
-    // Start is called before the first frame update
-    void Start()
+    //AI motion
+    [SerializeField] private int speed;
+
+    Vector3 velocity = Vector3.zero;
+
+
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
+        agent.updatePosition = false;
         agent.updateUpAxis = false;
-
-        InvokeRepeating("Flip", 2.0f, 1);
+        agent.updateRotation = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        target = player.transform.position;
+        Follow();
+    }
+
+    public void Follow()
+    {
+        if (agent.speed == 0)
+        {
+            agent.speed = speed;
+        }
+
+        target = player.position;
+
         if (playerDirection.isFacingRight)
         {
             agent.SetDestination(new Vector3(target.x - 1, target.y, transform.position.z));
+            transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f);
         } else
         {
             agent.SetDestination(new Vector3(target.x + 1, target.y, transform.position.z));
-        }
-        Flip();
-    }
-
-
-    private void Flip()
-    {
-        Vector3 ghostScale = transform.localScale;
-
-        if (transform.position.x > target.x)
-        {
-            ghostScale.x = -1;
-            transform.localScale = ghostScale;
-        } else if (transform.position.x < target.x)
-        {
-            ghostScale.x = 1;
-            transform.localScale = ghostScale;
+            transform.position = Vector3.SmoothDamp(transform.position, agent.nextPosition, ref velocity, 0.1f);
         }
     }
 }
