@@ -9,6 +9,8 @@ public class InGameButtonQuitButton : MonoBehaviour
     // Start is called before the first frame update
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1.0f;
+        SceneManager.LoadSceneAsync("MainMenu");
+        
     }
 }

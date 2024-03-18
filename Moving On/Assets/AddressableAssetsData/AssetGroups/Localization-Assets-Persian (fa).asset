@@ -16,25 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: b770b4f693768ab4a8251fd32b7f4047
-  m_SerializeEntries:
-  - m_GUID: 842c9ad355d9cfa4c8421d9625551533
-    m_Address: Continue_Farsi
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-fa
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2a54d4a4034670641900c4afa1151674
-    m_Address: New Game - Farsi
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-fa
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 94505d8fe736b5243bfc103e592a25b1
-    m_Address: How to play - Farsi
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-fa
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 1ceaf0cb6ca9c4b46b58311faff997c2, type: 2}
   m_SchemaSet:
