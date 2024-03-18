@@ -23,6 +23,11 @@ public class DialogueManager : MonoBehaviour
 
     public Story currentStory;
 
+    [Header("Audio Sources")]
+    [SerializeField] private AudioSource dialogueStartSound;
+    [SerializeField] private AudioSource dialogueNextSound;
+
+
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
 
@@ -110,6 +115,7 @@ public class DialogueManager : MonoBehaviour
             // Debug.Log("Moving to next dialogue");
             canContinueLines = false;
             ContinueStory();
+            dialogueNextSound.Play();
         }
     }
 
@@ -125,6 +131,8 @@ public class DialogueManager : MonoBehaviour
 
         string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
         currentStory.variablesState["localeID"] = localeID;
+
+        dialogueStartSound.Play();
 
         ContinueStory();
     }
