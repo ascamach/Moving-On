@@ -37,4 +37,15 @@ You're as pale as the moonlight. Sit down, take a moment to breathe. Perhaps som
 #speaker: روح
 بیا این ساندویچ رو بخور سرحال بیای.
 
+#speaker: ???
+(ساندویچ را می خورد)
+
+خوبی عزیزم؟
+
+#speaker: ادیسون
+آره حالم خوبه، فقط یه چیزی یادم اومد…. ولش کن
+
+#speaker: روح
+مثل گچ رنگ پوستت سفید شده. بشین یکم سرحال بیای. پاشو یه آهنگ بذار دلت باز شه. 
+
 -> DONE
