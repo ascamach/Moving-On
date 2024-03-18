@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: TextTable_en
+  m_Name: How2PlayTable_fa
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en
-  m_SharedData: {fileID: 11400000, guid: 13c6af7008c3140319733102eb0e61f6, type: 2}
+    m_Code: fa
+  m_SharedData: {fileID: 11400000, guid: c3e6e780467dad340a7b2c576934e266, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 1472925261824
-    m_Localized: test_en
+  - m_Id: 116288032768
+    m_Localized: "\u0628\u0631\u0627\u06CC \u062D\u0631\u06A9\u062A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7200090001408
+    m_Localized: "\u0628\u0631\u0627\u06CC \u062D\u0631\u06A9\u062A"
     m_Metadata:
       m_Items: []
   references:

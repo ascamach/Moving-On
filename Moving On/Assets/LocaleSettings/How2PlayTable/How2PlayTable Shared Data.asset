@@ -10,23 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: TextTable Shared Data
+  m_Name: How2PlayTable Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: TextTable
-  m_TableCollectionNameGuidString: 13c6af7008c3140319733102eb0e61f6
+  m_TableCollectionName: How2PlayTable
+  m_TableCollectionNameGuidString: c3e6e780467dad340a7b2c576934e266
   m_Entries:
-  - m_Id: 1472925261824
+  - m_Id: 116288032768
+    m_Key: Title Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7200090001408
     m_Key: test
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 6838522909076750360
+    rid: 1528102767195324447
   references:
     version: 2
     RefIds:
-    - rid: 6838522909076750360
+    - rid: 1528102767195324447
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1710649082977
+        m_CustomEpoch: 1710733534131
