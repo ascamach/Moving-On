@@ -27,26 +27,13 @@ VAR raineConditional = ""
     -> DONE
 }
 
-{ 
-    - dog_interactions == 1 && raineConditional >= 1:
+{ dog_interactions == 1 && raineConditional >= 1:
     -> log2_fa
     -> DONE
-    - dog_interactions == 1:
-    -> log4_fa
-    -> DONE
 }
 
-{ 
-    - dog_interactions == 2 && larryConditional >= 4:
+{ dog_interactions >= 2:
     -> log3_fa
-    -> DONE
-    - dog_interactions == 2:
-    -> log4_fa
-    -> DONE
-}
-
-{ dog_interactions >= 3:
-    -> log4_fa
     -> DONE
 }
 
@@ -80,46 +67,39 @@ VAR raineConditional = ""
 
 === log3_fa ===
 هاپ هاپ #speaker: جرقه ای
-~ times_interacted = 3
-~ dog_interactions = times_interacted
--> DONE
 
-=== log4_fa ===
-idk
 -> DONE
 
 
 === main_en ===
 
-{ dog_interactions == "":
+{ dog_interactions == 1:
     -> log1
     -> DONE
 }
 
 { 
-    - dog_interactions == 1 && raineConditional >= 1:
+- dog_interactions == 2 && raineConditional >= 1:
     -> log2
     -> DONE
-    - dog_interactions == 1:
+- dog_interactions == 2:
     -> log4
     -> DONE
 }
 
-{ 
-    - dog_interactions == 2 && larryConditional >= 4:
+{
+- dog_interactions == 3 && larryConditional >= 4:
     -> log3
     -> DONE
-    - dog_interactions == 2:
+- dog_interactions == 3:
+    -> log4
+    ->DONE
+}
+
+{ dog_interactions == 4:
     -> log4
     -> DONE
 }
-
-{ dog_interactions >= 3:
-    -> log4
-    -> DONE
-}
-
-
 
 -> DONE
 
@@ -171,12 +151,11 @@ idk
 [Addison] Yes I did, thank you Rowan! #speaker: Addison
 
 [Rowan] I’m glad! Now off you go. Remember Addison, the village is always there for you. #speaker: Rowan
-
 ~ times_interacted = 3
 ~ dog_interactions = times_interacted
 -> DONE
 
-=== log4 === 
+=== log4 ===
 [Rowan] I wish this rain would stop soon, it’s driving away my customers!! #speaker: Rowan
 -> DONE
 
