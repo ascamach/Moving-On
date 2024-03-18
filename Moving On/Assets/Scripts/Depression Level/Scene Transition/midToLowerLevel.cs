@@ -3,21 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class depressionStairs : MonoBehaviour
+public class midToLowerLevel : MonoBehaviour
 {
     [Header("Visual Cue")]
-    [SerializeField] public GameObject visualCue;
+    [SerializeField] private GameObject visualCue;
     [Header("Put Canvas Animator Here for Fade In: ")]
     [SerializeField] private Animator animator;
-
-
     private bool playerInRange;
-
-    private void Awake()
-    {
-        playerInRange = false;
-        visualCue.SetActive(false);
-    }
 
     private void Update()
     {
@@ -29,9 +21,6 @@ public class depressionStairs : MonoBehaviour
                 animator.SetTrigger("playFadeIn");
                 StartCoroutine(sceneTransition());
             }
-        } else
-        {
-            visualCue.SetActive(false);
         }
     }
 
@@ -48,12 +37,14 @@ public class depressionStairs : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerInRange = false;
+            visualCue.SetActive(false);
         }
     }
 
     IEnumerator sceneTransition()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync("depressionScene");
+        Debug.Log("Spawning in position: " + depressionLevelManager.Instance.playerSpawn);
+        SceneManager.LoadSceneAsync("depressionHomeScene");
     }
 }
