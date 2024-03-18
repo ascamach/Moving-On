@@ -10,7 +10,6 @@ public class NPCTrigger : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
-    private int count = 0;
     private int timesInteracted = 0;
 
     private bool playerInRange;
@@ -34,6 +33,11 @@ public class NPCTrigger : MonoBehaviour
         } else
         {
             visualCue.SetActive(false);
+        }
+
+        if (timesInteracted >= 4)
+        {
+            depressionLevelManager.Instance.keyObtained = true;
         }
     }
 
