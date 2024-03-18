@@ -22,8 +22,26 @@ MonoBehaviour:
     m_Localized: How To Play
     m_Metadata:
       m_Items: []
-  - m_Id: 7200090001408
-    m_Localized: Test
+  - m_Id: 9290413674496
+    m_Localized: 'A and D Keys to Move
+
+
+      W Key to Jump
+
+
+      Spacebar for
+      Continuing Dialogue
+
+
+      F to Interact'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11251879940096
+    m_Localized: test
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28242485350400
+    m_Localized: Back to Menu
     m_Metadata:
       m_Items: []
   references:
