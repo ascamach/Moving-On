@@ -128,9 +128,7 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.SetActive(true);
 
         dialogueVariables.StartListening(currentStory);
-
-        string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
-        currentStory.variablesState["localeID"] = localeID;
+        getLocaleID();
 
         dialogueStartSound.Play();
 
@@ -310,5 +308,14 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Ink variable not found: " + variableName);
         }
         return variableValue;
+    }
+
+    private string getLocaleID()
+    {
+        string currentLocaleID = "";
+        string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
+        currentStory.variablesState["localeID"] = localeID;
+
+        return currentLocaleID;
     }
 }
