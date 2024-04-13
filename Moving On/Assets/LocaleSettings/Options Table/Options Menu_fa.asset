@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Options Menu_fa
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fa
+  m_SharedData: {fileID: 11400000, guid: 39469cc1ade725b4c9841fac0d29912f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 20697153536
+    m_Localized: Close in Farsi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4204792217600
+    m_Localized: Volume in Farsi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5802377445376
+    m_Localized: Farsi in Farsi
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
