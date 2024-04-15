@@ -27,6 +27,7 @@ public class depressionStairs : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 animator.SetTrigger("playFadeIn");
+                depressionLevelManager.Instance.playerSpawn = 0;
                 StartCoroutine(sceneTransition());
             }
         } else
