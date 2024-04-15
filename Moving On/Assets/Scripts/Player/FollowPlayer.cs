@@ -18,16 +18,24 @@ public class FollowPlayer : MonoBehaviour
 
     private void Awake()
     {
+        
         agent = GetComponent<NavMeshAgent>();
         agent.updatePosition = false;
         agent.updateUpAxis = false;
         agent.updateRotation = false;
     }
 
+    private void Start()
+    {
+        transform.position = player.position;
+        Debug.Log("Current Ghost Position: " + transform.position);
+    }
+
     private void FixedUpdate()
     {
         Follow();
         Flip();
+        //Debug.Log(transform.position);
     }
 
     public void Follow()
