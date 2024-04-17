@@ -13,13 +13,15 @@ public class TextSlider : MonoBehaviour
     private Slider slider;
 
     // Starting volume value
-    private float startingVolume = 7.0f; // Starting volume at 7 out of 20
+    private float startingVolume;
+    
 
     void Start()
     {
+        startingVolume = AudioListener.volume * 20f;
         slider = GetComponent<Slider>();
         // Set the slider value to match the starting volume
-        slider.value = startingVolume / 20.0f; // Map 7 to the range between 0 and 1
+        slider.value = startingVolume;
         // Update the text to display the starting volume
         SetNumberText(startingVolume);
         // Set the volume based on the starting volume
