@@ -42,7 +42,7 @@ public class MenuManager : MonoBehaviour
         disableMenuButton();
         //how2PlayButton.interactable = false;
         dataPersistenceManager.instance.NewGame();
-        SceneManager.LoadSceneAsync("OpeningSceneDream");
+        SceneManager.LoadSceneAsync("introDream");
         
     }
 
