@@ -55,6 +55,6 @@ public class depressionStairs : MonoBehaviour
     IEnumerator sceneTransition()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync("depressionScene");
+        SceneManager.LoadSceneAsync("depressionStoreScene");
     }
 }
