@@ -14,12 +14,6 @@ public class playSoundRoomMusic : MonoBehaviour
     [SerializeField] private AudioSource audioSource2;
     [SerializeField] private AudioSource audioSource3;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -70,6 +64,14 @@ public class playSoundRoomMusic : MonoBehaviour
     IEnumerator musicStartup()
     {
         yield return new WaitForSeconds(1);
-        audioSource2.Play();
+        if (audioSource2.isPlaying)
+        {
+            audioSource1.Play();
+            audioSource2.Pause();
+        } else if (!audioSource2.isPlaying)
+        {
+            audioSource1.Pause();
+            audioSource2.Play();
+        }
     }
 }
