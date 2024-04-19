@@ -16,6 +16,7 @@ public class jacketCollision : MonoBehaviour
     private int count = 0;
 
     private bool playerInRange;
+    public bool jacketCollected = false;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class jacketCollision : MonoBehaviour
             {
                 Destroy(jacketCue);
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                jacketCollected = true;
             }
         } else
         {
