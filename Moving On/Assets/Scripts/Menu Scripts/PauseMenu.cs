@@ -14,7 +14,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseMenuUI;
-    bool paused = false;
+    public bool paused = false;
     [SerializeField] GameObject optionsUI; //add this
 
 
