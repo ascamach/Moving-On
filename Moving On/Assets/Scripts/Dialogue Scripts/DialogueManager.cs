@@ -52,6 +52,9 @@ public class DialogueManager : MonoBehaviour
 
     private bool canContinueLines = false;
 
+    // Reference for pause menu
+    public PauseMenu pauseMenu;
+
     [Header("Dialogue Typing Speed")]
     [SerializeField] private float typingSpeed = 0.04f;
 
@@ -103,6 +106,11 @@ public class DialogueManager : MonoBehaviour
     {
         // Return if no dialogue is playing
         if(!dialoguePlaying)
+        {
+            return;
+        }
+
+        if (pauseMenu.paused == true)
         {
             return;
         }

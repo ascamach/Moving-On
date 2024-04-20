@@ -25,7 +25,7 @@ public class fallingFromRoof : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         Debug.Log("Spawning in position: " + depressionLevelManager.Instance.playerSpawn);
-        SceneManager.LoadSceneAsync("depressionScene");
+        SceneManager.LoadSceneAsync("depressionStoreScene");
     }
 }
 
