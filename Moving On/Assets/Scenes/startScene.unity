@@ -1956,6 +1956,7 @@ MonoBehaviour:
   - {fileID: 763038968}
   - {fileID: 1686646977}
   - {fileID: 112698940}
+  pauseMenu: {fileID: 1470504268}
   typingSpeed: 0.04
 --- !u!1 &1221465761
 GameObject:
@@ -2898,6 +2899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 359373346}
+  paused: 0
   optionsUI: {fileID: 1888614462}
 --- !u!114 &1470504269
 MonoBehaviour:
@@ -3699,6 +3701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 0}
+  paused: 0
   optionsUI: {fileID: 1848067896}
 --- !u!114 &1888614464
 MonoBehaviour:

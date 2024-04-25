@@ -4287,6 +4287,7 @@ MonoBehaviour:
   - {fileID: 869122091}
   - {fileID: 1233629421}
   - {fileID: 594934464}
+  pauseMenu: {fileID: 0}
   typingSpeed: 0.04
 --- !u!1 &1568600313
 GameObject:
@@ -4571,7 +4572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1698375750
 RectTransform:
   m_ObjectHideFlags: 0
