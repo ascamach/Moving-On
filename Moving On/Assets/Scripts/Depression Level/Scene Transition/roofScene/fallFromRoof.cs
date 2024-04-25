@@ -13,6 +13,7 @@ public class fallingFromRoof : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            depressionLevelManager.Instance.roofFirstTrigger = true;
             Debug.Log("Entering the Left Side Trigger");
             animator.SetTrigger("playFadeIn");
             depressionLevelManager.Instance.playerSpawn = hole;

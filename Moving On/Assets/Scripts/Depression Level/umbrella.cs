@@ -9,7 +9,7 @@ public class umbrella : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadSceneAsync("Credits");
+            SceneManager.LoadSceneAsync("creditsMenu"); //Normaly, this will take us to hub world, but for the purpose of v.slice, it takes to credits menu.
         }
     }
 }
