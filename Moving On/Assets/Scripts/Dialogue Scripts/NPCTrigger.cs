@@ -10,6 +10,9 @@ public class NPCTrigger : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
+    [Header("Drag the NPC object that this script is \nattached to down here")]
+    [SerializeField] private GameObject npc;
+
     private int timesInteracted = 0;
 
     private bool playerInRange;
@@ -27,6 +30,7 @@ public class NPCTrigger : MonoBehaviour
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
+                
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 timesInteracted++;
             }
@@ -34,11 +38,17 @@ public class NPCTrigger : MonoBehaviour
         {
             visualCue.SetActive(false);
         }
+        //Depression Level Checks Start Here
+        if (timesInteracted >= 1 && npc.name == "Rowan NPC")
+        {
+            depressionLevelManager.Instance.doughnutsRecieved = true;
+        }
 
-        if (timesInteracted >= 4)
+        if (timesInteracted >= 4 && npc.name=="LarryNPC")  //This check to see if we are actually interacting with Larry and if we have interacted 4 times w/ larry
         {
             depressionLevelManager.Instance.keyObtained = true;
         }
+        //Depression Level Checks End Here
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -5311,7 +5311,7 @@ Tilemap:
       - {fileID: 6699407704743256933, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 1606191026905108572, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -6735415089238527364, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 6, y: 0, z: 0}
@@ -5322,7 +5322,7 @@ Tilemap:
       - {fileID: 6699407704743256933, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 1606191026905108572, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -6735415089238527364, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -6, y: 1, z: 0}
@@ -5333,7 +5333,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 6, y: 1, z: 0}
@@ -5421,7 +5421,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 6, y: 5, z: 0}
@@ -8615,6 +8615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 1725223817}
+  paused: 0
   optionsUI: {fileID: 1650864431}
 --- !u!114 &1086523343
 MonoBehaviour:
@@ -9131,6 +9132,7 @@ MonoBehaviour:
   - {fileID: 679376536}
   - {fileID: 2017272394}
   - {fileID: 929407396}
+  pauseMenu: {fileID: 1086523342}
   typingSpeed: 0.04
 --- !u!1 &1260208102
 GameObject:
@@ -9311,6 +9313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285952797}
+  - component: {fileID: 1285952798}
   m_Layer: 0
   m_Name: Room Triggers
   m_TagString: Untagged
@@ -9334,6 +9337,19 @@ Transform:
   - {fileID: 2078110671}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1285952798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285952796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946ea70a01bf447b9bf5c41aaf246fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 2078110670}
 --- !u!1 &1293135885
 GameObject:
   m_ObjectHideFlags: 0
@@ -10580,7 +10596,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04882455, y: 0.21970993}
+  m_Offset: {x: -0.24909356, y: 0.21970993}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10591,7 +10607,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.162383, y: 1.8794199}
+  m_Size: {x: 1.4398713, y: 1.8794199}
   m_EdgeRadius: 0
 --- !u!114 &1608583416
 MonoBehaviour:
@@ -10607,6 +10623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualCue: {fileID: 1428426369}
   inkJSON: {fileID: 4900000, guid: 3afdd47c22e9fbe4991a04b85882ebd2, type: 3}
+  npc: {fileID: 1608583414}
 --- !u!212 &1608583417
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10728,6 +10745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 0}
+  paused: 0
   optionsUI: {fileID: 1379850612}
 --- !u!114 &1650864434
 MonoBehaviour:

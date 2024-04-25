@@ -19,6 +19,7 @@ public class RoomTrigger : MonoBehaviour
     {
         if (!firstTime)
         {
+            Debug.Log("It better be in the spawn for this to trigger");
             DialogueManager.GetInstance().EnterDialogueMode(inkText);
             firstTime = true;
         }

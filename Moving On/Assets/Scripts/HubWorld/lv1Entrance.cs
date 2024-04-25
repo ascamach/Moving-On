@@ -27,7 +27,7 @@ public class lv1Entrance : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && inEntrance)
         {
             Debug.Log("Entering Level 1...");
-            SceneManager.LoadSceneAsync("depressionStoreScene");
+            SceneManager.LoadSceneAsync("depressionHomeScene");
         }
     }
 

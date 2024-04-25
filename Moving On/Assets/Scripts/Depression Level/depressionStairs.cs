@@ -26,6 +26,7 @@ public class depressionStairs : MonoBehaviour
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
+                depressionLevelManager.Instance.houseFirstTrigger = true;
                 animator.SetTrigger("playFadeIn");
                 depressionLevelManager.Instance.playerSpawn = 0;
                 StartCoroutine(sceneTransition());
