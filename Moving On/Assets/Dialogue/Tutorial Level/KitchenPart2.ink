@@ -31,20 +31,38 @@ VAR currentLocale = ""
 === log1 ===
 Oh hey, there’s only a grilled cheese sandwich in there. Perfect. Why don't you have that? #speaker: Mom
 
-//Flashback to a black screen that will have dialogue
+........
 
-...Are you ok?
+"Everyday after school Mom would make me a grilled cheese sandwhich" #speaker: Addison
 
-I'm okay... It's just... I remembered something... Never mind. #speaker: Addison
+"Whenever I cried" #speaker: Addison
 
-You're as pale as the moonlight. Sit down, take a moment to breathe. Perhaps some music in the living room will soothe your spirit. #speaker: Mom
+"Whenever I was mad" #speaker: Addison
+
+"Whenever I was happy" #speaker: Addison
+
+"There was always a grilled cheese sandwhich waiting for me" #speaker: Addison
+
+"I can imagine taking that first bite and the flavors melting on my tongue" #speaker: Addison
+
+"I'll never have mom's grilled cheese sandwich again will I" #speaker: Addison
+
+Addison. Are you ok? #speaker: Mom 
+
+You've been staring at the sandwhich in silence. #speaker: Mom 
+
+I'm okay. It's just I remembered something. #speaker: Addison
+
+You know what I lost my appetite. #speaker: Addison
+
+Why don't you sit down, take a moment to breathe. Perhaps some music in the living room will soothe your spirit. #speaker: Mom
 
 ~ fridgeInteraction = true
 -> DONE
 
 === log2 ===
 #speaker: Addison
-I'm already full...
+I don't want to look at the grilled cheese sandwhich again.
 -> DONE
 
 === main_fa ===
