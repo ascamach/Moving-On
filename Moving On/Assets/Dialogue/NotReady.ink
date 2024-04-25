@@ -15,7 +15,9 @@ VAR currentLocale = ""
 }
 
 === main_en ===
-Come on Sweetie, try looking elsewhere. #speaker: Mom
+Ehhh #speaker: Addison
+
+I don't want to step foot in here. #speaker: Addison
 
 -> DONE
 
