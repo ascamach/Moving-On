@@ -19,7 +19,23 @@ VAR currentLocale = ""
 // ادیسون
 
 === main_en ===
-//Flashback to a black screen that will have dialogue
+
+........ #speaker: Addison
+
+"It's been so long since I stepped in here" #speaker: Addison
+
+"It almost feels like normal" #speaker: Addison
+
+"It's almost feels..." #speaker: Addison
+
+"Peaceful" #speaker: Addison
+
+"The smell of my mom's hoodie" #speaker: Addison
+
+"Once I wear it, her smell will be gone forever" #speaker: Addison
+
+/Addison starts crying
+
 Oh, sweetheart, if only I could cry with you. But this ghost form won’t let me. I wish I could give you a big hug. #speaker: Mom
 
 I wAnT a HuG. I MIsS YoUUUUUUUU #speaker: Addison

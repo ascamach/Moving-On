@@ -19,23 +19,30 @@ VAR currentLocale = ""
 // ادیسون
 
 === main_en ===
-// Addison
-I can't stay here anymore. Let's go. #speaker: Addison 
+
+........
+
+"This was the song that Mom used to hum all the time" #speaker: Addison
+
+"Those were such happy times" #speaker: Addison
+
+........
+
+Hey Mom, I can't stay here anymore. Can we go? #speaker: Addison 
 
 // Mom
-But you're not dressed for the cold outside. You should wear something warmer. My jacket, in my room, will keep you cozy.. #speaker: Mom
-
+It looks cold outside. Can you go to my room to get a jacket? #speaker: Mom
 
 // Addison
 Do I have to? I think I’ll be fine. #speaker: Addison
 
 // Mom
-We are not stepping out until you put on a proper jacket. Please, fetch it from my room.. #speaker: Mom 
+I don't want you to get sick. Please get it from my room. #speaker: Mom 
 
 Don’t make me have to use my stern voice on you. 
 
 // Addison
-Alright, I'll go.. #speaker: Addison
+Alright fine. I'll go.. #speaker: Addison
 
 -> DONE
 
