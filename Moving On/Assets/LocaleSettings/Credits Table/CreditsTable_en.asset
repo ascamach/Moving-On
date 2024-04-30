@@ -50,6 +50,14 @@ MonoBehaviour:
       Addison Camacho'
     m_Metadata:
       m_Items: []
+  - m_Id: 6158409058091008
+    m_Localized: Credits Page
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6159045522751488
+    m_Localized: Back To Menu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
