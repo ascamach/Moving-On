@@ -33,7 +33,7 @@ Oh hey, there’s only a grilled cheese sandwich in there. Perfect. Why don't yo
 
 ........
 
-"Everyday after school Mom would make me a grilled cheese sandwhich" #speaker: Addison
+"Everyday after school Mom would make me a grilled cheese sandwich" #speaker: Addison
 
 "Whenever I cried" #speaker: Addison
 
@@ -41,15 +41,15 @@ Oh hey, there’s only a grilled cheese sandwich in there. Perfect. Why don't yo
 
 "Whenever I was happy" #speaker: Addison
 
-"There was always a grilled cheese sandwhich waiting for me" #speaker: Addison
+"There was always a grilled cheese sandwich waiting for me" #speaker: Addison
 
 "I can imagine taking that first bite and the flavors melting on my tongue" #speaker: Addison
 
 "I'll never have mom's grilled cheese sandwich again will I" #speaker: Addison
 
-Addison. Are you ok? #speaker: Mom 
+Addison. Are you okay? #speaker: Mom 
 
-You've been staring at the sandwhich in silence. #speaker: Mom 
+You've been staring at the sandwich in silence. #speaker: Mom 
 
 I'm okay. It's just I remembered something. #speaker: Addison
 
@@ -62,7 +62,7 @@ Why don't you sit down, take a moment to breathe. Perhaps some music in the livi
 
 === log2 ===
 #speaker: Addison
-I don't want to look at the grilled cheese sandwhich again.
+I don't want to look at the grilled cheese sandwich again.
 -> DONE
 
 === main_fa ===
