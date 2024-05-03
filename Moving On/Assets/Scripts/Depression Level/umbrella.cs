@@ -9,6 +9,12 @@ public class umbrella : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            depressionLevelManager.Instance.playerSpawn = 0;
+            depressionLevelManager.Instance.keyObtained = false;
+            depressionLevelManager.Instance.houseFirstTrigger = false;
+            depressionLevelManager.Instance.doughnutsRecieved = false;
+            depressionLevelManager.Instance.roofFirstTrigger = false;
+
             SceneManager.LoadSceneAsync("creditsMenu"); //Normaly, this will take us to hub world, but for the purpose of v.slice, it takes to credits menu.
         }
     }
