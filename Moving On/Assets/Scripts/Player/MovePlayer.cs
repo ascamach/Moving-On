@@ -12,12 +12,18 @@ public class MovePlayer : MonoBehaviour
     [Header("New Position")]
     [SerializeField] private Vector3 newPosition;
 
+    [Header("Cameras")]
+    [SerializeField] private GameObject upstairsCam;
+    [SerializeField] private GameObject downstairsCam;
+
     private bool playerInRange;
 
     private void Awake()
     {
         playerInRange = false;
         visualCue.SetActive(false);
+        upstairsCam.SetActive(true);
+        downstairsCam.SetActive(false);
     }
 
     private void Update()
@@ -27,6 +33,8 @@ public class MovePlayer : MonoBehaviour
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
+                upstairsCam.SetActive(!upstairsCam.activeInHierarchy);
+                downstairsCam.SetActive(!downstairsCam.activeInHierarchy);
                 player.transform.position = newPosition;
             }
         }
