@@ -2521,7 +2521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a421ae14a72ce4e48817d39e9a2b9d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 9b6cd28fccff649b1af82761ac323b61, type: 3}
+  inkJSON: {fileID: 4900000, guid: 1cc3ab91c7ad3448caefe95d0b053033, type: 3}
   scene: tutorialScene
   dialogueUI: {fileID: 413145493}
 --- !u!4 &1356607384

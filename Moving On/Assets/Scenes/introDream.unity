@@ -2509,7 +2509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a421ae14a72ce4e48817d39e9a2b9d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: e95846cb75ef3447595f8e4eada06ccf, type: 3}
+  inkJSON: {fileID: 4900000, guid: 6092bd285bd364ed7b4d9038a018cfeb, type: 3}
   scene: startScene
   dialogueUI: {fileID: 458242970}
 --- !u!4 &1133288559
