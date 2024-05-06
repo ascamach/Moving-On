@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
+// https://www.youtube.com/watch?app=desktop&v=rmlJUaWfmzQ&ab_channel=spaderdabomb
+// https://stackoverflow.com/questions/59188747/how-to-create-blur-effect-to-all-the-scene-except-for-one-object-focus-on-that
+
 public class InputScript : MonoBehaviour
 {
     // Start is called before the first frame update
