@@ -11,7 +11,7 @@ public class InputScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
@@ -21,6 +21,8 @@ public class InputScript : MonoBehaviour
         {
             PostProcessVolume ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
             ppVolume.enabled = !ppVolume.enabled;
+            //ppVolume.enabled = !ppVolume.enabled;
         }
+        //ppVolume.enabled = false;
     }
 }
