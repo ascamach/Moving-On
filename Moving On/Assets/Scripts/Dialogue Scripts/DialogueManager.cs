@@ -118,7 +118,7 @@ public class DialogueManager : MonoBehaviour
         // If dialogue is playing, the player can press space to progress through dialogue
         if (canContinueLines
             && currentStory.currentChoices.Count == 0 
-            && Input.GetKeyDown(KeyCode.F))
+            && Input.GetKeyDown(KeyCode.Space))
         {
             // Debug.Log("Moving to next dialogue");
             canContinueLines = false;
