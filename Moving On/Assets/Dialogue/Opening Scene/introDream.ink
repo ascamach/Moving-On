@@ -11,44 +11,115 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
+    
 }
-
-// Mom:
-// روح
-// Addison:
-// ادیسون
-
-=== main_fa ===
-#speaker: ادیسون
-
-مامان، لطفا از پیشم نرو
-
-هنوز خیلی چیز ها مونده که باید ازت یاد بگیرم.
-
-خیلی جاها مونده که قول دادی بهم نشون بدی.
-
-هنوز هتل مورد علاقه تو بهم نشون ندادی.
-
-قول داده بودی جشن فارغ التحصیلیم کنارم باشی.
-
-لطفا از پیشم نرو.
-
-من بی تو نمی تونم.
-
--> DONE
 
 === main_en ===
 
-Mom, don't leave this world yet. Please don’t leave… #speaker: Addison
+...
 
-There’s still so much for us to do together!
+...
 
-There’s still places we have to visit on our travel list! 
+I'm having a dream again.
 
-You always wanted to try that cafe down by the corner right? You want to see me graduate college right? Please don’t leave. 
+A dream about the pain and regrets I felt during that moment.
 
-I don’t know what I’ll do without you. 
+...
 
-Please don't leave. 
+I didn’t realize how fast things would change.
+
+Even though it’s been three weeks, I’m still struggling to process everything.
+
+...
+
+Please don’t leave…
+
+I wish I hadn’t said the things I said to you.
+
+If only I had known that night was the last time I would ever talk to you…
+
+…to see and to hug you.
+
+I’m sorry Mom.
+
+I wish I could apologize to you.
+
+Mom, don’t leave this world yet.
+
+I don’t know what I’ll do without you.
+
+-> DONE
+
+=== main_fa ===
+...
+
+...
+
+I'm having a dream again.
+
+A dream about the pain and regrets I felt during that moment.
+
+...
+
+I didn’t realize how fast things would change.
+
+Even though it’s been three weeks, I’m still struggling to process everything.
+
+...
+
+Please don’t leave…
+
+I wish I hadn’t said the things I said to you.
+
+If only I had known that night was the last time I would ever talk to you…
+
+…to see and to hug you.
+
+I’m sorry Mom.
+
+I wish I could apologize to you.
+
+Mom, don’t leave this world yet.
+
+I don’t know what I’ll do without you.
+
+-> DONE
+
+=== main_ja ===
+
+...
+
+...
+
+I'm having a dream again.
+
+A dream about the pain and regrets I felt during that moment.
+
+...
+
+I didn’t realize how fast things would change.
+
+Even though it’s been three weeks, I’m still struggling to process everything.
+
+...
+
+Please don’t leave…
+
+I wish I hadn’t said the things I said to you.
+
+If only I had known that night was the last time I would ever talk to you…
+
+…to see and to hug you.
+
+I’m sorry Mom.
+
+I wish I could apologize to you.
+
+Mom, don’t leave this world yet.
+
+I don’t know what I’ll do without you.
 
 -> DONE
