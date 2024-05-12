@@ -46,8 +46,6 @@ public class playerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Check if a Dialogue Instance is playing
-        
-
         if(dialogueInScene == true)
         {
             if (DialogueManager.GetInstance().dialoguePlaying)
