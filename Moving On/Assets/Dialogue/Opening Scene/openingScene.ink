@@ -11,110 +11,73 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+    
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
-// Mom:
-// روح
-// Addison:
-// ادیسون
-
 === main_en ===
-HuhHHHuHHHH? MoM????? #speaker: Addison
 
-HOw aRe YoU HeRE? Wait, hoW cAn I SeE YoU?! Wait, aM I deAd? #speaker: Addison
+Who’s there? #speaker: Addison
 
-Calm down Addison. #speaker: Mom
+I scratch my eyes in disbelief. Although I couldn’t believe it, the one standing right in front of me is…
 
-Wait, Is ThiS a DrEam?? #speaker: Addison
+…Mom??? #speaker: Addison
 
-It’s not a dream sweetie.. #speaker: Mom
+What the—? #speaker: Addison
 
-IS ThiS the EnD foR Me??? I cAn SeE GhOsts!!! #speaker: Addison
+Calm down, Addison— it’s me! #speaker: Mom
+
+All I could do was stand there, stunned in shock. Was this real?
+
+No, that can’t be right… I must be imagining things, I’m still in a dream— yeah, that’s it! I’m still dreaming. I should pinch myself to wake up, isn’t that how it works? #speaker: Addison
 
 CALM DOWN! #speaker: Mom
 
-… MOM #speaker: Addison
+...
 
-//STRETCH GOAL: Have the player get up and go to their mom to hug
+...
 
-I’m sorry for leaving you. I didn’t know my time was so short with you. #speaker: Mom
+...
 
-I know you’re hurting and I’ve been watching you for a while. 
+It’s going to be alright, sweetie. #speaker: Mom
 
-I don’t like to see you in pain. But sweetie, I need your help.
+I’ve missed you so much… #speaker: Addison
 
-What (sniffle) do you need help (sniffle) with? #speaker: Addison
+I’ve missed you too, Addison. #speaker: Mom
 
-When I passed away, I instantly came back to the world as a ghost. #speaker: Mom
+Once I died, I’ve always been by your side. But you weren’t able to see me… #speaker: Mom
 
-No one could see me though except this hooded figure that kept following me. 
+…until now. #speaker: Mom
 
-They approached me and said I would be stuck in the land of living. 
 
-The only way for me to move on from this land is to collect important possessions of mine. 
+Why can I see you now Mom? #speaker: Addison
 
-This will help me to be able to let go of my old self and accept that I passed on. 
+Why now? #speaker: Addison
 
-If I’m unable to find all my possessions, I’ll evaporate into dust and will disappear from the face of this world. 
+I can explain what’s going on.  #speaker: Mom
 
-The only issue is I can’t touch anything. My hand just goes through everything. I need you to help me get my possessions. 
+Another ghost had told me that I’m stuck in a limbo spirit world. According to them, I can’t move on until I collect enough “special” objects.  #speaker: Mom
 
-Can you help me sweetie? We can spend more time together!
+If I don’t find them soon, I’ll evaporate into dust and will disappear from the face of this world. #speaker: Mom
 
-If it’s to help you not be stuck in limbo and not disappear, I’ll help you. #speaker: Addison
+The only issue is…I can’t touch anything. I just go through everything. #speaker: Mom
 
-I'll do anything for you mom. I love you.
+Do you think you can help me, sweetie? #speaker: Mom
+
+I guess… #speaker: Addison
+
+I know things didn’t end well for us, and I’m sorry for that. Let’s go on one more journey together, yeah? #speaker: Mom
+
+
 
 -> DONE
 
 === main_fa ===
-#speaker: ادیسون
-هاااااا؟ مامان توییی؟ چه شکلی ممکنه؟ یعنی من مردم؟
+dafo;ljdaksfljfdas
+-> DONE
 
-#speaker: روح
-آروم باش عزیزم
-
-#speaker: ادیسون
-یعنی دارم خواب میبینم؟
-
-#speaker: روح
-نه عزیزم اینا همش واقعییه
-
-#speaker: ادیسون
-یعنی این آخر خطه برای من؟ روز منم رسید؟ بالاخره روح دارم میبینم!!!
-
-#speaker: روح
-آروم باش یکم
-
-#speaker: ادیسون
-مامانننن
-
-#speaker: روح
-الان به کمک نیاز دارم و فقط تورو دارم که به دادم برسی.
-
-من خیلی سخته برات ولی اینو بدون کن من از راه دور همیشه دارم نگاهت می کنم. دوست ندارم ناراحتیت رو ببینم. ولی
-
-عزیزم من شرمنده ام که تنها موندی. نمیدونستم که سرنوشت من و تو خیلی زود قرار بود به ختم برسه. میدونم که بدونه
-
-#speaker: ادیسون
-چطوری من میتونم به تو کمک کنم مامان جونم
-
-#speaker: روح
-وقتی که دنیا برای من تموم شد، هممون لحظه دوباره تو همین دنیا ظاهر شدم ولی تو فرم یه روح. احساس می کردم
-
-هیچکس منو نمیتونه ببینه، ولی یه شبح هست که همش دنبالم می کنه. چند وقت پیش اومد نزدیکم و بهم گفت که تا ابد تو
-
-دنیا بی تکلیف قراره گیر بکنم. تنها راهی که میتونم از این شرایت خلاص شم اینه که یه سری از وسایل شخصیم رو باید
-
-در اختیار تو بذارم. این کار به من اجازه میده که دیگه به چیزای غیر مهم تو این دنیا که بهشون وابسته نیستم رو در
-
-اختیار دیگران بذارم ‌و راحت و آسوده از این دنیا برم. فقط دلم پیشه تو میمونه.  اگه نتونم اینکار رو به موقع انجام بدم
-
-آروم آروم از این دنیا محو میشم و از یاد تو و دیگری ها میرم بدونه هیچ خاطره ای. مشکلم الان اینه که من به هیچ چیز
-
-نمی‌تونم دست بزنم. به کمک تو لازم دارم تا وسایل ام رو پیدا کنیم. میشه لطفا کمکم کنی؟
-
-#speaker: ادیسون
-معلومه مه آره، من نمیذارم تو تو این بلاتکلیفی گیر کنی.
-
+=== main_ja ===
+jflskdajasdkfljdsaflkjafdl
 -> DONE

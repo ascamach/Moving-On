@@ -122,4 +122,18 @@ Mom, don’t leave this world yet.
 
 I don’t know what I’ll do without you.
 
+...
+
+...
+
+...
+
+I woke up in a cold sweat.
+
+Feeling dizzy, I try to sit up in bed.
+
+I should get a glass of water…
+
+As soon as I got up, I noticed a strange yet oddly familiar presence from the other side of the room.
+
 -> DONE
