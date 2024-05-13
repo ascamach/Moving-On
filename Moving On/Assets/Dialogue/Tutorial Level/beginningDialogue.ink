@@ -20,15 +20,20 @@ VAR currentLocale = ""
 // ادیسون
 
 === main_en ===
-Addison, you’ve been staying in bed for so long. It’s time to get up now. #speaker: Mom 
+You’ve been holed up in your room for the past couple of weeks. Why don’t we get up and prepare to head out? #speaker: Mom 
 
-I don’t want to. I just want to be a sad potato and stay here. #speaker: Addison
+This feels so sudden; I’m not sure if I’m ready. #speaker: Addison
 
-Come on now, the early bird gets the worm and we’re in a time crunch. I don’t want to fade away. # speaker: Mom
+I know this must be a lot for you right now, but…I believe in you sweetie. You can do this! You’re a tough cookie! # speaker: Mom
 
-Fine. #speaker: Addison #portrait: player_sad
+…and there you go again with your cringe phrases. #speaker: Addison #portrait: player_sad
 
-Why don’t you come with me to the kitchen? You need to eat a good hearty meal before we leave on this journey. #speaker: Mom
+*sighs* Alright, I’m up. #speaker: Addison
+
+But, am I actually ready for this?
+
+Can I bring myself to go on this journey just to go through that all over again?
+
 
 -> DONE
 
