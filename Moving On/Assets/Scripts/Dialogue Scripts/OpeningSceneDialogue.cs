@@ -19,16 +19,21 @@ public class OpeningSceneDialogue : MonoBehaviour
         dialogueUI.SetActive(false);
     }
 
+    private void Start()
+    {
+        if (!DialogueManager.GetInstance().dialoguePlaying)
+        {
+            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+        }
+    }
+
     // Update is called once per frame
     private void Update()
     {
         if (!DialogueManager.GetInstance().dialoguePlaying)
         {
-            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-        } 
-
-        if (DialogueManager.GetInstance().dialogueFinished)
-        {
+            Debug.Log("hello world please work.");
+            firstCheck = true;
             dialogueUI.SetActive(false);
             SceneManager.LoadScene(scene);
         }
