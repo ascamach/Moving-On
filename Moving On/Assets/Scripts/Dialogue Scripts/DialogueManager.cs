@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour
     public PauseMenu pauseMenu;
 
     [Header("Dialogue Typing Speed")]
-    [SerializeField] private float typingSpeed = 0.04f;
+    private float typingSpeed = 0.04f;
 
     private void Awake()
     {
@@ -110,7 +110,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (pauseMenu.paused == true)
+        if (pauseMenu.paused)
         {
             return;
         }
@@ -207,7 +207,7 @@ public class DialogueManager : MonoBehaviour
             i++;
             // Display whole line if the player presses the interact button
             // during the typing effect.
-            if (Input.GetKey(KeyCode.F) && i > 3)
+            if (Input.GetKey(KeyCode.Space) && i > 3)
             {
                 // Debug.Log("Pressing G here.");
                 dialogueText.text = line;

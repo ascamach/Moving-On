@@ -5,8 +5,8 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     private float horizontal;
-    [SerializeField] private float speed = 8f;
-    [SerializeField] private float jumpPower = 10f;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpPower;
     public bool isFacingRight = true;
 
     [SerializeField] private GameObject ghost;
@@ -14,61 +14,58 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private bool dialogueInScene = true;
+    [SerializeField] private bool dialogueInScene;
 
     private void Update()
     {
-        if (dialogueInScene == true)
-        {
-            if (DialogueManager.GetInstance().dialoguePlaying)
-            {
-                return;
-            }
-        }
-
-        horizontal = Input.GetAxis("Horizontal");
-
-        // Debug.Log("Player X Velocity: " + rb.velocity.x);
-
-        if (Input.GetButtonDown("Jump") && isGrounded())
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-        }
-
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0.5f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
         Flip();
-        //Debug.Log(rb.position);
     }
 
     private void FixedUpdate()
     {
         // Check if a Dialogue Instance is playing
-        
-
-        if(dialogueInScene == true)
+        if (dialogueInScene)
         {
             if (DialogueManager.GetInstance().dialoguePlaying)
             {
-                // If so, deccelerate player
+                // Deccelerate player
                 rb.velocity -= 0.1f * rb.velocity;
                 return;
             }
         }
 
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        //horizontal = Input.GetAxis("Horizontal");
+
+        if (Input.GetKey(KeyCode.A)) {
+            horizontal = -1f;
+        } else if (Input.GetKey(KeyCode.D)) {
+            horizontal = 1f;
+        } else
+        {
+            horizontal = 0f;
+        }
+
+        float yVelocity = rb.velocity.y;
+
+        if (Input.GetButton("Jump") && isGrounded())
+        {
+            yVelocity = jumpPower;
+        }
+
+        rb.velocity = new Vector2(horizontal * speed, yVelocity);
     }
 
     private bool isGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.3f, groundLayer);
+        //return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.9f, groundLayer);
+        return (hit.collider != null);
+
     }
 
     private void Flip()
     {
-        if(isFacingRight && horizontal <0f || !isFacingRight && horizontal > 0f)
+        if((isFacingRight && horizontal < 0f) || (!isFacingRight && horizontal > 0f))
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
