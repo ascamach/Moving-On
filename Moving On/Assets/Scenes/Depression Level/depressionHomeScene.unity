@@ -575,19 +575,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1319351202}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3883894570481688530, guid: 69640cb554c1549c9b6a7ab497a8c6b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -532.5166
+      value: -23.150513
       objectReference: {fileID: 0}
     - target: {fileID: 3883894570481688530, guid: 69640cb554c1549c9b6a7ab497a8c6b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -232.57373
+      value: 0.18730164
       objectReference: {fileID: 0}
     - target: {fileID: 3883894570481688530, guid: 69640cb554c1549c9b6a7ab497a8c6b8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.8095958
+      value: -0.2507589
       objectReference: {fileID: 0}
     - target: {fileID: 3883894570481688530, guid: 69640cb554c1549c9b6a7ab497a8c6b8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -626,11 +626,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69640cb554c1549c9b6a7ab497a8c6b8, type: 3}
---- !u!4 &180320108 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3883894570481688530, guid: 69640cb554c1549c9b6a7ab497a8c6b8, type: 3}
-  m_PrefabInstance: {fileID: 180320107}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &222491862 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3558747469007714812, guid: 283ec21a4ee0c4cdda7160d3cb8517ba, type: 3}
@@ -5251,7 +5246,7 @@ Tilemap:
       - {fileID: 6699407704743256933, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 1606191026905108572, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -6735415089238527364, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 8, y: -7, z: 0}
@@ -5262,7 +5257,7 @@ Tilemap:
       - {fileID: 6699407704743256933, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 1606191026905108572, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -6735415089238527364, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -8, y: -6, z: 0}
@@ -5306,7 +5301,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -8, y: -4, z: 0}
@@ -5317,7 +5312,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 8, y: -4, z: 0}
@@ -5372,7 +5367,7 @@ Tilemap:
       - {fileID: -7708373312908789319, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 5483255720397775166, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -6247007954747600601, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -6, y: 0, z: 0}
@@ -5493,7 +5488,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 6, y: 5, z: 0}
@@ -6241,7 +6236,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1319351202}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1217047551252465417, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
       propertyPath: tutorialCompleted
@@ -6253,15 +6248,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5220763492898043884, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -512.45105
+      value: -3.084961
       objectReference: {fileID: 0}
     - target: {fileID: 5220763492898043884, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -233.95525
+      value: -1.1942139
       objectReference: {fileID: 0}
     - target: {fileID: 5220763492898043884, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.57273
+      value: -0.013893127
       objectReference: {fileID: 0}
     - target: {fileID: 5220763492898043884, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6296,11 +6291,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
---- !u!4 &676454349 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5220763492898043884, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
-  m_PrefabInstance: {fileID: 676454348}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &679376536
 GameObject:
   m_ObjectHideFlags: 0
@@ -9255,7 +9245,6 @@ MonoBehaviour:
   - {fileID: 2017272394}
   - {fileID: 929407396}
   pauseMenu: {fileID: 1086523342}
-  typingSpeed: 0.04
 --- !u!1 &1260208102
 GameObject:
   m_ObjectHideFlags: 0
@@ -9848,8 +9837,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 180320108}
-  - {fileID: 676454349}
   - {fileID: 1221011433}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12735,6 +12722,8 @@ Animator:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 676454348}
+  - {fileID: 180320107}
   - {fileID: 1319351202}
   - {fileID: 947579008}
   - {fileID: 1848240687}
