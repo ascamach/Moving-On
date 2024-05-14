@@ -19,6 +19,7 @@ public class playerMovement : MonoBehaviour
     private void Update()
     {
         Flip();
+        //Debug.Log("Player Position: " + rb.position);
     }
 
     private void FixedUpdate()
