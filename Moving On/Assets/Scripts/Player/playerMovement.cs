@@ -12,14 +12,15 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private GameObject ghost;
 
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool dialogueInScene;
+    
 
     private void Update()
     {
         Flip();
         //Debug.Log("Player Position: " + rb.position);
+        
     }
 
     private void FixedUpdate()
@@ -58,7 +59,7 @@ public class playerMovement : MonoBehaviour
 
     private bool isGrounded()
     {
-        //return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.9f, groundLayer);
         return (hit.collider != null);
 
