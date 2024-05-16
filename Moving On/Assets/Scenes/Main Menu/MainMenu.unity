@@ -2545,6 +2545,7 @@ Transform:
   - {fileID: 898824097}
   - {fileID: 862512295}
   - {fileID: 1488884832}
+  - {fileID: 1381749369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041242332
@@ -5674,6 +5675,10 @@ PrefabInstance:
     - target: {fileID: 1900988363384841509, guid: a04aa2db1cebc49be973a1384ec464ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634420729193643193, guid: a04aa2db1cebc49be973a1384ec464ee, type: 3}
+      propertyPath: useEncryption
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4700495440294897621, guid: a04aa2db1cebc49be973a1384ec464ee, type: 3}
       propertyPath: m_Name
