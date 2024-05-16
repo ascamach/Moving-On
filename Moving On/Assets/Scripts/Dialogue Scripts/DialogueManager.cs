@@ -215,6 +215,8 @@ public class DialogueManager : MonoBehaviour
         // Clear previous dialogue
         dialogueText.text = "";
 
+        bool isAddingRichTextTags = false;
+
         submitSkip = false;
         StartCoroutine(CanSkip());
 
@@ -251,8 +253,20 @@ public class DialogueManager : MonoBehaviour
                 dialogueText.text = line;
                 break;
             }
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+
+            if (letter == '<' || isAddingRichTextTags)
+            {
+                isAddingRichTextTags = true;
+                dialogueText.text += letter;
+                if (letter == '>')
+                {
+                    isAddingRichTextTags = false;
+                }
+            } else
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
             // Debug.Log("Dialogue Finished");
         }
 
@@ -352,6 +366,8 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
         }
     } 
+
+    public 
 
     public Ink.Runtime.Object GetVariableState (string variableName)
     {
