@@ -52,6 +52,10 @@ public class DialogueManager : MonoBehaviour
 
     private bool canContinueLines = false;
 
+    // Booleans to skip to end of line during dialogue
+    private bool canSkip = false;
+    private bool submitSkip = false;
+
     // Reference for pause menu
     public PauseMenu pauseMenu;
 
@@ -115,6 +119,11 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            submitSkip = true;
+        }
+
         // If dialogue is playing, the player can press space to progress through dialogue
         if (canContinueLines
             && currentStory.currentChoices.Count == 0 
@@ -122,6 +131,7 @@ public class DialogueManager : MonoBehaviour
         {
             // Debug.Log("Moving to next dialogue");
             canContinueLines = false;
+            canSkip = false;
             ContinueStory();
             dialogueNextSound.Play();
         }
@@ -138,7 +148,20 @@ public class DialogueManager : MonoBehaviour
         dialogueVariables.StartListening(currentStory);
         getLocaleID();
 
+        string tempLocaleID = getLocaleID();
+
         dialogueStartSound.Play();
+
+        if (getLocaleID() == "fa")
+        {
+            dialogueText.isRightToLeftText = true;
+            dialogueText.alignment = TextAlignmentOptions.TopRight;
+        }
+        else
+        {
+            dialogueText.alignment = TextAlignmentOptions.TopLeft;
+            dialogueText.isRightToLeftText = false;
+        }
 
         ContinueStory();
     }
@@ -164,7 +187,6 @@ public class DialogueManager : MonoBehaviour
         // If the dialogue is NOT on the last line, we can continue the story.
         if (currentStory.canContinue)
         {
-            // 
             if (displayLineCoroutine != null)
             {
                 StopCoroutine(displayLineCoroutine);
@@ -194,6 +216,11 @@ public class DialogueManager : MonoBehaviour
         // Clear previous dialogue
         dialogueText.text = "";
 
+        bool isAddingRichTextTags = false;
+
+        submitSkip = false;
+        StartCoroutine(CanSkip());
+
         canContinueLines = false;
 
         HideChoices();
@@ -205,16 +232,42 @@ public class DialogueManager : MonoBehaviour
         {
             // Debug.Log("i's current value: " + i);
             i++;
+            /* -----------------------------
+             * OLD SKIP METHOD
+             * _____________________________
             // Display whole line if the player presses the interact button
             // during the typing effect.
-            if (Input.GetKey(KeyCode.Space) && i > 3)
+            if (Input.GetKey(KeyCode.Space) && i > 3 && canSkip)
             {
                 // Debug.Log("Pressing G here.");
                 dialogueText.text = line;
                 break;
             }
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            */
+
+            // Newer Skip method
+            // Uses a variable that is updated in the Update() method... 
+            // ...instead of inside the coroutine itself
+            if (canSkip && submitSkip)
+            {
+                submitSkip = false;
+                dialogueText.text = line;
+                break;
+            }
+
+            if (letter == '<' || isAddingRichTextTags)
+            {
+                isAddingRichTextTags = true;
+                dialogueText.text += letter;
+                if (letter == '>')
+                {
+                    isAddingRichTextTags = false;
+                }
+            } else
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
             // Debug.Log("Dialogue Finished");
         }
 
@@ -222,6 +275,14 @@ public class DialogueManager : MonoBehaviour
         // If choices are available, show all available choices
         DisplayChoices();
         canContinueLines = true;
+        canSkip = false;
+    }
+
+    private IEnumerator CanSkip()
+    {
+        canSkip = false;
+        yield return new WaitForSeconds(0.05f);
+        canSkip = true;
     }
 
     private void HandleTags(List<string> currentTags)
@@ -323,6 +384,7 @@ public class DialogueManager : MonoBehaviour
         string currentLocaleID = "";
         string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
         currentStory.variablesState["localeID"] = localeID;
+        currentLocaleID = localeID;
 
         return currentLocaleID;
     }
