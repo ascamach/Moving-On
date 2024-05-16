@@ -159,6 +159,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            dialogueText.alignment = TextAlignmentOptions.TopLeft;
             dialogueText.isRightToLeftText = false;
         }
 
