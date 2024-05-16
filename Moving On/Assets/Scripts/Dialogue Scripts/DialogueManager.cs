@@ -5,8 +5,11 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.Localization.Settings;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 using UnityEngine.Localization;
 using UnityEngine.Localization.SmartFormat.Utilities;
+using Unity.Services.Core.Analytics;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -43,6 +46,8 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueFinished { get; private set; }
 
     private DialogueVariables dialogueVariables;
+
+    public string dialogueName = "";
 
     // Tags for Ink
     private const string speaker_tag = "speaker";
@@ -142,6 +147,9 @@ public class DialogueManager : MonoBehaviour
         // Load the JSON file associated with the game object 
         // Shows the Dialogue UI
         currentStory = new Story(inkJSON.text);
+
+        dialogueName = inkJSON.name;
+
         dialoguePlaying = true;
         dialogueUI.SetActive(true);
 
