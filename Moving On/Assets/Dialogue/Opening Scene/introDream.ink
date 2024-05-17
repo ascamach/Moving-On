@@ -54,6 +54,20 @@ Mom, don’t leave this world yet. #speaker: Addison
 
 I don’t know what I’ll do without you. #speaker: Addison
 
+... #speaker: Addison
+
+... #speaker: Addison
+
+... #speaker: Addison
+
+I woke up in a cold sweat. #speaker: Addison
+
+Feeling dizzy, I try to sit up in bed. #speaker: Addison
+
+I should get a glass of water… #speaker: Addison
+
+As soon as I got up, I noticed a strange yet oddly familiar presence from the other side of the room. #speaker: Addison
+
 -> DONE
 
 === main_fa ===
@@ -94,6 +108,21 @@ I don’t know what I’ll do without you. #speaker: Addison
 
 
 نمی‌دونم بدون تو چیکار کنم. #speaker: ادیسون
+
+... #speaker: ادیسون
+
+... #speaker: ادیسون
+
+... #speaker: ادیسون
+
+امروز با یه لرزی تو بدنم بیدار شدم. #speaker: ادیسون
+
+حالم اصلا خوب نیست، می خوام بلند شم وای نمی‌تونم.
+#speaker: ادیسون
+
+بذار یه لیوان آب بخورم شاید حالم جا بیاد #speaker: ادیسون
+
+به محض اینکه بلند شدم، احساس کردم یه نفر دیگه هم با من تو اتاقه! #speaker: ادیسون
 
 -> DONE
 
