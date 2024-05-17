@@ -19,37 +19,37 @@ VAR currentLocale = ""
 
 === main_en ===
 
-...
+... #speaker: Addison
 
-...
+... #speaker: Addison
 
-I'm having a dream again.
+I'm having a dream again. #speaker: Addison
 
-A dream about the pain and regrets I felt during that moment.
+A dream about the pain and regrets I felt during that moment. #speaker: Addison
 
-...
+... #speaker: Addison
 
-I didn’t realize how fast things would change.
+I didn’t realize how fast things would change. #speaker: Addison
 
-Even though it’s been three weeks, I’m still struggling to process everything.
+Even though it’s been three weeks, I’m still struggling to process everything. #speaker: Addison
 
-...
+... #speaker: Addison
 
-Please don’t leave…
+Please don’t leave… #speaker: Addison
 
-I wish I hadn’t said the things I said to you.
+I wish I hadn’t said the things I said to you. #speaker: Addison
 
-If only I had known that night was the last time I would ever talk to you…
+If only I had known that night was the last time I would ever talk to you… #speaker: Addison
 
-…to see and to hug you.
+…to see and to hug you. #speaker: Addison
 
-I’m sorry Mom.
+I’m sorry Mom. #speaker: Addison
 
-I wish I could apologize to you.
+I wish I could apologize to you. #speaker: Addison
 
-Mom, don’t leave this world yet.
+Mom, don’t leave this world yet. #speaker: Addison
 
-I don’t know what I’ll do without you.
+I don’t know what I’ll do without you. #speaker: Addison
 
 -> DONE
 
