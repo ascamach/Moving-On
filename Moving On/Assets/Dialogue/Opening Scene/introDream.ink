@@ -17,6 +17,9 @@ VAR currentLocale = ""
     
 }
 
+// Addison:
+// ادیسون
+
 === main_en ===
 
 ... #speaker: Addison
@@ -58,33 +61,39 @@ I don’t know what I’ll do without you. #speaker: Addison
 
 ...
 
-I'm having a dream again.
+دوباره دارم خواب میبینم. #speaker: 
 
-A dream about the pain and regrets I felt during that moment.
-
-...
-
-I didn’t realize how fast things would change.
-
-Even though it’s been three weeks, I’m still struggling to process everything.
+دوبار این حس لعنتی، افسوس اون لحظه. 
 
 ...
 
-Please don’t leave…
+هیچوقت فکر نمیکردم دنیام چقدر سری میتونه عوض شه.
 
-I wish I hadn’t said the things I said to you.
 
-If only I had known that night was the last time I would ever talk to you…
+با اینکه ۳ هفته گذشته، هنوز باور کردنش برام سخته.
 
-…to see and to hug you.
 
-I’m sorry Mom.
+...
 
-I wish I could apologize to you.
+لطفا نرو، تنهام نزار
 
-Mom, don’t leave this world yet.
 
-I don’t know what I’ll do without you.
+ای کاش اون حرفارو بهت نمیزدم.
+
+
+اگه فقط می دونستم که اون شب آخرین شبی هست که میدیدمت…
+
+
+بغلت میکردم
+
+منو ببخش مامان
+
+ای کاش می‌شد همه چی برگرده
+
+ای کاش می‌شد یکبار دیگه میدیدمش.
+
+
+نمی‌دونم بدون تو چیکار کنم.
 
 -> DONE
 
