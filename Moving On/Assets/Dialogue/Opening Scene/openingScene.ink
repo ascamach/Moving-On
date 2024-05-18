@@ -22,7 +22,7 @@ VAR not_ready = false
 
 Who’s there? #speaker: Addison
 
-I scratch my eyes in disbelief. Although I couldn’t believe it, the one standing right in front of me is…
+I scratch my eyes in disbelief. Although I couldn’t believe it, the one standing right in front of me is… #speaker: Addison
 
 …Mom??? #speaker: Addison
 
@@ -30,7 +30,7 @@ What the—? #speaker: Addison
 
 Calm down, Addison— it’s me! #speaker: Mom
 
-All I could do was stand there, stunned in shock. Was this real?
+All I could do was stand there, stunned in shock. Was this real? #speaker: Addison
 
 No, that can’t be right… I must be imagining things, I’m still in a dream— yeah, that’s it! I’m still dreaming. I should pinch myself to wake up, isn’t that how it works? #speaker: Addison
 
