@@ -1,6 +1,8 @@
 INCLUDE ../globals.ink
 
-VAR currentLocale = ""
+-> main_en
+
+VAR currentLocale = "en"
 
 ~ currentLocale = localeID
 
@@ -20,6 +22,7 @@ VAR currentLocale = ""
 === main_en ===
 
 ...
+~ testFunction()
 
 ...
 

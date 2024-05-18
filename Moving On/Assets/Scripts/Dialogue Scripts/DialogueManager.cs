@@ -22,6 +22,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameplateText;
     [SerializeField] private GameObject continueIcon;
 
+    public Sprite flashbackImage;
+
     [SerializeField] private Animator playerAnimator;
 
     public Story currentStory;
@@ -91,7 +93,7 @@ public class DialogueManager : MonoBehaviour
         // Gets all choices text
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
-        foreach( GameObject choice in choices)
+        foreach (GameObject choice in choices)
         {
             // Grabs the text of the choices buttons (children of the buttons)
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
@@ -171,6 +173,23 @@ public class DialogueManager : MonoBehaviour
             dialogueText.isRightToLeftText = false;
         }
 
+        /* ------------------------------
+         * BINDING FOR UNITY FUNCTIONS
+         * ------------------------------
+         */
+
+        currentStory.BindExternalFunction("testFunction", () =>
+        {
+            testFunction();
+        });
+
+        currentStory.BindExternalFunction("fadeImage", (bool fadeAway, string imageID) =>
+        {
+            FadeImage(fadeAway, imageID);
+        });
+
+        // ------------------------------
+
         ContinueStory();
     }
 
@@ -188,6 +207,14 @@ public class DialogueManager : MonoBehaviour
         playerAnimator.Play("default");
 
         dialogueFinished = true;
+
+        /* ------------------------------
+         * UNBINDING THE UNITY FUNCTIONS
+         * ------------------------------
+         */
+
+        currentStory.UnbindExternalFunction("testFunction");
+        currentStory.UnbindExternalFunction("fadeImage");
     }
 
     private void ContinueStory()
@@ -253,10 +280,10 @@ public class DialogueManager : MonoBehaviour
             }
             */
 
-            // Newer Skip method
-            // Uses a variable that is updated in the Update() method... 
-            // ...instead of inside the coroutine itself
-            if (canSkip && submitSkip)
+        // Newer Skip method
+        // Uses a variable that is updated in the Update() method... 
+        // ...instead of inside the coroutine itself
+        if (canSkip && submitSkip)
             {
                 submitSkip = false;
                 dialogueText.text = line;
@@ -395,5 +422,41 @@ public class DialogueManager : MonoBehaviour
         currentLocaleID = localeID;
 
         return currentLocaleID;
+    }
+
+    public void testFunction()
+    {
+           Debug.Log("Hello from test function!");
+    }
+
+    IEnumerator FadeImage(bool fadeAway, string imageID)
+    {
+        // Find specific using Unity tags
+        GameObject flashbackImage = GameObject.FindWithTag(imageID);
+
+        // Grab sprite renderer component to change alpha
+        SpriteRenderer image = flashbackImage.GetComponent<SpriteRenderer>();
+
+        if (fadeAway)
+        {
+            // Loop over 1 second
+            for (float i = 1; i >= 0; i -= Time.deltaTime)
+            {
+                // Change alpha
+                image.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
+        }
+        // fade from transparent to opaque
+        else
+        {
+            // Loop over 1 second
+            for (float i = 0; i <= 1; i += Time.deltaTime)
+            {
+                // Change alpha
+                image.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
+        }
     }
 }

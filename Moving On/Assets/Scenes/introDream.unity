@@ -440,6 +440,7 @@ MonoBehaviour:
   dialogueText: {fileID: 524880342}
   nameplateText: {fileID: 37413193}
   continueIcon: {fileID: 749858693}
+  flashbackImage: {fileID: 0}
   playerAnimator: {fileID: 0}
   dialogueStartSound: {fileID: 207182029}
   dialogueNextSound: {fileID: 1776986063}
@@ -572,7 +573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &205189817
 Transform:
   m_ObjectHideFlags: 0
