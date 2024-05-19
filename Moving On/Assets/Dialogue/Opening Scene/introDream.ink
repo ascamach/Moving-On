@@ -1,8 +1,6 @@
 INCLUDE ../globals.ink
 
--> main_en
-
-VAR currentLocale = "en"
+VAR currentLocale = ""
 
 ~ currentLocale = localeID
 

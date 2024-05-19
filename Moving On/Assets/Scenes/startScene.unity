@@ -558,7 +558,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 883557546}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -1897,7 +1897,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 883557546}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -2049,6 +2049,7 @@ MonoBehaviour:
   dialogueText: {fileID: 494474866}
   nameplateText: {fileID: 140921236}
   continueIcon: {fileID: 594601425}
+  flashbackImage: {fileID: 0}
   playerAnimator: {fileID: 7953530692439054433}
   dialogueStartSound: {fileID: 459842711}
   dialogueNextSound: {fileID: 498770971}
@@ -2057,8 +2058,8 @@ MonoBehaviour:
   - {fileID: 763038968}
   - {fileID: 1686646977}
   - {fileID: 112698940}
+  dialogueName: 
   pauseMenu: {fileID: 1470504268}
-  typingSpeed: 0.04
 --- !u!1 &965879989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,7 +3669,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 883557546}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
