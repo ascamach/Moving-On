@@ -10,16 +10,19 @@ public class lv1Entrance : MonoBehaviour
     private SpriteRenderer rend;
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
+    [SerializeField] private SpriteRenderer visualCueColor;
 
     private void Start()
     {
 
         lvUnlock = levelManager.Instance.levelsUnlocked[0];
+        
 
         inEntrance = false;
         rend = GetComponent<SpriteRenderer>();
         rend.color = Color.black;
         visualCue.SetActive(false);
+        
     }
 
     private void Update()
@@ -35,6 +38,7 @@ public class lv1Entrance : MonoBehaviour
     {
         if (collision.tag == "Player" && lvUnlock)
         {
+            visualCueColor.color = Color.green;
             rend.color = Color.green;
             visualCue.SetActive(true);
 
@@ -42,6 +46,8 @@ public class lv1Entrance : MonoBehaviour
         else if (collision.tag == "Player" && lvUnlock == false)
         {
             rend.color = Color.red;
+            visualCueColor.color = Color.red;
+            visualCue.SetActive(true);
         }
     }
 
@@ -60,6 +66,7 @@ public class lv1Entrance : MonoBehaviour
         {
             inEntrance = false;
             rend.color = Color.black;
+            visualCueColor.color = Color.white;
             visualCue.SetActive(false);
         }
     }

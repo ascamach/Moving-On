@@ -12,6 +12,8 @@ public class BGMPersistence : MonoBehaviour
     {
         get { return instance; }
     }
+
+    private GameObject depressionManagerObj;
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,6 +36,12 @@ public class BGMPersistence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        depressionManagerObj = GameObject.Find("/depressionLevelManager");
+        if(depressionManagerObj == null)
+        {
+            bgm.Stop();
+            Destroy(gameObject);
+        }
         
     }
 }

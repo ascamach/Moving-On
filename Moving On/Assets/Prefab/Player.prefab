@@ -178,15 +178,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.45
-  jumpPower: 7
+  jumpPower: 10
   isFacingRight: 1
-  ghost: {fileID: 0}
   rb: {fileID: 6796631766009901027}
-  groundCheck: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
   dialogueInScene: 1
+  rayCastDistance: 0.85
+  boxSize: {x: 0.55, y: 0.12}
+  castDistance: 0.79
 --- !u!50 &6796631766009901027
 Rigidbody2D:
   serializedVersion: 4
