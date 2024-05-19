@@ -40,7 +40,7 @@ public class BGMPersistence : MonoBehaviour
         if(depressionManagerObj == null)
         {
             bgm.Stop();
-            Destroy(this);
+            Destroy(gameObject);
         }
         
     }
