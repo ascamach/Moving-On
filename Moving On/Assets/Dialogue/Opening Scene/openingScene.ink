@@ -67,17 +67,13 @@ The only issue is…I can’t touch anything. I just go through everything. #spe
 
 Do you think you can help me, sweetie? #speaker: Mom
 
-* I guess…
++ [I guess…]
+    I know things didn’t end well for us, and I’m sorry for that. Let’s go on one more journey together, yeah? #speaker: Mom
+    -> DONE
 
-I know things didn’t end well for us, and I’m sorry for that. Let’s go on one more journey together, yeah? #speaker: Mom
-
--> DONE
-
-* Of course!
-
-Thank you, sweetie. Let’s go get ready. #speaker: Mom
-
--> DONE
++ [Of course!]
+    Thank you, sweetie. Let’s go get ready. #speaker: Mom
+    -> DONE
 
 === main_fa ===
 dafo;ljdaksfljfdas
