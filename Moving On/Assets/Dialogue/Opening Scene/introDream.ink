@@ -20,7 +20,6 @@ VAR currentLocale = ""
 === main_en ===
 
 ...
-~ testFunction()
 
 ...
 
