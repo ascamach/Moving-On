@@ -15,6 +15,7 @@ public class UGS_Analytics : MonoBehaviour
             await UnityServices.InitializeAsync();
             GiveConsent(); //Get user consent according to various legislations
             LevelCompletedCustomEvent();
+            DialogueFinishedEvent();
         }
         catch (ConsentCheckException e)
         {
@@ -32,6 +33,18 @@ public class UGS_Analytics : MonoBehaviour
         };
 
         AnalyticsService.Instance.CustomData("levelCompleted", parameters);
+
+        AnalyticsService.Instance.Flush();
+    }
+
+    private void DialogueFinishedEvent()
+    {
+        Dictionary<string, object> parameters = new Dictionary<string, object>()
+        {
+            { "finishDialogue", "Dialogue Section: " + DialogueManager.GetInstance().dialogueName }
+        };
+
+        AnalyticsService.Instance.CustomData("dialogueFinished", parameters);
 
         AnalyticsService.Instance.Flush();
     }
