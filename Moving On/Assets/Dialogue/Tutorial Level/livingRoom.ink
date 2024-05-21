@@ -21,6 +21,7 @@ VAR currentLocale = ""
 === main_en ===
 
 #fadein: musicflashback
+#speaker: Addison
 ........
 
 #speaker: Addison

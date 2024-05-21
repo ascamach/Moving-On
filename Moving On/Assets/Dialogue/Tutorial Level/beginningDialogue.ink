@@ -28,7 +28,7 @@ I know this must be a lot for you right now, but…I believe in you sweetie. You
 
 …and there you go again with your cringe phrases. #speaker: Addison #portrait: player_sad
 
-*sighs* Alright, I’m up. #speaker: Addison
+sighs Alright, I’m up. #speaker: Addison
 
 But, am I actually ready for this?
 

@@ -51,7 +51,9 @@ I’ll never forget her warmth and comfort.
 
 
 #speaker: Mom
-Sweetie… I know it’s been really rough—you’ve been going through a lot all by yourself, but… listen to me. I’m here. You’re going to be alright. 
+Sweetie… I know it’s been really rough—you’ve been going through a lot all by yourself, but… listen to me.
+
+I’m here. You’re going to be alright. 
 
 #speaker: Addison
 But you’re not! // *wobbly effect*
