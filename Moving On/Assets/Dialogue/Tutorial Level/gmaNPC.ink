@@ -39,10 +39,8 @@ VAR currentLocale = ""
     -> log1_en
 - gma_interactions == 1:
     -> log2_en
-- gma_interactions == 2:
+- gma_interactions >= 2:
     -> log3_en
-- gma_interactions >= 3:
-    -> log4_en
 }
 
 // Farsi Dialogue
@@ -110,15 +108,18 @@ VAR currentLocale = ""
 
 // English Dialogue
 === log1_en ===
-Hey there sonny! Long time no see hehe. #speaker: Grandma
+#speaker: Grandma
+Hey there, A-Star! Long time no see! \*snickers\*
 
-Grandma?! How can I see you? I just saw Sparky in the hallway. What’s going on? #speaker: Addison
+#speaker: Addison
+Grandma?? 
 
-I don’t know sonny but I’ve been watching you from this ghost world for quite some time. #speaker: Grandma
+Dang, I really can see ghosts now, huh…
 
-Wait but how come you didn’t disappear? How come you don’t need help like my mom does? #speaker: Addison
+How have you been? I’ve missed you so much.
 
-Because I’m waiting for that stubborn grandpa of yours. I can only move on when he comes to the ghost world. #speaker: Grandma
+#speaker: Grandma
+Oh, you know! Just relaxing, waiting for your grandpa. 
 
 
 ~ times_interacted = 1
@@ -126,31 +127,26 @@ Because I’m waiting for that stubborn grandpa of yours. I can only move on whe
 -> DONE
 
 === log2_en ===
-Addison, you’re too skinny. You need to eat more. #speaker: Grandma
+#speaker: Grandma
+You need to take care of yourself, A-Star! Drink water, go for a walk.
 
-Ok grandma. #speaker: Addison
-
-Eat more fruits and vegetables too! You need to be healthy when you enter college. #speaker: Grandma
-
-Ok grandma.. #speaker: Addison
+#speaker: Addison
+I will, Grandma, I will…
 
 ~ times_interacted = 2
 ~ gma_interactions = times_interacted
 -> DONE
 
 === log3_en ===
-Back in my day, I used to go outside and play with my friends. You youngins just stay in and play video games all day.
- #speaker: Grandma
+#speaker: Grandma
+A-Star, can you believe it? In this form, I don’t have to worry about my arthritis!
 
-I play with my friends on the computer. #speaker: Addison
+#speaker: Addison
+I’m really happy for you, Grandma! Hahaha…
 
-You should go outside and play more. #speaker: Grandma
+I don’t know if I should feel happy or…sad? It’s a peculiar situation.
 
 ~ times_interacted = 3
 ~ gma_interactions = times_interacted
 -> DONE
 
-=== log4_en ===
-Sonny, go help out and listen to your mom. I’ll be watching you guys! #speaker: Grandma
-
--> DONE

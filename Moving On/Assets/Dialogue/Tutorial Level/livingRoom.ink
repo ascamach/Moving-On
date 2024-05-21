@@ -20,29 +20,26 @@ VAR currentLocale = ""
 
 === main_en ===
 
+#fadein: musicflashback
 ........
 
-"This was the song that Mom used to hum all the time" #speaker: Addison
+#speaker: Addison
+This was the song that Mom used to hum all the time.
 
-"Those were such happy times" #speaker: Addison
+Those were such happy times…
 
 ........
+#fadeout: musicflashback
 
-Hey Mom, I can't stay here anymore. Can we go? #speaker: Addison 
+#speaker: Mom
+Is everything alright?
 
-// Mom
-It looks cold outside. Can you go to my room to get a jacket? #speaker: Mom
+#speaker: Addison
+Sorry…I just remembered something.
 
-// Addison
-Do I have to? I think I’ll be fine. #speaker: Addison
+#speaker: Mom
+It’s okay, baby. I know it’s been difficult; I wish I could give you a hug right now.
 
-// Mom
-I don't want you to get sick. Please get it from my room. #speaker: Mom 
-
-Don’t make me have to use my stern voice on you. 
-
-// Addison
-Alright fine. I'll go.. #speaker: Addison
 
 -> DONE
 

@@ -72,44 +72,39 @@ VAR currentLocale = ""
     -> DONE
 }
 
-{ dog_interactions == 1:
+{ dog_interactions >= 1:
     -> log2
-    -> DONE
-}
-
-{ dog_interactions >= 2:
-    -> log3
     -> DONE
 }
 
 -> DONE
 
 === log1 ===
-Sparky??? What are you doing here boy! #speaker: Addison
+#speaker: Addison
+Wait a minute… 
 
-Woof wooff #speaker: Sparky
+Sparky?? //animated text, moderate wobble
 
-I can’t believe I can see you!! You passed away years ago! Have you been a good doggy? #speaker: Addison
+It’s been so many years!
 
-Woof! #speaker: Sparky
+#speaker: Sparky
+Woof! Woof woof! (Sparky seems happy to see Addison again.)
 
-Oh right, lemme go into the kitchen to look for food. Maybe I’ll find a bone for you Sparky! #speaker: Addison
+#speaker: Addison
+Aww, I’ve missed you too! Who’s a good boy?
+
+#speaker: Sparky
+Woof woof! (Sparky seems to be saying “Me me! I have been a good boy!”)
 
 ~ times_interacted = 1
 ~ dog_interactions = times_interacted
 -> DONE
 
 === log2 ===
-Sorry Sparky, I couldn’t find any food for you. But I was wondering if you could even eat the food I gave you. #speaker: Addison
-
-Grrrrr, woof #speaker: Sparky
-
-I wish I could give you belly rubs. I miss you Sparky. #speaker: Addison
+#speaker: Sparky
+Woof woof!
 
 ~ times_interacted = 2
 ~ dog_interactions = times_interacted
 -> DONE
 
-=== log3 ===
-Woof woof! #speaker: Sparky
--> DONE

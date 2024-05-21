@@ -71,7 +71,7 @@ How about we just bring some snacks instead?
 
 === log2 ===
 #speaker: Addison
-I don't want to look at the grilled cheese sandwich again.
+I’m not sure if I can look at grilled cheese sandwiches the same.
 -> DONE
 
 === main_fa ===

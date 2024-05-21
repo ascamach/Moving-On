@@ -20,39 +20,68 @@ VAR currentLocale = ""
 
 === main_en ===
 
-........ #speaker: Addison
+#speaker: Addison
+It's been so long since I stepped in here.
 
-"It's been so long since I stepped in here" #speaker: Addison
+It almost feels like normal.
 
-"It almost feels like normal" #speaker: Addison
+It almost feels…
 
-"It's almost feels..." #speaker: Addison
+Peaceful...
 
-"Peaceful" #speaker: Addison
+........ 
 
-"The smell of my mom's hoodie" #speaker: Addison
+It was a similar, gloomy day, back when I was younger. // middle school era
 
-"Once I wear it, her smell will be gone forever" #speaker: Addison
+I was walking back from school, where I had gotten injured from something that happened.
 
-/Addison starts crying
+An upperclassman hurt me… I didn’t want to argue, but I needed to stand up for myself.
 
-Oh, sweetheart, if only I could cry with you. But this ghost form won’t let me. I wish I could give you a big hug. #speaker: Mom
+Mom was waiting at the door for me, my nose red and sniffling from the cold. 
 
-I wAnT a HuG. I MIsS YoUUUUUUUU #speaker: Addison
+Tears were still rolling down my face. 
 
-It will be ok. I will always be by your side, don’t forget that. #speaker: Mom
+Mom told me the school called her and for me not to worry. Everything was going to be okay. 
 
-Since you can still see me, that’s good right! Even though I look different, my love for you remains unchanged.
+She then gave me a warm hug, and wrapped this specific jacket around me.
 
-It's not the same. I miss your warmth, your smell.. #speaker: Addison
+I’ll never forget her warmth and comfort.
 
-Wearing my jacket, you'll carry a part of me everywhere. That's comforting, isn't it? #speaker: Mom
- 
-… I guess sooooo. #speaker: Addison
+…………….. 
 
-Shall we head out now? #speaker: Mom
 
-Ok Mom, I’m ready. Let's stick together, okay? #speaker: Addison
+#speaker: Mom
+Sweetie… I know it’s been really rough—you’ve been going through a lot all by yourself, but… listen to me. I’m here. You’re going to be alright. 
+
+#speaker: Addison
+But you’re not! // *wobbly effect*
+
+Nothing’s the same anymore. How can I keep going forward without you?
+
+
+You've been there all my life. You left all of a sudden, and I don’t know what to do without you.
+
+#speaker: Mom
+I know, and I can’t express how much I wish I could physically be there for you. To give you all the hugs you want. 
+
+It may not seem like it right now, but trust me. Everything will be okay. Everything will always turn out okay.
+
+#speaker: Addison
+But how can everything become okay if you’re not always there for me?
+
+#speaker: Mom
+Let’s take things one step at a time. Focus on the now. Don’t worry about the future yet.
+
+Why don’t you put on my jacket? That’s a good start. Just think of it as you’re carrying a part of me everywhere. 
+
+#speaker: Addison
+…
+
+#speaker: Mom
+Addison, shall we head out now?
+
+#speaker: Addison
+Okay Mom, I’m ready. Let's stick together, okay?
 
 -> DONE
 

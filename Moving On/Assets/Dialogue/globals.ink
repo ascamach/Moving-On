@@ -1,7 +1,3 @@
-// Unity functions to be called through Ink
-EXTERNAL testFunction()
-EXTERNAL fadeImage(fadeBool, imageID)
-
 // Localization Variable
 VAR localeID = ""
 
