@@ -32,7 +32,9 @@ Calm down, Addison— it’s me! #speaker: Mom
 
 All I could do was stand there, stunned in shock. Was this real? #speaker: Addison
 
-No, that can’t be right… I must be imagining things, I’m still in a dream— yeah, that’s it! I’m still dreaming. I should pinch myself to wake up, isn’t that how it works? #speaker: Addison
+No, that can’t be right… I must be imagining things, I’m still in a dream— yeah, that’s it!
+
+I’m still dreaming. I should pinch myself to wake up, isn’t that how it works? #speaker: Addison
 
 CALM DOWN! #speaker: Mom
 
@@ -59,7 +61,9 @@ Why now? #speaker: Addison
 
 I can explain what’s going on.  #speaker: Mom
 
-Another ghost had told me that I’m stuck in a limbo spirit world. According to them, I can’t move on until I collect enough “special” objects.  #speaker: Mom
+Another ghost had told me that I’m stuck in a limbo spirit world. #speaker: Mom
+
+According to them, I can’t move on until I collect enough “special” objects.  #speaker: Mom
 
 If I don’t find them soon, I’ll evaporate into dust and will disappear from the face of this world. #speaker: Mom
 
