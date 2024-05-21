@@ -29,33 +29,42 @@ VAR currentLocale = ""
 }
 
 === log1 ===
-Oh hey, there’s only a grilled cheese sandwich in there. Perfect. Why don't you have that? #speaker: Mom
+Oh hey, there’s only a grilled cheese sandwich in there. #speaker: Mom
 
-........
+Perfect. Why don't you have that? #speaker: Mom
 
-"Everyday after school Mom would make me a grilled cheese sandwich" #speaker: Addison
+........................ #speaker: Addison
 
-"Whenever I cried" #speaker: Addison
+Everyday after school, Mom would make me a grilled cheese sandwich.
 
-"Whenever I was mad" #speaker: Addison
+Whenever I cried…
 
-"Whenever I was happy" #speaker: Addison
+…whenever I was mad…
 
-"There was always a grilled cheese sandwich waiting for me" #speaker: Addison
+…whenever I was happy…
 
-"I can imagine taking that first bite and the flavors melting on my tongue" #speaker: Addison
+…there was always a grilled cheese sandwich waiting for me.
 
-"I'll never have mom's grilled cheese sandwich again will I" #speaker: Addison
+I remember taking the first bite, and the flavors would melt on my tongue.
 
-Addison. Are you okay? #speaker: Mom 
+I'll never have mom's grilled cheese sandwich again, will I?
+……………….
 
-You've been staring at the sandwich in silence. #speaker: Mom 
+…ison… #speaker: Mom
 
-I'm okay. It's just I remembered something. #speaker: Addison
+Addison! 
 
-You know what I lost my appetite. #speaker: Addison
+Are you okay? 
 
-Why don't you sit down, take a moment to breathe. Perhaps some music in the living room will soothe your spirit. #speaker: Mom
+You've just been staring at the sandwich. 
+
+I'm okay…It's just that I remembered something. #speaker: Addison
+
+…I think I lost my appetite. 
+
+It’s okay. #speaker: Mom
+
+How about we just bring some snacks instead?
 
 ~ fridgeInteraction = true
 -> DONE
