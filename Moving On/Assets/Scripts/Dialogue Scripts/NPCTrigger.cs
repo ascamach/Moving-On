@@ -20,23 +20,20 @@ public class NPCTrigger : MonoBehaviour
     private void Awake()
     {
         playerInRange = false;
-        visualCue.SetActive(false);
+        visualCue.SetActive(true);
     }
 
     private void Update()
     {
         if (playerInRange && !DialogueManager.GetInstance().dialoguePlaying)
         {
-            visualCue.SetActive(true);
+            //visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
                 
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 timesInteracted++;
             }
-        } else
-        {
-            visualCue.SetActive(false);
         }
         //Depression Level Checks Start Here
         if (timesInteracted >= 1 && npc.name == "Rowan NPC")
