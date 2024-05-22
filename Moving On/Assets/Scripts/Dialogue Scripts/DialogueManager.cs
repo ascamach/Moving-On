@@ -69,6 +69,10 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue Typing Speed")]
     private float typingSpeed = 0.04f;
 
+    // Booleans for auto play mode during dialogue
+    private bool autoMode = false;
+    private bool autoPlay = false;
+
     private void Awake()
     {
         // Checks if there is more than one dialogue manager in the scene
@@ -131,17 +135,34 @@ public class DialogueManager : MonoBehaviour
             submitSkip = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.K) && !autoMode)
+        {
+            autoMode = true;
+            Debug.Log("Enabling auto mode");
+        } else if (Input.GetKeyDown(KeyCode.K) && autoMode)
+        {
+            autoMode = false;
+            Debug.Log("Disabling auto mode");
+        }
+
         // If dialogue is playing, the player can press space to progress through dialogue
+        if (autoMode)
+        {
+            if (canContinueLines
+                && currentStory.currentChoices.Count == 0
+                && !autoPlay)
+            {
+                autoPlay = true;
+                StartCoroutine(nextLineTest());
+            }
+        }
+
         if (canContinueLines
             && currentStory.currentChoices.Count == 0 
             && Input.GetKeyDown(KeyCode.Space))
         {
-            // Debug.Log("Moving to next dialogue");
-            canContinueLines = false;
-            canSkip = false;
-            ContinueStory();
-            dialogueNextSound.Play();
-        }
+            NextLine();
+        } 
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -185,7 +206,7 @@ public class DialogueManager : MonoBehaviour
 
         currentStory.BindExternalFunction("fadeImage", (bool fadeAway, string imageID) =>
         {
-            FadeImage(fadeAway, imageID);
+            StartCoroutine(FadeImage(fadeAway, imageID));
         });
 
         // ------------------------------
@@ -458,5 +479,24 @@ public class DialogueManager : MonoBehaviour
                 yield return null;
             }
         }
+    }
+
+    private void NextLine()
+    {
+        canContinueLines = false;
+        canSkip = false;
+        ContinueStory();
+        dialogueNextSound.Play();
+    }
+
+    IEnumerator nextLineTest()
+    {
+        Debug.Log("Next line test called here.");
+        yield return new WaitForSeconds(2.0f);
+        canContinueLines = false;
+        canSkip = false;
+        ContinueStory();
+        dialogueNextSound.Play();
+        autoPlay = false;
     }
 }
