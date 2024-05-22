@@ -153,7 +153,14 @@ public class DialogueManager : MonoBehaviour
                 && !autoPlay)
             {
                 autoPlay = true;
-                StartCoroutine(nextLineTest());
+                StartCoroutine(nextLineAuto());
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    autoPlay = false;
+                    StopCoroutine(nextLineAuto());
+                    NextLine();
+                }
             }
         }
 
@@ -489,7 +496,7 @@ public class DialogueManager : MonoBehaviour
         dialogueNextSound.Play();
     }
 
-    IEnumerator nextLineTest()
+    IEnumerator nextLineAuto()
     {
         Debug.Log("Next line test called here.");
         yield return new WaitForSeconds(2.0f);
