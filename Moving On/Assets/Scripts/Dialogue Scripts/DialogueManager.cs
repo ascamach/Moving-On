@@ -497,6 +497,9 @@ public class DialogueManager : MonoBehaviour
         canSkip = false;
         ContinueStory();
         dialogueNextSound.Play();
-        autoPlay = false;
+        if (autoPlay)
+        {
+            autoPlay = false;
+        }
     }
 }
