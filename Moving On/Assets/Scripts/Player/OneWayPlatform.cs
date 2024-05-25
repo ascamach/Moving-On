@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class OneWayPlatform : MonoBehaviour
 {
+    private GameObject[] allPlatforms;
     private GameObject currentPlatform;
 
     [SerializeField] private PolygonCollider2D playerCollider;
@@ -25,7 +26,6 @@ public class OneWayPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
             currentPlatform = collision.gameObject;
-
         }
     }
 
@@ -39,7 +39,7 @@ public class OneWayPlatform : MonoBehaviour
 
     private IEnumerator DisableCollision()
     {
-        TilemapCollider2D platformCollider = currentPlatform.GetComponent<TilemapCollider2D>();
+        BoxCollider2D platformCollider = currentPlatform.GetComponent<BoxCollider2D>();
 
         Physics2D.IgnoreCollision(playerCollider, platformCollider);
         yield return new WaitForSeconds(1f);

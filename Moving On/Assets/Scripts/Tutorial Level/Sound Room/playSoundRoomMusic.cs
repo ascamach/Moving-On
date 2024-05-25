@@ -7,6 +7,8 @@ public class playSoundRoomMusic : MonoBehaviour
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
     private bool playerInRange;
+    private bool isGramophonePlaying = false;
+    private bool gramophoneFlag = false;
 
     [SerializeField] public GameObject livingRoomTrigger;
 
@@ -26,11 +28,15 @@ public class playSoundRoomMusic : MonoBehaviour
         {
             visualCue.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && !gramophoneFlag)
             {
-                Debug.Log("Playing Sound...");
+                // disable interaction until music successfully stops/starts
+                gramophoneFlag = true;
+
                 audioSource3.Play();
-                audioSource1.Pause();
+
+                audioSource1.Stop();
+                audioSource2.Stop();
 
                 StartCoroutine(musicStartup());
                 if (!livingRoomTrigger.activeSelf)
@@ -64,14 +70,16 @@ public class playSoundRoomMusic : MonoBehaviour
     IEnumerator musicStartup()
     {
         yield return new WaitForSeconds(1);
-        if (audioSource2.isPlaying)
+        if (isGramophonePlaying)
         {
             audioSource1.Play();
-            audioSource2.Pause();
-        } else if (!audioSource2.isPlaying)
+            audioSource2.Stop();
+        } else
         {
-            audioSource1.Pause();
+            audioSource1.Stop();
             audioSource2.Play();
         }
+        isGramophonePlaying = !isGramophonePlaying;
+        gramophoneFlag = false;
     }
 }
