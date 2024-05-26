@@ -26,47 +26,47 @@ VAR currentLocale = ""
 
 ... #speaker: Addison
 
-I'm having a dream again. #speaker: Addison
+<i>I'm having that dream again.</i> #speaker: Addison
 
-A dream about the pain and regrets I felt during that moment. #speaker: Addison
-
-... #speaker: Addison
-
-I didn’t realize how fast things would change. #speaker: Addison
-
-Even though it’s been three weeks, I’m still struggling to process everything. #speaker: Addison
+<i>A dream about the pain and regrets I felt during that moment.</i> #speaker: Addison
 
 ... #speaker: Addison
 
-Please don’t leave… #speaker: Addison
+<i>I didn't realize how fast things would change.</i> #speaker: Addison
 
-I wish I hadn’t said the things I said to you. #speaker: Addison
+<i>Even though it's been three weeks, I'm still struggling to process everything.</i> #speaker: Addison
 
-If only I had known that night was the last time I would ever talk to you… #speaker: Addison
+... #speaker: Addison
 
-…to see and to hug you. #speaker: Addison
+Please don't leave ... #speaker: Addison
 
-I’m sorry Mom. #speaker: Addison
+I wish I hadn't said the things I said to you. #speaker: Addison
+
+If only I had known that night was the last time I would ever talk to you ... #speaker: Addison
+
+...to see and to hug you. #speaker: Addison
+
+I'm sorry, Mom. #speaker: Addison
 
 I wish I could apologize to you. #speaker: Addison
 
-Mom, don’t leave this world yet. #speaker: Addison
+Mom, don't leave this world yet. #speaker: Addison
 
-I don’t know what I’ll do without you. #speaker: Addison
-
-... #speaker: Addison
+I don't know what I'll do without you. #speaker: Addison
 
 ... #speaker: Addison
 
 ... #speaker: Addison
 
-I woke up in a cold sweat. #speaker: Addison
+... #speaker: Addison
 
-Feeling dizzy, I try to sit up in bed. #speaker: Addison
+<i>I wake up in a cold sweat.</i> #speaker: Addison
 
-I should get a glass of water… #speaker: Addison
+<i>Feeling dizzy, I try to sit up in bed.</i> #speaker: Addison
 
-As soon as I got up, I noticed a strange yet oddly familiar presence from the other side of the room. #speaker: Addison
+I should get a glass of water ... #speaker: Addison
+
+<i>As soon as I get up, I notice a strange yet oddly familiar presence from the other side of the room.</i> #speaker: Addison
 
 -> DONE
 
