@@ -69,6 +69,9 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue Typing Speed")]
     private float typingSpeed = 0.04f;
 
+    [Header("Check True if at Ending Scene")]
+    [SerializeField] private bool atEndingScene;
+
     // Booleans for auto play mode during dialogue
     private bool autoMode = false;
     private bool autoPlay = false;
