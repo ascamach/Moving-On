@@ -5,7 +5,8 @@ using UnityEngine;
 public class EndingManager : MonoBehaviour
 {
     public static EndingManager Instance;
-    public bool plantFlower;
+    public bool plantFlower = false;
+    [SerializeField] private GameObject flowers;
 
     private void Awake()
     {
@@ -16,10 +17,17 @@ public class EndingManager : MonoBehaviour
         }
         Instance = this;
     }
+    private void Start()
+    {
+        flowers.SetActive(false);   
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (plantFlower)
+        {
+            flowers.SetActive(true);
+        }
     }
 }

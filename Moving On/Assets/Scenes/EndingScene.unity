@@ -2556,12 +2556,12 @@ MonoBehaviour:
   dialogueNextSound: {fileID: 1953888058}
   loadGlobalsJSON: {fileID: 4900000, guid: e4c6163ed7975674daf45924049f85d1, type: 3}
   choices:
-  - {fileID: 981095116}
-  - {fileID: 835054807}
-  - {fileID: 1826013716}
+  - {fileID: 2146653062}
+  - {fileID: 2134657376}
+  - {fileID: 1574364200}
   dialogueName: 
   pauseMenu: {fileID: 1546955423}
-  atEndingScene: 0
+  atEndingScene: 1
 --- !u!1 &656899037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,6 +3676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 885638097}
+  - component: {fileID: 885638098}
   m_Layer: 0
   m_Name: Ending Level Manager
   m_TagString: Untagged
@@ -3698,6 +3699,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 785644479}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &885638098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885638096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de905e947106c48f092896c72152f2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantFlower: 0
+  flowers: {fileID: 224536897}
 --- !u!1 &904366247
 GameObject:
   m_ObjectHideFlags: 0
@@ -6262,6 +6277,11 @@ Transform:
   - {fileID: 551266275}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1574364200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5234302844327641088, guid: 5f2b3ec2771d0438ab00d9b334b80440, type: 3}
+  m_PrefabInstance: {fileID: 503659503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1595687827
 GameObject:
   m_ObjectHideFlags: 0
@@ -8608,6 +8628,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113165140}
   m_CullTransparentMesh: 1
+--- !u!1 &2134657376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5129688561232065657, guid: 5f2b3ec2771d0438ab00d9b334b80440, type: 3}
+  m_PrefabInstance: {fileID: 503659503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2136357631
 GameObject:
   m_ObjectHideFlags: 0
@@ -8945,6 +8970,11 @@ Transform:
   - {fileID: 1541852267}
   m_Father: {fileID: 251301901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2146653062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2356376988271170712, guid: 5f2b3ec2771d0438ab00d9b334b80440, type: 3}
+  m_PrefabInstance: {fileID: 503659503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
