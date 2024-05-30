@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
 
     //Variables to keep track of when to activate flowers at Ending Scene
     private int currentLine;
-    private int targetLine = 16;
+    private int targetLine = 15;
 
     // Booleans for auto play mode during dialogue
     private bool autoMode = false;
