@@ -69,6 +69,14 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue Typing Speed")]
     private float typingSpeed = 0.04f;
 
+    //Check if Manager is currently at Ending Scene
+    [Header("Check True if at Ending Scene")]
+    [SerializeField] private bool atEndingScene;
+
+    //Variables to keep track of when to activate flowers at Ending Scene
+    private int currentLine;
+    private int targetLine = 15;
+
     // Booleans for auto play mode during dialogue
     private bool autoMode = false;
     private bool autoPlay = false;
@@ -115,6 +123,9 @@ public class DialogueManager : MonoBehaviour
         currentStory.variablesState["localeID"] = localeID;
 
         dialogueVariables.StopListening(currentStory);
+
+        //Set currentLine Variable to 1 for Ending Scene
+        currentLine = 1;
     }
 
     private void Update()
@@ -135,7 +146,7 @@ public class DialogueManager : MonoBehaviour
             submitSkip = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.K) && !autoMode)
+        if (atEndingScene && !autoMode)
         {
             autoMode = true;
             Debug.Log("Enabling auto mode");
@@ -154,6 +165,12 @@ public class DialogueManager : MonoBehaviour
             {
                 autoPlay = true;
                 StartCoroutine(nextLineAuto());
+                currentLine++;
+                Debug.Log("Currently at Line: " + currentLine);
+                if(currentLine>=targetLine && !EndingManager.Instance.plantFlower)
+                {
+                    EndingManager.Instance.plantFlower = true;
+                }
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
