@@ -6045,6 +6045,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3215893117518446818, guid: 8047c78e2f7a74204894e62c013cc4c2, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].x
+      value: 4.0251865
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215893117518446818, guid: 8047c78e2f7a74204894e62c013cc4c2, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[8].y
+      value: -2.8078456
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215893117518446818, guid: 8047c78e2f7a74204894e62c013cc4c2, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].x
+      value: 2.9310462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215893117518446818, guid: 8047c78e2f7a74204894e62c013cc4c2, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
+      value: 0.8626083
+      objectReference: {fileID: 0}
     - target: {fileID: 3333328949164430414, guid: 8047c78e2f7a74204894e62c013cc4c2, type: 3}
       propertyPath: m_Name
       value: --- GRAVEYARD BACKGROUND ---
