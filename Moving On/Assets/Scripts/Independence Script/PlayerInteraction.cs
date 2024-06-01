@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float interactionDistance = 3f;  // Distance within which the player can interact with the crane
+    public float interactionDistance = 7f;  // Distance within which the player can interact with the crane
     private Crane crane;
 
     void Update()
@@ -27,6 +27,7 @@ public class PlayerInteraction : MonoBehaviour
                 if (crane != null)
                 {
                     crane.DestroyBoulders();
+                    Debug.Log("Rocks are gone");
                     return;
                 }
             }
