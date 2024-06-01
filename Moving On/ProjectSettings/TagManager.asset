@@ -8,6 +8,7 @@ TagManager:
   - Platform
   - OneWayPlatform
   - NPC
+  - Wrecking Ball
   layers:
   - Default
   - TransparentFX
