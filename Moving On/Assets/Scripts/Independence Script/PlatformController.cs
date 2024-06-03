@@ -2,28 +2,25 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
-    private FixedJoint2D playerJoint;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            // Create a FixedJoint2D component and attach it to the player
-            playerJoint = other.gameObject.AddComponent<FixedJoint2D>();
+            Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
+            Rigidbody2D platformRB = GetComponent<Rigidbody2D>();
 
-            // Connect the joint to the platform
-            playerJoint.connectedBody = GetComponent<Rigidbody2D>();
-            playerJoint.autoConfigureConnectedAnchor = false;
-            playerJoint.connectedAnchor = Vector2.zero;
+            // Match the platform's velocity
+            playerRB.velocity += platformRB.velocity - platformRB.GetPointVelocity(playerRB.position);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            // Remove the FixedJoint2D component from the player
-            Destroy(playerJoint);
+            // Reset the player's velocity to avoid unexpected behavior
+            Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
+            playerRB.velocity = Vector2.zero;
         }
     }
 }
