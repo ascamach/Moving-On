@@ -21,6 +21,5 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = spawnPoint;
         Debug.Log("Player respawned to: " + spawnPoint);
-        // Optionally reset player health or other states here
     }
 }
