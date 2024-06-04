@@ -5,9 +5,9 @@ public class ButtonController : MonoBehaviour
 {
     public GameObject ButtonUnpressed;
     public GameObject ButtonPressed;
-    public SpecificOrderGateController gateController; // Reference to the SpecificOrderGateController script
-    public GameObject player; // Reference to the player GameObject
-    public float activationDistance = 3f; // Maximum distance within which the player can press the button
+    public SpecificOrderGateController gateController;
+    public GameObject player; 
+    public float activationDistance = 3f; 
 
     // List of buttons in the correct order
     public List<ButtonController> correctOrder;
@@ -15,7 +15,6 @@ public class ButtonController : MonoBehaviour
 
     void Start()
     {
-        // Ensure the unpressed button is active and the pressed button is inactive at the start
         ButtonUnpressed.SetActive(true);
         ButtonPressed.SetActive(false);
     }
@@ -26,7 +25,7 @@ public class ButtonController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && IsPlayerCloseEnough())
         {
             PressButton();
-            Debug.Log("Button is pushed");
+            Debug.Log("Button pushed");
         }
     }
 
@@ -44,7 +43,7 @@ public class ButtonController : MonoBehaviour
         // Check if this button is already pressed
         if (pressedButtons.Contains(this))
         {
-            Debug.Log("Button already pressed!");
+            Debug.Log("Button pushed already");
             return;
         }
 

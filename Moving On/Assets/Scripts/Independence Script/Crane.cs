@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Crane : MonoBehaviour
 {
-    public GameObject[] boulders;  // Array to hold all the boulders to be destroyed
+    public GameObject[] boulders;
 
     public void DestroyBoulders()
     {

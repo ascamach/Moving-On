@@ -22,7 +22,6 @@ public class MovingPlatformHorizontalWithLever : MonoBehaviour
     {
         if (platformPaused)
         {
-            // Platform is paused, do nothing
             return;
         }
 
@@ -60,21 +59,17 @@ public class MovingPlatformHorizontalWithLever : MonoBehaviour
     {
         if (leverPressCount % 2 == 0)
         {
-            // Even number of presses: pause the platform
             platformPaused = !platformPaused;
             if (!platformPaused)
             {
-                // Resume the platform movement, reset startTime
                 startTime = Time.time - (transform.position.x - minX) / moveSpeed;
             }
         }
         else
         {
-            // Odd number of presses: toggle player control
             playerControl = !playerControl;
             if (!playerControl)
             {
-                // Reset the platform to its automatic movement
                 startTime = Time.time - (transform.position.x - minX) / moveSpeed;
             }
         }

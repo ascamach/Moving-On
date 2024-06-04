@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        // Initialize the spawn point to the player's starting position
         spawnPoint = transform.position;
         Debug.Log("Initial spawn point set to: " + spawnPoint);
     }

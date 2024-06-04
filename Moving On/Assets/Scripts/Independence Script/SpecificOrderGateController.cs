@@ -8,7 +8,6 @@ public class SpecificOrderGateController : MonoBehaviour
     {
         if (!gateOpen)
         {
-            // Your logic to open the gate
             Debug.Log("Gate is now open!");
             gateOpen = true;
         }
@@ -18,7 +17,6 @@ public class SpecificOrderGateController : MonoBehaviour
     {
         if (gateOpen)
         {
-            // Your logic to reset the gate state
             Debug.Log("Gate reset!");
             gateOpen = false;
         }

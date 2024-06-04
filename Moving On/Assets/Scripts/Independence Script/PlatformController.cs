@@ -8,8 +8,6 @@ public class PlatformController : MonoBehaviour
         {
             Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
             Rigidbody2D platformRB = GetComponent<Rigidbody2D>();
-
-            // Match the platform's velocity
             playerRB.velocity += platformRB.velocity - platformRB.GetPointVelocity(playerRB.position);
         }
     }
@@ -18,7 +16,6 @@ public class PlatformController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Reset the player's velocity to avoid unexpected behavior
             Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
             playerRB.velocity = Vector2.zero;
         }

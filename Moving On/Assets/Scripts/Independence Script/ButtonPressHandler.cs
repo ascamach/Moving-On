@@ -4,22 +4,20 @@ public class ButtonPressHandler : MonoBehaviour
 {
     public GameObject ButtonUnpressed;
     public GameObject ButtonPressed;
-    public GameObject gateToDestroy; // Reference to the gate GameObject
-    public GameObject objectToDestroy; // Reference to another object to destroy
-    public GameObject player; // Reference to the player GameObject
-    public float activationDistance = 3f; // Maximum distance within which the player can press the button
+    public GameObject gateToDestroy;
+    public GameObject objectToDestroy;
+    public GameObject player;
+    public float activationDistance = 3f;
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
-        // Ensure the unpressed button is active and the pressed button is inactive at the start
         ButtonUnpressed.SetActive(true);
         ButtonPressed.SetActive(false);
     }
 
     void Update()
     {
-        // Check if the player presses the "F" key and is within the activation distance
         if (Input.GetKeyDown(KeyCode.F) && IsPlayerCloseEnough())
         {
             PressButton();
