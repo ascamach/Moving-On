@@ -49,6 +49,9 @@ TagManager:
   - name: Background
     uniqueID: 505372779
     locked: 0
+  - name: pole
+    uniqueID: 517778909
+    locked: 0
   - name: Platforms
     uniqueID: 1187407849
     locked: 0
@@ -61,6 +64,9 @@ TagManager:
   - name: UI
     uniqueID: 2536743113
     locked: 0
+  - name: general stuff
+    uniqueID: 1298180527
+    locked: 0
   - name: NPC
     uniqueID: 517290589
     locked: 0
@@ -72,6 +78,12 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 674223247
+    locked: 0
+  - name: Gear
+    uniqueID: 32199363
+    locked: 0
+  - name: Cage
+    uniqueID: 3555598663
     locked: 0
   - name: Interactables
     uniqueID: 2873929639
