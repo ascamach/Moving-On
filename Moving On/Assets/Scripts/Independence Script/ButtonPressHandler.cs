@@ -4,9 +4,11 @@ public class ButtonPressHandler : MonoBehaviour
 {
     public GameObject ButtonUnpressed;
     public GameObject ButtonPressed;
-    public GateController gateController; // Reference to the GateController script
+    public GameObject gateToDestroy; // Reference to the gate GameObject
+    public GameObject objectToDestroy; // Reference to another object to destroy
     public GameObject player; // Reference to the player GameObject
     public float activationDistance = 3f; // Maximum distance within which the player can press the button
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -23,6 +25,11 @@ public class ButtonPressHandler : MonoBehaviour
             PressButton();
         }
 
+        // // Check if the player releases the "F" key
+        // if (Input.GetKeyUp(KeyCode.F))
+        // {
+        //     ReleaseButton();
+        // }
     }
 
     bool IsPlayerCloseEnough()
@@ -36,17 +43,33 @@ public class ButtonPressHandler : MonoBehaviour
 
     void PressButton()
     {
+
         // Switch the states of the buttons
         ButtonUnpressed.SetActive(false);
         ButtonPressed.SetActive(true);
 
-        // Trigger the gate to open
-        if (gateController != null)
+        // Destroy the gate
+        if (gateToDestroy != null)
         {
-            gateController.OpenGate();
+            Destroy(gateToDestroy);
+        }
+
+        // Destroy another specified object
+        if (objectToDestroy != null)
+        {
+            Destroy(objectToDestroy);
         }
 
         // Optionally, trigger other actions or events
         Debug.Log("Button Pressed!");
     }
 }
+//     void ReleaseButton()
+//     {
+//         // Switch back to the unpressed button state
+//         ButtonUnpressed.SetActive(true);
+//         ButtonPressed.SetActive(false);
+
+//         Debug.Log("Button Released!");
+//     }
+// }
