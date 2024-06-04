@@ -24,12 +24,6 @@ public class ButtonPressHandler : MonoBehaviour
         {
             PressButton();
         }
-
-        // // Check if the player releases the "F" key
-        // if (Input.GetKeyUp(KeyCode.F))
-        // {
-        //     ReleaseButton();
-        // }
     }
 
     bool IsPlayerCloseEnough()
@@ -64,12 +58,4 @@ public class ButtonPressHandler : MonoBehaviour
         Debug.Log("Button Pressed!");
     }
 }
-//     void ReleaseButton()
-//     {
-//         // Switch back to the unpressed button state
-//         ButtonUnpressed.SetActive(true);
-//         ButtonPressed.SetActive(false);
 
-//         Debug.Log("Button Released!");
-//     }
-// }
