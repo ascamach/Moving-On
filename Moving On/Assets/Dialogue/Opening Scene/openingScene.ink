@@ -1,7 +1,7 @@
 INCLUDE ../globals.ink
 
 VAR currentLocale = ""
-VAR not_ready = false
+
 
 ~ currentLocale = localeID
 

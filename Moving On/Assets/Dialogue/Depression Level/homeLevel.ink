@@ -25,7 +25,8 @@ VAR currentLocale = ""
 
 === main_en ===
 #speaker: Mom
-Hmm… I don’t have a map of where the first special object is. Shall we go through and explore the neighborhood?
+Hmm... I don’t have a map of where the <color=\#aefff1>special objects</color> are. Why don’t we go and explore the neighborhood?
+
 ~ depressionFirstDialogue = true
 -> DONE
 
