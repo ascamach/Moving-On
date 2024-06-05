@@ -37,7 +37,7 @@ public class GameBoard
     // state[9] represents the current player: User (1) or Bot (2)
     public List<int> NextState(List<int> state, int action)
     {
-        List<int> newState = state;
+        List<int> newState = new List<int>(state);
         if (state[9] == 1)
         {
             newState[action] = 1;
@@ -144,13 +144,25 @@ public class GameBoard
         }
         else
         {
-            // in progress
+            // game in progress
             return -1;
         }
     }
     public bool IsTerminal(List<int> state)
     {
         return (CurrentGameState(state) != -1);
+    }
+
+    public bool IsEmpty(List<int> state)
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            if (state[i] != 0)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void ResetBoard()

@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 public class KidAI : MonoBehaviour
 {
-    private int numNodes = 3000;
+    private int numNodes = 1000;
     private double exploreFaction = 2f;
 
     public int Think(GameBoard board, List<int> currentState)
@@ -18,7 +18,7 @@ public class KidAI : MonoBehaviour
 
         for (int x = 0; x < numNodes; x++)
         {
-            List<int> state = currentState;
+            List<int> state = new List<int>(currentState);
             MCTSNode node = root;
 
             // MCTS
@@ -36,7 +36,7 @@ public class KidAI : MonoBehaviour
         }
 
         int bestAction = GetBestAction(root);
-
+        Debug.Log("Possible Actions: " + GetActionsString(root));
         Debug.Log("Action chosen: " + bestAction.ToString());
         return bestAction;
     }
@@ -44,7 +44,7 @@ public class KidAI : MonoBehaviour
     private (MCTSNode, List<int>) TraverseNodes(MCTSNode node, GameBoard board, List<int> state)
     {
         MCTSNode currentNode = node;
-        List<int> currentState = state;
+        List<int> currentState = new List<int>(state);
         // keep traversing until currentNode has no children OR currentNode has untried actions
         while (currentNode.children.Count > 0 && currentNode.untriedActions.Count == 0)
         {
@@ -83,11 +83,86 @@ public class KidAI : MonoBehaviour
     // TODO: currently random rollout
     private List<int> Rollout(GameBoard board, List<int> state)
     {
-        List<int> currentState = state;
+        List<int> currentState = new List<int>(state);
+        
+        /*
         while (!board.IsTerminal(currentState))
         {
+            
             List<int> possibleMoves = board.PossibleMoves(currentState);
             int action = possibleMoves[Random.Range(0, possibleMoves.Count)];
+            currentState = board.NextState(currentState, action);
+        }
+        */
+        
+        
+        while (!board.IsTerminal(currentState))
+        {
+            int action = -1;
+
+            int numPlayerTiles, numBotTiles, emptyTile;
+            for (int row = 0; row < 3; row++)
+            {
+                numPlayerTiles = 0;
+                numBotTiles = 0;
+                emptyTile = -1;
+
+                for (int i = 0; i < 3; i++)
+                {
+                    int index = (row * 3) + 1;
+                    if (currentState[index] == 1)
+                    {
+                        numPlayerTiles++;
+                    }
+                    else if (currentState[index] == 2)
+                    {
+                        numBotTiles++;
+                    }
+                    else
+                    {
+                        emptyTile = index;
+                    }
+                }
+                if ((numPlayerTiles == 2 || numBotTiles == 2) && (emptyTile != -1))
+                {
+                    action = emptyTile;
+                }
+            }
+
+            for (int col = 0; col < 3; col++)
+            {
+                numPlayerTiles = 0;
+                numBotTiles = 0;
+                emptyTile = -1;
+
+                for (int i = 0; i < 3; i++)
+                {
+                    int index = col + (i * 3);
+                    if (currentState[index] == 1)
+                    {
+                        numPlayerTiles++;
+                    }
+                    else if (currentState[index] == 2)
+                    {
+                        numBotTiles++;
+                    }
+                    else
+                    {
+                        emptyTile = index;
+                    }
+                }
+                if ((numPlayerTiles == 2 || numBotTiles == 2) && (emptyTile != -1))
+                {
+                    action = emptyTile;
+                }
+            }
+
+            if (action == -1)
+            {
+                List<int> possibleMoves = board.PossibleMoves(currentState);
+                action = possibleMoves[Random.Range(0, possibleMoves.Count)];
+            }
+
             currentState = board.NextState(currentState, action);
         }
         return currentState;
@@ -121,7 +196,7 @@ public class KidAI : MonoBehaviour
         int bestAction = -1;
         foreach ((int action, MCTSNode node) in root.children)
         {
-            double winRate = node.wins / node.visits;
+            double winRate = (double)node.wins / node.visits;
             if (winRate > maxRate)
             {
                 maxRate = winRate;
@@ -129,6 +204,16 @@ public class KidAI : MonoBehaviour
             }
         }
         return bestAction;
+    }
+
+    private string GetActionsString(MCTSNode root)
+    {
+        string actions = "";
+        foreach ((int action, MCTSNode node) in root.children)
+        {
+            actions = actions + action.ToString() + " [" + ((double)node.wins / node.visits).ToString() + "], ";
+        }
+        return actions;
     }
 }
 

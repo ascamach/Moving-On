@@ -36,17 +36,17 @@ public class TicTacToe : MonoBehaviour
         if (!mainBoard.isPlayerTurn)
         {
 
-            /*
+            int action = -1;
             // randomly select tile
-            int chosenSpot = Random.Range(0, 9);
-            while (mainBoard.board[chosenSpot] != GameBoard.Tile.Empty)
+            if (mainBoard.IsEmpty(mainBoard.GetState()))
             {
-                chosenSpot = Random.Range(0, 9);
+                action = Random.Range(0, 9);
             }
-            */
-
-            // choose next action
-            int action = bot.GetComponent<KidAI>().Think(mainBoard, mainBoard.GetState());
+            else
+            {
+                // choose next action
+                action = bot.GetComponent<KidAI>().Think(mainBoard, mainBoard.GetState());
+            }
 
             // set internal data
             mainBoard.board[action] = GameBoard.Tile.X;
