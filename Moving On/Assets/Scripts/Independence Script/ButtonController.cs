@@ -60,11 +60,9 @@ public class ButtonController : MonoBehaviour
         // Check if the pressed buttons match the correct order
         if (IsCorrectOrder())
         {
-            Debug.Log("Correct button order detected.");
             // Trigger the gate to open
             if (gateController != null)
             {
-                Debug.Log("Calling OpenGate on gateController.");
                 gateController.OpenGate();
             }
         }
@@ -78,10 +76,6 @@ public class ButtonController : MonoBehaviour
 
     bool IsCorrectOrder()
     {
-        Debug.Log("Checking if pressed buttons match the correct order...");
-        Debug.Log("Pressed buttons count: " + pressedButtons.Count);
-        Debug.Log("Correct order buttons count: " + correctOrder.Count);
-
         if (pressedButtons.Count != correctOrder.Count) 
         {
             Debug.Log("Pressed buttons count does not match correct order count.");
@@ -103,7 +97,6 @@ public class ButtonController : MonoBehaviour
 
     void ResetButtons()
     {
-        Debug.Log("Resetting buttons...");
         // Reset the state of all buttons
         foreach (var button in pressedButtons)
         {
