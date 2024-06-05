@@ -5,6 +5,7 @@ public class LeverInteraction : MonoBehaviour
     public GameObject platform;
     private MovingPlatformHorizontalWithLever platformScript;
     private int leverPressCount = 0;
+    public float activationDistance = 1f;
 
     void Start()
     {
@@ -14,11 +15,11 @@ public class LeverInteraction : MonoBehaviour
             return;
         }
 
-        platformScript = platform.GetComponent<MovingPlatformHorizontalWithLever>();
+        platformScript = platform.GetComponent<MovingPlatformHorizontalWithLever >();
 
         if (platformScript == null)
         {
-            Debug.LogError("MovingPlatformHorizontal script is not found on the platform GameObject!");
+            Debug.LogError("MovingPlatformHorizontalWithLever  script is not found on the platform GameObject!");
         }
     }
 
@@ -27,13 +28,17 @@ public class LeverInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             float distance = Vector3.Distance(transform.position, platformScript.Player.transform.position);
-            Debug.Log("Distance to player: " + distance);
+            // Debug.Log("Distance to player: " + distance);
 
-            if (distance < 2f) // Adjust the distance threshold as needed
+            if (distance < activationDistance) 
             {
                 leverPressCount++;
                 platformScript.ToggleControl(leverPressCount);
             }
+            // else
+            // {
+            //     Debug.Log("Player is too far from the lever to activate it.");
+            // }
         }
     }
 }

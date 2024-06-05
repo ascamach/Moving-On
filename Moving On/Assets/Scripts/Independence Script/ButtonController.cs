@@ -5,9 +5,9 @@ public class ButtonController : MonoBehaviour
 {
     public GameObject ButtonUnpressed;
     public GameObject ButtonPressed;
-    public SpecificOrderGateController gateController;
-    public GameObject player; 
-    public float activationDistance = 3f; 
+    public SpecificOrderGateController gateController; // Reference to the SpecificOrderGateController script
+    public GameObject player; // Reference to the player GameObject
+    public float activationDistance = 3f; // Maximum distance within which the player can press the button
 
     // List of buttons in the correct order
     public List<ButtonController> correctOrder;
@@ -15,6 +15,7 @@ public class ButtonController : MonoBehaviour
 
     void Start()
     {
+        // Ensure the unpressed button is active and the pressed button is inactive at the start
         ButtonUnpressed.SetActive(true);
         ButtonPressed.SetActive(false);
     }
@@ -25,7 +26,6 @@ public class ButtonController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && IsPlayerCloseEnough())
         {
             PressButton();
-            Debug.Log("Button pushed");
         }
     }
 
@@ -40,15 +40,18 @@ public class ButtonController : MonoBehaviour
 
     void PressButton()
     {
+        Debug.Log("Attempting to press button...");
+
         // Check if this button is already pressed
         if (pressedButtons.Contains(this))
         {
-            Debug.Log("Button pushed already");
+            Debug.Log("Button already pressed!");
             return;
         }
 
         // Add this button to the list of pressed buttons
         pressedButtons.Add(this);
+        Debug.Log("Button pressed. Current pressed buttons count: " + pressedButtons.Count);
 
         // Switch the states of the buttons
         ButtonUnpressed.SetActive(false);
@@ -57,39 +60,50 @@ public class ButtonController : MonoBehaviour
         // Check if the pressed buttons match the correct order
         if (IsCorrectOrder())
         {
+            Debug.Log("Correct button order detected.");
             // Trigger the gate to open
             if (gateController != null)
             {
+                Debug.Log("Calling OpenGate on gateController.");
                 gateController.OpenGate();
             }
-
-            Debug.Log("Correct order! Gate is opening!");
         }
         else if (pressedButtons.Count == correctOrder.Count)
         {
             // If the order is incorrect and all buttons are pressed, reset the buttons
-            ResetButtons();
             Debug.Log("Incorrect order! Resetting buttons.");
+            ResetButtons();
         }
     }
 
     bool IsCorrectOrder()
     {
-        if (pressedButtons.Count != correctOrder.Count) return false;
+        Debug.Log("Checking if pressed buttons match the correct order...");
+        Debug.Log("Pressed buttons count: " + pressedButtons.Count);
+        Debug.Log("Correct order buttons count: " + correctOrder.Count);
+
+        if (pressedButtons.Count != correctOrder.Count) 
+        {
+            Debug.Log("Pressed buttons count does not match correct order count.");
+            return false;
+        }
 
         for (int i = 0; i < correctOrder.Count; i++)
         {
             if (pressedButtons[i] != correctOrder[i])
             {
+                Debug.Log("Button at index " + i + " does not match.");
                 return false;
             }
         }
 
+        Debug.Log("Pressed buttons match the correct order.");
         return true;
     }
 
     void ResetButtons()
     {
+        Debug.Log("Resetting buttons...");
         // Reset the state of all buttons
         foreach (var button in pressedButtons)
         {
