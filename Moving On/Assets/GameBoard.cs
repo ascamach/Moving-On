@@ -17,7 +17,7 @@ public class GameBoard
     public Tile[] board;
     public bool isPlayerTurn;
 
-    // Start is called before the first frame update
+    // constructor
     public GameBoard()
     {
         board = new Tile[9];
@@ -33,53 +33,113 @@ public class GameBoard
         Debug.Log(board);
     }
 
-    // CurrentGameState(): returns -1 if game in progress, 0 if tie, 1 if player wins, 2 if player loses
-    public int CurrentGameState()
+    // a STATE is a List<int>, where state[0-8] represents tiles on the board that are either empty (0), O (1), or X (2).
+    // state[9] represents the current player: User (1) or Bot (2)
+    public List<int> NextState(List<int> state, int action)
     {
-        if (board[0] == board[1] && board[1] == board[2] && board[0] != Tile.Empty)
+        List<int> newState = state;
+        if (state[9] == 1)
+        {
+            newState[action] = 1;
+            newState[9] = 2;
+        } else
+        {
+            newState[action] = 2;
+            newState[9] = 1;
+        }
+        return newState;
+    }
+
+    public List<int> GetState()
+    {
+        List<int> state = new List<int>();
+        for (int i = 0; i < 9; i++)
+        {
+            if (board[i] == Tile.Empty)
+            {
+                state.Add(0);
+            }
+            else if (board[i] == Tile.O)
+            {
+                state.Add(1);
+            }
+            else
+            {
+                state.Add(2);
+            }
+        }
+        state.Add(isPlayerTurn ? 1 : 2);
+
+        return state;
+    }
+
+    // update the internal data (board[] and isPlayerTurn) to match the given state 
+    public void SetData(List<int> state)
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            if (state[i] == 0)
+            {
+                board[i] = Tile.Empty;
+            }
+            else if (state[i] == 1)
+            {
+                board[i] = Tile.O;
+            }
+            else
+            {
+                board[i] = Tile.X;
+            }
+        }
+        isPlayerTurn = state[9] == 1;
+    }
+
+    // CurrentGameState(): returns -1 if game in progress, 0 if tie, 1 if player wins, 2 if player loses
+    public int CurrentGameState(List<int> state)
+    {
+        if (state[0] == state[1] && state[1] == state[2] && state[0] != 0)
         {
             // row0 winner
-            return DetermineWinner(board[0]);
+            return state[0];
         }
-        else if (board[3] == board[4] && board[4] == board[5] && board[3] != Tile.Empty)
+        else if (state[3] == state[4] && state[4] == state[5] && state[3] != 0)
         {
             // row1 winner
-            return DetermineWinner(board[3]);
+            return state[3];
         }
-        else if (board[6] == board[7] && board[7] == board[8] && board[6] != Tile.Empty)
+        else if (state[6] == state[7] && state[7] == state[8] && state[6] != 0)
         {
             // row2 winner
-            return DetermineWinner(board[6]);
+            return state[6];
         }
-        else if (board[0] == board[3] && board[3] == board[6] && board[0] != Tile.Empty)
+        else if (state[0] == state[3] && state[3] == state[6] && state[0] != 0)
         {
             // col0 winner
-            return DetermineWinner(board[0]);
+            return state[0];
         }
-        else if (board[1] == board[4] && board[4] == board[7] && board[1] != Tile.Empty)
+        else if (state[1] == state[4] && state[4] == state[7] && state[1] != 0)
         {
             // col1 winner
-            return DetermineWinner(board[1]);
+            return state[1];
         }
-        else if (board[2] == board[5] && board[5] == board[8] && board[2] != Tile.Empty)
+        else if (state[2] == state[5] && state[5] == state[8] && state[2] != 0)
         {
             // col2 winner
-            return DetermineWinner(board[2]);
+            return state[2];
         }
-        else if (board[0] == board[4] && board[4] == board[8] && board[0] != Tile.Empty)
+        else if (state[0] == state[4] && state[4] == state[8] && state[0] != 0)
         {
             // diag0 winner
-            return DetermineWinner(board[0]);
+            return state[0];
         }
-        else if (board[2] == board[4] && board[4] == board[6] && board[2] != Tile.Empty)
+        else if (state[2] == state[4] && state[4] == state[6] && state[2] != 0)
         {
             // diag1 winner
-            return DetermineWinner(board[2]);
+            return state[2];
         }
-        else if (!board.Contains(Tile.Empty))
+        else if (!state.Contains(0))
         {
             // tie
-            Debug.Log("Tie (0)");
             return 0;
         }
         else
@@ -88,26 +148,9 @@ public class GameBoard
             return -1;
         }
     }
-    public bool IsTerminal()
+    public bool IsTerminal(List<int> state)
     {
-        return (CurrentGameState() != -1);
-    }
-
-    // DetermineWinner(s): given tile state s, returns 1 for Player Win, or returns 2 for Player Loss. defaults to -1
-    private int DetermineWinner(Tile s)
-    {
-        int winner = -1;
-        if (s == Tile.O)
-        {
-            Debug.Log("Winner: Player (1)");
-            winner = 1;
-        }
-        else if (s == Tile.X)
-        {
-            Debug.Log("Winner: Bot (2)");
-            winner = 2;
-        }
-        return winner;
+        return (CurrentGameState(state) != -1);
     }
 
     public void ResetBoard()
@@ -118,5 +161,20 @@ public class GameBoard
         }
 
         isPlayerTurn = false;
+    }
+
+    // returns List<int> of indices [0-8] of empty spaces 
+    public List<int> PossibleMoves(List<int> state)
+    {
+        List<int> possibleMoves = new List<int> ();
+        for (int i = 0; i < 9; i++)
+        {
+            if (state[i] == 0)
+            {
+                possibleMoves.Add(i);
+            }
+        }
+
+        return possibleMoves;
     }
 }

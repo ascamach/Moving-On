@@ -22,8 +22,9 @@ public class TicTacToe : MonoBehaviour
     void Update()
     {
         //UpdateBoard();
-        if (mainBoard.CurrentGameState() != -1)
+        if (mainBoard.IsTerminal(mainBoard.GetState()))
         {
+            Debug.Log("Game Result: " + mainBoard.CurrentGameState(mainBoard.GetState()).ToString());
             mainBoard.ResetBoard();
             foreach (GameObject t in boardTiles)
             {
@@ -34,18 +35,24 @@ public class TicTacToe : MonoBehaviour
 
         if (!mainBoard.isPlayerTurn)
         {
+
+            /*
             // randomly select tile
             int chosenSpot = Random.Range(0, 9);
             while (mainBoard.board[chosenSpot] != GameBoard.Tile.Empty)
             {
                 chosenSpot = Random.Range(0, 9);
             }
+            */
+
+            // choose next action
+            int action = bot.GetComponent<KidAI>().Think(mainBoard, mainBoard.GetState());
 
             // set internal data
-            mainBoard.board[chosenSpot] = GameBoard.Tile.X;
+            mainBoard.board[action] = GameBoard.Tile.X;
 
             // render chosen tile
-            TicTacToeTile tile = GetBoardTile(chosenSpot).GetComponent<TicTacToeTile>();
+            TicTacToeTile tile = GetBoardTile(action).GetComponent<TicTacToeTile>();
             while (tile.state != GameBoard.Tile.X)
             {
                 tile.state = GameBoard.Tile.X;
