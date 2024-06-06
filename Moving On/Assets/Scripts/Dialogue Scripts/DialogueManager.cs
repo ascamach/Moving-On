@@ -88,7 +88,12 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("More than one instance of Dialogue Manager found in the scene.");
         }
+
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+
         instance = this;
+
+        // DontDestroyOnLoad(this.gameObject);
     }
 
     public static DialogueManager GetInstance()
@@ -110,10 +115,7 @@ public class DialogueManager : MonoBehaviour
             // Grabs the text of the choices buttons (children of the buttons)
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
-        }
-
-        // Grab current locale ID        
-        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        }      
 
         currentStory = new Story(loadGlobalsJSON.text);
 
@@ -448,7 +450,7 @@ public class DialogueManager : MonoBehaviour
         }
     } 
 
-    public Ink.Runtime.Object GetVariableState (string variableName)
+    public string GetVariableState (string variableName)
     {
         Ink.Runtime.Object variableValue = null;
         dialogueVariables.variables.TryGetValue(variableName, out variableValue); 
@@ -456,7 +458,7 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("Ink variable not found: " + variableName);
         }
-        return variableValue;
+        return variableValue.ToString();
     }
 
     private string getLocaleID()
