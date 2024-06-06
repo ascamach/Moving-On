@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu/tutorialCheck.unity
     guid: 827cfdceaba954e9f88094d9bb43da1b
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: b16d84508d3de464bb3d7d3c92c68cbd
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 1024ccb5f30fb470c812b787d57ce45f, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 24adf6e8081b84072b59641551fca512, type: 2}
