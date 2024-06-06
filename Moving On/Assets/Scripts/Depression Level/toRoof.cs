@@ -7,6 +7,9 @@ public class toRoof : MonoBehaviour
 {
     [Header("Put Canvas Animator Here for Fade In: ")]
     [SerializeField] private Animator animator;
+
+    [Header("Rigidbody of player: ")]
+    [SerializeField] private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class toRoof : MonoBehaviour
         if(collision.tag == "Player")
         {
             Debug.Log("Player Entered...");
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
             animator.SetTrigger("playFadeIn");
             StartCoroutine(sceneTransition());
         }
