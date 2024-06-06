@@ -15,6 +15,14 @@ public class DialogueVariables
     public object wantValue = "";
     public string result = "";
 
+    public string lookingForName2 = "roof";
+    public object wantValue2 = "";
+    public string result2 = "";
+
+    public string lookingForName3 = "key";
+    public object wantValue3 = "";
+    public string result3 = "";
+
     // Script that compiles the globals ink file into JSON
     // Adds all current variables and compiles when a value is changed
     public DialogueVariables(TextAsset loadGlobalsJSON)
@@ -58,6 +66,16 @@ public class DialogueVariables
         if(name == lookingForName){
             wantValue = value;
             result = wantValue.ToString();
+        }
+
+        if(name == lookingForName2){
+            wantValue2 = value;
+            result2 = wantValue2.ToString();
+        }
+
+        if(name == lookingForName3){
+            wantValue3 = value;
+            result3 = wantValue3.ToString();
         }
 
     
