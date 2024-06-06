@@ -20,6 +20,14 @@ VAR currentLocale = ""
 // ادیسون
 
 === main_en ===
+
+{ is_ready == "true":
+    HI YOU ARE CORRECT
+}
+
+{ is_ready == "false":
+    OH DEAR
+}
 You’ve been holed up in your room for the past couple of weeks. Why don’t we get up and prepare to head out? #speaker: Mom 
 
 This feels so sudden; I’m not sure if I’m ready. #speaker: Addison

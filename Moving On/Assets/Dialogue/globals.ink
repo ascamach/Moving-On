@@ -1,6 +1,7 @@
 // Localization Variable
 VAR localeID = ""
 
+VAR is_ready = false
 // Tutorial Level
 VAR number_chosen = ""
 VAR dog_interactions = ""

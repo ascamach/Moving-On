@@ -1,7 +1,7 @@
 INCLUDE ../globals.ink
 
 VAR currentLocale = ""
-
+VAR ready = false
 
 ~ currentLocale = localeID
 
@@ -72,10 +72,14 @@ Do you think you can help me, sweetie? #speaker: Mom
 
 + [I guess ...]
     I know things didn't end well for us, and I'm sorry for that. Let's go on one more journey together, yeah? #speaker: Mom
+    ~ ready = false
+    ~ is_ready = ready
     -> DONE
 
 + [Of course!]
     Thank you, sweetie. Let's go get ready. #speaker: Mom
+    ~ ready = true
+    ~ is_ready = ready
     -> DONE
 
 === main_fa ===

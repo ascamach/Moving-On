@@ -10,6 +10,10 @@ public class DialogueVariables
     // Create a dictionary to save key/value pairs
     public Dictionary<string, Ink.Runtime.Object> variables { get; private set; }
 
+    public string lookingForName = "is_ready";
+    public object wantValue = "";
+    public string result = "";
+
     // Script that compiles the globals ink file into JSON
     // Adds all current variables and compiles when a value is changed
     public DialogueVariables(TextAsset loadGlobalsJSON)
@@ -50,6 +54,11 @@ public class DialogueVariables
         }
 
         Debug.Log("Variable changed: " + name + "=" + value);
+        if(name == lookingForName){
+            wantValue = value;
+            result = wantValue.ToString();
+        }
+        //Debug.Log("YOO LOOK AT THIS: " + wantValue.ToString());
     }
  
     // Function for different stories to reference the dictionary

@@ -47,7 +47,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool dialogueFinished { get; private set; }
 
-    private DialogueVariables dialogueVariables;
+    public DialogueVariables dialogueVariables;
 
     public string dialogueName = "";
 
@@ -81,6 +81,9 @@ public class DialogueManager : MonoBehaviour
     private bool autoMode = false;
     private bool autoPlay = false;
 
+    //Global Variable
+    GlobalVariable globalVariable;
+
     private void Awake()
     {
         // Checks if there is more than one dialogue manager in the scene
@@ -89,6 +92,7 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("More than one instance of Dialogue Manager found in the scene.");
         }
         instance = this;
+        
     }
 
     public static DialogueManager GetInstance()
@@ -101,6 +105,9 @@ public class DialogueManager : MonoBehaviour
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
+
+        //Assigns globalVariable
+        globalVariable = GameObject.FindWithTag("Global Variable").GetComponent<GlobalVariable>();
 
         // Gets all choices text
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -122,6 +129,9 @@ public class DialogueManager : MonoBehaviour
         string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
         currentStory.variablesState["localeID"] = localeID;
 
+        string final = globalVariable.bitch;
+        currentStory.variablesState["is_ready"] = final;
+
         dialogueVariables.StopListening(currentStory);
 
         //Set currentLine Variable to 1 for Ending Scene
@@ -130,6 +140,12 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+
+        //Checking if there's anything in that bitch variable:
+        //Debug.Log("HI THIS IS DIALOGUE MANAGER: YOUR BITCH IS: " + globalVariable.bitch);
+        //currentStory.variablesState["is_ready"] = globalVariable.bitch;
+        
+        //globalVariable.currentStory.variablesState["is_ready"] = globalVariable.bitch;
         // Return if no dialogue is playing
         if(!dialoguePlaying)
         {
