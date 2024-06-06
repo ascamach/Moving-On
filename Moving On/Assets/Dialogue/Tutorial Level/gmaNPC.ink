@@ -114,7 +114,7 @@ Hey there, A-Star! Long time no see! \*snickers\*
 #speaker: Addison
 Grandma?? 
 
-Dang, I really can see ghosts now, huh ...
+<i>Dang, I really can see ghosts now, huh ...</i>
 
 How have you been? I’ve missed you so much.
 
@@ -144,7 +144,7 @@ A-Star, can you believe it? In this form, I don’t have to worry about my arthr
 #speaker: Addison
 I’m really happy for you, Grandma! Hahaha ...
 
-I don’t know if I should feel happy or ...sad? It’s a peculiar situation.
+<i>I don’t know if I should feel happy or ...sad? It’s a peculiar situation.</i>
 
 ~ times_interacted = 3
 ~ gma_interactions = times_interacted

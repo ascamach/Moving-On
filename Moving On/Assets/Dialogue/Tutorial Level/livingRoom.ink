@@ -44,13 +44,13 @@ It’s okay, baby. I know it’s been difficult; I wish I could give you a hug r
 ~ livingInteraction = true
 
 { fridgeInteraction and livingInteraction:
-      #speaker: Addison
+   #speaker: Addison
     ...I don’t think I can stay here anymore. Let's go. 
 
     #speaker: Mom
     But you're not dressed for the cold! You should wear something warmer. 
 
-    I know you haven’t done your laundry these past few weeks; my room has a clean jacket you can wear.
+    I know you haven’t done your laundry these past few weeks; <color=\#aefff1>my room</color> has a clean jacket you can wear.
 
     #speaker: Addison
     Do I have to? I think I’ll be fine.

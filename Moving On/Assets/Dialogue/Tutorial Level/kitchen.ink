@@ -77,7 +77,7 @@ How about we just bring some snacks instead?
     #speaker: Mom
     But you're not dressed for the cold! You should wear something warmer. 
 
-    I know you haven’t done your laundry these past few weeks; my room has a clean jacket you can wear.
+    I know you haven’t done your laundry these past few weeks; <color=\#aefff1>my room</color> has a clean jacket you can wear.
 
     #speaker: Addison
     Do I have to? I think I’ll be fine.
