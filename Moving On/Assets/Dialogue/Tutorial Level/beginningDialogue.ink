@@ -22,20 +22,26 @@ VAR currentLocale = ""
 === main_en ===
 You’ve been holed up in your room for the past couple of weeks. Why don’t we get up and prepare to head out? #speaker: Mom 
 
-This feels so sudden; I’m not sure if I’m ready. #speaker: Addison
+{ is_ready == "true":
+    Sure thing, but give me a bit to get ready. #speaker: Addison
+    -> DONE
+}
 
-I know this must be a lot for you right now, but…I believe in you sweetie. You can do this! You’re a tough cookie! # speaker: Mom
+{ is_ready == "false":
+    This feels so sudden; I’m not sure if I’m ready. #speaker: Addison
 
-…and there you go again with your cringe phrases. #speaker: Addison #portrait: player_sad
+    I know this must be a lot for you right now, but ...I believe in you sweetie. You can do this! You’re a tough cookie! #speaker: Mom
 
-sighs Alright, I’m up. #speaker: Addison
+    ...and there you go again with your cringe phrases. #speaker: Addison
 
-But, am I actually ready for this?
+    /*sighs*/ Alright, I’m up. #speaker: Addison
 
-Can I bring myself to go on this journey just to go through that all over again?
+    <i>But, am I actually ready for this?</i> #speaker: Addison
 
+    <i>Can I bring myself to go on this journey just to go through that all over again?</i> #speaker: Addison
+    -> DONE
+}
 
--> DONE
 
 === main_fa ===
 #speaker: روح

@@ -47,7 +47,8 @@ public class DialogueManager : MonoBehaviour
 
     public bool dialogueFinished { get; private set; }
 
-    private DialogueVariables dialogueVariables;
+    public DialogueVariables dialogueVariables;
+    private ReadyForBedroom bed;
 
     public string dialogueName = "";
 
@@ -81,6 +82,10 @@ public class DialogueManager : MonoBehaviour
     private bool autoMode = false;
     private bool autoPlay = false;
 
+    //Global Variable
+    GlobalVariable globalVariable;
+    
+
     private void Awake()
     {
         // Checks if there is more than one dialogue manager in the scene
@@ -92,8 +97,6 @@ public class DialogueManager : MonoBehaviour
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
 
         instance = this;
-
-        // DontDestroyOnLoad(this.gameObject);
     }
 
     public static DialogueManager GetInstance()
@@ -106,6 +109,9 @@ public class DialogueManager : MonoBehaviour
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
+
+        //Assigns globalVariable
+        globalVariable = GameObject.FindWithTag("Global Variable").GetComponent<GlobalVariable>();
 
         // Gets all choices text
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -124,6 +130,12 @@ public class DialogueManager : MonoBehaviour
         string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
         currentStory.variablesState["localeID"] = localeID;
 
+        string final = globalVariable.bitch;
+        currentStory.variablesState["is_ready"] = final;
+
+        //bool final2 = bed.bedTime;
+        //currentStory.variablesState["parentBedroom"] = final2;
+
         dialogueVariables.StopListening(currentStory);
 
         //Set currentLine Variable to 1 for Ending Scene
@@ -132,6 +144,12 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+
+        //Checking if there's anything in that bitch variable:
+        //Debug.Log("HI THIS IS DIALOGUE MANAGER: YOUR BITCH IS: " + globalVariable.bitch);
+        //currentStory.variablesState["is_ready"] = globalVariable.bitch;
+        
+        //globalVariable.currentStory.variablesState["is_ready"] = globalVariable.bitch;
         // Return if no dialogue is playing
         if(!dialoguePlaying)
         {
@@ -143,7 +161,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&&!autoMode)
         {
             submitSkip = true;
         }
@@ -174,18 +192,18 @@ public class DialogueManager : MonoBehaviour
                     EndingManager.Instance.plantFlower = true;
                 }
 
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    autoPlay = false;
-                    StopCoroutine(nextLineAuto());
-                    NextLine();
-                }
+                //if (Input.GetKeyDown(KeyCode.Space))
+                //{
+                //    autoPlay = false;
+                //    StopCoroutine(nextLineAuto());
+                //    NextLine();
+                //}
             }
         }
 
         if (canContinueLines
             && currentStory.currentChoices.Count == 0 
-            && Input.GetKeyDown(KeyCode.Space))
+            && Input.GetKeyDown(KeyCode.Space) && !autoMode)
         {
             NextLine();
         } 

@@ -81,7 +81,7 @@ VAR currentLocale = ""
 
 === log1 ===
 #speaker: Addison
-Wait a minute… 
+Wait a minute ... 
 
 Sparky?? //animated text, moderate wobble
 
