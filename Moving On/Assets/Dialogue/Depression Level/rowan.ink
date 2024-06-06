@@ -135,75 +135,90 @@ VAR rowanConditional = ""
     -> DONE
 }
 
-{ 
-    - larry_interactions == 1 && raineConditional >= 1:
-    -> log2
-    -> DONE
-    - rowanConditional == 1:
-    -> log4
-    -> DONE
+{ rowanConditional >= 1:
+    ->log2
+    ->DONE
 }
 
-{ 
-    - rowanConditional == 2 && larryConditional >= 4:
-    -> log3
-    -> DONE
-    - rowanConditional == 2:
-    -> log4
-    -> DONE
-}
+//{ 
+//    - larry_interactions == 1 && raineConditional >= 1:
+//    -> log2
+  //  -> DONE
+    //- rowanConditional == 1:
+    //-> log4
+    //-> DONE
+//}
 
-{ rowanConditional >= 3:
-    -> log4
-    -> DONE
-}
+//{ 
+  //  - rowanConditional == 2 && larryConditional >= 4:
+//    -> log3
+  //  -> DONE
+//    - rowanConditional == 2:
+  //  -> log4
+    //-> DONE
+//}
 
--> DONE
-
-
+//{ rowanConditional >= 3:
+  //  -> log4
+    //-> DONE
+//}
 
 -> DONE
 
 === log1 ===
-Oh, it’s Addison! #speaker: Rowan
+#speaker: Rowan
+Look who it is. Hey, kiddo!
 
-How have you been? Long time no see! Have you been hanging in there? #speaker: Rowan
+I’m really sorry to hear about what happened. Have you been hanging in there?
 
-Eh, I dunno. Everything is alright. #speaker: Addison
+#speaker: Addison
+Well, umm ...
 
-You know, we all miss your mom.
+It’s been hard ...I don’t really know how to explain.
 
-She would come in every morning for a cup of coffee and a sugar donut. Her presence was very well-known. #speaker: Rowan
+#speaker: Rowan 
+Don’t worry, I understand. 
 
-Yeah, I know… #speaker: Addison
+A lot of customers stop by here, so I hear a lot of different stories.
 
-I’m sorry… I realized I made you a bit sad. 
+Your mom was no exception — she would talk a lot about you. And I mean <i>a lot</i>.
 
-If you need anything from us, feel free to drop by. Free donuts on the house. #speaker: Rowan
+#speaker: Addison
+Really? 
+
+#speaker: Rowan
+Of course! You know, your mom really cared about you. 
+
+If she was still around, she would be consulting me about how you would be moving far away for college. 
+
+#speaker: Addison
+Yeah ...I guess so.
+
+<i>If only Rowan knew that my mom was right behind me.</i>
+
+Oh Rowan, actually I was wondering. Have you seen anything out of the ordinary recently?
+
+#speaker: Rowan
+I can’t say that I have ...but there have been some strange things happening on <color=\#aefff1>the roof</color>. 
+
+Why do you ask?
+
+#speaker: Addison
+Just wondering. Thank you.
+
+<i>I see some platforms on the sides of the buildings. I can try getting to the rooftop with them.</i>
+
 
 ~ times_interacted = 1
-~ dog_interactions = times_interacted
+~ rowan_interactions = times_interacted
 -> DONE
 
 === log2 ===
-You should be careful! I saw you climbing to the roof over there. Your mom would agree with what I have to say. #speaker: Rowan
-
-I saw that there’s a locked gate up there. Is there a key to unlock it? #speaker: Addison
-
-Why do you need to unlock that gate? #speaker: Rowan
-
-Oh, I saw something behind the gate and I wanted to see it. #speaker: Addison
-
-Hm… I can’t remember who last opened the gate or who even has the key. #speaker: Rowan 
-
-Is there anything I can do to break the gate? #speaker: Addison
-
-Addison! Good grief, don’t you become a vandalizer now. Let me— OH I remember! Larry last had the key because he needed to store his fishing gear. #speaker: Rowan
-
-Why don’t you ask him? #speaker: Rowan
+#speaker: Rowan
+Feel free to stop by the café whenever you want. I’ll treat you to some homemade donuts. 
 
 ~ times_interacted = 2
-~ dog_interactions = times_interacted
+~ rowan_interactions = times_interacted
 -> DONE
 
 === log3 ===

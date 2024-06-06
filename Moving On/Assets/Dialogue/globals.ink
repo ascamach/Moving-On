@@ -11,6 +11,7 @@ VAR livingInteraction = false
 
 // Depression Level
 VAR raine_interactions = ""
+VAR abby_interactions = ""
 VAR larry_interactions = ""
 VAR rowan_interactions = ""
 VAR key_obtained = ""
