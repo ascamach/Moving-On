@@ -9,12 +9,16 @@ public class fallingFromRoof : MonoBehaviour
     [SerializeField] private int hole;
     [Header("Put Canvas Animator Here for Fade In: ")]
     [SerializeField] private Animator animator;
+    [Header("Put Player's Rigidbody to freeze it when entering: ")]
+    [SerializeField] private Rigidbody2D rb;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
             depressionLevelManager.Instance.roofFirstTrigger = true;
             Debug.Log("Entering the Left Side Trigger");
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
             animator.SetTrigger("playFadeIn");
             depressionLevelManager.Instance.playerSpawn = hole;
             StartCoroutine(sceneTransition());

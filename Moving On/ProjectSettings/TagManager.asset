@@ -48,35 +48,44 @@ TagManager:
   - name: Background
     uniqueID: 505372779
     locked: 0
-  - name: Platforms
-    uniqueID: 1187407849
-    locked: 0
   - name: Borders
     uniqueID: 2000251123
     locked: 0
   - name: Background Image
     uniqueID: 2884289565
     locked: 0
+  - name: Buildings
+    uniqueID: 1490304677
+    locked: 0
   - name: UI
     uniqueID: 2536743113
-    locked: 0
-  - name: NPC
-    uniqueID: 517290589
     locked: 0
   - name: Exit or Entrance
     uniqueID: 215601959
     locked: 0
-  - name: Buildings
-    uniqueID: 1490304677
+  - name: Hidden Items
+    uniqueID: 3856141119
+    locked: 0
+  - name: Objects Hiding Items
+    uniqueID: 824397695
+    locked: 0
+  - name: NPC
+    uniqueID: 517290589
     locked: 0
   - name: Flowers
     uniqueID: 3092025625
+    locked: 0
+  - name: Platforms
+    uniqueID: 1187407849
     locked: 0
   - name: Player
     uniqueID: 3731135449
     locked: 0
   - name: Ground
     uniqueID: 674223247
+    locked: 0
+  - name: Platforms
+    uniqueID: 1442358973
     locked: 0
   - name: Interactables
     uniqueID: 2873929639
