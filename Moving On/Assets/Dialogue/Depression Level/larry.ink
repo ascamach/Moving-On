@@ -24,18 +24,19 @@ VAR currentLocale = ""
 - larry_interactions == "":
     -> log1
     -> DONE
-- larry_interactions == 1:
+    //Default Larry
+- larry_interactions >= 1:
     -> log2
     -> DONE
-- larry_interactions == 2:
-    -> log3
-    -> DONE
-- larry_interactions == 3:
-    -> log4
-    -> DONE
-- larry_interactions >= 4:
-    -> log5
-    -> DONE
+//- larry_interactions == 2:
+//    -> log3
+//    -> DONE
+//- larry_interactions == 3:
+//    -> log4
+//    -> DONE
+//- larry_interactions >= 4:
+//    -> log5
+//    -> DONE
 }
 -> DONE
 
@@ -159,31 +160,36 @@ VAR currentLocale = ""
 
 
 === log1 ===
-Ahoy there, Addison! My my, when was th’ last time I saw ye? Yer looking quite older. Are ye in college? #speaker: Larry
+#speaker: Larry
+Hey lad! My my, when was the last time I saw you? You’re looking quite older. Are you in college now?
 
-No. I’m going to graduate high school soon, though. #speaker: Addison
+#speaker: Addison
+Not yet. I’ll be graduating from high school, though.
 
-Shiver me timbers! Such a shame yer mom couldn’t’ve seen ye graduate. It’s such a major accomplishment. #speaker: Larry
+#speaker: Larry
+Time really flies, doesn’t it? 
 
-Aye, I remember when my own son graduated from high school. I wept tears o’ joy like there’s no tomorrow! #speaker: Larry
+I’m sure your mom is very proud of you!
 
-Anyway, do come by soon! ‘S always a treat when ye visit me by th’ docks. #speaker: Larry
+#speaker: Addison
+...
+
+#speaker: Larry
+Oh my. I’m sorry — I just remembered. This old head can forget things at the worst times. 
+
+#speaker: Addison
+...It’s okay. 
+
+#speaker: Larry
+Ay, if you wanna talk about anything, you know where to find me!
 
 ~ times_interacted = 1
 ~ larry_interactions = times_interacted
 -> DONE
 
 === log2 ===
-Aye, ye remember the time ye tried fishing when you were just a youngin’? Ye thought ye had to go to the fish, not the fish coming to ye! Argharghargh! #speaker: Larry
-
-Ye didn’t let go when th’ pole started wrangling, and it went “plop!” in the ocean. #speaker: Larry
-
-Yer mom and th’ neighbors sure were angry at me fer not helping ye. #speaker: Larry
-
-I was only five!! #speaker: Addison
-
-Ye start learning young, heh. Good times. #speaker: Larry
-
+#speaker: Larry
+Why aren’t there any fish today? I’ll starve if I can’t catch at least one!
 
 ~ times_interacted = 2
 ~ larry_interactions = times_interacted
