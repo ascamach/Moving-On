@@ -16,7 +16,7 @@ VAR currentLocale = ""
 #speaker: Addison
 <i>I hear a child crying from the nearby house.</i>
 
-#speaker: Woman's Voice
+#speaker: Woman
 It’s going to be okay, honey! You just scraped your knee a little.
 
 Stay here while I get a bandage for you.
