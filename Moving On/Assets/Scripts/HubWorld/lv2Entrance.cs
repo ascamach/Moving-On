@@ -30,6 +30,7 @@ public class lv2Entrance : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && inEntrance)
         {
             Debug.Log("Entering Lv.2...");
+            SceneManager.LoadSceneAsync("EndingScene");
         }
     }
 

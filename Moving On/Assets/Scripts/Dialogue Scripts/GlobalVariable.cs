@@ -20,9 +20,14 @@ public class GlobalVariable : MonoBehaviour
         if (instance != null)
         {
             Debug.LogWarning("More than one instance of Dialogue Manager found in the scene.");
+            Destroy(gameObject);
         }
-        instance = this;
-        DontDestroyOnLoad(this);
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        
 
         currentStory = new Ink.Runtime.Story(globalInk.text);
     }
