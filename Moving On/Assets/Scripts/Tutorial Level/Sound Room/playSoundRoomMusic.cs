@@ -16,6 +16,9 @@ public class playSoundRoomMusic : MonoBehaviour
     [SerializeField] private AudioSource audioSource2;
     [SerializeField] private AudioSource audioSource3;
 
+    //Bool to check progress
+    public bool soundRoomfinished = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +33,7 @@ public class playSoundRoomMusic : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F) && !gramophoneFlag)
             {
+                soundRoomfinished = true;
                 // disable interaction until music successfully stops/starts
                 gramophoneFlag = true;
 

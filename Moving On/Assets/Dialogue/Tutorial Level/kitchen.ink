@@ -1,6 +1,7 @@
 INCLUDE ../globals.ink
 
 VAR currentLocale = ""
+VAR bedReady = false
 
 ~ currentLocale = localeID
 
@@ -35,22 +36,23 @@ Perfect. Why don't you have that? #speaker: Mom
 
 ........................ #speaker: Addison
 
-Everyday after school, Mom would make me a grilled cheese sandwich.
+<i>Everyday after school, Mom would make me a grilled cheese sandwich.</i>
 
-Whenever I cried…
+<i>Whenever I cried ...</i>
 
-…whenever I was mad…
+<i>...whenever I was mad ...</i>
 
-…whenever I was happy…
+<i>...whenever I was happy ...</i>
 
-…there was always a grilled cheese sandwich waiting for me.
+<i>...there was always a grilled cheese sandwich waiting for me.</i>
 
-I remember taking the first bite, and the flavors would melt on my tongue.
+<i>I remember taking the first bite, and the flavors would melt on my tongue.</i>
 
-I'll never have mom's grilled cheese sandwich again, will I?
-……………….
+<i>I'll never have mom's grilled cheese sandwich again, will I?</i>
 
-…ison… #speaker: Mom
+......
+
+...ison ... #speaker: Mom
 
 Addison! 
 
@@ -58,31 +60,36 @@ Are you okay?
 
 You've just been staring at the sandwich. 
 
-I'm okay…It's just that I remembered something. #speaker: Addison
+I'm okay ...It's just that I remembered something. #speaker: Addison
 
-…I think I lost my appetite. 
+...I think I lost my appetite. 
 
 It’s okay. #speaker: Mom
 
 How about we just bring some snacks instead?
 
-#speaker: Addison
-…I don’t think I can stay here anymore. Let's go. 
-
-#speaker: Mom
-But you're not dressed for the cold! You should wear something warmer. 
-
-I know you haven’t done your laundry these past few weeks; my room has a clean jacket you can wear.
-
-#speaker: Addison
-Do I have to? I think I’ll be fine.
-
-#speaker: Mom
-We are not stepping out until you put on a proper jacket. Please, just grab it from <color=\#aefff1>my room</color>. 
-
-#speaker: Addison
-Alright, fine…I'll go.
 ~ fridgeInteraction = true
+
+{ fridgeInteraction and livingInteraction:
+    #speaker: Addison
+    ...I don’t think I can stay here anymore. Let's go. 
+
+    #speaker: Mom
+    But you're not dressed for the cold! You should wear something warmer. 
+
+    I know you haven’t done your laundry these past few weeks; my room has a clean jacket you can wear.
+
+    #speaker: Addison
+    Do I have to? I think I’ll be fine.
+
+    #speaker: Mom
+    We are not stepping out until you put on a proper jacket. Please, just grab it from <color=\#aefff1>my room</color>. 
+
+    #speaker: Addison
+    Alright, fine ...I'll go.
+    -> DONE
+}
+
 -> DONE
 
 === log2 ===

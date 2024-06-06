@@ -21,37 +21,37 @@ VAR currentLocale = ""
 === main_en ===
 
 #speaker: Addison
-It's been so long since I stepped in here.
+<i>It's been so long since I stepped in here.</i>
 
-It almost feels like normal.
+<i>It almost feels like normal.</i>
 
-It almost feels…
+<i>It almost feels ...</i>
 
-Peaceful...
+<i>Peaceful ...</i>
 
 ........ 
 
-It was a similar, gloomy day, back when I was younger. // middle school era
+<i>It was a similar, gloomy day, back when I was younger.</i> // middle school era
 
-I was walking back from school, where I had gotten injured from something that happened.
+<i>I was walking back from school, where I had gotten injured from something that happened. </i>
 
-An upperclassman hurt me… I didn’t want to argue, but I needed to stand up for myself.
+<i>An upperclassman hurt me ... I didn’t want to argue, but I needed to stand up for myself.</i>
 
-Mom was waiting at the door for me, my nose red and sniffling from the cold. 
+<i>Mom was waiting at the door for me, my nose red and sniffling from the cold.</i> 
 
-Tears were still rolling down my face. 
+<i>Tears were still rolling down my face.</i> 
 
-Mom told me the school called her and for me not to worry. Everything was going to be okay. 
+<i>Mom told me the school called her and for me not to worry. Everything was going to be okay.</i> 
 
-She then gave me a warm hug, and wrapped this specific jacket around me.
+<i>She then gave me a warm hug, and wrapped this specific jacket around me.</i>
 
-I’ll never forget her warmth and comfort.
+<i>I’ll never forget her warmth and comfort.</i>
 
-…………….. 
+......
 
 
 #speaker: Mom
-Sweetie… I know it’s been really rough—you’ve been going through a lot all by yourself, but… listen to me.
+Sweetie ... I know it’s been really rough — you’ve been going through a lot all by yourself, but ... listen to me.
 
 I’m here. You’re going to be alright. 
 
@@ -77,13 +77,22 @@ Let’s take things one step at a time. Focus on the now. Don’t worry about th
 Why don’t you put on my jacket? That’s a good start. Just think of it as you’re carrying a part of me everywhere. 
 
 #speaker: Addison
-…
+...
 
 #speaker: Mom
 Addison, shall we head out now?
 
 #speaker: Addison
 Okay Mom, I’m ready. Let's stick together, okay?
+
+{is_ready == "true":
+#speaker: Addison
+<i>I realized that ...</i>
+
+<i>The moment I step out of the house, what’s going to happen?</i>
+<i>Am I actually ready to face everything?</i>
+-> DONE
+}
 
 -> DONE
 
