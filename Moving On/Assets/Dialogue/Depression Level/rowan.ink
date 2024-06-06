@@ -9,6 +9,8 @@ VAR larryConditional = ""
 VAR raineConditional = ""
 VAR rowanConditional = ""
 
+VAR cooked = false
+
 ~ larryConditional = larry_interactions
 ~ raineConditional = raine_interactions
 ~ rowanConditional = rowan_interactions
@@ -135,6 +137,11 @@ VAR rowanConditional = ""
     -> DONE
 }
 
+{ rowanConditional >= 1 and roof == "true":
+    ->log3
+    ->DONE
+}  
+
 { rowanConditional >= 1:
     ->log2
     ->DONE
@@ -222,14 +229,28 @@ Feel free to stop by the café whenever you want. I’ll treat you to some homem
 -> DONE
 
 === log3 ===
-Did you get the key? #speaker: Rowan
+#speaker: Addison
+Hey Rowan, do you know anything about that closet on the rooftop?
 
-Yes I did, thank you Rowan! #speaker: Addison
+#speaker: Rowan
+Yeah, that’s the community storage room.
 
-I’m glad! Now off you go. Remember Addison, the village is always there for you. #speaker: Rowan
+Why? Do you need something from there?
 
-~ times_interacted = 3
-~ dog_interactions = times_interacted
+#speaker: Addison
+I saw something shiny, and I wanted to check it out.
+
+#speaker: Rowan
+Oh, feel free to! Thing is, I don’t have the key to unlock it.
+
+I think Larry was the last person to use it. You should ask him.
+
+#speaker: Addison
+Cool. Thank you!
+
+~ cooked = true
+~ key = cooked
+
 -> DONE
 
 === log4 === 

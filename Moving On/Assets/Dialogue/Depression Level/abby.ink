@@ -2,7 +2,7 @@ INCLUDE ../globals.ink
 
 VAR times_interacted = 0
 VAR currentLocale = ""
-
+VAR roofReady = false
 ~ currentLocale = localeID
 
 
@@ -60,6 +60,10 @@ Pinky promise!
 
 ~ times_interacted = 1
 ~ abby_interactions = times_interacted
+
+~ roofReady = true
+~ roof = roofReady
+
 -> DONE
 === log2 ===
 
@@ -72,6 +76,5 @@ Sorry, I’m still on my special mission. I will soon!
 #speaker: Abby
 Don’t forget you pinky promised me!
 
-~ times_interacted = 2
-~ abby_interactions = times_interacted
+
 -> DONE
