@@ -25,9 +25,9 @@ VAR currentLocale = ""
 ........
 
 #speaker: Addison
-This was the song that Mom used to hum all the time.
+<i>This was the song that Mom used to hum all the time.</i>
 
-Those were such happy times…
+<i>Those were such happy times ...</i>
 
 ........
 #fadeout: musicflashback
@@ -36,7 +36,7 @@ Those were such happy times…
 Is everything alright?
 
 #speaker: Addison
-Sorry…I just remembered something.
+Sorry ...I just remembered something.
 
 #speaker: Mom
 It’s okay, baby. I know it’s been difficult; I wish I could give you a hug right now.
@@ -44,8 +44,8 @@ It’s okay, baby. I know it’s been difficult; I wish I could give you a hug r
 ~ livingInteraction = true
 
 { fridgeInteraction and livingInteraction:
-    #speaker: Addison
-    …I don’t think I can stay here anymore. Let's go. 
+      #speaker: Addison
+    ...I don’t think I can stay here anymore. Let's go. 
 
     #speaker: Mom
     But you're not dressed for the cold! You should wear something warmer. 
@@ -59,7 +59,7 @@ It’s okay, baby. I know it’s been difficult; I wish I could give you a hug r
     We are not stepping out until you put on a proper jacket. Please, just grab it from <color=\#aefff1>my room</color>. 
 
     #speaker: Addison
-    Alright, fine…I'll go.
+    Alright, fine ...I'll go.
     -> DONE
 }
 

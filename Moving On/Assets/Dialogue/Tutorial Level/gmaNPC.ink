@@ -114,7 +114,7 @@ Hey there, A-Star! Long time no see! \*snickers\*
 #speaker: Addison
 Grandma?? 
 
-Dang, I really can see ghosts now, huh…
+Dang, I really can see ghosts now, huh ...
 
 How have you been? I’ve missed you so much.
 
@@ -131,7 +131,7 @@ Oh, you know! Just relaxing, waiting for your grandpa.
 You need to take care of yourself, A-Star! Drink water, go for a walk.
 
 #speaker: Addison
-I will, Grandma, I will…
+I will, Grandma, I will ...
 
 ~ times_interacted = 2
 ~ gma_interactions = times_interacted
@@ -142,9 +142,9 @@ I will, Grandma, I will…
 A-Star, can you believe it? In this form, I don’t have to worry about my arthritis!
 
 #speaker: Addison
-I’m really happy for you, Grandma! Hahaha…
+I’m really happy for you, Grandma! Hahaha ...
 
-I don’t know if I should feel happy or…sad? It’s a peculiar situation.
+I don’t know if I should feel happy or ...sad? It’s a peculiar situation.
 
 ~ times_interacted = 3
 ~ gma_interactions = times_interacted
