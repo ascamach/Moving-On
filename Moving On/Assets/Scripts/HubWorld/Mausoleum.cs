@@ -7,17 +7,19 @@ public class Mausoleum : MonoBehaviour
 {
     // String from player input
     private string input;
-    public Image maosoleumBackground;
+    public GameObject flowerPot;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        if (PlayerPrefs.GetString("playerStory") != "")
+        {
+            flowerPot.SetActive(true);
+        }
     }
 
     public void ReadString(string story)
     {
         input = story;
-        Debug.Log(input);
+        PlayerPrefs.SetString("playerStory", input);
     }
 }
