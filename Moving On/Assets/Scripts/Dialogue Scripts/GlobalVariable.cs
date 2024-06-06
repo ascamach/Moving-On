@@ -11,7 +11,8 @@ public class GlobalVariable : MonoBehaviour
     private static GlobalVariable instance;
     public DialogueManager want;
     public string bitch = "";
-
+    //public string bitch2 = "";
+   
     public bool is_ready = false;
 
     private void Awake()

@@ -48,6 +48,7 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueFinished { get; private set; }
 
     public DialogueVariables dialogueVariables;
+    private ReadyForBedroom bed;
 
     public string dialogueName = "";
 
@@ -83,6 +84,7 @@ public class DialogueManager : MonoBehaviour
 
     //Global Variable
     GlobalVariable globalVariable;
+    
 
     private void Awake()
     {
@@ -131,6 +133,9 @@ public class DialogueManager : MonoBehaviour
 
         string final = globalVariable.bitch;
         currentStory.variablesState["is_ready"] = final;
+
+        //bool final2 = bed.bedTime;
+        //currentStory.variablesState["parentBedroom"] = final2;
 
         dialogueVariables.StopListening(currentStory);
 

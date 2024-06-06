@@ -14,11 +14,15 @@ public class Interactable : MonoBehaviour
 
     private bool playerInRange;
 
+    public bool kitchenRoomFinished = false;
+
     private void Awake()
     {
         playerInRange = false;
         visualCue.SetActive(false);
     }
+
+  
 
     private void Update()
     {
@@ -27,7 +31,7 @@ public class Interactable : MonoBehaviour
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
-                
+                kitchenRoomFinished = true;
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
         } else

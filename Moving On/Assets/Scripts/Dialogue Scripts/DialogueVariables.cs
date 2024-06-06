@@ -10,6 +10,7 @@ public class DialogueVariables
     // Create a dictionary to save key/value pairs
     public Dictionary<string, Ink.Runtime.Object> variables { get; private set; }
 
+    //Temporary solution - Tristyn please clean this up
     public string lookingForName = "is_ready";
     public object wantValue = "";
     public string result = "";
@@ -58,6 +59,8 @@ public class DialogueVariables
             wantValue = value;
             result = wantValue.ToString();
         }
+
+    
         //Debug.Log("YOO LOOK AT THIS: " + wantValue.ToString());
     }
  
