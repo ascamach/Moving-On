@@ -3485,7 +3485,7 @@ Transform:
   m_GameObject: {fileID: 1332263118}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.683851, y: -7.214502, z: -0.019047737}
+  m_LocalPosition: {x: 10.683863, y: -8.005673, z: -0.019047737}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3568,7 +3568,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.97
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4243,6 +4243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2e43a7f3bb4499f95a16df5b15d64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!1 &1460843304
 GameObject:
   m_ObjectHideFlags: 0
@@ -6011,7 +6012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 1077960081}
+  m_BoundingShape2D: {fileID: 0}
   m_Damping: 0.5
   m_MaxWindowSize: -1
 --- !u!114 &1535519535
@@ -6036,7 +6037,7 @@ MonoBehaviour:
   m_Follow: {fileID: 921937458}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 5
+    OrthographicSize: 4.97
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -11773,7 +11774,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 8, y: -5, z: 0}
@@ -11916,7 +11917,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -6, y: 3, z: 0}
@@ -11982,7 +11983,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -6, y: 6, z: 0}
@@ -12082,6 +12083,14 @@ PrefabInstance:
     - target: {fileID: 1217047551252465417, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
       propertyPath: tutorialCompleted
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217047551252465417, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
+      propertyPath: levelsUnlocked.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217047551252465417, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
+      propertyPath: levelsCompleted.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1948970956814688867, guid: 741b2156273964527a4c87c5c7d1cc14, type: 3}
       propertyPath: m_Name

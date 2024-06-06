@@ -162,7 +162,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&&!autoMode)
         {
             submitSkip = true;
         }
@@ -193,18 +193,18 @@ public class DialogueManager : MonoBehaviour
                     EndingManager.Instance.plantFlower = true;
                 }
 
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    autoPlay = false;
-                    StopCoroutine(nextLineAuto());
-                    NextLine();
-                }
+                //if (Input.GetKeyDown(KeyCode.Space))
+                //{
+                //    autoPlay = false;
+                //    StopCoroutine(nextLineAuto());
+                //    NextLine();
+                //}
             }
         }
 
         if (canContinueLines
             && currentStory.currentChoices.Count == 0 
-            && Input.GetKeyDown(KeyCode.Space))
+            && Input.GetKeyDown(KeyCode.Space) && !autoMode)
         {
             NextLine();
         } 
