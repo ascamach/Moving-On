@@ -4390,6 +4390,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1939049390}
   nameplateText: {fileID: 1487795925}
   continueIcon: {fileID: 454008211}
+  flashbackImage: {fileID: 0}
   playerAnimator: {fileID: 0}
   dialogueStartSound: {fileID: 1089789810}
   dialogueNextSound: {fileID: 334718378}
@@ -4398,7 +4399,9 @@ MonoBehaviour:
   - {fileID: 869122091}
   - {fileID: 1233629421}
   - {fileID: 594934464}
+  dialogueName: 
   pauseMenu: {fileID: 0}
+  atEndingScene: 0
 --- !u!1 &1568600313
 GameObject:
   m_ObjectHideFlags: 0

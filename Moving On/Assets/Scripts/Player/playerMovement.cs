@@ -13,9 +13,19 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool dialogueInScene;
 
+    //public PhysicsMaterial2D[] material;
+
     //Method 2 of Grounded
     public Vector2 boxSize;
     public float castDistance;
+
+    //Movement State
+    private bool isMoving;
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {
@@ -28,10 +38,14 @@ public class playerMovement : MonoBehaviour
                 return;
             }
         }
+
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
+            rb.isKinematic = false;
             rb.AddForce(Vector2.up * jumpPower * 50f);
+            isMoving = true;
         }
+
     }
 
     private void FixedUpdate()
@@ -49,28 +63,25 @@ public class playerMovement : MonoBehaviour
         // Moving and Jumping
         if (Input.GetKey(KeyCode.A))
         {
+            //rb.isKinematic = false;
+            isMoving = true;
             horizontal = -1f;
+            
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            horizontal = 1f;
+            //rb.isKinematic = false;
+            isMoving = true;
+            horizontal = 1f;  
         }
         else
         {
             horizontal = 0f;
         }
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
-    /*
-    // simpler version of isGrounded()
-    // use this if the complicated version of isGrounded() doesn't work
-    private bool isGrounded()
-    {
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer);
-        return (hit);
-    }
-    */
+
 
     // isGrounded() that involves one-way platforms
     private bool isGrounded()
@@ -101,6 +112,7 @@ public class playerMovement : MonoBehaviour
 
         if (groundCheck)
         {
+
             return true;
         }
         else if (oneWayPlatformCheck)
