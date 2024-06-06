@@ -57,17 +57,17 @@ TagManager:
   - name: Background Image
     uniqueID: 2884289565
     locked: 0
+  - name: Buildings
+    uniqueID: 1490304677
+    locked: 0
   - name: UI
     uniqueID: 2536743113
-    locked: 0
-  - name: NPC
-    uniqueID: 517290589
     locked: 0
   - name: Exit or Entrance
     uniqueID: 215601959
     locked: 0
-  - name: Buildings
-    uniqueID: 1490304677
+  - name: NPC
+    uniqueID: 517290589
     locked: 0
   - name: Flowers
     uniqueID: 3092025625

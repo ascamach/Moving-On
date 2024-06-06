@@ -13,9 +13,19 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool dialogueInScene;
 
+    public PhysicsMaterial2D[] material;
+
     //Method 2 of Grounded
     public Vector2 boxSize;
     public float castDistance;
+
+    //Movement State
+    private bool isMoving;
+
+    private void Start()
+    {
+        rb.sharedMaterial = material[0];
+    }
 
     private void Update()
     {
@@ -28,10 +38,32 @@ public class playerMovement : MonoBehaviour
                 return;
             }
         }
+
+        
+
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
+            rb.isKinematic = false;
             rb.AddForce(Vector2.up * jumpPower * 50f);
+            isMoving = true;
         }
+
+        if (isMoving)
+        {
+            //rb.isKinematic = false;
+            rb.sharedMaterial = material[0];
+            Debug.Log(rb.sharedMaterial);
+
+        }
+        else
+        {
+            //rb.isKinematic = true;
+            rb.velocity = new Vector2(0f, 0f);
+            rb.sharedMaterial = material[1];
+            Debug.Log(rb.sharedMaterial);
+            //rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        }
+
     }
 
     private void FixedUpdate()
@@ -46,31 +78,59 @@ public class playerMovement : MonoBehaviour
             }
         }
 
+        
+
         // Moving and Jumping
         if (Input.GetKey(KeyCode.A))
         {
+            //rb.isKinematic = false;
+            isMoving = true;
             horizontal = -1f;
+            
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            //rb.isKinematic = false;
+            isMoving = true;
             horizontal = 1f;
+            
         }
         else
         {
             horizontal = 0f;
+            
         }
+
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
+        if (rb.velocity.x == 0f)
+        {
+            if (isGrounded())
+            {
+                //Debug.Log("No Movement at all");
+                if (Input.GetKey(KeyCode.W))
+                {
+                    isMoving = true;
+                    rb.isKinematic = false;
+
+                }
+                else
+                {
+                    isMoving = false;
+                    //rb.isKinematic = true;
+                    //rb.velocity = new Vector2(0f, 0f);
+                }
+            }
+            
+
+        }
+
+        
+        
+        //Debug.Log(rb.velocity);
+
     }
-    /*
-    // simpler version of isGrounded()
-    // use this if the complicated version of isGrounded() doesn't work
-    private bool isGrounded()
-    {
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer);
-        return (hit);
-    }
-    */
+
 
     // isGrounded() that involves one-way platforms
     private bool isGrounded()
@@ -101,6 +161,7 @@ public class playerMovement : MonoBehaviour
 
         if (groundCheck)
         {
+
             return true;
         }
         else if (oneWayPlatformCheck)
