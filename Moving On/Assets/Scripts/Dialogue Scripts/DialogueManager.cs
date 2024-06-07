@@ -150,6 +150,8 @@ public class DialogueManager : MonoBehaviour
 
         //Set currentLine Variable to 1 for Ending Scene
         currentLine = 1;
+
+        textMesh = dialogueText;
     }
 
     private void Update()

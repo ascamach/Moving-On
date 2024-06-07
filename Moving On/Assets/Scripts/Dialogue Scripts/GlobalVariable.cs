@@ -35,7 +35,7 @@ public class GlobalVariable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //want = DialogueVariables.FindWithTag("Dialogue Manager")
+        // want = DialogueVariables.FindWithTag("Dialogue Manager")
         //result = "";
     }
 
