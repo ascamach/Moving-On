@@ -93,6 +93,9 @@ public class DialogueManager : MonoBehaviour
     // Variables to change effects of animated text
     public string textEffect = "default";
 
+    // Default value for font size
+    private int defaultFontSize = 32;
+
     private void Awake()
     {
         // Checks if there is more than one dialogue manager in the scene
@@ -112,7 +115,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void Start()
-    {
+    { 
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
@@ -239,6 +242,10 @@ public class DialogueManager : MonoBehaviour
                 case "wobble":
                     Wobble(Time.time + i);
                     offset = Wobble(Time.time + i);
+                    break;
+                case "shake":
+                    Shake(Time.time + i);
+                    offset = Shake(Time.time + i);
                     break;
             }
 
@@ -602,5 +609,10 @@ public class DialogueManager : MonoBehaviour
     Vector2 Wobble(float time)
     {
         return new Vector2(Mathf.Sin(time * 3.3f), Mathf.Cos(time * 1.8f));
+    }
+
+    Vector2 Shake(float time)
+    {
+        return new Vector2(Mathf.Sin(time * 50f), Mathf.Cos(time * 50f));
     }
 }
