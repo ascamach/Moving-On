@@ -179,7 +179,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1410677731
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8bcfc1a733da842f0b31cbf523d34094, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1128,7 +1128,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -563831847
-  m_SortingLayer: 10
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c4218aec7493c42e6b8a1ddb510c9c88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1237,7 +1237,7 @@ GameObject:
   - component: {fileID: 883557546}
   m_Layer: 0
   m_Name: DialogueManager
-  m_TagString: Untagged
+  m_TagString: Dialogue Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1287,6 +1287,8 @@ MonoBehaviour:
   dialogueName: 
   pauseMenu: {fileID: 1470504268}
   atEndingScene: 0
+  textMesh: {fileID: 0}
+  textEffect: default
 --- !u!1 &965879989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,7 +1995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalInk: {fileID: 4900000, guid: e4c6163ed7975674daf45924049f85d1, type: 3}
-  want: {fileID: 883557546}
+  want: {fileID: 0}
   bitch: 
   is_ready: 0
 --- !u!4 &1351987408
@@ -3386,7 +3388,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -563831847
-  m_SortingLayer: 10
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b6037a8d714dd44acbe59297a18eb06f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
