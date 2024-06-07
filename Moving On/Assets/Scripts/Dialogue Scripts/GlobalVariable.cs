@@ -11,8 +11,7 @@ public class GlobalVariable : MonoBehaviour
     private static GlobalVariable instance;
     public DialogueManager want;
     public string bitch = "";
-    public string bitch2 = "";
-    public string bitch3 = "";
+    //public string bitch2 = "";
    
     public bool is_ready = false;
 
@@ -44,8 +43,6 @@ public class GlobalVariable : MonoBehaviour
     void FixedUpdate()
     {
         bitch = want.dialogueVariables.result;
-        bitch2 = want.dialogueVariables.result2;
-        bitch3 = want.dialogueVariables.result3;
         //if(bitch != ""){
             //Debug.Log(bitch);
         //}

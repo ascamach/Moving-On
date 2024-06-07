@@ -134,12 +134,6 @@ public class DialogueManager : MonoBehaviour
         string final = globalVariable.bitch;
         currentStory.variablesState["is_ready"] = final;
 
-        string final2 = globalVariable.bitch2;
-        currentStory.variablesState["roof"] = final2;
-
-        string final3 = globalVariable.bitch3;
-        currentStory.variablesState["key"] = final3;
-
         //bool final2 = bed.bedTime;
         //currentStory.variablesState["parentBedroom"] = final2;
 
