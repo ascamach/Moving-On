@@ -18,5 +18,3 @@ VAR key_obtained = ""
 VAR depressionFirstDialogue = ""
 VAR depressionRoofDialogue = ""
 VAR depressionMiddleDialogue = ""
-VAR roof = false
-VAR key = false

@@ -28,11 +28,6 @@ VAR currentLocale = ""
 - larry_interactions >= 1:
     -> log2
     -> DONE
-- larry_interactions >= 1 and key == "true":
-    ->log3
-    ->DONE
-    
-    
 //- larry_interactions == 2:
 //    -> log3
 //    -> DONE
@@ -43,7 +38,6 @@ VAR currentLocale = ""
 //    -> log5
 //    -> DONE
 }
-
 -> DONE
 
 === main_fa === 
@@ -202,39 +196,11 @@ Why aren’t there any fish today? I’ll starve if I can’t catch at least one
 -> DONE
 
 === log3 ===
-#speaker: Larry
-Hey there, lad! Back so soon?
+Ye know, I remember th’ day your mom moved into this village. #speaker: Larry
 
-#speaker: Addison
-Hey, Larry! I was wondering if you have the key to the community storage room on the rooftop.
+Th’ village took ‘er in like kin. Even though we ain’t related by blood, don’t ferget— we’re always here fer ye. #speaker: Larry
 
-#speaker: Larry
-Oh! I do! You need it?
-
-#speaker: Addison
-Larry rummages through his pockets. Sounds of fish bait, hooks, and other gear can be heard. 
-
-Eventually...
-
-#speaker: Larry
-Here you go!
-
-#speaker: Addison
-Larry hands me a key.
-
-Thank you! I’ll return it as soon as I’m done.
-
-#speaker: Larry
-No worries, lad!
-
-Be careful up there. I get the heebie-jeebies whenever I visit the roof.
-
-I think there might be a ghost there...
-
-Sometimes, I leave a plate of cookies there - you know - just in case whatever’s there gets hungry.
-
-#speaker: Addison
-Alright, I’ll keep an eye out.
+Don’t ferget. #speaker: Larry
 
 ~ times_interacted = 3
 ~ larry_interactions = times_interacted
