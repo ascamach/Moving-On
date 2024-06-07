@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Options Menu_en
+  m_Name: How2PlayTable_ja
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en
-  m_SharedData: {fileID: 11400000, guid: 39469cc1ade725b4c9841fac0d29912f, type: 2}
+    m_Code: ja
+  m_SharedData: {fileID: 11400000, guid: c3e6e780467dad340a7b2c576934e266, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 20697153536
-    m_Localized: Close
+  - m_Id: 116288032768
+    m_Localized: "\u30B3\u30F3\u30C8\u30ED\u30FC\u30EB\u30B9"
     m_Metadata:
       m_Items: []
-  - m_Id: 4204792217600
-    m_Localized: Volume
+  - m_Id: 9290413674496
+    m_Localized: "A\u3068D\u306E\u30AD\u30FC\u306F\u52D5\u304F\nW\u306E\u30AD\u30FC\u306F\u30B8\u30E3\u30F3\u30D7\n\u30B9\u30DA\u30FC\u30B9\u306E\u30AD\u30FC\u306F\u5BFE\u8A71\u3092\u9032\u3081\u308B\nF\u306E\u30AD\u30FC\u306F\u30A4\u30F3\u30BF\u30A2\u30AF\u30C8\u3057\u307E\u3059"
     m_Metadata:
       m_Items: []
-  - m_Id: 5802377445376
-    m_Localized: Farsi
+  - m_Id: 11251879940096
+    m_Localized: 
     m_Metadata:
       m_Items: []
-  - m_Id: 20247396836347904
-    m_Localized: "\u65E5\u672C\u8A9E"
+  - m_Id: 28242485350400
+    m_Localized: "\u623B\u308B"
     m_Metadata:
       m_Items: []
   references:
