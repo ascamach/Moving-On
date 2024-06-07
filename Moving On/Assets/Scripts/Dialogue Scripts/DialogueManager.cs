@@ -83,7 +83,7 @@ public class DialogueManager : MonoBehaviour
     private bool autoPlay = false;
 
     //Global Variable
-    GlobalVariable globalVariable;
+    private GlobalVariable globalVariable;
     
 
     private void Awake()
