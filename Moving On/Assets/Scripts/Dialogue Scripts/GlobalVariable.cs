@@ -35,13 +35,16 @@ public class GlobalVariable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // want = DialogueVariables.FindWithTag("Dialogue Manager")
         //result = "";
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!want)
+        {
+            want = GameObject.FindWithTag("Dialogue Manager").GetComponent<DialogueManager>();
+        }
         bitch = want.dialogueVariables.result;
         //if(bitch != ""){
             //Debug.Log(bitch);
