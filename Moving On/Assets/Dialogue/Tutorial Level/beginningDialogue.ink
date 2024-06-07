@@ -42,6 +42,8 @@ You’ve been holed up in your room for the past couple of weeks. Why don’t we
     -> DONE
 }
 
+-> DONE
+
 
 === main_fa ===
 #speaker: روح
