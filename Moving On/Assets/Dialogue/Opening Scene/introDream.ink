@@ -21,7 +21,6 @@ VAR currentLocale = ""
 // ادیسون
 
 === main_en ===
-
 ... #speaker: Addison
 
 ... #speaker: Addison

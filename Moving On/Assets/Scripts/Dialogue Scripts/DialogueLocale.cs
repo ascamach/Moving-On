@@ -10,7 +10,7 @@ public class DialogueLocale : MonoBehaviour
 
     private Story globalsFile;
 
-    private Ink.Runtime.Object test;
+    private string test;
 
     public void ChangeLocaleID()
     {
