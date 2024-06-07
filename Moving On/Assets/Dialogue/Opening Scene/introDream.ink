@@ -22,6 +22,12 @@ VAR currentLocale = ""
 
 === main_en ===
 
+~ textEffect("wobble")
+TESTING UNITY FUNCTION HERE 
+
+~ textEffect("default")
+RESETING TEXT BACK TO DEFAULT HERE
+
 ... #speaker: Addison
 
 ... #speaker: Addison

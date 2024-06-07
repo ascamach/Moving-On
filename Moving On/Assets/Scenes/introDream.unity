@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &140460962
 Transform:
   m_ObjectHideFlags: 0
@@ -185,6 +185,8 @@ MonoBehaviour:
   dialogueName: 
   pauseMenu: {fileID: 720376347}
   atEndingScene: 0
+  textMesh: {fileID: 211525911}
+  textEffect: default
 --- !u!1 &161352041
 GameObject:
   m_ObjectHideFlags: 0

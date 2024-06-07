@@ -84,7 +84,14 @@ public class DialogueManager : MonoBehaviour
 
     //Global Variable
     private GlobalVariable globalVariable;
-    
+
+    // Variables for animated text
+    public TMP_Text textMesh;
+    Mesh mesh;
+    Vector3[] textVertices;
+
+    // Variables to change effects of animated text
+    public string textEffect = "default";
 
     private void Awake()
     {
@@ -206,7 +213,43 @@ public class DialogueManager : MonoBehaviour
             && Input.GetKeyDown(KeyCode.Space) && !autoMode)
         {
             NextLine();
-        } 
+        }
+
+        /* --------------------
+         * CODE FOR TEXT MESHING THINGS
+         * --------------------
+         */
+
+        textMesh.ForceMeshUpdate();
+        mesh = textMesh.mesh;
+        textVertices = mesh.vertices;
+
+        for (int i = 0; i < textMesh.textInfo.characterCount; i++)
+        {
+            Vector3 offset = new Vector3(0, 0, 0);
+            TMP_CharacterInfo c = textMesh.textInfo.characterInfo[i];
+
+            int index = c.vertexIndex;
+
+            switch(textEffect)
+            {
+                case "default":
+                    offset = new Vector3(0, 0, 0);
+                    break;
+                case "wobble":
+                    Wobble(Time.time + i);
+                    offset = Wobble(Time.time + i);
+                    break;
+            }
+
+            textVertices[index] += offset;
+            textVertices[index + 1] += offset;
+            textVertices[index + 2] += offset;
+            textVertices[index + 3] += offset;
+        }
+
+        mesh.vertices = textVertices;
+        textMesh.canvasRenderer.SetMesh(mesh);
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -253,6 +296,11 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(FadeImage(fadeAway, imageID));
         });
 
+        currentStory.BindExternalFunction("textEffect", (string effect) =>
+        {
+            textEffect = effect;
+        });
+
         // ------------------------------
 
         ContinueStory();
@@ -280,6 +328,9 @@ public class DialogueManager : MonoBehaviour
 
         currentStory.UnbindExternalFunction("testFunction");
         currentStory.UnbindExternalFunction("fadeImage");
+        currentStory.UnbindExternalFunction("textEffect");
+
+        // -----------------------------
     }
 
     private void ContinueStory()
@@ -545,5 +596,11 @@ public class DialogueManager : MonoBehaviour
         {
             autoPlay = false;
         }
+    }
+
+    // Functions for animated text
+    Vector2 Wobble(float time)
+    {
+        return new Vector2(Mathf.Sin(time * 3.3f), Mathf.Cos(time * 1.8f));
     }
 }
