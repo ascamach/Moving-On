@@ -29,6 +29,9 @@ public class Mausoleum : MonoBehaviour
             Debug.LogWarning("More than one Mausoleum instance found.");
         }
 
+        InputUI.SetActive(false);
+        mausoleumStory.SetActive(false);
+
         Debug.Log("Player Pref current value: " + PlayerPrefs.GetString("playerStory"));
         input = PlayerPrefs.GetString("playerStory");
         if (PlayerPrefs.GetString("playerStory") != "")
@@ -53,12 +56,21 @@ public class Mausoleum : MonoBehaviour
                 InputUI.SetActive(true);
             } else if (Input.GetKey(KeyCode.F) && input != "")
             {
+                storyText.text = input;
                 mausoleumStory.SetActive(true);
             }
         } else
         {
             mausoleumStory.SetActive(false);
             InputUI.SetActive(false);
+        }
+
+        if (InputUI.activeSelf) 
+        {
+            inputActive = true;
+        } else if (!InputUI.activeSelf) 
+        {
+            inputActive = false;
         }
     }
 
@@ -71,7 +83,6 @@ public class Mausoleum : MonoBehaviour
             flowerPot.SetActive(true);
         }
         Debug.Log("Captured player story: " + input);
-        Time.timeScale = 1f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -86,6 +97,8 @@ public class Mausoleum : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            mausoleumStory.SetActive(false);
+            InputUI.SetActive(false);
             playerInRange = false;
         }
     }
