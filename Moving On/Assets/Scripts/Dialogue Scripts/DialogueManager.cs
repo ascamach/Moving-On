@@ -120,7 +120,8 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY WTFFFF");
         Debug.Log("---------------------------------------------");
 
-        Debug.Log("BRO");
+        Debug.Log("ADDISON");
+
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
