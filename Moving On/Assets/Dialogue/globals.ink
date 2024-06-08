@@ -18,3 +18,14 @@ VAR key_obtained = ""
 VAR depressionFirstDialogue = ""
 VAR depressionRoofDialogue = ""
 VAR depressionMiddleDialogue = ""
+
+// Functions from Unity
+EXTERNAL testFunction()
+EXTERNAL fadeImage(fadeAway, imageName)
+
+// Function to change text effect
+// List of available effects:
+// "default" (no effect)
+// "wobble"
+// "shake"
+EXTERNAL textEffect(effect)

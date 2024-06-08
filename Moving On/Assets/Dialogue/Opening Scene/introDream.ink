@@ -19,9 +19,13 @@ VAR currentLocale = ""
 
 // Addison:
 // ادیسون
+// アディソン
+
+// Mom: 
+// 
+// ママ
 
 === main_en ===
-
 ... #speaker: Addison
 
 ... #speaker: Addison
@@ -128,51 +132,45 @@ I should get a glass of water ... #speaker: Addison
 
 === main_ja ===
 
-...
+。。。
 
-...
+。。。
 
-I'm having a dream again.
+また、あの夢を見ている。
 
-A dream about the pain and regrets I felt during that moment.
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
 
-...
+。。。
 
-I didn’t realize how fast things would change.
+こんなに早く状況が変わるとは思わなかった。
 
-Even though it’s been three weeks, I’m still struggling to process everything.
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
 
-...
+。。。
 
-Please don’t leave…
+行かないで。。。
 
-I wish I hadn’t said the things I said to you.
+君にあんな事を言わなければ。。。
 
-If only I had known that night was the last time I would ever talk to you…
+あの夜が、君と話す最後の時間だと知っていたら。。。
 
-…to see and to hug you.
+。。。君を見る、君をハグする。
 
-I’m sorry Mom.
+ごめん、母さん。
 
-I wish I could apologize to you.
+母さんに謝りたい。。。
 
-Mom, don’t leave this world yet.
+母さん、この世を去らないで。。。
 
-I don’t know what I’ll do without you.
+ママがいないなら、何をするのか分からない。。。
 
-...
+冷や汗をかいて、目が覚めた。
 
-...
+めまいがして、ベッドに座ろうとする。
 
-...
+「水、飲みたい。。。」#speaker: アディソン
 
-I woke up in a cold sweat.
-
-Feeling dizzy, I try to sit up in bed.
-
-I should get a glass of water…
-
-As soon as I got up, I noticed a strange yet oddly familiar presence from the other side of the room.
+起きたらすぐに、部屋の反対側から変だが、親しい存在に気づいた。
 
 -> DONE
 

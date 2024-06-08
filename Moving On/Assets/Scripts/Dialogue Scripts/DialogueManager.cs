@@ -84,7 +84,17 @@ public class DialogueManager : MonoBehaviour
 
     //Global Variable
     private GlobalVariable globalVariable;
-    
+
+    // Variables for animated text
+    public TMP_Text textMesh;
+    Mesh mesh;
+    Vector3[] textVertices;
+
+    // Variables to change effects of animated text
+    public string textEffect = "default";
+
+    // Default value for font size
+    private int defaultFontSize = 32;
 
     private void Awake()
     {
@@ -93,8 +103,10 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("More than one instance of Dialogue Manager found in the scene.");
         }
+
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+
         instance = this;
-        
     }
 
     public static DialogueManager GetInstance()
@@ -104,6 +116,14 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("---------------------------------------------");
+        Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY WTFFFF");
+        Debug.Log("---------------------------------------------");
+
+        Debug.Log("ADDISON");
+
+        Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY PART 2");
+
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
@@ -119,10 +139,7 @@ public class DialogueManager : MonoBehaviour
             // Grabs the text of the choices buttons (children of the buttons)
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
-        }
-
-        // Grab current locale ID        
-        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        }      
 
         currentStory = new Story(loadGlobalsJSON.text);
 
@@ -141,6 +158,8 @@ public class DialogueManager : MonoBehaviour
 
         //Set currentLine Variable to 1 for Ending Scene
         currentLine = 1;
+
+        textMesh = dialogueText;
     }
 
     private void Update()
@@ -207,7 +226,47 @@ public class DialogueManager : MonoBehaviour
             && Input.GetKeyDown(KeyCode.Space) && !autoMode)
         {
             NextLine();
-        } 
+        }
+
+        /* --------------------
+         * CODE FOR TEXT MESHING THINGS
+         * --------------------
+         */
+
+        textMesh.ForceMeshUpdate();
+        mesh = textMesh.mesh;
+        textVertices = mesh.vertices;
+
+        for (int i = 0; i < textMesh.textInfo.characterCount; i++)
+        {
+            Vector3 offset = new Vector3(0, 0, 0);
+            TMP_CharacterInfo c = textMesh.textInfo.characterInfo[i];
+
+            int index = c.vertexIndex;
+
+            switch(textEffect)
+            {
+                case "default":
+                    offset = new Vector3(0, 0, 0);
+                    break;
+                case "wobble":
+                    Wobble(Time.time + i);
+                    offset = Wobble(Time.time + i);
+                    break;
+                case "shake":
+                    Shake(Time.time + i);
+                    offset = Shake(Time.time + i);
+                    break;
+            }
+
+            textVertices[index] += offset;
+            textVertices[index + 1] += offset;
+            textVertices[index + 2] += offset;
+            textVertices[index + 3] += offset;
+        }
+
+        mesh.vertices = textVertices;
+        textMesh.canvasRenderer.SetMesh(mesh);
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -254,6 +313,11 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(FadeImage(fadeAway, imageID));
         });
 
+        currentStory.BindExternalFunction("textEffect", (string effect) =>
+        {
+            textEffect = effect;
+        });
+
         // ------------------------------
 
         ContinueStory();
@@ -281,6 +345,9 @@ public class DialogueManager : MonoBehaviour
 
         currentStory.UnbindExternalFunction("testFunction");
         currentStory.UnbindExternalFunction("fadeImage");
+        currentStory.UnbindExternalFunction("textEffect");
+
+        // -----------------------------
     }
 
     private void ContinueStory()
@@ -469,7 +536,7 @@ public class DialogueManager : MonoBehaviour
         }
     } 
 
-    public Ink.Runtime.Object GetVariableState (string variableName)
+    public string GetVariableState (string variableName)
     {
         Ink.Runtime.Object variableValue = null;
         dialogueVariables.variables.TryGetValue(variableName, out variableValue); 
@@ -477,7 +544,7 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("Ink variable not found: " + variableName);
         }
-        return variableValue;
+        return variableValue.ToString();
     }
 
     private string getLocaleID()
@@ -546,5 +613,16 @@ public class DialogueManager : MonoBehaviour
         {
             autoPlay = false;
         }
+    }
+
+    // Functions for animated text
+    Vector2 Wobble(float time)
+    {
+        return new Vector2(Mathf.Sin(time * 3.3f), Mathf.Cos(time * 1.8f));
+    }
+
+    Vector2 Shake(float time)
+    {
+        return new Vector2(Mathf.Sin(time * 50f), Mathf.Cos(time * 50f));
     }
 }

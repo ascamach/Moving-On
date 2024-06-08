@@ -9,6 +9,7 @@ TagManager:
   - OneWayPlatform
   - NPC
   - Global Variable
+  - Dialogue Manager
   layers:
   - Default
   - TransparentFX

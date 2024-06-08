@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
@@ -11,7 +12,10 @@ public class playerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private LayerMask groundLayer;
+
+    // Booleans to pause player movement depending on game activity
     [SerializeField] private bool dialogueInScene;
+    [SerializeField] private bool inputInScene;
 
     //public PhysicsMaterial2D[] material;
 
@@ -39,6 +43,15 @@ public class playerMovement : MonoBehaviour
             }
         }
 
+        // Check if player text input is active
+        if (inputInScene)
+        {
+            if (Mausoleum.Instance().inputActive)
+            {
+                return;
+            }
+        }
+
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.isKinematic = false;
@@ -56,6 +69,15 @@ public class playerMovement : MonoBehaviour
             if (DialogueManager.GetInstance().dialoguePlaying)
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
+                return;
+            }
+        }
+
+        // Check if player text input is active
+        if (inputInScene)
+        {
+            if (Mausoleum.Instance().inputActive)
+            {
                 return;
             }
         }

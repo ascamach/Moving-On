@@ -12,7 +12,7 @@ VAR ready = false
 - currentLocale == "fa":
     -> main_fa
     -> DONE
-    
+
 - currentLocale == "ja":
     -> main_ja
     -> DONE
@@ -20,6 +20,7 @@ VAR ready = false
 
 === main_en ===
 
+TEST LINE HERE 
 Who's there? #speaker: Addison
 
 <i>I scratch my eyes in disbelief. Although I couldn't believe it, the one standing right in front of me is ...</i> #speaker: Addison
