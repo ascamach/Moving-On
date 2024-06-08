@@ -115,7 +115,10 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void Start()
-    { 
+    {
+        Debug.Log("---------------------------------------------");
+        Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY WTFFFF");
+        Debug.Log("---------------------------------------------");
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
