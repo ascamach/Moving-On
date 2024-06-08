@@ -122,6 +122,8 @@ public class DialogueManager : MonoBehaviour
 
         Debug.Log("ADDISON");
 
+        Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY PART 2");
+
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
