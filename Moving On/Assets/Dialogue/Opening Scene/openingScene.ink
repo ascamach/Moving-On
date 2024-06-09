@@ -19,8 +19,6 @@ VAR ready = false
 }
 
 === main_en ===
-
-TEST LINE HERE 
 Who's there? #speaker: Addison
 
 <i>I scratch my eyes in disbelief. Although I couldn't believe it, the one standing right in front of me is ...</i> #speaker: Addison
@@ -84,7 +82,55 @@ Do you think you can help me, sweetie? #speaker: Mom
     -> DONE
 
 === main_fa ===
-dafo;ljdaksfljfdas
+دوباره دارم خواب میبینم. #speaker: ادیسون
+
+دوبار این حس لعنتی، افسوس اون لحظه. #speaker: ادیسون
+
+... #speaker: ادیسون
+
+هیچوقت فکر نمیکردم دنیام چقدر سری میتونه عوض شه. #speaker: ادیسون
+
+
+با اینکه ۳ هفته گذشته، هنوز باور کردنش برام سخته. #speaker: ادیسون
+
+
+... #speaker: ادیسون
+
+لطفا نرو، تنهام نزار #speaker: ادیسون
+
+
+ای کاش اون حرفارو بهت نمیزدم. #speaker: ادیسون
+
+
+اگه فقط می دونستم که اون شب آخرین شبی هست که میدیدمت… #speaker: ادیسون
+
+
+بغلت میکردم #speaker: ادیسون
+
+منو ببخش مامان #speaker: ادیسون
+
+ای کاش می‌شد همه چی برگرده #speaker: ادیسون
+
+ای کاش می‌شد یکبار دیگه میدیدمش. #speaker: ادیسون
+
+
+نمی‌دونم بدون تو چیکار کنم. #speaker: ادیسون
+
+... #speaker: ادیسون
+
+... #speaker: ادیسون
+
+... #speaker: ادیسون
+
+امروز با یه لرزی تو بدنم بیدار شدم. #speaker: ادیسون
+
+حالم اصلا خوب نیست، می خوام بلند شم وای نمی‌تونم.
+#speaker: ادیسون
+
+بذار یه لیوان آب بخورم شاید حالم جا بیاد #speaker: ادیسون
+
+به محض اینکه بلند شدم، احساس کردم یه نفر دیگه هم با من تو اتاقه! #speaker: ادیسون
+
 -> DONE
 
 === main_ja ===
