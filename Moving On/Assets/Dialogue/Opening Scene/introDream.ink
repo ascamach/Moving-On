@@ -6,7 +6,7 @@ VAR currentLocale = ""
 
 {
 - currentLocale == "en":
-    -> main_fa
+    -> main_en
     -> DONE
 - currentLocale == "fa":
     -> main_fa

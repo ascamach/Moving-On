@@ -12,7 +12,24 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
+
+=== main_en ===
+
+{ dog_interactions == "":
+    -> log1_en
+    -> DONE
+}
+
+{ dog_interactions >= 1:
+    -> log2_en
+    -> DONE
+}
+
+-> DONE
 
 === main_fa === 
 
@@ -21,16 +38,54 @@ VAR currentLocale = ""
     -> DONE
 }
 
-{ dog_interactions == 1:
+{ dog_interactions >= 1:
     -> log2_fa
     -> DONE
 }
 
-{ dog_interactions >= 2:
-    -> log3_fa
+-> DONE
+
+=== main_ja === 
+
+{ dog_interactions == "":
+    -> log1_ja
     -> DONE
 }
 
+{ dog_interactions >= 1:
+    -> log2_ja
+    -> DONE
+}
+
+-> DONE
+
+=== log1_en ===
+#speaker: Addison
+Wait a minute ... 
+
+Sparky?? //animated text, moderate wobble
+
+It’s been so many years!
+
+#speaker: Sparky
+Woof! Woof woof! (Sparky seems happy to see Addison again.)
+
+#speaker: Addison
+Aww, I’ve missed you too! Who’s a good boy?
+
+#speaker: Sparky
+Woof woof! (Sparky seems to be saying “Me me! I have been a good boy!”)
+
+~ times_interacted = 1
+~ dog_interactions = times_interacted
+-> DONE
+
+=== log2_en ===
+#speaker: Sparky
+Woof woof!
+
+~ times_interacted = 2
+~ dog_interactions = times_interacted
 -> DONE
 
 === log1_fa ===
@@ -59,52 +114,40 @@ VAR currentLocale = ""
 ~ dog_interactions = times_interacted
 -> DONE
 
-=== log3_fa ===
-هاپ هاپ #speaker: جرقه ای
+=== log1_ja ===
+また、あの夢を見ている。
 
--> DONE
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
 
+。。。
 
-=== main_en ===
+こんなに早く状況が変わるとは思わなかった。
 
-{ dog_interactions == "":
-    -> log1
-    -> DONE
-}
-
-{ dog_interactions >= 1:
-    -> log2
-    -> DONE
-}
-
--> DONE
-
-=== log1 ===
-#speaker: Addison
-Wait a minute ... 
-
-Sparky?? //animated text, moderate wobble
-
-It’s been so many years!
-
-#speaker: Sparky
-Woof! Woof woof! (Sparky seems happy to see Addison again.)
-
-#speaker: Addison
-Aww, I’ve missed you too! Who’s a good boy?
-
-#speaker: Sparky
-Woof woof! (Sparky seems to be saying “Me me! I have been a good boy!”)
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
 
 ~ times_interacted = 1
 ~ dog_interactions = times_interacted
 -> DONE
 
-=== log2 ===
-#speaker: Sparky
-Woof woof!
+=== log2_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
 
 ~ times_interacted = 2
 ~ dog_interactions = times_interacted
 -> DONE
+
+-> END
+
+
+
+
+
 

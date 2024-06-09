@@ -11,6 +11,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Mom:
@@ -44,3 +47,19 @@ Why don’t you go check out <color=\#aefff1>the fridge</color>? I know you’ve
 باشه باشه 
 
 -> DONE
+
+=== main_ja ===
+
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+-> DONE
+
+->END

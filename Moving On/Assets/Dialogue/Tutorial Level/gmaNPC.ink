@@ -37,23 +37,68 @@ VAR currentLocale = ""
 
 { 
 - gma_interactions == "":
-    -> log1_en
+    -> log1_fa
 - gma_interactions == 1:
-    -> log2_en
+    -> log2_fa
 - gma_interactions >= 2:
-    -> log3_en
+    -> log3_fa
 }
 
 === main_ja ===
 
 { 
 - gma_interactions == "":
-    -> log1_en
+    -> log1_ja
 - gma_interactions == 1:
-    -> log2_en
+    -> log2_ja
 - gma_interactions >= 2:
-    -> log3_en
+    -> log3_ja
 }
+
+// English Dialogue
+=== log1_en ===
+#speaker: Grandma
+Hey there, A-Star! Long time no see! \*snickers\*
+
+#speaker: Addison
+Grandma?? 
+
+<i>Dang, I really can see ghosts now, huh ...</i>
+
+How have you been? I’ve missed you so much.
+
+#speaker: Grandma
+Oh, you know! Just relaxing, waiting for your grandpa. 
+
+
+~ times_interacted = 1
+~ gma_interactions = times_interacted
+-> DONE
+
+=== log2_en ===
+#speaker: Grandma
+You need to take care of yourself, A-Star! Drink water, go for a walk.
+
+#speaker: Addison
+I will, Grandma, I will ...
+
+~ times_interacted = 2
+~ gma_interactions = times_interacted
+-> DONE
+
+=== log3_en ===
+#speaker: Grandma
+A-Star, can you believe it? In this form, I don’t have to worry about my arthritis!
+
+#speaker: Addison
+I’m really happy for you, Grandma! Hahaha ...
+
+<i>I don’t know if I should feel happy or ...sad? It’s a peculiar situation.</i>
+
+~ times_interacted = 3
+~ gma_interactions = times_interacted
+-> DONE
+
 
 // Farsi Dialogue
 === log1_fa ===
@@ -110,58 +155,6 @@ VAR currentLocale = ""
 ~ gma_interactions = times_interacted
 -> DONE
 
-=== log4_fa ===
-#speaker: مادر بزرگ
-خوشگلم برو به مامانت کمک کن. من همیشه کنارتم.
-
-~ times_interacted = 4
-~ gma_interactions = times_interacted
--> DONE
-
-// English Dialogue
-=== log1_en ===
-#speaker: Grandma
-Hey there, A-Star! Long time no see! \*snickers\*
-
-#speaker: Addison
-Grandma?? 
-
-<i>Dang, I really can see ghosts now, huh ...</i>
-
-How have you been? I’ve missed you so much.
-
-#speaker: Grandma
-Oh, you know! Just relaxing, waiting for your grandpa. 
-
-
-~ times_interacted = 1
-~ gma_interactions = times_interacted
--> DONE
-
-=== log2_en ===
-#speaker: Grandma
-You need to take care of yourself, A-Star! Drink water, go for a walk.
-
-#speaker: Addison
-I will, Grandma, I will ...
-
-~ times_interacted = 2
-~ gma_interactions = times_interacted
--> DONE
-
-=== log3_en ===
-#speaker: Grandma
-A-Star, can you believe it? In this form, I don’t have to worry about my arthritis!
-
-#speaker: Addison
-I’m really happy for you, Grandma! Hahaha ...
-
-<i>I don’t know if I should feel happy or ...sad? It’s a peculiar situation.</i>
-
-~ times_interacted = 3
-~ gma_interactions = times_interacted
--> DONE
-
 === log1_ja ===
 
 。。。
@@ -203,6 +196,32 @@ I’m really happy for you, Grandma! Hahaha ...
 「水、飲みたい。。。」#speaker: アディソン
 
 起きたらすぐに、部屋の反対側から変だが、親しい存在に気づいた。
+
+-> DONE
+
+=== log2_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+-> DONE
+
+=== log3_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
 
 -> DONE
 

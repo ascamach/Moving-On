@@ -11,6 +11,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Mom:
@@ -82,3 +85,18 @@ It’s okay, baby. I know it’s been difficult; I wish I could give you a hug r
 باشه باشه 
 
 -> DONE
+
+=== main_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+-> DONE
+
+-> END
