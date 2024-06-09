@@ -17,7 +17,19 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 0703bb3c5f0ff485f82388961fc2306d, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 491657666400256
+    m_Localized: 25d71fea695957140807bd410f1740bb[New Game_japanese]
+    m_Metadata:
+      m_Items: []
+  - m_Id: 491966547529728
+    m_Localized: 311f57f5543540746b0073becb6d35d1[Continue_japanese]
+    m_Metadata:
+      m_Items: []
+  - m_Id: 492133459857408
+    m_Localized: efee7f1b1fc56604590ad21d8ffdfe3e[How to play_japanese]
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
