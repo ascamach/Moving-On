@@ -435,6 +435,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720376345}
     m_Modifications:
+    - target: {fileID: 1250335771715119580, guid: 5f2b3ec2771d0438ab00d9b334b80440, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 743ff6528cc67d24bbc54d2969f0af93, type: 2}
+    - target: {fileID: 1250335771715119580, guid: 5f2b3ec2771d0438ab00d9b334b80440, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6212919841344071475, guid: 743ff6528cc67d24bbc54d2969f0af93, type: 2}
+    - target: {fileID: 1250335771715119580, guid: 5f2b3ec2771d0438ab00d9b334b80440, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2018586942230802681, guid: 5f2b3ec2771d0438ab00d9b334b80440, type: 3}
       propertyPath: m_Name
       value: Dialogue UI

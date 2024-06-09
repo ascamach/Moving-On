@@ -12,19 +12,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
-}
-
-=== main_fa ===
-
-{
-- gma_interactions == "":
-    -> log1_fa
-- gma_interactions == 1:
-    -> log2_fa
-- gma_interactions == 2:
-    -> log3_fa
-- gma_interactions >= 3:
-    -> log4_fa
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Grandma:
@@ -33,6 +23,28 @@ VAR currentLocale = ""
 // ادیسون
 
 === main_en ===
+
+{ 
+- gma_interactions == "":
+    -> log1_en
+- gma_interactions == 1:
+    -> log2_en
+- gma_interactions >= 2:
+    -> log3_en
+}
+
+=== main_fa ===
+
+{ 
+- gma_interactions == "":
+    -> log1_en
+- gma_interactions == 1:
+    -> log2_en
+- gma_interactions >= 2:
+    -> log3_en
+}
+
+=== main_ja ===
 
 { 
 - gma_interactions == "":
@@ -149,4 +161,50 @@ I’m really happy for you, Grandma! Hahaha ...
 ~ times_interacted = 3
 ~ gma_interactions = times_interacted
 -> DONE
+
+=== log1_ja ===
+
+。。。
+
+。。。
+
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+。。。
+
+行かないで。。。
+
+君にあんな事を言わなければ。。。
+
+あの夜が、君と話す最後の時間だと知っていたら。。。
+
+。。。君を見る、君をハグする。
+
+ごめん、母さん。
+
+母さんに謝りたい。。。
+
+母さん、この世を去らないで。。。
+
+ママがいないなら、何をするのか分からない。。。
+
+冷や汗をかいて、目が覚めた。
+
+めまいがして、ベッドに座ろうとする。
+
+「水、飲みたい。。。」#speaker: アディソン
+
+起きたらすぐに、部屋の反対側から変だが、親しい存在に気づいた。
+
+-> DONE
+
+-> END
 

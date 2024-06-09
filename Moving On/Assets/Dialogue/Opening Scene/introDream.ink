@@ -6,7 +6,7 @@ VAR currentLocale = ""
 
 {
 - currentLocale == "en":
-    -> main_ja
+    -> main_fa
     -> DONE
 - currentLocale == "fa":
     -> main_fa
@@ -22,7 +22,6 @@ VAR currentLocale = ""
 // アディソン
 
 // Mom: 
-// 
 // ママ
 
 === main_en ===
