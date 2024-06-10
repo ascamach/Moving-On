@@ -5,26 +5,61 @@ VAR currentLocale = ""
 
 ~ currentLocale = localeID
 
-
 {
 - currentLocale == "en":
     -> main_en
+    -> DONE
+- currentLocale == "fa":
+    -> main_fa
+    -> DONE
+- currentLocale == "ja":
+    -> main_ja
     -> DONE
 }
 
 === main_en ===
 
 { abby_interactions == "":
-    -> log1
+    -> log1_en
     -> DONE
 }
 
 { abby_interactions >= 1:
-    -> log2
+    -> log2_en
     -> DONE
 }
 
-=== log1 ===
+-> DONE
+
+=== main_fa ===
+
+{ abby_interactions == "":
+    -> log1_fa
+    -> DONE
+}
+
+{ abby_interactions >= 1:
+    -> log2_fa
+    -> DONE
+}
+
+-> DONE
+
+=== main_ja ===
+
+{ abby_interactions == "":
+    -> log1_ja
+    -> DONE
+}
+
+{ abby_interactions >= 1:
+    -> log2_ja
+    -> DONE
+}
+
+-> DONE
+
+=== log1_en ===
 #speaker: Addison
 Hello there.
 
@@ -61,7 +96,7 @@ Pinky promise!
 ~ times_interacted = 1
 ~ abby_interactions = times_interacted
 -> DONE
-=== log2 ===
+=== log2_en ===
 
 #speaker: Abby
 Are you ready to tell your story yet?
@@ -75,3 +110,62 @@ Don’t forget you pinky promised me!
 ~ times_interacted = 2
 ~ abby_interactions = times_interacted
 -> DONE
+
+=== log1_fa ===
+اسپارکی؟؟ تو اینجا چیکار می‌کنی؟#speaker: ادیسون
+
+هاپ هاپ #speaker: جرقه ای
+
+باورم نمیشه دوباره میتونم میبینمت!#speaker: ادیسون
+
+هاپ #speaker: جرقه ای
+
+اوه، بذار برم آشپزخونه ببینم غذا چی داریم. شاید یه جایزه هم برای تو پیدا کنم! #speaker: ادیسون
+
+~ times_interacted = 1
+~ abby_interactions = times_interacted
+
+-> DONE
+
+=== log2_fa ===
+اسپارکی ، نتونستم برات چیزی پیدا کنم. ولی اصلا چیزی میتونی بخوری؟  #speaker:ادیسون
+
+هاپ هاپ #speaker: جرقه ای
+
+ای کاش میتونستن حداقل نازت کنم. خیلی دلم برات تنگ شده. #speaker: ادیسون
+
+~ times_interacted = 2
+~ abby_interactions = times_interacted
+-> DONE
+
+=== log1_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+~ times_interacted = 1
+~ abby_interactions = times_interacted
+-> DONE 
+
+=== log2_ja ===
+
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+~ times_interacted = 2
+~ abby_interactions = times_interacted
+-> DONE
+

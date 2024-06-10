@@ -11,6 +11,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Mom:
@@ -89,8 +92,40 @@ I won’t be alone... I have all these memories and so many people who care for 
 
 === main_fa ===
 
-// the message below this comment DOES NOT CORRELATE TO THE FIRST LINE IN ENGLISH
+#speaker: روون
+بیشتر حواستو جمع کن عمو جان. دیدم داشتی از درو دیوار میرفتی بالا نگران شدم. مامانتم اگه اینجا بود همینو می گفت.
+
 #speaker: ادیسون
-هاااااا؟ مامان توییی؟ چه شکلی ممکنه؟ یعنی من مردم؟
+اون بالا یه در هست که قفله. شما میدونین چطوری میشه بازش کرد؟
+
+#speaker: روون
+اونجا می‌خوای بری چیکار؟
+
+#speaker: ادیسون
+اونجا یه چیزی هست که لازم دارم.
+
+#speaker: روون
+والله یادم نیست.
+
+#speaker: ادیسون
+چطوری میتونم برم توش؟
+
+#speaker: روون
+اَدیسون جان فکر کنم بار آخر لَری کلید اونجا رو داشت.
+
+برو ببین پیشه اونه؟
+-> DONE
+
+=== main_ja ===
+
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
 
 -> DONE
