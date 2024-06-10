@@ -11,6 +11,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Mom:
@@ -65,4 +68,19 @@ Alright, fine…I'll go.
 #speaker: ادیسون
 باشه مامان. من حاضر ام. ولی تنهام نذاریا، قول؟
 
-->DONE
+-> DONE
+
+=== main_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+-> DONE
+
+-> END

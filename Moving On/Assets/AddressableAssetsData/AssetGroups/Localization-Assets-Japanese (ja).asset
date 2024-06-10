@@ -16,7 +16,25 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: ad62054fb520e334790841f3f176348c
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 25d71fea695957140807bd410f1740bb
+    m_Address: New Game_japanese
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 311f57f5543540746b0073becb6d35d1
+    m_Address: Continue_japanese
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efee7f1b1fc56604590ad21d8ffdfe3e
+    m_Address: How to play_japanese
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 1ceaf0cb6ca9c4b46b58311faff997c2, type: 2}
   m_SchemaSet:

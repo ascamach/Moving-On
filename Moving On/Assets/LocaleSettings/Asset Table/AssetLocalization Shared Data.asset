@@ -43,14 +43,17 @@ MonoBehaviour:
           m_TableCodes:
           - en
           - fa
+          - ja
         - m_KeyId: 491966547529728
           m_TableCodes:
           - en
           - fa
+          - ja
         - m_KeyId: 492133459857408
           m_TableCodes:
           - fa
           - en
+          - ja
         m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - rid: 6838522909076750361

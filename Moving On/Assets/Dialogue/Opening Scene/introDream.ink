@@ -22,7 +22,6 @@ VAR currentLocale = ""
 // アディソン
 
 // Mom: 
-// 
 // ママ
 
 === main_en ===

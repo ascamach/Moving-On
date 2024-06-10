@@ -11,6 +11,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Mom:
@@ -48,7 +51,6 @@ VAR currentLocale = ""
 <i>I’ll never forget her warmth and comfort.</i>
 
 ......
-
 
 #speaker: Mom
 Sweetie ... I know it’s been really rough — you’ve been going through a lot all by yourself, but ... listen to me.
@@ -123,3 +125,33 @@ Okay Mom, I’m ready. Let's stick together, okay?
 باشه مامان. من حاضر ام. ولی تنهام نذاریا، قول؟
 
 ->DONE
+
+=== main_ja === 
+
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+。。。
+
+行かないで。。。
+
+君にあんな事を言わなければ。。。
+
+あの夜が、君と話す最後の時間だと知っていたら。。。
+
+。。。君を見る、君をハグする。
+
+ごめん、母さん。
+
+母さんに謝りたい。。。
+
+-> DONE
+
+-> END
