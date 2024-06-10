@@ -10,6 +10,12 @@ VAR currentLocale = ""
 - currentLocale == "en":
     -> main_en
     -> DONE
+- currentLocale == "fa":
+    -> main_fa
+    -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 === main_en ===
@@ -32,5 +38,32 @@ Stay here while I get a bandage for you.
 
 <i>I lost the one person who was there for me ...</i>
 -> DONE
+
+=== main_fa ===
+اسپارکی؟؟ تو اینجا چیکار می‌کنی؟#speaker: ادیسون
+
+هاپ هاپ #speaker: جرقه ای
+
+باورم نمیشه دوباره میتونم میبینمت!#speaker: ادیسون
+
+هاپ #speaker: جرقه ای
+
+اوه، بذار برم آشپزخونه ببینم غذا چی داریم. شاید یه جایزه هم برای تو پیدا کنم! #speaker: ادیسون
+
+-> DONE
+
+=== main_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+-> DONE
+
 
 

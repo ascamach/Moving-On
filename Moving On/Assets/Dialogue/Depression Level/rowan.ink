@@ -20,12 +20,28 @@ VAR rowanConditional = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Rowan:
 // روون
 // Addison:
 // ادیسون
+
+=== main_en ===
+
+{ rowanConditional == "":
+    -> log1_en
+    -> DONE
+}
+
+{ rowanConditional >= 1:
+    ->log2_en
+    ->DONE
+}
+-> DONE
 
 === main_fa === 
 
@@ -34,29 +50,79 @@ VAR rowanConditional = ""
     -> DONE
 }
 
-{ 
-    - larry_interactions == 1 && raineConditional >= 1:
-    -> log2_fa
-    -> DONE
-    - rowanConditional == 1:
-    -> log4_fa
+{ rowanConditional >= 1:
+    ->log2_fa
+    ->DONE
+}
+-> DONE
+
+=== main_ja === 
+
+{ rowanConditional == "":
+    -> log1_ja
     -> DONE
 }
 
-{ 
-    - rowanConditional == 2 && larryConditional >= 4:
-    -> log3_fa
-    -> DONE
-    - rowanConditional == 2:
-    -> log4_fa
-    -> DONE
+{ rowanConditional >= 1:
+    ->log2_ja
+    ->DONE
 }
+-> DONE
 
-{ rowanConditional >= 3:
-    -> log4_fa
-    -> DONE
-}
+=== log1_en ===
+#speaker: Rowan
+Look who it is. Hey, kiddo!
 
+I’m really sorry to hear about what happened. Have you been hanging in there?
+
+#speaker: Addison
+Well, umm ...
+
+It’s been hard ...I don’t really know how to explain.
+
+#speaker: Rowan 
+Don’t worry, I understand. 
+
+A lot of customers stop by here, so I hear a lot of different stories.
+
+Your mom was no exception — she would talk a lot about you. And I mean <i>a lot</i>.
+
+#speaker: Addison
+Really? 
+
+#speaker: Rowan
+Of course! You know, your mom really cared about you. 
+
+If she was still around, she would be consulting me about how you would be moving far away for college. 
+
+#speaker: Addison
+Yeah ...I guess so.
+
+<i>If only Rowan knew that my mom was right behind me.</i>
+
+Oh Rowan, actually I was wondering. Have you seen anything out of the ordinary recently?
+
+#speaker: Rowan
+I can’t say that I have ...but there have been some strange things happening on <color=\#aefff1>the roof</color>. 
+
+Why do you ask?
+
+#speaker: Addison
+Just wondering. Thank you.
+
+<i>I see some platforms on the sides of the buildings. I can try getting to the rooftop with them.</i>
+
+
+~ times_interacted = 1
+~ rowan_interactions = times_interacted
+-> DONE
+
+=== log2_en ===
+#speaker: Rowan
+Feel free to stop by the café whenever you want. I’ll treat you to some homemade donuts. 
+
+~ times_interacted = 2
+~ rowan_interactions = times_interacted
 -> DONE
 
 === log1_fa ===
@@ -109,129 +175,33 @@ VAR rowanConditional = ""
 ~ rowan_interactions = times_interacted
 -> DONE
 
-=== log3_fa ===
-#speaker: روون
-کیلید رو پیدا کردی؟
+=== log1_ja ===
+また、あの夢を見ている。
 
-#speaker: ادیسون
-بله، ممنون
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
 
-#speaker: روون
-خدارو شکر، باز اگه کمکی خواستی بیا پیشم عمو.
+。。。
 
-~ times_interacted = 3
-~ rowan_interactions = times_interacted
--> DONE
+こんなに早く状況が変わるとは思わなかった。
 
-=== log4_fa ===
-#speaker: روون
-ای کاش این بارون بند بیاد یکم دیگه، هوای بد مشتری ها رو می‌ پرونه!
--> DONE
-
-=== main_en ===
-
-{ rowanConditional == "":
-    -> log1
-    -> DONE
-}
-
-{ rowanConditional >= 1:
-    ->log2
-    ->DONE
-}
-
-//{ 
-//    - larry_interactions == 1 && raineConditional >= 1:
-//    -> log2
-  //  -> DONE
-    //- rowanConditional == 1:
-    //-> log4
-    //-> DONE
-//}
-
-//{ 
-  //  - rowanConditional == 2 && larryConditional >= 4:
-//    -> log3
-  //  -> DONE
-//    - rowanConditional == 2:
-  //  -> log4
-    //-> DONE
-//}
-
-//{ rowanConditional >= 3:
-  //  -> log4
-    //-> DONE
-//}
-
--> DONE
-
-=== log1 ===
-#speaker: Rowan
-Look who it is. Hey, kiddo!
-
-I’m really sorry to hear about what happened. Have you been hanging in there?
-
-#speaker: Addison
-Well, umm ...
-
-It’s been hard ...I don’t really know how to explain.
-
-#speaker: Rowan 
-Don’t worry, I understand. 
-
-A lot of customers stop by here, so I hear a lot of different stories.
-
-Your mom was no exception — she would talk a lot about you. And I mean <i>a lot</i>.
-
-#speaker: Addison
-Really? 
-
-#speaker: Rowan
-Of course! You know, your mom really cared about you. 
-
-If she was still around, she would be consulting me about how you would be moving far away for college. 
-
-#speaker: Addison
-Yeah ...I guess so.
-
-<i>If only Rowan knew that my mom was right behind me.</i>
-
-Oh Rowan, actually I was wondering. Have you seen anything out of the ordinary recently?
-
-#speaker: Rowan
-I can’t say that I have ...but there have been some strange things happening on <color=\#aefff1>the roof</color>. 
-
-Why do you ask?
-
-#speaker: Addison
-Just wondering. Thank you.
-
-<i>I see some platforms on the sides of the buildings. I can try getting to the rooftop with them.</i>
-
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
 
 ~ times_interacted = 1
 ~ rowan_interactions = times_interacted
 -> DONE
 
-=== log2 ===
-#speaker: Rowan
-Feel free to stop by the café whenever you want. I’ll treat you to some homemade donuts. 
+=== log2_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
 
 ~ times_interacted = 2
 ~ rowan_interactions = times_interacted
 -> DONE
 
-=== log3 ===
-Did you get the key? #speaker: Rowan
-
-Yes I did, thank you Rowan! #speaker: Addison
-
-I’m glad! Now off you go. Remember Addison, the village is always there for you. #speaker: Rowan
-
-~ times_interacted = 3
-~ dog_interactions = times_interacted
--> DONE
-
-=== log4 === 
-I wish this rain would stop soon, it’s driving away my customers!! #speaker: Rowan
--> DONE
