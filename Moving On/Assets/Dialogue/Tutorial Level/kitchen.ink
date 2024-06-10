@@ -12,6 +12,9 @@ VAR bedReady = false
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Mom:
@@ -125,3 +128,40 @@ I’m not sure if I can look at grilled cheese sandwiches the same.
 #speaker: ادیسون
 من دیگه سیر شدم...
 -> DONE
+
+=== main_ja ===
+{
+- fridgeInteraction == false:
+    -> log1_ja
+    -> DONE
+- fridgeInteraction == true:
+    -> log2_ja
+    -> DONE
+}
+
+=== log1_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。 
+~ fridgeInteraction = true
+-> DONE
+
+=== log2_ja ===
+また、あの夢を見ている。
+
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。
+
+。。。
+
+こんなに早く状況が変わるとは思わなかった。
+
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+-> DONE
+
+-> END
