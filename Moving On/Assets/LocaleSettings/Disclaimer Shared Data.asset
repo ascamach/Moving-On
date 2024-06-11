@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Disclaimer Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Disclaimer
+  m_TableCollectionNameGuidString: 12ef47ad6c23b4c6293b24f723e4f29e
+  m_Entries:
+  - m_Id: 95079620608
+    m_Key: Body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12229533696
+    m_Key: Disclaimer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2069900550144
+    m_Key: Viewer
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 765747424327106567
+  references:
+    version: 2
+    RefIds:
+    - rid: 765747424327106567
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1718100146008
