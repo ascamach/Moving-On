@@ -158,8 +158,6 @@ public class DialogueManager : MonoBehaviour
 
         //Set currentLine Variable to 1 for Ending Scene
         currentLine = 1;
-
-        textMesh = dialogueText;
     }
 
     private void Update()
@@ -176,12 +174,17 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        if (!textMesh)
+        {
+            textMesh = dialogueText;
+        }
+
         if (pauseMenu.paused)
         {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)&&!autoMode)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             submitSkip = true;
         }
@@ -212,12 +215,12 @@ public class DialogueManager : MonoBehaviour
                     EndingManager.Instance.plantFlower = true;
                 }
 
-                //if (Input.GetKeyDown(KeyCode.Space))
-                //{
-                //    autoPlay = false;
-                //    StopCoroutine(nextLineAuto());
-                //    NextLine();
-                //}
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    autoPlay = false;
+                    StopCoroutine(nextLineAuto());
+                    NextLine();
+                }
             }
         }
 

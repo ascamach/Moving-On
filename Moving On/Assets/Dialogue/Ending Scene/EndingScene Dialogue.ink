@@ -79,7 +79,7 @@ Goodbye, Mom. #speaker: Addison
 
 // [Addison is tearfully crying, not strong crying]
 
-*Sniff* I won’t ever forget you, Mom. I promise. I’ll keep visiting, and I’ll make sure this place is never lonely. #speaker: Addison
+\*Sniff\* I won’t ever forget you, Mom. I promise. I’ll keep visiting, and I’ll make sure this place is never lonely. #speaker: Addison
 
 I won’t be alone... I have all these memories and so many people who care for me. I’ll move forward, carrying you in my heart forever
 

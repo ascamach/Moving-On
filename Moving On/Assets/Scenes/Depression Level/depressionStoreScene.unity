@@ -6197,7 +6197,7 @@ GameObject:
   - component: {fileID: 1658731345}
   m_Layer: 0
   m_Name: DialogueManager
-  m_TagString: Untagged
+  m_TagString: Dialogue Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11401,7 +11401,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -8, y: -5, z: 0}
@@ -11423,7 +11423,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -8, y: -4, z: 0}
@@ -11577,7 +11577,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -6, y: 4, z: 0}
