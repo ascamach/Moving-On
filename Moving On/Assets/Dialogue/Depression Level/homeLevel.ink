@@ -14,6 +14,9 @@ VAR currentLocale = ""
     - currentLocale == "fa":
         -> main_fa
         -> DONE
+     - currentLocale == "ja":
+        -> main_ja
+        -> DONE
     }
 - depressionFirstDialogue == true:
     -> DONE
@@ -35,3 +38,10 @@ Hmm ... I don’t have a map of where the <color=\#aefff1>special objects</color
 نقشه اینجا رو نداریم. بهتره بریم محله رو بگردیم ببینیم چیزی که دنبالشم رو پیدا می کنیم.
 ~ depressionFirstDialogue = true
 -> DONE
+
+=== main_ja ===
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。
+
+~ depressionFirstDialogue = true
+-> DONE
+
