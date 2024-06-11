@@ -34,7 +34,7 @@ Hmm ... I don’t have a map of where the <color=\#aefff1>special objects</color
 -> DONE
 
 === main_fa ===
-#speaker: روح
+#speaker:  مامان
 والله دقیقا نمی دونم از کجا باید شروع کنیم یا کجا باید بریم… ولی میدونم چند تا چیزه مهمه که باید از پیدا کنم 
 قبله رفتن. بیا از محله خودمون شروع کنیم.
 
