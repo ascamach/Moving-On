@@ -22,6 +22,7 @@ VAR currentLocale = ""
 // ادیسون
 
 === main_en ===
+//Hi Will
 Do you remember this place, sweetheart? We used to visit every year for Cemetery Day. #speaker: Mom
 
 Yeah… We would always bring food and incense to leave at the gravestones. #speaker: Addison
