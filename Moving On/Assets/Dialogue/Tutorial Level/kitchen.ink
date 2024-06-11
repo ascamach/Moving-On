@@ -111,11 +111,12 @@ I’m not sure if I can look at grilled cheese sandwiches the same.
 }
 
 === log1_fa ===
-.فقط یه ساندویچ نون و پنیر داریم#speaker: Mom
+#speaker:  مامان
+.فقط یه ساندویچ نون و پنیر داریم
 
-چرا اونو نمیخوری؟ #speaker: Mom
+چرا اونو نمیخوری؟ 
 
-........................ #speaker: Addison
+........................ #speaker: ادیسون
 
 .هر روز برای تغذیه مدرسه، مامانم برام ساندویچ نون و پنیر درست می کرد
 
@@ -133,7 +134,8 @@ I’m not sure if I can look at grilled cheese sandwiches the same.
 
 ......
 
-...ادیسون... #speaker: Mom
+#speaker:  مامان
+...ادیسون... 
 
 ادیسون!
 
@@ -141,11 +143,12 @@ I’m not sure if I can look at grilled cheese sandwiches the same.
 
 .چرا ماتت برده، زل زدی به غذات یه ساعته
 
-.هیچی… یاده یه چیزی افتادم #speaker: Addison
+.هیچی… یاده یه چیزی افتادم #speaker: ادیسون
 
 ...اصلا میل به غذا خوردن ندارم الان
 
-.باشه #speaker: Mom
+#speaker:  مامان
+.باشه 
 
 !جاش برای خودت یه چیزی بیار تو راه گشنت نشه
 ~ fridgeInteraction = true

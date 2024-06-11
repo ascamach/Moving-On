@@ -85,28 +85,28 @@ It’s okay, baby. I know it’s been difficult; I wish I could give you a hug r
 
 ...ببخشید تو فکر یه چیزی بودم
 
-#speaker: Mom
+#speaker:  مامان
 .نگران نباش عزیزم، میدونم که این چند وقت روزای سختی رو پی کردی. ای کاش میشد الان بغلت می کردم
 
 ~ livingInteraction = true
 
 { fridgeInteraction and livingInteraction:
-   #speaker: Addison
+   #speaker: ادیسون
     در و دیوارای این خونه داره حالمو خراب میکنه. میشه بریم از اینجا؟ 
 
-    #speaker: Mom
+    #speaker:  مامان
     .آره ولی یه لباس گرم بپوش‌ سرما نخوری
 
     .کلاغه خبر رسونده که لباساتو خیلی وقته نشستی؛ برو ژاکت منو از تو اتاقم بردار بپوش
 
-    #speaker: Addison
+    #speaker: ادیسون
     .حالشو ندارم مامان
 
-    #speaker: Mom
+    #speaker:  مامان
     .یه چیزی بپوش تو این حال فقط کم مونده سرما بخوری. تا اتاقه من که راهی نیست
 
 
-    #speaker: Addison
+    #speaker: ادیسون
     .باشه… الان میرم
     -> DONE
 }

@@ -102,14 +102,17 @@ I’m really happy for you, Grandma! Hahaha ...
 
 // Farsi Dialogue
 === log1_fa ===
+#speaker: مادر بزرگ
 سلام نوه قشنگم! دلم برات یه ذره شده بود.
 
+#speaker: ادیسون
 مامانی؟
 
 پس واقعانی میتونم روح ارو ببینم دیگه 
 
 .مامانی خوبی؟ دلم‌ برات تنگ شده بود
 
+#speaker: مادر بزرگ
 والله هیچی! چشم به انتظار بابا بزرگت.
 
 ~ times_interacted = 1
@@ -117,16 +120,20 @@ I’m really happy for you, Grandma! Hahaha ...
 -> DONE
 
 === log2_fa ===
+#speaker: مادر بزرگ
 !ببینم به خودت میرسی گلم؟ لاغر شدی
 
+#speaker: ادیسون
 .به خدا آره، سعیمو میکنم
 ~ times_interacted = 2
 ~ gma_interactions = times_interacted
 -> DONE
 
 === log3_fa ===
+#speaker: مادر بزرگ
 باورت میشه از وقتی روح شدم دیگه آرتروز کمرم رو حس نمیکنم؟
 
+#speaker: ادیسون
 خوشحالم که دیگه درد نمیکشی مامانی 
 
 ولی نمیدونم خوشحال باشم یا ناراحت؟ خیلی دلم براتون تنگ شده بود؟

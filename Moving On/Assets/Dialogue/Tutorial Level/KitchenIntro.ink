@@ -31,7 +31,7 @@ Why don’t you go check out <color=\#aefff1>the fridge</color>? I know you’ve
 -> DONE
 
 === main_fa ===
-#speaker: Mom
+#speaker:  مامان
 ببینم مگه همسایه ها برات غذا نیاورده بودن؟ یخچال رو میخوای چک کنی؟ 
 
 -> DONE
