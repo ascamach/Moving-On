@@ -175,17 +175,6 @@ I should get a glass of water ... #speaker: Addison
 
 。。。#speaker: アディソン
 
-。。。#speaker: アディソン
-
-冷や汗をかいて、目が覚めた。#speaker: アディソン
-
-めまいがして、ベッドに座ろうとする。#speaker: アディソン
-
-「水、飲みたい。。。」#speaker: アディソン
-
-起きたらすぐに、部屋の反対側から変だが、親しい存在に気づいた。#speaker: アディソン
-
-
 -> DONE
 
 -> END

@@ -116,13 +116,15 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("---------------------------------------------");
-        Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY WTFFFF");
-        Debug.Log("---------------------------------------------");
+        // Debug.Log("---------------------------------------------");
+        // Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY WTFFFF");
+        // Debug.Log("---------------------------------------------");
 
-        Debug.Log("ADDISON");
+        // Debug.Log("ADDISON");
 
-        Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY PART 2");
+        // Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY PART 2");
+
+
 
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
@@ -146,7 +148,8 @@ public class DialogueManager : MonoBehaviour
         dialogueVariables.StartListening(currentStory);
 
         string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
-        currentStory.variablesState["localeID"] = localeID;
+        // currentStory.variablesState["localeID"] = localeID;
+        currentStory.variablesState["localeID"] = "ja";
 
         string final = globalVariable.bitch;
         currentStory.variablesState["is_ready"] = final;
@@ -554,7 +557,8 @@ public class DialogueManager : MonoBehaviour
     {
         string currentLocaleID = "";
         string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
-        currentStory.variablesState["localeID"] = localeID;
+        // currentStory.variablesState["localeID"] = localeID;
+        currentStory.variablesState["localeID"] = "ja";
         currentLocaleID = localeID;
 
         return currentLocaleID;
