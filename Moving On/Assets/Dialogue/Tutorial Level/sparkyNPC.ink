@@ -89,25 +89,27 @@ Woof woof!
 -> DONE
 
 === log1_fa ===
+#speaker: ادیسون
 یه لحظه وایسا 
 
 اسپارکی؟ //animated text, moderate wobble
 
 باورم نمیشه!
 
-#speaker: Sparky
+#speaker: جرقه ای
 واق، واق، واق! (اسپارکی به نظر میرسه که خوشحاله)
 
-#speaker: Addison
+#speaker: ادیسون
 منم دلم برات تنگ شده بود پسرم! تو پسر قشنگ کی بودی؟
 
-#speaker: Sparky
+#speaker: جرقه ای
 واق، واق، واق! (اسپارکی به نظر میرسه که تایید میکنه)
 ~ times_interacted = 1
 ~ dog_interactions = times_interacted
 -> DONE
 
 === log2_fa ===
+#speaker: جرقه ای
 واق واق!
 
 ~ times_interacted = 2
