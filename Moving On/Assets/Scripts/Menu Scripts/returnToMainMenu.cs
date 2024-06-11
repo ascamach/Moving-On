@@ -10,7 +10,7 @@ public class InGameButtonQuitButton : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadSceneAsync("MainMenu");
+        SceneManager.LoadSceneAsync("introDream");
         
     }
 }
