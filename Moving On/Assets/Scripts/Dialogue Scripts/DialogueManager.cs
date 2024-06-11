@@ -557,8 +557,8 @@ public class DialogueManager : MonoBehaviour
     {
         string currentLocaleID = "";
         string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
-        // currentStory.variablesState["localeID"] = localeID;
-        currentStory.variablesState["localeID"] = "ja";
+        currentStory.variablesState["localeID"] = localeID;
+        // currentStory.variablesState["localeID"] = "ja";
         currentLocaleID = localeID;
 
         return currentLocaleID;
