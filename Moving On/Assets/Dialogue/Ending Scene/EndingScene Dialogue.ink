@@ -34,7 +34,9 @@ Hey, it was a windy day! #speaker: Addison
 
 [They gradually stop laughing and have a neutral, somber face to them]
 
-Whenever we went there, I always thought that the cemetery was a creepy place that had scary ghosts that would jumpscare me. I don’t know why, but it looks so…peaceful. It’s nice… # speaker: Addison
+Whenever we went there, I always thought that the cemetery was a creepy place that had scary ghosts that would jumpscare me. 
+
+I don’t know why, but it looks so…peaceful. It’s nice… # speaker: Addison
 
 // some sort of walking is done here
 
@@ -42,7 +44,9 @@ Look at you, brave little one — you’re growing into a mature strong adult. #
 
 I can't believe how much you've grown. Nearly 18! Time does fly.
 
-Look at what you’ve accomplished! You did all of this and you even helped your mom out. You’re a strong, tough cookie. I couldn’t have been more proud of you and I will always continue to be proud of you.
+Look at what you’ve accomplished! You did all of this and you even helped your mom out. 
+
+You’re a strong, tough cookie. I couldn’t have been more proud of you and I will always continue to be proud of you.
 
 You walked, you ran, you soared. You lived. That's all I ever wanted for you.
 
@@ -65,11 +69,19 @@ Look— the sunrise…it’s so pretty! # speaker: Addison
 // [Addison and Mom look out into the sky]
 // [The sky brightens as the sun rises, casting a golden light over the scene. The Mom's form begins to fade as the light grows.]
 
-It's time for me to go, my darling. Remember, I'm always with you— through the good times, the bad times, and everything in between. #speaker: Mom
+#speaker: Mom
+It's time for me to go, my darling. 
+
+Remember, I'm always with you— through the good times, the bad times, and everything in between. #speaker: Mom
 
 Do you really have to leave now, Mom? I'll miss you so much. #speaker: Addison
 
-I know, sweetheart, and I’ll miss you too… You’ll always be in my heart and in my mind. Don’t ever forget that. But, you’re ready to face the world. Live fully, love deeply, be happy. That’s all I’ve ever wished for you. #speaker: Mom
+#speaker: Mom
+I know, sweetheart, and I’ll miss you too… You’ll always be in my heart and in my mind. 
+
+Don’t ever forget that. But, you’re ready to face the world. 
+
+Live fully, love deeply, be happy. That’s all I’ve ever wished for you. 
 
 // [Addison hugs Mom while her form dissipates with the rising sun, a final tearful smile shared between them.]
 
