@@ -1656,6 +1656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grandma NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 8158123312951692128, guid: dfdf90a5e439f450485cdb0726e7053f, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 43b163aee4b844c6b87630dbdd981c05, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

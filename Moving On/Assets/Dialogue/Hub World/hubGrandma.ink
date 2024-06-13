@@ -60,7 +60,26 @@ VAR currentLocale = ""
 -> DONE
 
 === log1_en ===
-OK BOOMEr
+#speaker: Addison
+Hey Grandma! What are you doing here?
+
+#speaker: Grandma
+Oh, hello my little A-Star! I’m just resting by my gravestone. 
+
+Whenever someone visits my grave, I get transported over here.
+
+I always enjoy these visits.
+
+#speaker: Addison
+So...whenever Mom and I visited you, you’d be there with us?
+
+#speaker: Grandma
+Yep! I was always there even though you couldn’t see me.
+
+#speaker: Addison
+<i>Huh</i> ...Mom used to tell me that ghosts would always be there whenever we’d visit, but I never believed her.
+
+<i>I always thought that it was a folk tale.</i>
 
 ~ times_interacted = 1
 ~ hubGrandma_interactions = times_interacted
