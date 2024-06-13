@@ -1,6 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!78 &1
 TagManager:
   serializedVersion: 2
   tags:
@@ -10,6 +9,7 @@ TagManager:
   - NPC
   - Global Variable
   - Dialogue Manager
+  - Wrecking Ball
   layers:
   - Default
   - TransparentFX
@@ -50,6 +50,12 @@ TagManager:
   - name: Background
     uniqueID: 505372779
     locked: 0
+  - name: pole
+    uniqueID: 517778909
+    locked: 0
+  - name: Platforms
+    uniqueID: 1187407849
+    locked: 0
   - name: Borders
     uniqueID: 2000251123
     locked: 0
@@ -61,6 +67,12 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 2536743113
+    locked: 0
+  - name: general stuff
+    uniqueID: 1298180527
+    locked: 0
+  - name: NPC
+    uniqueID: 517290589
     locked: 0
   - name: Exit or Entrance
     uniqueID: 215601959
@@ -79,6 +91,14 @@ TagManager:
     locked: 0
   - name: Platforms
     uniqueID: 1187407849
+  - name: Gear
+    uniqueID: 32199363
+    locked: 0
+  - name: Cage
+    uniqueID: 3555598663
+    locked: 0
+  - name: Interactables
+    uniqueID: 2873929639
     locked: 0
   - name: Player
     uniqueID: 3731135449
