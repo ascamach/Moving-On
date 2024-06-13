@@ -19,6 +19,9 @@ VAR depressionFirstDialogue = ""
 VAR depressionRoofDialogue = ""
 VAR depressionMiddleDialogue = ""
 
+//Hub World
+VAR hubGrandma_interactions = ""
+
 // Functions from Unity
 EXTERNAL testFunction()
 EXTERNAL fadeImage(fadeAway, imageName)
