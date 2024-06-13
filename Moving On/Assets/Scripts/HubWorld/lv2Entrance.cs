@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class lv2Entrance : MonoBehaviour
 {
+
+    //Script to Enter into Anger Level
     private bool lvUnlock;
     private bool inEntrance;
-    private SpriteRenderer rend;
+    
     [Header("Visual Cue")]
+
     [SerializeField] private GameObject visualCue;
+    [SerializeField] private SpriteRenderer visualCueColor;
 
     private void Start()
     {
@@ -16,8 +21,7 @@ public class lv2Entrance : MonoBehaviour
         lvUnlock = levelManager.Instance.levelsUnlocked[1];
 
         inEntrance = false;
-        rend = GetComponent<SpriteRenderer>();
-        rend.color = Color.black;
+        
         visualCue.SetActive(false);
     }
 
@@ -26,6 +30,7 @@ public class lv2Entrance : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && inEntrance)
         {
             Debug.Log("Entering Lv.2...");
+            SceneManager.LoadSceneAsync("EndingScene");
         }
     }
 
@@ -33,13 +38,16 @@ public class lv2Entrance : MonoBehaviour
     {
         if (collision.tag == "Player" && lvUnlock)
         {
-            rend.color = Color.green;
+            visualCueColor.color = Color.green;
+            
             visualCue.SetActive(true);
 
         }
         else if (collision.tag == "Player" && lvUnlock == false)
         {
-            rend.color = Color.red;
+            
+            visualCueColor.color = Color.red;
+            visualCue.SetActive(true);
         }
     }
 
@@ -57,7 +65,8 @@ public class lv2Entrance : MonoBehaviour
         if (collision.tag == "Player")
         {
             inEntrance = false;
-            rend.color = Color.black;
+            
+            visualCueColor.color = Color.white;
             visualCue.SetActive(false);
         }
     }

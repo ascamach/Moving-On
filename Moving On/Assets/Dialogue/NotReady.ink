@@ -12,6 +12,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 === main_en ===
@@ -22,5 +25,16 @@ I don't want to step foot in here. #speaker: Addison
 -> DONE
 
 === main_fa ===
-Farsi here.
+#speaker: ادیسون
+هههه
+
+من نمی خواهم پا در اینجا بگذارم. 
+-> DONE
+
+=== main_ja ===
+#speaker:「アディソン」
+ええ
+
+ここに行きたくない
+
 -> DONE

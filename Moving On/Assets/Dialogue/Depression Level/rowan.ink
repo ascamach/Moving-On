@@ -20,12 +20,28 @@ VAR rowanConditional = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Rowan:
 // روون
 // Addison:
 // ادیسون
+
+=== main_en ===
+
+{ rowanConditional == "":
+    -> log1_en
+    -> DONE
+}
+
+{ rowanConditional >= 1:
+    ->log2_en
+    ->DONE
+}
+-> DONE
 
 === main_fa === 
 
@@ -34,189 +50,209 @@ VAR rowanConditional = ""
     -> DONE
 }
 
-{ 
-    - larry_interactions == 1 && raineConditional >= 1:
-    -> log2_fa
-    -> DONE
-    - rowanConditional == 1:
-    -> log4_fa
+{ rowanConditional >= 1:
+    ->log2_fa
+    ->DONE
+}
+-> DONE
+
+=== main_ja === 
+
+{ rowanConditional == "":
+    -> log1_ja
     -> DONE
 }
 
-{ 
-    - rowanConditional == 2 && larryConditional >= 4:
-    -> log3_fa
-    -> DONE
-    - rowanConditional == 2:
-    -> log4_fa
-    -> DONE
+{ rowanConditional >= 1:
+    ->log2_ja
+    ->DONE
 }
+-> DONE
 
-{ rowanConditional >= 3:
-    -> log4_fa
-    -> DONE
-}
+=== log1_en ===
+#speaker: Rowan
+Look who it is. Hey, kiddo!
 
+I’m really sorry to hear about what happened. Have you been hanging in there?
+
+#speaker: Addison
+Well, umm ...
+
+It’s been hard ...I don’t really know how to explain.
+
+#speaker: Rowan 
+Don’t worry, I understand. 
+
+A lot of customers stop by here, so I hear a lot of different stories.
+
+Your mom was no exception — she would talk a lot about you. And I mean <i>a lot</i>.
+
+#speaker: Addison
+Really? 
+
+#speaker: Rowan
+Of course! You know, your mom really cared about you. 
+
+If she was still around, she would be consulting me about how you would be moving far away for college. 
+
+#speaker: Addison
+Yeah ...I guess so.
+
+<i>If only Rowan knew that my mom was right behind me.</i>
+
+Oh Rowan, actually I was wondering. Have you seen anything out of the ordinary recently?
+
+#speaker: Rowan
+I can’t say that I have ...but there have been some strange things happening on <color=\#aefff1>the roof</color>. 
+
+Why do you ask?
+
+#speaker: Addison
+Just wondering. Thank you.
+
+<i>I see some platforms on the sides of the buildings. I can try getting to the rooftop with them.</i>
+
+
+~ times_interacted = 1
+~ rowan_interactions = times_interacted
+-> DONE
+
+=== log2_en ===
+#speaker: Rowan
+Feel free to stop by the café whenever you want. I’ll treat you to some homemade donuts. 
+
+~ times_interacted = 2
+~ rowan_interactions = times_interacted
 -> DONE
 
 === log1_fa ===
 #speaker: روون
-اوه اَدیسون جان تویی!
+ببین کی راه گم کرده سر از اینجا در آورده.
 
-حالت چطوره؟ کم پیدایی عمو جان؟
-
+برای اتفاق هایی که برات افتاده حسابی متاسفم. حال خودت بهتره؟
 #speaker: ادیسون
-هییی نمی‌دونم عمو جان. سعی می‌کنم خوب باشم. 
+هی آره بهترم.
 
+یذره هنوز برام باور کردنش سخته… نمیدونم چه شکلی توصیفش کنم.
 #speaker: روون
-خودت بهتر میدونی که همه ما دلمون برای مادرت خیلی تنگ شده. مادرت یکی از مشتری های ثابت من بود.
+نگران نباش عزیزم میفهمم منظورتو.
 
+اینجا خداروشکر هر روز آدم زیاد میاد و مییره به خاطره همین من همه جور داستانها اینجا میشنوم.
+
+مامان تو هم یکی از اون آدم‌های جالب بود که هیچ وقت دسا از تعریف کردن درباره تو بر نمیداشت.
 #speaker: ادیسون
-بله میدونم…
-
+واقعا؟
 #speaker: روون
-شرمنده عزیزم، حاله تورو هم خراب کردم. نباید یادت می آوردم. اینجا بیشتر بیا، پیراشکی همیشه مهمونه منی.
+آره، همه میدونستن که تمام جون و دله این زن بسته به بچشش. 
+
+الان اگر اینجا بود داشت برای من دریاره کالج تو حرف میزد.
+#speaker: ادیسون
+آره فکر کنم…
+
+اگر فقط میشد به روان بگم که الان اینجا پیشمونه (مامان).
+
+راستی روان من میخواستم درباره این ازت بپرسم. جدیدنا چیزه عجیبی اینجا احساس نکردی؟
+#speaker: روون
+نه والله فکر‌نکنم، ولی چند وقته همه درباره روح روی پشت بوم پچ پچ میکنن.
+
+چرا چیزی شده؟
+#speaker: ادیسون
+به فقط کنجکاو بودم… مرسی.
+
+پله ها بستس ولی فکر‌کنم از روی تراس همسایه بتونم برم بالا.
+
 
 ~ times_interacted = 1
 ~ rowan_interactions = times_interacted
 -> DONE
 
 === log2_fa ===
-#speaker: روون
-بیشتر حواستو جمع کن عمو جان. دیدم داشتی از درو دیوار میرفتی بالا نگران شدم. مامانتم اگه اینجا بود همینو می گفت.
-
 #speaker: ادیسون
-اون بالا یه در هست که قفله. شما میدونین چطوری میشه بازش کرد؟
+دوباره سلام، شما درباره انباری پشته بوم چیزی میدونین؟
 
+آره، اون انباری واسه شهرداریه ولی یه کلیدم ما داریم واسش.
 #speaker: روون
-اونجا می‌خوای بری چیکار؟
+چیزی میخوای از اونجا؟
 
+آرو دنبال یکی از وسایل مامانمم.
 #speaker: ادیسون
-اونجا یه چیزی هست که لازم دارم.
+مشکلی نیست فقط کلیدش دست من نیست.
 
-#speaker: روون
-والله یادم نیست.
+اگر اشتباه نکنم لری داشتش آخرین بار.
 
-#speaker: ادیسون
-چطوری میتونم برم توش؟
-
-#speaker: روون
-اَدیسون جان فکر کنم بار آخر لَری کلید اونجا رو داشت.
-
-برو ببین پیشه اونه؟
+باشه… مرسی.
 
 ~ times_interacted = 2
 ~ rowan_interactions = times_interacted
 -> DONE
 
-=== log3_fa ===
-#speaker: روون
-کیلید رو پیدا کردی؟
+=== log1_ja ===
+#speaker:「ローワン」
+「おお、お前だな！よ、ボス！」
 
-#speaker: ادیسون
-بله، ممنون
+「最近のこと、本当に残念です。もう頑張ったか？」
 
-#speaker: روون
-خدارو شکر، باز اگه کمکی خواستی بیا پیشم عمو.
+#speaker:「アディソン」
+「まあ。。。その。。。」
+「大変でした。説明して大変です。」
 
-~ times_interacted = 3
-~ rowan_interactions = times_interacted
--> DONE
+#speaker:「ローワン」
+「ご心配なく、分かるよ。」
 
-=== log4_fa ===
-#speaker: روون
-ای کاش این بارون بند بیاد یکم دیگه، هوای بد مشتری ها رو می‌ پرونه!
--> DONE
+「多いお客様はここに立ち寄るので、多い様々な物語を聞た。」
 
-=== main_en ===
+「お前のお母さんも例外ではなかったー彼女はお前の事を話しました。とーてもしゃべりましたよ。」
 
-{ rowanConditional == "":
-    -> log1
-    -> DONE
-}
+#speaker:「アディソン」
+「本当かい？」
 
-{ 
-    - larry_interactions == 1 && raineConditional >= 1:
-    -> log2
-    -> DONE
-    - rowanConditional == 1:
-    -> log4
-    -> DONE
-}
+#speaker:「ローワン」
+「もちろん！あのね、彼女はお前をとても気にかけした。」
 
-{ 
-    - rowanConditional == 2 && larryConditional >= 4:
-    -> log3
-    -> DONE
-    - rowanConditional == 2:
-    -> log4
-    -> DONE
-}
+「もし彼女はまだいたら、私にあなたが大学進学の事相談しますよ。」
 
-{ rowanConditional >= 3:
-    -> log4
-    -> DONE
-}
+#speaker:「アディソン」
+「ん。。。そうね。。。」
 
--> DONE
+もしローワンさんが母が俺の後ろにいると知ってさえいれば。。。
 
+「ああ、ローワンさん。最近、何か変な事を見ましたか？」
 
+#speaker:「ローワン」
+「いいえ、そうとは言えない。。。でも、屋根に変な事が起こりました。」
 
--> DONE
+「どうして、その聞くの？」
 
-=== log1 ===
-Oh, it’s Addison! #speaker: Rowan
+#speaker:「アディソン」
+「ちょっと気になっただけです。ありがとう。」
 
-How have you been? Long time no see! Have you been hanging in there? #speaker: Rowan
-
-Eh, I dunno. Everything is alright. #speaker: Addison
-
-You know, we all miss your mom.
-
-She would come in every morning for a cup of coffee and a sugar donut. Her presence was very well-known. #speaker: Rowan
-
-Yeah, I know… #speaker: Addison
-
-I’m sorry… I realized I made you a bit sad. 
-
-If you need anything from us, feel free to drop by. Free donuts on the house. #speaker: Rowan
+「あの建物の側面にプラットホームが見える。あれで、屋根に行けるはずだ。」
 
 ~ times_interacted = 1
-~ dog_interactions = times_interacted
+~ rowan_interactions = times_interacted
 -> DONE
 
-=== log2 ===
-You should be careful! I saw you climbing to the roof over there. Your mom would agree with what I have to say. #speaker: Rowan
+=== log2_ja ===
+#speaker:「アディソン」
+「ローワンさん！あの屋根の押入れ、何か知りまか？」
 
-I saw that there’s a locked gate up there. Is there a key to unlock it? #speaker: Addison
+#speaker:「ローワン」
+「ええ、あれは公共の物置だよ。」
 
-Why do you need to unlock that gate? #speaker: Rowan
+「どうして？あれから何か要りますか？」
 
-Oh, I saw something behind the gate and I wanted to see it. #speaker: Addison
+#speaker:「アディソン」
+「なんか、ギンギラのものを見た。ちょっと調べてみたい。」
 
-Hm… I can’t remember who last opened the gate or who even has the key. #speaker: Rowan 
+#speaker:「ローワン」
+「そうですか？じゃあ、どうぞ。ですが、鍵を持っていない。」
 
-Is there anything I can do to break the gate? #speaker: Addison
+「たぶん、ラリーが最後に使った人だともう。。。彼に聞てみて。」
 
-Addison! Good grief, don’t you become a vandalizer now. Let me— OH I remember! Larry last had the key because he needed to store his fishing gear. #speaker: Rowan
-
-Why don’t you ask him? #speaker: Rowan
+#speaker: 「アディソン」
+「わかりました。ありがとう！」
 
 ~ times_interacted = 2
-~ dog_interactions = times_interacted
+~ rowan_interactions = times_interacted
 -> DONE
 
-=== log3 ===
-Did you get the key? #speaker: Rowan
-
-Yes I did, thank you Rowan! #speaker: Addison
-
-I’m glad! Now off you go. Remember Addison, the village is always there for you. #speaker: Rowan
-
-~ times_interacted = 3
-~ dog_interactions = times_interacted
--> DONE
-
-=== log4 === 
-I wish this rain would stop soon, it’s driving away my customers!! #speaker: Rowan
--> DONE

@@ -1,24 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
     private float horizontal;
-    [SerializeField] private float speed = 8f;
-    [SerializeField] private float jumpPower = 10f;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpPower;
     public bool isFacingRight = true;
 
-    [SerializeField] private GameObject ghost;
-
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private bool dialogueInScene = true;
+
+    // Booleans to pause player movement depending on game activity
+    [SerializeField] private bool dialogueInScene;
+    [SerializeField] private bool inputInScene;
+
+    //public PhysicsMaterial2D[] material;
+
+    //Method 2 of Grounded
+    public Vector2 boxSize;
+    public float castDistance;
+
+    //Movement State
+    private bool isMoving;
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {
-        if (dialogueInScene == true)
+        Flip();
+        //Debug.Log("Player Position: " + rb.position);
+        if (dialogueInScene)
         {
             if (DialogueManager.GetInstance().dialoguePlaying)
             {
@@ -26,49 +41,118 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        horizontal = Input.GetAxis("Horizontal");
-
-        // Debug.Log("Player X Velocity: " + rb.velocity.x);
+        // Check if player text input is active
+        if (inputInScene)
+        {
+            if (Mausoleum.Instance().inputActive)
+            {
+                return;
+            }
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            rb.isKinematic = false;
+            rb.AddForce(Vector2.up * jumpPower * 50f);
+            isMoving = true;
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0.5f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
-        Flip();
-        //Debug.Log(rb.position);
     }
 
     private void FixedUpdate()
     {
         // Check if a Dialogue Instance is playing
-        
-
-        if(dialogueInScene == true)
+        if (dialogueInScene)
         {
             if (DialogueManager.GetInstance().dialoguePlaying)
             {
-                // If so, deccelerate player
-                rb.velocity -= 0.1f * rb.velocity;
+                rb.velocity = new Vector2(0, rb.velocity.y);
                 return;
             }
+        }
+
+        // Check if player text input is active
+        if (inputInScene)
+        {
+            if (Mausoleum.Instance().inputActive)
+            {
+                return;
+            }
+        }
+
+        // Moving and Jumping
+        if (Input.GetKey(KeyCode.A))
+        {
+            //rb.isKinematic = false;
+            isMoving = true;
+            horizontal = -1f;
+            
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            //rb.isKinematic = false;
+            isMoving = true;
+            horizontal = 1f;  
+        }
+        else
+        {
+            horizontal = 0f;
         }
 
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
+
+    // isGrounded() that involves one-way platforms
     private bool isGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.3f, groundLayer);
+        bool groundCheck = false;
+        bool oneWayPlatformCheck = false;
+
+        // get all "Ground" hits
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer);
+        PolygonCollider2D playerCollider = gameObject.GetComponent<PolygonCollider2D>();
+
+        foreach (RaycastHit2D hit in hits)
+        {
+            bool isOneWay = hit.collider.gameObject.CompareTag("OneWayPlatform");
+
+            // detect if player is on ground that player can jump
+            if (hit && (!isOneWay || (isOneWay && hit.collider.IsTouching(playerCollider))))
+            {
+                groundCheck = true;
+            }
+
+            // detect if player is currently phasing through a one-way platform
+            if (isOneWay && !hit.collider.IsTouching(playerCollider))
+            {
+                oneWayPlatformCheck = true;
+            }
+        }
+
+        if (groundCheck)
+        {
+
+            return true;
+        }
+        else if (oneWayPlatformCheck)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position-transform.up * castDistance, boxSize);
     }
 
     private void Flip()
     {
-        if(isFacingRight && horizontal <0f || !isFacingRight && horizontal > 0f)
+        if((isFacingRight && horizontal < 0f) || (!isFacingRight && horizontal > 0f))
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;

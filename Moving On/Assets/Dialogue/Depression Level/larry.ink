@@ -12,6 +12,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Larry:
@@ -22,56 +25,97 @@ VAR currentLocale = ""
 === main_en ===
 { 
 - larry_interactions == "":
-    -> log1
+    -> log1_en
     -> DONE
-- larry_interactions == 1:
-    -> log2
-    -> DONE
-- larry_interactions == 2:
-    -> log3
-    -> DONE
-- larry_interactions == 3:
-    -> log4
-    -> DONE
-- larry_interactions >= 4:
-    -> log5
+    //Default Larry
+- larry_interactions >= 1:
+    -> log2_en
     -> DONE
 }
 -> DONE
 
-=== main_fa === 
-
+=== main_fa ===
 { 
 - larry_interactions == "":
     -> log1_fa
     -> DONE
-- larry_interactions == 1:
+    //Default Larry
+- larry_interactions >= 1:
     -> log2_fa
     -> DONE
-- larry_interactions == 2:
-    -> log3_fa
+}
+-> DONE
+
+=== main_ja ===
+{ 
+- larry_interactions == "":
+    -> log1_ja
     -> DONE
-- larry_interactions >= 3:
-    -> log4_fa
+    //Default Larry
+- larry_interactions >= 1:
+    -> log2_ja
     -> DONE
 }
-
-
 -> DONE
+
+=== log1_en ===
+#speaker: Larry
+Hey lad! My my, when was the last time I saw you? You’re looking quite older. Are you in college now?
+
+#speaker: Addison
+Not yet. I’ll be graduating from high school, though.
+
+#speaker: Larry
+Time really flies, doesn’t it? 
+
+I’m sure your mom is very proud of you!
+
+#speaker: Addison
+...
+
+#speaker: Larry
+Oh my. I’m sorry — I just remembered. This old head can forget things at the worst times. 
+
+#speaker: Addison
+...It’s okay. 
+
+#speaker: Larry
+Ay, if you wanna talk about anything, you know where to find me!
+
+~ times_interacted = 1
+~ larry_interactions = times_interacted
+-> DONE
+
+=== log2_en ===
+#speaker: Larry
+Why aren’t there any fish today? I’ll starve if I can’t catch at least one!
+
+~ times_interacted = 2
+~ larry_interactions = times_interacted
+-> DONE
+
 
 === log1_fa ===
 #speaker: لری
-سلام اَدیسون جان، چقدر بزرگ شدی جوون. دانشگاه میری؟
+سلام عمو جان، خیلی وقته ندیدمت جوون. ماشالله حسابی بزرگ شدی. الان دانشگاه باید باشی درسته؟
 
 #speaker: ادیسون
-نه هنوز دبیرستانم ولی کم کم تمومه اونم.
+هنوز نه، ولی کم کم. پارم دبیرستان رو تمموم میکنم.
 
 #speaker: لری
-حیف که مادرت نیست اون روز رو ببینه. ولی بدون که اهالی این محل همیشه به تو افتخار میکنن.
+خیلی زود میگزره ها!
 
-من روزی که پسر خودم فارغ التحصیل شد رو یادمه. از خوشحالی گریه کردم.
+مطمعنم مامانت اگه اینحا بود حصابی بهت افتخار میکرد عمو.
+#speaker: ادیسون
+...
 
-برو عمو حوصله تو سر نمیبرم دیگه. در اینجا به روت بازه!
+...
+#speaker: لری
+ای وای، شرمنده اصلا تمیخواستم ناراحتت کنم عمو جان . من پیر شدم چرت و پرت میگم جدیدنا.
+#speaker: ادیسون
+نه اوکیه…
+#speaker: لری
+اگر هر موقع خواستی دربارش حرف بزنی بیا پیش عمو جونت.
 
 ~ times_interacted = 1
 ~ larry_interactions = times_interacted
@@ -79,173 +123,100 @@ VAR currentLocale = ""
 
 === log2_fa ===
 #speaker: لری
-یادته کوچک تر که بودی باهم رفتیم ماهی گیری؟ چه روز های بود!
-
-یادته به جای اینکه تو ماهی ها رو بگیری، ماهی ها تورو گرفتن وقتی پریدی تو آب! هاهاها
-
-مامانتو بقیه محل شاکی بودن که چرا من کمکت نکردم.
-
+زود برگشتی عمو جان؟
 #speaker: ادیسون
-عمو من فقط پنج سالم بود.
+دوباره سلام! کلید انباری رو پشت بوم پیشه شماست؟
 
-#speaker:لری
-خوبه دیگه، الان اگه شنا بلدی میدونه منی عمو جان.
+بله عمو، لازم داریش؟
+#speaker: لری
+لری بعد از کلی گشت و گذار تو جیبش، بعد از یه ربع بلاخره…
+
+آها
+
+پیداش کردم هوم.
+
+لری کلید رو بهم داد.
+#speaker: لری
+مرسی. زودی براتون میارمش.
+#speaker: ادیسون
+باشه عمو.
+#speaker: لری
+مواظب باش میری اون بالا. خیلی بهم ریختس، نیفتی.
+
+اون سری خانم ولی پور تعریف میکرد اون بالا صدا های گریه یه دختر رو میشنیده.
+
+ولی کسی نبوده، میگفت که روح دختر اون همسایه پایینیشون که از بالا پشت بوم افتاده. حواست رو جمع کن.
+
+چشم، حواسم هست عوم.
 
 ~ times_interacted = 2
 ~ larry_interactions = times_interacted
 -> DONE
 
-=== log3_fa ===
-#speaker: لری
-من اون روزی که مامانت اسباب کشی کرد تو این محل رو یادمه.
+=== log1_ja ===
+#speaker:「ラリー」
+「おい、しょうねん！おや、おや、お前の顔を見るのはいつかな？ずいぶん老けたみたい。もう大学生だろう？」
 
-آنقدر خانوم با شخصیتی و مهربونی بود که از روز اول همه مثل خانواده‌شون باهاش رفتار میکردن.
+#speaker:「アディソン」
+「いや、まだです。もうすぐ高校から卒業しますけど。」
 
-یادت نره این ویژگی های مادرت.
+#speaker:「ラリー」
+「時間が過ぎるのはとても早いね。」
 
-~ times_interacted = 3
-~ larry_interactions = times_interacted
--> DONE
+「お母さんはあんたの事をとても誇りに思っていると思うわ！」
 
-=== log4_fa ===
-#speaker: لری
-سوالت چیه عمو جان
+#speaker:「アディソン」
+「。。。」
 
-# speaker: ادیسون
-میخواستم ببینم کیلید انباری سلمونی پیشه شماست؟
+#speaker:「ラリー」
+「あ、しまった。。。ごめんなさいー今思い出した。このおじいさん、最悪のタイミングで物事を忘れます。
 
-#speaker: لری
-آره فکر کنم. بذار چک کنم…
+#speaker:「アディソン」
+「。。。や、大丈夫ですよ。」
 
-(Rustling sounds)
-
-بیا عمو جان. کیلید رو برای چی میخوای؟
-
-#speaker: ادیسون
-دنبال یه چیزی ام، فکر کنم اونجا باشه…
-
-#speaker: لری
-تو اون انباری از شیره مرغ پیدا میشه تا جونه آدمیزاد. فقط یادت نره کا
-
-رت تموم شد کیلید رو یا به من یا به روانبرگردون لطفا.
-
-#speaker: ادیسون
-چشم عمو جان
-
-#speaker: لری
-چشمت بی بلا. حواست باشه میری بالا خطرناکه ها. یکی از دختر بچه های محل سال ها قبل از اینکه شما بیاین از اونجا 
-
-افتاد پایین و تموم کرد.
-
-بعضی وقتا که تنها میری رو سقف، صدای گریه هاش میاد.
-
-نترسیدی که؟
-
-#speaker: ادیسون
-چرا یکم عمو.
-
-#speaker: لری
-بعضی وقتا که میرم اون انباری براش بیسکویت میزارم که روحش گشنش نشه.
-
-#speaker: ادیسون
-تا حالا دیدینش؟
-
-#speaker: لری
-نه، ولی من به روح و این چیزا اعتقاد دارم زیاد.
--> DONE 
-
-=== log5_fa ===
--> DONE
-
-
-=== log1 ===
-Ahoy there, Addison! My my, when was th’ last time I saw ye? Yer looking quite older. Are ye in college? #speaker: Larry
-
-No. I’m going to graduate high school soon, though. #speaker: Addison
-
-Shiver me timbers! Such a shame yer mom couldn’t’ve seen ye graduate. It’s such a major accomplishment. #speaker: Larry
-
-Aye, I remember when my own son graduated from high school. I wept tears o’ joy like there’s no tomorrow! #speaker: Larry
-
-Anyway, do come by soon! ‘S always a treat when ye visit me by th’ docks. #speaker: Larry
+「あい、もし何も話したい事があれば、このおじいさんはここにいるよ。」
 
 ~ times_interacted = 1
 ~ larry_interactions = times_interacted
 -> DONE
 
-=== log2 ===
-Aye, ye remember the time ye tried fishing when you were just a youngin’? Ye thought ye had to go to the fish, not the fish coming to ye! Argharghargh! #speaker: Larry
+=== log2_ja ===
+#speaker:「ラリー」
+「おや、しょうねん。もう戻ってきた？」
 
-Ye didn’t let go when th’ pole started wrangling, and it went “plop!” in the ocean. #speaker: Larry
+#speaker:「アディソン」
+「そう、ラリーさん！実は屋根の押入れの鍵が持っていると聞きたいのです。」
 
-Yer mom and th’ neighbors sure were angry at me fer not helping ye. #speaker: Larry
+#speaker:「ラリー」
+「ああ、持っている。要るか？」
 
-I was only five!! #speaker: Addison
+#speaker:「アディソン」
+ラリーはポケットを漁る。
 
-Ye start learning young, heh. Good times. #speaker: Larry
+魚の餌とか、釣り針とか、どの道具の音が聞こえます。
 
+しばらくして。。。
+
+#speaker:「ラリー」
+「よし、どうぞ！」
+
+#speaker:「アディソン」
+ラリーが鍵をくれました。
+
+「ありがとう！終わったら、すぐ返します！」
+
+#speaker:「ラリー」
+「心配ない、しょうねん！」
+
+「でも気を付けて。屋上に行くに、ゾッとするだよ。」
+
+「ゴーストがあそこにいるはずだろう。。。」
+
+「時々、クッキー皿を置いて行くーなぜだろうーもしあのゴーストはペコペコになる。」
+
+#speaker:「アディソン」
+「ん、気を付けます」。
 
 ~ times_interacted = 2
 ~ larry_interactions = times_interacted
--> DONE
-
-=== log3 ===
-Ye know, I remember th’ day your mom moved into this village. #speaker: Larry
-
-Th’ village took ‘er in like kin. Even though we ain’t related by blood, don’t ferget— we’re always here fer ye. #speaker: Larry
-
-Don’t ferget. #speaker: Larry
-
-~ times_interacted = 3
-~ larry_interactions = times_interacted
--> DONE
-
-=== log4 ===
-#speaker: Larry
-Ye look like ye have a question.
-
-# speaker: Addison
-I do. I was wondering if you have the key to the gate on the roof of the barbershop?
-
-#speaker: Larry
-I believe I do! Lemme check my pockets…
-
-(Rustling sounds)
-
-Here ye go. Why do ye need th’ key? 
-
-#speaker: Addison
-There’s something behind the gate that I saw was interesting…
-
-#speaker: Larry
-There’s always interesting random stuff in there. 
-
-Don’t ferget to give th’ key back! Ye can give it back to me or Rowan.
-
-#speaker: Addison
-Okay. Thank you Larry.
-
-#speaker: Larry
-AYE! Be careful up there! A little girl was playing up there and fell off th’ roof. Sadly, she ain’t make it… such a sad tale. 
-
-Sometimes, if yer alone and on the roof, ye can hear faint crying sounds.
-
-Shivers yer timbers, don’t it?
-
-#speaker: Addison
-A bit.
-
-#speaker: Larry
-Sometimes I leave some cookies by th’ edge where she fell just in case ‘er spirit is hungry.
-
-#speaker: Addison
-You can see her?
-
-#speaker: Larry
-No, but I just believe in ‘em heebie-jeebies y’know? Anyway, off ye go now!
-
--> DONE
-
-=== log5 ===
-Sigh... One more fish to go. #speaker: Larry
 -> DONE

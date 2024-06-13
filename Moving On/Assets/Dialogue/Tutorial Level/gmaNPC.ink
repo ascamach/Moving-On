@@ -12,19 +12,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
-}
-
-=== main_fa ===
-
-{
-- gma_interactions == "":
-    -> log1_fa
-- gma_interactions == 1:
-    -> log2_fa
-- gma_interactions == 2:
-    -> log3_fa
-- gma_interactions >= 3:
-    -> log4_fa
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Grandma:
@@ -39,86 +29,46 @@ VAR currentLocale = ""
     -> log1_en
 - gma_interactions == 1:
     -> log2_en
-- gma_interactions == 2:
+- gma_interactions >= 2:
     -> log3_en
-- gma_interactions >= 3:
-    -> log4_en
 }
 
-// Farsi Dialogue
-=== log1_fa ===
-#speaker: مادر بزرگ
-نوه عزیییزم چطوره؟ خوبی ننه جان؟ 
+=== main_fa ===
 
-# speaker: ادیسون
-مامانی؟ چطور ممکنه؟ اسپارکی هم اینجاس. چه خبر شده اینجا؟
+{ 
+- gma_interactions == "":
+    -> log1_fa
+- gma_interactions == 1:
+    -> log2_fa
+- gma_interactions >= 2:
+    -> log3_fa
+}
 
-#speaker: مادر بزرگ
-والله نمی‌دونم عزیزم، من فقط اینو میدونم که از راه دور هر روز حواسم بهت هست.
+=== main_ja ===
 
-#speaker: ادیسون
-چه شکلی تو محو نمیشی؟ چطوری مثله مامان به کمک من نیاز نداری؟
-
-#speaker: مادر بزرگ
-به خاطره اینکه منتظر بابابزرگ یه دندَت ام. من موقعی خلاص میشم که اونم بیاد پیشم.
-
-#speaker: ادیسون
-اوه خیلی وقته به بابابزرگ سر نزدم. بیاد حتما یه سر بهش بزنم. 
-
-~ times_interacted = 1
-~ gma_interactions = times_interacted
--> DONE
-
-=== log2_fa ===
-#speaker: مادر بزرگ
-عزیز دلم چقدر لاغر شدی. برو یه چیزی بخور.
-
-#speaker: ادیسون
-باشه مامانی.
-
-#speaker: مادر بزرگ
-میوه و سبزیجات یادت نره بخوری. باید یه ذره به خودت برسی مادر.
-
-#speaker: ادیسون
-چشم مامانی.
-
-~ times_interacted = 2
-~ gma_interactions = times_interacted
--> DONE
-
-=== log3_fa ===
-#speaker: مادر بزرگ
-اون دوران که من جوون بودم، همش بیرون با دوستام بازی میکردم. شما جوون ها همش خونه پایه کامپیوترین.
-
-#speaker: ادیسون
-مامانی من با دوستام آنلاین کامپیوتر بازی می‌کنم.
-
-#speaker: مادر بزرگ
-باید بیشتر بری بیرون مادر.
-
-~ times_interacted = 3
-~ gma_interactions = times_interacted
--> DONE
-
-=== log4_fa ===
-#speaker: مادر بزرگ
-خوشگلم برو به مامانت کمک کن. من همیشه کنارتم.
-
-~ times_interacted = 4
-~ gma_interactions = times_interacted
--> DONE
+{ 
+- gma_interactions == "":
+    -> log1_ja
+- gma_interactions == 1:
+    -> log2_ja
+- gma_interactions >= 2:
+    -> log3_ja
+}
 
 // English Dialogue
 === log1_en ===
-Hey there sonny! Long time no see hehe. #speaker: Grandma
+#speaker: Grandma
+Hey there, A-Star! Long time no see! \*snickers\*
 
-Grandma?! How can I see you? I just saw Sparky in the hallway. What’s going on? #speaker: Addison
+#speaker: Addison
+Grandma?? 
 
-I don’t know sonny but I’ve been watching you from this ghost world for quite some time. #speaker: Grandma
+<i>Dang, I really can see ghosts now, huh ...</i>
 
-Wait but how come you didn’t disappear? How come you don’t need help like my mom does? #speaker: Addison
+How have you been? I’ve missed you so much.
 
-Because I’m waiting for that stubborn grandpa of yours. I can only move on when he comes to the ghost world. #speaker: Grandma
+#speaker: Grandma
+Oh, you know! Just relaxing, waiting for your grandpa. 
 
 
 ~ times_interacted = 1
@@ -126,31 +76,116 @@ Because I’m waiting for that stubborn grandpa of yours. I can only move on whe
 -> DONE
 
 === log2_en ===
-Addison, you’re too skinny. You need to eat more. #speaker: Grandma
+#speaker: Grandma
+You need to take care of yourself, A-Star! Drink water, go for a walk.
 
-Ok grandma. #speaker: Addison
-
-Eat more fruits and vegetables too! You need to be healthy when you enter college. #speaker: Grandma
-
-Ok grandma.. #speaker: Addison
+#speaker: Addison
+I will, Grandma, I will ...
 
 ~ times_interacted = 2
 ~ gma_interactions = times_interacted
 -> DONE
 
 === log3_en ===
-Back in my day, I used to go outside and play with my friends. You youngins just stay in and play video games all day.
- #speaker: Grandma
+#speaker: Grandma
+A-Star, can you believe it? In this form, I don’t have to worry about my arthritis!
 
-I play with my friends on the computer. #speaker: Addison
+#speaker: Addison
+I’m really happy for you, Grandma! Hahaha ...
 
-You should go outside and play more. #speaker: Grandma
+<i>I don’t know if I should feel happy or ...sad? It’s a peculiar situation.</i>
 
 ~ times_interacted = 3
 ~ gma_interactions = times_interacted
 -> DONE
 
-=== log4_en ===
-Sonny, go help out and listen to your mom. I’ll be watching you guys! #speaker: Grandma
 
+// Farsi Dialogue
+=== log1_fa ===
+#speaker: مادر بزرگ
+سلام نوه قشنگم! دلم برات یه ذره شده بود.
+
+#speaker: ادیسون
+مامانی؟
+
+پس واقعانی میتونم روح ارو ببینم دیگه 
+
+.مامانی خوبی؟ دلم‌ برات تنگ شده بود
+
+#speaker: مادر بزرگ
+والله هیچی! چشم به انتظار بابا بزرگت.
+
+~ times_interacted = 1
+~ gma_interactions = times_interacted
 -> DONE
+
+=== log2_fa ===
+#speaker: مادر بزرگ
+!ببینم به خودت میرسی گلم؟ لاغر شدی
+
+#speaker: ادیسون
+.به خدا آره، سعیمو میکنم
+~ times_interacted = 2
+~ gma_interactions = times_interacted
+-> DONE
+
+=== log3_fa ===
+#speaker: مادر بزرگ
+باورت میشه از وقتی روح شدم دیگه آرتروز کمرم رو حس نمیکنم؟
+
+#speaker: ادیسون
+خوشحالم که دیگه درد نمیکشی مامانی 
+
+ولی نمیدونم خوشحال باشم یا ناراحت؟ خیلی دلم براتون تنگ شده بود؟
+
+~ times_interacted = 3
+~ gma_interactions = times_interacted
+-> DONE
+
+=== log1_ja ===
+
+#speaker: 「おばあちゃん」
+「おや、A-Starじゃないの！久しぶり！へへへ。。。」
+
+#speaker: 「アディソン」
+「ばあちゃん？」
+
+「いや。。。本当にゴースト見えるかな。。。」
+
+「お元気ですか？会いたかったよ。」
+
+#speaker:「おばあちゃん」
+「ま、ま、リラックスしていって、おじいちゃんを待っている。」
+
+
+~ times_interacted = 1
+~ gma_interactions = times_interacted
+-> DONE
+
+=== log2_ja ===
+#speaker: 「おばあちゃん」
+「お大事にしないと、A-Star! 水を飲んで、散歩しよう！」
+
+#speaker:「アディソン」
+「はいはい、ばあちゃん。。。」
+
+~ times_interacted = 2
+~ gma_interactions = times_interacted
+-> DONE
+
+=== log3_ja ===
+#speaker: 「おばあちゃん」
+「A-Star、信じられないよ！この形で、関節炎を心配しないよ！」
+
+#speaker: 「アディソン」
+「そうですか？よかったね、ばあちゃん！ハハハ。。。」
+
+「喜ぶべきか、悲しむべきか？分からない。。。」
+
+~ times_interacted = 3
+~ gma_interactions = times_interacted
+-> DONE
+
+
+-> END
+

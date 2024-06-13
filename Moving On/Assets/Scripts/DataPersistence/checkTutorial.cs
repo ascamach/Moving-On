@@ -10,7 +10,7 @@ public class checkTutorial : MonoBehaviour
     {
         if (!levelManager.Instance.tutorialCompleted)
         {
-            SceneManager.LoadSceneAsync("OpeningSceneDream");
+            SceneManager.LoadSceneAsync("introDream");
         }
         else
         {

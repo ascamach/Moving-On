@@ -12,7 +12,24 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
+
+=== main_en ===
+
+{ dog_interactions == "":
+    -> log1_en
+    -> DONE
+}
+
+{ dog_interactions >= 1:
+    -> log2_en
+    -> DONE
+}
+
+-> DONE
 
 === main_fa === 
 
@@ -21,95 +38,119 @@ VAR currentLocale = ""
     -> DONE
 }
 
-{ dog_interactions == 1:
+{ dog_interactions >= 1:
     -> log2_fa
-    -> DONE
-}
-
-{ dog_interactions >= 2:
-    -> log3_fa
     -> DONE
 }
 
 -> DONE
 
+=== main_ja === 
+
+{ dog_interactions == "":
+    -> log1_ja
+    -> DONE
+}
+
+{ dog_interactions >= 1:
+    -> log2_ja
+    -> DONE
+}
+
+-> DONE
+
+=== log1_en ===
+#speaker: Addison
+Wait a minute ... 
+
+Sparky?? //animated text, moderate wobble
+
+It’s been so many years!
+
+#speaker: Sparky
+Woof! Woof woof! (Sparky seems happy to see Addison again.)
+
+#speaker: Addison
+Aww, I’ve missed you too! Who’s a good boy?
+
+#speaker: Sparky
+Woof woof! (Sparky seems to be saying “Me me! I have been a good boy!”)
+
+~ times_interacted = 1
+~ dog_interactions = times_interacted
+-> DONE
+
+=== log2_en ===
+#speaker: Sparky
+Woof woof!
+
+~ times_interacted = 2
+~ dog_interactions = times_interacted
+-> DONE
+
 === log1_fa ===
-اسپارکی؟؟ تو اینجا چیکار می‌کنی؟#speaker: ادیسون
+#speaker: ادیسون
+یه لحظه وایسا 
 
-هاپ هاپ #speaker: جرقه ای
+اسپارکی؟ //animated text, moderate wobble
 
-باورم نمیشه دوباره میتونم میبینمت!#speaker: ادیسون
+باورم نمیشه!
 
-هاپ #speaker: جرقه ای
+#speaker: جرقه ای
+واق، واق، واق! (اسپارکی به نظر میرسه که خوشحاله)
 
-اوه، بذار برم آشپزخونه ببینم غذا چی داریم. شاید یه جایزه هم برای تو پیدا کنم! #speaker: ادیسون
+#speaker: ادیسون
+منم دلم برات تنگ شده بود پسرم! تو پسر قشنگ کی بودی؟
 
+#speaker: جرقه ای
+واق، واق، واق! (اسپارکی به نظر میرسه که تایید میکنه)
 ~ times_interacted = 1
 ~ dog_interactions = times_interacted
 -> DONE
 
 === log2_fa ===
-اسپارکی ، نتونستم برات چیزی پیدا کنم. ولی اصلا چیزی میتونی بخوری؟  #speaker:ادیسون
-
-هاپ هاپ #speaker: جرقه ای
-
-ای کاش میتونستن حداقل نازت کنم. خیلی دلم برات تنگ شده. #speaker: ادیسون
+#speaker: جرقه ای
+واق واق!
 
 ~ times_interacted = 2
 ~ dog_interactions = times_interacted
 -> DONE
 
-=== log3_fa ===
-هاپ هاپ #speaker: جرقه ای
+=== log1_ja ===
+#speaker:「アディソン」
+「ちょっと待って。。。」
 
--> DONE
+「スパーキー？？」
 
+「久しぶりね！」
 
-=== main_en ===
+#speaker:「スパーキー」
 
-{ dog_interactions == "":
-    -> log1
-    -> DONE
-}
+「ワン！ワンワン！（スパーキーが嬉しそう）」
 
-{ dog_interactions == 1:
-    -> log2
-    -> DONE
-}
+#speaker:「アディソン」
+「俺も会いたいよ！いいこ、いいこ。」
 
-{ dog_interactions >= 2:
-    -> log3
-    -> DONE
-}
+#speaker:「スパーキー」
+「ワンワン！（私！私！私はいいこだった！）」
 
--> DONE
-
-=== log1 ===
-Sparky??? What are you doing here boy! #speaker: Addison
-
-Woof wooff #speaker: Sparky
-
-I can’t believe I can see you!! You passed away years ago! Have you been a good doggy? #speaker: Addison
-
-Woof! #speaker: Sparky
-
-Oh right, lemme go into the kitchen to look for food. Maybe I’ll find a bone for you Sparky! #speaker: Addison
 
 ~ times_interacted = 1
 ~ dog_interactions = times_interacted
 -> DONE
 
-=== log2 ===
-Sorry Sparky, I couldn’t find any food for you. But I was wondering if you could even eat the food I gave you. #speaker: Addison
-
-Grrrrr, woof #speaker: Sparky
-
-I wish I could give you belly rubs. I miss you Sparky. #speaker: Addison
+=== log2_ja ===
+#speaker:「スパーキー」
+「ワン！」
 
 ~ times_interacted = 2
 ~ dog_interactions = times_interacted
 -> DONE
 
-=== log3 ===
-Woof woof! #speaker: Sparky
--> DONE
+-> END
+
+
+
+
+
+

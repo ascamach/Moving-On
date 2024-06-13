@@ -12,14 +12,14 @@ public class disclaimerDisplay : MonoBehaviour
     public string MainMenu;
     public void LoadMainMenu()
     {
-        SceneManager.LoadSceneAsync("MainMenu");
+        SceneManager.LoadSceneAsync("introDream");
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            SceneManager.LoadSceneAsync("MainMenu");
+            SceneManager.LoadSceneAsync("introDream");
         }
     }
 }

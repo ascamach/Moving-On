@@ -6,17 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu/disclaimerScene.unity
-    guid: 0eb8450c4758c4d4fbc79a74b5b63aa6
-  - enabled: 1
     path: Assets/Scenes/Main Menu/MainMenu.unity
     guid: 9c700a5313733ed4c99229adc9eb0055
+  - enabled: 1
+    path: Assets/Scenes/Main Menu/disclaimerScene.unity
+    guid: 0eb8450c4758c4d4fbc79a74b5b63aa6
   - enabled: 1
     path: Assets/Scenes/Tutorial Level/tutorialScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/hubWorld.unity
     guid: abf0817e4f98741c199538fcca4cab41
+  - enabled: 1
+    path: Assets/Scenes/insideMausoleum.unity
+    guid: f2c51bc878faf9d4c893c93f7b84494c
   - enabled: 1
     path: Assets/Scenes/Main Menu/howToPlayMenu.unity
     guid: 0f07d1f87a21246f79aa5dc4bcdd1afc
@@ -41,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu/tutorialCheck.unity
     guid: 827cfdceaba954e9f88094d9bb43da1b
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: b16d84508d3de464bb3d7d3c92c68cbd
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 1024ccb5f30fb470c812b787d57ce45f, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 24adf6e8081b84072b59641551fca512, type: 2}

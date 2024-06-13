@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &121136315802522910
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 583309572495834485}
-  m_Layer: 0
-  m_Name: groundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &583309572495834485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121136315802522910}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1343772409671551558}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &359631902623646001
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,8 +35,7 @@ Transform:
   m_LocalPosition: {x: -11.79, y: 2.801928, z: 0}
   m_LocalScale: {x: 1.83, y: 1.83, z: 1.83}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 583309572495834485}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8664922335596405899
@@ -210,15 +178,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.45
-  jumpPower: 7
+  jumpPower: 10
   isFacingRight: 1
-  ghost: {fileID: 0}
   rb: {fileID: 6796631766009901027}
-  groundCheck: {fileID: 583309572495834485}
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
   dialogueInScene: 1
+  rayCastDistance: 0.85
+  boxSize: {x: 0.55, y: 0.12}
+  castDistance: 0.79
 --- !u!50 &6796631766009901027
 Rigidbody2D:
   serializedVersion: 4

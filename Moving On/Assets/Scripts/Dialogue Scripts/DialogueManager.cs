@@ -5,8 +5,11 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.Localization.Settings;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 using UnityEngine.Localization;
 using UnityEngine.Localization.SmartFormat.Utilities;
+using Unity.Services.Core.Analytics;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI nameplateText;
     [SerializeField] private GameObject continueIcon;
+
+    public Sprite flashbackImage;
 
     [SerializeField] private Animator playerAnimator;
 
@@ -42,7 +47,10 @@ public class DialogueManager : MonoBehaviour
 
     public bool dialogueFinished { get; private set; }
 
-    private DialogueVariables dialogueVariables;
+    public DialogueVariables dialogueVariables;
+    private ReadyForBedroom bed;
+
+    public string dialogueName = "";
 
     // Tags for Ink
     private const string speaker_tag = "speaker";
@@ -52,11 +60,41 @@ public class DialogueManager : MonoBehaviour
 
     private bool canContinueLines = false;
 
+    // Booleans to skip to end of line during dialogue
+    private bool canSkip = false;
+    private bool submitSkip = false;
+
     // Reference for pause menu
     public PauseMenu pauseMenu;
 
     [Header("Dialogue Typing Speed")]
-    [SerializeField] private float typingSpeed = 0.04f;
+    private float typingSpeed = 0.04f;
+
+    //Check if Manager is currently at Ending Scene
+    [Header("Check True if at Ending Scene")]
+    [SerializeField] private bool atEndingScene;
+
+    //Variables to keep track of when to activate flowers at Ending Scene
+    private int currentLine;
+    private int targetLine = 15;
+
+    // Booleans for auto play mode during dialogue
+    private bool autoMode = false;
+    private bool autoPlay = false;
+
+    //Global Variable
+    private GlobalVariable globalVariable;
+
+    // Variables for animated text
+    public TMP_Text textMesh;
+    Mesh mesh;
+    Vector3[] textVertices;
+
+    // Variables to change effects of animated text
+    public string textEffect = "default";
+
+    // Default value for font size
+    private int defaultFontSize = 32;
 
     private void Awake()
     {
@@ -65,6 +103,9 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("More than one instance of Dialogue Manager found in the scene.");
         }
+
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+
         instance = this;
     }
 
@@ -75,56 +116,163 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        // Debug.Log("---------------------------------------------");
+        // Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY WTFFFF");
+        // Debug.Log("---------------------------------------------");
+
+        // Debug.Log("ADDISON");
+
+        // Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY PART 2");
+
+
+
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
         dialogueUI.SetActive(false);
 
+        //Assigns globalVariable
+        globalVariable = GameObject.FindWithTag("Global Variable").GetComponent<GlobalVariable>();
+
         // Gets all choices text
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
-        foreach( GameObject choice in choices)
+        foreach (GameObject choice in choices)
         {
             // Grabs the text of the choices buttons (children of the buttons)
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
-        }
-
-        // Grab current locale ID        
-        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        }      
 
         currentStory = new Story(loadGlobalsJSON.text);
 
         dialogueVariables.StartListening(currentStory);
 
         string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
-        currentStory.variablesState["localeID"] = localeID;
+        // currentStory.variablesState["localeID"] = localeID;
+        currentStory.variablesState["localeID"] = "ja";
+
+        string final = globalVariable.bitch;
+        currentStory.variablesState["is_ready"] = final;
+
+        //bool final2 = bed.bedTime;
+        //currentStory.variablesState["parentBedroom"] = final2;
 
         dialogueVariables.StopListening(currentStory);
+
+        //Set currentLine Variable to 1 for Ending Scene
+        currentLine = 1;
     }
 
     private void Update()
     {
+
+        //Checking if there's anything in that bitch variable:
+        //Debug.Log("HI THIS IS DIALOGUE MANAGER: YOUR BITCH IS: " + globalVariable.bitch);
+        //currentStory.variablesState["is_ready"] = globalVariable.bitch;
+        
+        //globalVariable.currentStory.variablesState["is_ready"] = globalVariable.bitch;
         // Return if no dialogue is playing
         if(!dialoguePlaying)
         {
             return;
         }
 
-        if (pauseMenu.paused == true)
+        if (!textMesh)
+        {
+            textMesh = dialogueText;
+        }
+
+        if (pauseMenu.paused)
         {
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            submitSkip = true;
+        }
+
+        if (atEndingScene && !autoMode)
+        {
+            autoMode = true;
+            Debug.Log("Enabling auto mode");
+        } else if (Input.GetKeyDown(KeyCode.K) && autoMode)
+        {
+            autoMode = false;
+            Debug.Log("Disabling auto mode");
+        }
+
         // If dialogue is playing, the player can press space to progress through dialogue
+        if (autoMode)
+        {
+            if (canContinueLines
+                && currentStory.currentChoices.Count == 0
+                && !autoPlay)
+            {
+                autoPlay = true;
+                StartCoroutine(nextLineAuto());
+                currentLine++;
+                Debug.Log("Currently at Line: " + currentLine);
+                if(currentLine>=targetLine && !EndingManager.Instance.plantFlower)
+                {
+                    EndingManager.Instance.plantFlower = true;
+                }
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    autoPlay = false;
+                    StopCoroutine(nextLineAuto());
+                    NextLine();
+                }
+            }
+        }
+
         if (canContinueLines
             && currentStory.currentChoices.Count == 0 
-            && Input.GetKeyDown(KeyCode.Space))
+            && Input.GetKeyDown(KeyCode.Space) && !autoMode)
         {
-            // Debug.Log("Moving to next dialogue");
-            canContinueLines = false;
-            ContinueStory();
-            dialogueNextSound.Play();
+            NextLine();
         }
+
+        /* --------------------
+         * CODE FOR TEXT MESHING THINGS
+         * --------------------
+         */
+
+        textMesh.ForceMeshUpdate();
+        mesh = textMesh.mesh;
+        textVertices = mesh.vertices;
+
+        for (int i = 0; i < textMesh.textInfo.characterCount; i++)
+        {
+            Vector3 offset = new Vector3(0, 0, 0);
+            TMP_CharacterInfo c = textMesh.textInfo.characterInfo[i];
+
+            int index = c.vertexIndex;
+
+            switch(textEffect)
+            {
+                case "default":
+                    offset = new Vector3(0, 0, 0);
+                    break;
+                case "wobble":
+                    Wobble(Time.time + i);
+                    offset = Wobble(Time.time + i);
+                    break;
+                case "shake":
+                    Shake(Time.time + i);
+                    offset = Shake(Time.time + i);
+                    break;
+            }
+
+            textVertices[index] += offset;
+            textVertices[index + 1] += offset;
+            textVertices[index + 2] += offset;
+            textVertices[index + 3] += offset;
+        }
+
+        mesh.vertices = textVertices;
+        textMesh.canvasRenderer.SetMesh(mesh);
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -132,13 +280,51 @@ public class DialogueManager : MonoBehaviour
         // Load the JSON file associated with the game object 
         // Shows the Dialogue UI
         currentStory = new Story(inkJSON.text);
+
+        dialogueName = inkJSON.name;
+
         dialoguePlaying = true;
         dialogueUI.SetActive(true);
 
         dialogueVariables.StartListening(currentStory);
         getLocaleID();
 
+        string tempLocaleID = getLocaleID();
+
         dialogueStartSound.Play();
+
+        if (getLocaleID() == "fa")
+        {
+            dialogueText.isRightToLeftText = true;
+            dialogueText.alignment = TextAlignmentOptions.TopRight;
+        }
+        else
+        {
+            dialogueText.alignment = TextAlignmentOptions.TopLeft;
+            dialogueText.isRightToLeftText = false;
+        }
+
+        /* ------------------------------
+         * BINDING FOR UNITY FUNCTIONS
+         * ------------------------------
+         */
+
+        currentStory.BindExternalFunction("testFunction", () =>
+        {
+            testFunction();
+        });
+
+        currentStory.BindExternalFunction("fadeImage", (bool fadeAway, string imageID) =>
+        {
+            StartCoroutine(FadeImage(fadeAway, imageID));
+        });
+
+        currentStory.BindExternalFunction("textEffect", (string effect) =>
+        {
+            textEffect = effect;
+        });
+
+        // ------------------------------
 
         ContinueStory();
     }
@@ -157,6 +343,17 @@ public class DialogueManager : MonoBehaviour
         playerAnimator.Play("default");
 
         dialogueFinished = true;
+
+        /* ------------------------------
+         * UNBINDING THE UNITY FUNCTIONS
+         * ------------------------------
+         */
+
+        currentStory.UnbindExternalFunction("testFunction");
+        currentStory.UnbindExternalFunction("fadeImage");
+        currentStory.UnbindExternalFunction("textEffect");
+
+        // -----------------------------
     }
 
     private void ContinueStory()
@@ -164,7 +361,6 @@ public class DialogueManager : MonoBehaviour
         // If the dialogue is NOT on the last line, we can continue the story.
         if (currentStory.canContinue)
         {
-            // 
             if (displayLineCoroutine != null)
             {
                 StopCoroutine(displayLineCoroutine);
@@ -194,6 +390,11 @@ public class DialogueManager : MonoBehaviour
         // Clear previous dialogue
         dialogueText.text = "";
 
+        bool isAddingRichTextTags = false;
+
+        submitSkip = false;
+        StartCoroutine(CanSkip());
+
         canContinueLines = false;
 
         HideChoices();
@@ -205,16 +406,42 @@ public class DialogueManager : MonoBehaviour
         {
             // Debug.Log("i's current value: " + i);
             i++;
+            /* -----------------------------
+             * OLD SKIP METHOD
+             * _____________________________
             // Display whole line if the player presses the interact button
             // during the typing effect.
-            if (Input.GetKey(KeyCode.F) && i > 3)
+            if (Input.GetKey(KeyCode.Space) && i > 3 && canSkip)
             {
                 // Debug.Log("Pressing G here.");
                 dialogueText.text = line;
                 break;
             }
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            */
+
+        // Newer Skip method
+        // Uses a variable that is updated in the Update() method... 
+        // ...instead of inside the coroutine itself
+        if (canSkip && submitSkip)
+            {
+                submitSkip = false;
+                dialogueText.text = line;
+                break;
+            }
+
+            if (letter == '<' || isAddingRichTextTags)
+            {
+                isAddingRichTextTags = true;
+                dialogueText.text += letter;
+                if (letter == '>')
+                {
+                    isAddingRichTextTags = false;
+                }
+            } else
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
             // Debug.Log("Dialogue Finished");
         }
 
@@ -222,6 +449,14 @@ public class DialogueManager : MonoBehaviour
         // If choices are available, show all available choices
         DisplayChoices();
         canContinueLines = true;
+        canSkip = false;
+    }
+
+    private IEnumerator CanSkip()
+    {
+        canSkip = false;
+        yield return new WaitForSeconds(0.05f);
+        canSkip = true;
     }
 
     private void HandleTags(List<string> currentTags)
@@ -307,7 +542,7 @@ public class DialogueManager : MonoBehaviour
         }
     } 
 
-    public Ink.Runtime.Object GetVariableState (string variableName)
+    public string GetVariableState (string variableName)
     {
         Ink.Runtime.Object variableValue = null;
         dialogueVariables.variables.TryGetValue(variableName, out variableValue); 
@@ -315,7 +550,7 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("Ink variable not found: " + variableName);
         }
-        return variableValue;
+        return variableValue.ToString();
     }
 
     private string getLocaleID()
@@ -323,7 +558,78 @@ public class DialogueManager : MonoBehaviour
         string currentLocaleID = "";
         string localeID = LocalizationSettings.SelectedLocale.Identifier.Code;
         currentStory.variablesState["localeID"] = localeID;
+        // currentStory.variablesState["localeID"] = "ja";
+        currentLocaleID = localeID;
 
         return currentLocaleID;
+    }
+
+    public void testFunction()
+    {
+           Debug.Log("Hello from test function!");
+    }
+
+    IEnumerator FadeImage(bool fadeAway, string imageID)
+    {
+        // Find specific using Unity tags
+        GameObject flashbackImage = GameObject.FindWithTag(imageID);
+
+        // Grab sprite renderer component to change alpha
+        SpriteRenderer image = flashbackImage.GetComponent<SpriteRenderer>();
+
+        if (fadeAway)
+        {
+            // Loop over 1 second
+            for (float i = 1; i >= 0; i -= Time.deltaTime)
+            {
+                // Change alpha
+                image.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
+        }
+        // fade from transparent to opaque
+        else
+        {
+            // Loop over 1 second
+            for (float i = 0; i <= 1; i += Time.deltaTime)
+            {
+                // Change alpha
+                image.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
+        }
+    }
+
+    private void NextLine()
+    {
+        canContinueLines = false;
+        canSkip = false;
+        ContinueStory();
+        dialogueNextSound.Play();
+    }
+
+    IEnumerator nextLineAuto()
+    {
+        Debug.Log("Next line test called here.");
+        yield return new WaitForSeconds(2.0f);
+        canContinueLines = false;
+        canSkip = false;
+        ContinueStory();
+        dialogueNextSound.Play();
+        if (autoPlay)
+        {
+            autoPlay = false;
+        }
+    }
+
+    // Functions for animated text
+    Vector2 Wobble(float time)
+    {
+        return new Vector2(Mathf.Sin(time * 3.3f), Mathf.Cos(time * 1.8f));
+    }
+
+    Vector2 Shake(float time)
+    {
+        return new Vector2(Mathf.Sin(time * 50f), Mathf.Cos(time * 50f));
     }
 }

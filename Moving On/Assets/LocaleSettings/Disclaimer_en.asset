@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Disclaimer_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 12ef47ad6c23b4c6293b24f723e4f29e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 12229533696
+    m_Localized: Disclaimer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95079620608
+    m_Localized: "This game contains sensitive topics such as grief, depression,
+      death, and may not be suitable for all audiences. \n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2069900550144
+    m_Localized: Viewer discretion is advised.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

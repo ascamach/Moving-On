@@ -11,7 +11,7 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] private playerMovement playerDirection;
 
     //AI motion
-    [SerializeField] private int speed;
+    [SerializeField] private float speed;
 
     Vector3 velocity = Vector3.zero;
 

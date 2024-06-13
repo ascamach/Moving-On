@@ -11,6 +11,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Mom:
@@ -20,66 +23,232 @@ VAR currentLocale = ""
 
 === main_en ===
 
-........ #speaker: Addison
+#speaker: Addison
+<i>It's been so long since I stepped in here.</i>
 
-"It's been so long since I stepped in here" #speaker: Addison
+<i>It almost feels like normal.</i>
 
-"It almost feels like normal" #speaker: Addison
+<i>It almost feels ...</i>
 
-"It's almost feels..." #speaker: Addison
+<i>Peaceful ...</i>
 
-"Peaceful" #speaker: Addison
+........ 
 
-"The smell of my mom's hoodie" #speaker: Addison
+<i>It was a similar, gloomy day, back when I was younger.</i> // middle school era
 
-"Once I wear it, her smell will be gone forever" #speaker: Addison
+<i>I was walking back from school, where I had gotten injured from something that happened. </i>
 
-/Addison starts crying
+<i>An upperclassman hurt me ... I didn’t want to argue, but I needed to stand up for myself.</i>
 
-Oh, sweetheart, if only I could cry with you. But this ghost form won’t let me. I wish I could give you a big hug. #speaker: Mom
+<i>Mom was waiting at the door for me, my nose red and sniffling from the cold.</i> 
 
-I wAnT a HuG. I MIsS YoUUUUUUUU #speaker: Addison
+<i>Tears were still rolling down my face.</i> 
 
-It will be ok. I will always be by your side, don’t forget that. #speaker: Mom
+<i>Mom told me the school called her and for me not to worry. Everything was going to be okay.</i> 
 
-Since you can still see me, that’s good right! Even though I look different, my love for you remains unchanged.
+<i>She then gave me a warm hug, and wrapped this specific jacket around me.</i>
 
-It's not the same. I miss your warmth, your smell.. #speaker: Addison
+<i>I’ll never forget her warmth and comfort.</i>
 
-Wearing my jacket, you'll carry a part of me everywhere. That's comforting, isn't it? #speaker: Mom
- 
-… I guess sooooo. #speaker: Addison
+......
 
-Shall we head out now? #speaker: Mom
+#speaker: Mom
+Sweetie ... I know it’s been really rough — you’ve been going through a lot all by yourself, but ... listen to me.
 
-Ok Mom, I’m ready. Let's stick together, okay? #speaker: Addison
+I’m here. You’re going to be alright. 
+
+#speaker: Addison
+But you’re not! // *wobbly effect*
+
+Nothing’s the same anymore. How can I keep going forward without you?
+
+
+You've been there all my life. You left all of a sudden, and I don’t know what to do without you.
+
+#speaker: Mom
+I know, and I can’t express how much I wish I could physically be there for you. To give you all the hugs you want. 
+
+It may not seem like it right now, but trust me. Everything will be okay. Everything will always turn out okay.
+
+#speaker: Addison
+But how can everything become okay if you’re not always there for me?
+
+#speaker: Mom
+Let’s take things one step at a time. Focus on the now. Don’t worry about the future yet.
+
+Why don’t you put on my jacket? That’s a good start. Just think of it as you’re carrying a part of me everywhere. 
+
+#speaker: Addison
+...
+
+#speaker: Mom
+Addison, shall we head out now?
+
+#speaker: Addison
+Okay Mom, I’m ready. Let's stick together, okay?
+
+{is_ready == "true":
+#speaker: Addison
+<i>I realized that ...</i>
+
+<i>The moment I step out of the house, what’s going to happen?</i>
+<i>Am I actually ready to face everything?</i>
+-> DONE
+}
 
 -> DONE
 
 === main_fa ===
-#speaker: روح
-قشنگم گریه نکن دیگه. من اگه میتونستم الان
+#speaker: ادیسون
+من خیلی وقته این تو نیومدم.
 
-یه دله سیر بغلت میکردم. ولی تو این حالت چیزی از دستم بر نمیاد.
+بوی مامان رو میده.
+
+خیلی…
+
+بوش آرومم میکنه.
+
+........ 
+
+وقتی کوچکتر بودم تو یه روز دلگیر.
+
+یادمه داشتم از مدرسه برمیگشتم که یه اتفاقی برام افتاد. 
+
+یادمه یه کلاس پنجمی، میخواست اذیتم بکنه ولی من باهاش دعوام شد.
+
+مامانم دمه در منتظره من بود، منم داشتم از سرما یخ میزدم.
+
+گریه کنان می دویم و اسمشو داد میزدم.
+
+بهم گفتش که از مدرسه بهش زنگ زدن و گفتن چی شده. خیلی حمایتم کرد.
+
+بغل گرمش حسابی آرومم کرد اون روز. همین ژاکتش رو تنم کرد.
+
+هیچ وقت حس گرم بغلش از یادم نمیره.
+
+......
+
+#speaker:  مامان
+خوشگلم میدونم روزای سختی رو سپری کردی، ولی به من گوش کن، این روزام میگذره و تو دوباره قوی تر از 
+همیشه به زندگیت ادامه میدی. الان که کنارتم. گریه نکن دیگه.
 
 #speaker: ادیسون
-دلم واسه بغلت تنگ شده. واسه خودت. واسه بوت.
+ولی نیستی!!!
 
-#speaker: روح
-منم عزیز دلم. ولی اینو بدون که من همیشه کنارتم و نمیزارم تنه
+هیچی دیگه مثل قبل نمیشه. چطوری بودن تو ادامه بدم؟
 
-ا بمونی. بهت قول میدم. ممکنه یکم عوض شده باشم ولی تو یکی و یدونه منی.
+تو تو تک تک لحظه های زندگی من‌بودی. نمیشه همیطوری یه شبه منو تنها بذاری و بری. من بدون تو چیکار کنم 
+اخه؟
 
-#speaker: ادیسون
-نه. من دلم برای گرمای وجودت تنگ شده. برای مامانم…
+#speaker:  مامان
+تو نمیدونی من الان دنیا رو میدم که بتونم یک ثانیه بغلت کنم و کنارت باشم. 
 
-#speaker: روح
-آره ولی…
-
-#speaker: روح
-ولی نداره. پاشو بریم بیرون.
+ولی چیکار کنم این اتفاقی بود که نه دست تو بود و نه من. ولی میدونم که این روزها هم میگذره و همه چی بهتر 
+میشه.
 
 #speaker: ادیسون
-باشه مامان. من حاضر ام. ولی تنهام نذاریا، قول؟
+ولی چطوری وقتی تو توش نیستی. من اون آینده رو نمیخوام که تث توش نباشی.
 
-->DONE
+#speaker:  مامان
+آرووم باش گله من، یکی یکی همه چیز درست میشه. به فکر آینده نباش حالا.
+
+چرا ژاکته منو نمی پوشی؟ انگار که یه تیکه از منو پوشیدی. ها!؟ 
+
+
+{is_ready == "true":
+#speaker: ادیسون
+الان به خاطر ام اومد…
+
+لحظه ای که پامو از این خونه بیرون بزارم، چه اتفاقی برام میفته؟ آیا به نظرت حاضرم با چالش های اون بیرون رو به رو شم؟ 
+
+...
+
+#speaker:  مامان
+ادیسون آماده ای بریم؟
+
+#speaker: ادیسون
+
+باشه مامان حاظر ام. لطفا این دفعه تنهام نزار.
+-> DONE
+}
+
+-> DONE
+
+=== main_ja === 
+
+#speaker:「アディソン」
+久しぶり。。。ここに足を踏み入れるの。
+
+ほとんど普通の感じだ。。。
+
+ほとんど。。。
+
+平和的だ。。。
+
+。。。
+
+。。。
+
+小学生の時も、同じような暗い日だった。
+
+学校から歩いて帰る途中だった。あることが原因で怪我をしたんだった。
+
+上級生に傷つけられた。喧嘩をしたくなかった。。。でも、自分自身のために立ち上がる必要があった。
+
+俺の鼻が赤くなって、寒さで鼻が鳴っていた。母は家のドアで待っていてくれました。
+
+涙が伝い落ちた。
+
+母が暖かいハグをして、このジャケットを巻いてくれた。
+
+俺は。。。絶対に母の温かさと心地よさを忘れない。
+
+。。。。。
+
+#speaker:「母」
+「アディソン、大変だと分かっている。あなたは自分でたくさん経験しましたけど、私はここにいるよ。大丈夫だよ。」
+
+#speaker:「アディソン」
+「違う！」
+
+「もう同じものは何もない。」
+
+「どうやって母がいなければ続く？」
+
+「いつも俺のために母がいた。突然消えた。何をするのもう分からない。。。」
+
+#speaker:「母」
+「そう。。。物理的にアディソンのそばにいられたらとおもうと、言葉ではい表せない。」
+
+「あなたは今感じないけど、全部うまくなるよ。全ては必ずうまくなりますよ。」
+
+#speaker:「アディソン」
+「でも、母が俺のためにいないなら、どうやってうまくいくか？」
+
+#speaker:「母」
+「一歩ずつ前進しよう。今のことに集中して。未来は考えない。」
+
+「さ、私のジャケットを着よう？いいスタートだ。私の一部をどこに持っていくのかを考えて。」
+
+{is_ready == "true":
+#speaker:「アディソン」
+気づいた。。。
+
+この家を出た瞬間に。。。どうなるかな？
+
+本当に全て向き合う準備ができましたか？
+
+。。。
+
+
+#speaker:「母」
+「さて、アディソン、出発しましょうか？」
+
+#speaker:「アディソン」
+「ええ、準備できました、母。一緒に行ってくれ。」
+
+-> DONE
+}
+-> DONE
+
+-> END

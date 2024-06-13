@@ -1,6 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!78 &1
 TagManager:
   serializedVersion: 2
   tags:
@@ -8,6 +7,8 @@ TagManager:
   - Platform
   - OneWayPlatform
   - NPC
+  - Global Variable
+  - Dialogue Manager
   - Wrecking Ball
   layers:
   - Default
@@ -61,6 +62,9 @@ TagManager:
   - name: Background Image
     uniqueID: 2884289565
     locked: 0
+  - name: Buildings
+    uniqueID: 1490304677
+    locked: 0
   - name: UI
     uniqueID: 2536743113
     locked: 0
@@ -73,12 +77,20 @@ TagManager:
   - name: Exit or Entrance
     uniqueID: 215601959
     locked: 0
-  - name: Buildings
-    uniqueID: 1490304677
+  - name: Hidden Items
+    uniqueID: 3856141119
     locked: 0
-  - name: Ground
-    uniqueID: 674223247
+  - name: Objects Hiding Items
+    uniqueID: 824397695
     locked: 0
+  - name: NPC
+    uniqueID: 517290589
+    locked: 0
+  - name: Flowers
+    uniqueID: 3092025625
+    locked: 0
+  - name: Platforms
+    uniqueID: 1187407849
   - name: Gear
     uniqueID: 32199363
     locked: 0
@@ -90,4 +102,13 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3731135449
+    locked: 0
+  - name: Ground
+    uniqueID: 674223247
+    locked: 0
+  - name: Platforms
+    uniqueID: 1442358973
+    locked: 0
+  - name: Interactables
+    uniqueID: 2873929639
     locked: 0

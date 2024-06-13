@@ -17,123 +17,164 @@ VAR currentLocale = ""
     
 }
 
+// Addison:
+// ادیسون
+// アディソン
+
+// Mom: 
+// ママ
+
 === main_en ===
+... #speaker: Addison
 
-...
+... #speaker: Addison
 
-...
+<i>I'm having that dream again.</i> #speaker: Addison
 
-I'm having a dream again.
+<i>A dream about the pain and regrets I felt during that moment.</i> #speaker: Addison
 
-A dream about the pain and regrets I felt during that moment.
+... #speaker: Addison
 
-...
+<i>I didn't realize how fast things would change.</i> #speaker: Addison
 
-I didn’t realize how fast things would change.
+<i>Even though it's been three weeks, I'm still struggling to process everything.</i> #speaker: Addison
 
-Even though it’s been three weeks, I’m still struggling to process everything.
+... #speaker: Addison
 
-...
+Please don't leave ... #speaker: Addison
 
-Please don’t leave…
+I wish I hadn't said the things I said to you. #speaker: Addison
 
-I wish I hadn’t said the things I said to you.
+If only I had known that night was the last time I would ever talk to you ... #speaker: Addison
 
-If only I had known that night was the last time I would ever talk to you…
+...to see and to hug you. #speaker: Addison
 
-…to see and to hug you.
+I'm sorry, Mom. #speaker: Addison
 
-I’m sorry Mom.
+I wish I could apologize to you. #speaker: Addison
 
-I wish I could apologize to you.
+Mom, don't leave this world yet. #speaker: Addison
 
-Mom, don’t leave this world yet.
+I don't know what I'll do without you. #speaker: Addison
 
-I don’t know what I’ll do without you.
+... #speaker: Addison
+
+... #speaker: Addison
+
+... #speaker: Addison
+
+<i>I wake up in a cold sweat.</i> #speaker: Addison
+
+<i>Feeling dizzy, I try to sit up in bed.</i> #speaker: Addison
+
+I should get a glass of water ... #speaker: Addison
+
+<i>As soon as I get up, I notice a strange yet oddly familiar presence from the other side of the room.</i> #speaker: Addison
 
 -> DONE
 
 === main_fa ===
-...
+#speaker: ادیسون
+... 
 
-...
+... 
 
-I'm having a dream again.
+دوباره دارم خواب میبینم. 
 
-A dream about the pain and regrets I felt during that moment.
+دوبار این حس لعنتی، افسوس اون لحظه. 
 
-...
+... 
 
-I didn’t realize how fast things would change.
+هیچوقت فکر نمیکردم دنیام چقدر سری میتونه عوض شه. 
 
-Even though it’s been three weeks, I’m still struggling to process everything.
 
-...
+با اینکه ۳ هفته گذشته، هنوز باور کردنش برام سخته. 
 
-Please don’t leave…
 
-I wish I hadn’t said the things I said to you.
+... 
 
-If only I had known that night was the last time I would ever talk to you…
+لطفا نرو، تنهام نزار 
 
-…to see and to hug you.
 
-I’m sorry Mom.
+ای کاش اون حرفارو بهت نمیزدم. 
 
-I wish I could apologize to you.
 
-Mom, don’t leave this world yet.
+اگه فقط می دونستم که اون شب آخرین شبی هست که میدیدمت… 
 
-I don’t know what I’ll do without you.
+
+بغلت میکردم 
+
+منو ببخش مامان 
+
+ای کاش می‌شد همه چی برگرده 
+
+ای کاش می‌شد یکبار دیگه میدیدمش. 
+
+
+نمی‌دونم بدون تو چیکار کنم. 
+
+... 
+
+... 
+
+... 
+
+امروز با یه لرزی تو بدنم بیدار شدم. 
+
+حالم اصلا خوب نیست، می خوام بلند شم وای نمی‌تونم.
+
+بذار یه لیوان آب بخورم شاید حالم جا بیاد 
+
+به محض اینکه بلند شدم، احساس کردم یه نفر دیگه هم با من تو اتاقه!
 
 -> DONE
 
 === main_ja ===
 
-...
+。。。#speaker: アディソン
 
-...
+。。。#speaker: アディソン
 
-I'm having a dream again.
+また、あの夢を見ている。#speaker: アディソン
 
-A dream about the pain and regrets I felt during that moment.
+あの瞬間に苦しい事と、後悔の事を感じた夢だ。。。#speaker: アディソン
 
-...
+。。。#speaker: アディソン
 
-I didn’t realize how fast things would change.
+こんなに早く状況が変わるとは思わなかった。#speaker: アディソン
 
-Even though it’s been three weeks, I’m still struggling to process everything.
+もう３週間も経ったのに、俺はまだこんな事を理解するのは大変だ。#speaker: アディソン
 
-...
+。。。#speaker: アディソン
 
-Please don’t leave…
+行かないで。。。#speaker: アディソン
 
-I wish I hadn’t said the things I said to you.
+君にあんな事を言わなければ。。。#speaker: アディソン
 
-If only I had known that night was the last time I would ever talk to you…
+あの夜が、君と話す最後の時間だと知っていたら。。。#speaker: アディソン
 
-…to see and to hug you.
+。。。君を見る、君をハグする。#speaker: アディソン
 
-I’m sorry Mom.
+ごめん、母さん。#speaker: アディソン
 
-I wish I could apologize to you.
+母さんに謝りたい。。。#speaker: アディソン
 
-Mom, don’t leave this world yet.
+母さん、この世を去らないで。。。#speaker: アディソン
 
-I don’t know what I’ll do without you.
+ママがいないなら、何をするのか分からない。。。#speaker: アディソン
 
-...
+冷や汗をかいて、目が覚めた。#speaker: アディソン
 
-...
+めまいがして、ベッドに座ろうとする。#speaker: アディソン
 
-...
+「水、飲みたい。。。」#speaker: アディソン
 
-I woke up in a cold sweat.
+起きたらすぐに、部屋の反対側から変だが、親しい存在に気づいた。#speaker: アディソン
 
-Feeling dizzy, I try to sit up in bed.
+。。。#speaker: アディソン
 
-I should get a glass of water…
-
-As soon as I got up, I noticed a strange yet oddly familiar presence from the other side of the room.
+。。。#speaker: アディソン
 
 -> DONE
+
+-> END

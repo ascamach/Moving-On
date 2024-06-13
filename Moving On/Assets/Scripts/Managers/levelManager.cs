@@ -5,8 +5,8 @@ using UnityEngine;
 public class levelManager : MonoBehaviour, iDataPersistence
 {
     public static levelManager Instance;
-    public bool[] levelsCompleted = new bool[] { false, false};
-    public bool[] levelsUnlocked = new bool[] { true, false};
+    public bool[] levelsCompleted = new bool[] { false, false, false, false};
+    public bool[] levelsUnlocked = new bool[] { true, false, false, false};
     public bool tutorialCompleted = false;
     private void Awake()
     {

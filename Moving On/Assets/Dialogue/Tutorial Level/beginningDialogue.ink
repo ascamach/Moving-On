@@ -12,6 +12,9 @@ VAR currentLocale = ""
 - currentLocale == "fa":
     -> main_fa
     -> DONE
+- currentLocale == "ja":
+    -> main_ja
+    -> DONE
 }
 
 // Mom:
@@ -22,35 +25,91 @@ VAR currentLocale = ""
 === main_en ===
 You’ve been holed up in your room for the past couple of weeks. Why don’t we get up and prepare to head out? #speaker: Mom 
 
-This feels so sudden; I’m not sure if I’m ready. #speaker: Addison
+{ is_ready == "true":
+    Sure thing, but give me a bit to get ready. #speaker: Addison
+    -> DONE
+}
 
-I know this must be a lot for you right now, but…I believe in you sweetie. You can do this! You’re a tough cookie! # speaker: Mom
+{ is_ready == "false":
+    This feels so sudden; I’m not sure if I’m ready. #speaker: Addison
 
-…and there you go again with your cringe phrases. #speaker: Addison #portrait: player_sad
+    I know this must be a lot for you right now, but ...I believe in you sweetie. You can do this! You’re a tough cookie! #speaker: Mom
 
-*sighs* Alright, I’m up. #speaker: Addison
+    ...and there you go again with your cringe phrases. #speaker: Addison
 
-But, am I actually ready for this?
+    /*sighs*/ Alright, I’m up. #speaker: Addison
 
-Can I bring myself to go on this journey just to go through that all over again?
+    <i>But, am I actually ready for this?</i> #speaker: Addison
 
+    <i>Can I bring myself to go on this journey just to go through that all over again?</i> #speaker: Addison
+    -> DONE
+}
 
 -> DONE
+
 
 === main_fa ===
-#speaker: روح
-روح: کله روز تو تختت بودی. وقتشه پاشی.
+#speaker:  مامان
+.بسه دیگه عزیزم، چند هفته اس پاتو از خونه بیرون نذاشتی. پاشو بپوش بریم بیرون یکم حالت عوض شه
 
+{ is_ready == "true":
 #speaker: ادیسون
-بازیکن: واقعا حسشو ندارم. ترجیح میدم کله روز تو تختم بپوسم.
+    .باشه بذار الان میپوشم بریم
+    -> DONE
+}
 
-#speaker: روح
-پاشو دیگه… سحر خیز باش تا کامروا شوی. وقت کمه پاشو بریم.
+{ is_ready == "false":
+    #speaker: ادیسون
+    .هنوز باورم نمیشه، نمیدونم حس بیرون رفتن دارم یا نه 
+    #speaker:  مامان
+    میدونم این چند وقت یکم برات سخت بوده ولی لطفا بخاطره مامان قوی باش. همه دنیای من تویی عزیزم دوست 
 
-#speaker: ادیسون
-باشه، الان پا میشم.
+    #speaker: ادیسون
+   ندارم تو این حال ببینمت.
+   
+   باشه باشه الان پا میشم.
 
-#speaker: روح
-پاشو باهم بریم آشپزخونه قبل از این که بریم بیرون یه چیز بخوری.
+
+   !ولی هنوز احصاص میکنم آمادگی شو ندارم
+
+   نمیدونم بتونم قبولش کنم که دوباره قراره از دستت بدم.
+
+    -> DONE
+}
 
 -> DONE
+
+=== main_ja ===
+
+#speaker:「母」
+
+「もう、数週間お前は部屋に閉じこもっていたよ。さて、起きて出かける準備をしましょうか。」
+
+{ is_ready == "true":
+    #speaker:「アディソン」
+    「いいよ、でも少し時間くれ。ちょっと準備する。」
+    -> DONE
+}
+
+{ is_ready == "false":
+    #speaker:「アディソン」
+    「これは突然だよ。。。本当にいいのかな？」
+
+    #speaker:「母」
+    「アディソンにとって、大変なことに間違いないけど、あなたなら信じっています。できるぞう！タフだよ！」
+    
+     #speaker:「アディソン」
+
+    「。。。と、また母の恥ずかしいフレーズ。」
+
+    「は。。。よし、行こう。」
+
+    でも、俺は本当に準備できていますか？
+
+    また同じことを感じるかもしれない。。。本当にこの旅に出るかな。。。
+    -> DONE
+}
+
+-> DONE
+
+-> END

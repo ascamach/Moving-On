@@ -10,6 +10,7 @@ public class gameData
     public serializableDictionary<string, bool> collectablesCollected;
     public bool[] levelsUnlock;
     public bool[] levelsCompleted;
+    public string language;
     public bool tutorialCompleted;
 
     public gameData()
@@ -18,5 +19,7 @@ public class gameData
         levelsCompleted = new bool[] { false, false, false };
         collectablesCollected = new serializableDictionary<string, bool>();
         tutorialCompleted = false;
+        language = "English";
+        
     }
 }

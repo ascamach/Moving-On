@@ -19,15 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 20697153536
-    m_Localized: Close in Farsi
+    m_Localized: "\u062E\u0631\u0648\u062C"
     m_Metadata:
       m_Items: []
   - m_Id: 4204792217600
-    m_Localized: Volume in Farsi
+    m_Localized: "\u0635\u062F\u0627"
     m_Metadata:
       m_Items: []
   - m_Id: 5802377445376
-    m_Localized: Farsi in Farsi
+    m_Localized: "\u0641\u0627\u0631\u0633\u06CC\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20247396836347904
+    m_Localized: "\u65E5\u672C\u8A9E"
     m_Metadata:
       m_Items: []
   references:
