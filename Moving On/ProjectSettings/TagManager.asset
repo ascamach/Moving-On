@@ -10,6 +10,7 @@ TagManager:
   - NPC
   - Global Variable
   - Dialogue Manager
+  - Wrecking Ball
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 505372779
+    locked: 0
+  - name: Pole
+    uniqueID: 30811227
     locked: 0
   - name: Borders
     uniqueID: 2000251123
