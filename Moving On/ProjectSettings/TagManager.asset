@@ -11,6 +11,7 @@ TagManager:
   - Global Variable
   - Dialogue Manager
   - Wrecking Ball
+  - test tag
   layers:
   - Default
   - TransparentFX
