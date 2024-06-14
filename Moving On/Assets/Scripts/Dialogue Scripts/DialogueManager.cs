@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine.Localization.Settings;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
@@ -316,7 +317,12 @@ public class DialogueManager : MonoBehaviour
 
         currentStory.BindExternalFunction("fadeImage", (bool fadeAway, string imageID) =>
         {
-            StartCoroutine(FadeImage(fadeAway, imageID));
+            GameObject flashbackImage = GameObject.FindWithTag(imageID);
+
+            // Grab sprite renderer component to change alpha
+            Image image = flashbackImage.GetComponent<Image>();
+
+            StartCoroutine(FadeImage(fadeAway, image));
         });
 
         currentStory.BindExternalFunction("textEffect", (string effect) =>
@@ -569,14 +575,8 @@ public class DialogueManager : MonoBehaviour
            Debug.Log("Hello from test function!");
     }
 
-    IEnumerator FadeImage(bool fadeAway, string imageID)
+    IEnumerator FadeImage(bool fadeAway, Image image)
     {
-        // Find specific using Unity tags
-        GameObject flashbackImage = GameObject.FindWithTag(imageID);
-
-        // Grab sprite renderer component to change alpha
-        SpriteRenderer image = flashbackImage.GetComponent<SpriteRenderer>();
-
         if (fadeAway)
         {
             // Loop over 1 second

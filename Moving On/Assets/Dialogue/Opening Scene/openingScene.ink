@@ -19,7 +19,10 @@ VAR ready = false
 }
 
 === main_en ===
+~fadeImage(true, "test tag")
 Who's there? #speaker: Addison
+
+~fadeImage(false, "test tag")
 
 <i>I scratch my eyes in disbelief. Although I couldn't believe it, the one standing right in front of me is ...</i> #speaker: Addison
 
