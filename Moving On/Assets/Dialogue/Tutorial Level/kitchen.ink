@@ -37,6 +37,7 @@ Oh hey, there’s only a grilled cheese sandwich in there. #speaker: Mom
 
 Perfect. Why don't you have that? #speaker: Mom
 
+~ fadeImage(true, "Sandwich")
 ........................ #speaker: Addison
 
 <i>Everyday after school, Mom would make me a grilled cheese sandwich.</i>
