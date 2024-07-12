@@ -117,15 +117,6 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        // Debug.Log("---------------------------------------------");
-        // Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY WTFFFF");
-        // Debug.Log("---------------------------------------------");
-
-        // Debug.Log("ADDISON");
-
-        // Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY PART 2");
-
-
 
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
@@ -152,8 +143,8 @@ public class DialogueManager : MonoBehaviour
         // currentStory.variablesState["localeID"] = localeID;
         currentStory.variablesState["localeID"] = "ja";
 
-        string final = globalVariable.bitch;
-        currentStory.variablesState["is_ready"] = final;
+        string final1 = globalVariable.isReadystr;
+        currentStory.variablesState["is_ready"] = final1;
 
         //bool final2 = bed.bedTime;
         //currentStory.variablesState["parentBedroom"] = final2;

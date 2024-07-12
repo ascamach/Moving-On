@@ -11,9 +11,9 @@ public class DialogueVariables
     public Dictionary<string, Ink.Runtime.Object> variables { get; private set; }
 
     //Temporary solution - Tristyn please clean this up
-    public string lookingForName = "is_ready";
-    public object wantValue = "";
-    public string result = "";
+    public string isReady = "is_ready"; //originally lookingForName
+    public object inkValue1 = ""; //originally wantValue
+    public string unityValue1 = ""; //originally result
 
     // Script that compiles the globals ink file into JSON
     // Adds all current variables and compiles when a value is changed
@@ -55,13 +55,10 @@ public class DialogueVariables
         }
 
         Debug.Log("Variable changed: " + name + "=" + value);
-        if(name == lookingForName){
-            wantValue = value;
-            result = wantValue.ToString();
+        if(name == isReady){
+            inkValue1 = value;
+            unityValue1 = inkValue1.ToString();
         }
-
-    
-        //Debug.Log("YOO LOOK AT THIS: " + wantValue.ToString());
     }
  
     // Function for different stories to reference the dictionary
