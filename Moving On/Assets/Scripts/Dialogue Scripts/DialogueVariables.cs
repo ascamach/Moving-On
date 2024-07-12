@@ -10,10 +10,13 @@ public class DialogueVariables
     // Create a dictionary to save key/value pairs
     public Dictionary<string, Ink.Runtime.Object> variables { get; private set; }
 
-    //Temporary solution - Tristyn please clean this up
     public string isReady = "is_ready"; //originally lookingForName
     public object inkValue1 = ""; //originally wantValue
     public string unityValue1 = ""; //originally result
+
+    public string larryInteractions = "larry_interactions";
+    public object inkValue2 = "";
+    public string unityValue2 = "";
 
     // Script that compiles the globals ink file into JSON
     // Adds all current variables and compiles when a value is changed
@@ -58,6 +61,11 @@ public class DialogueVariables
         if(name == isReady){
             inkValue1 = value;
             unityValue1 = inkValue1.ToString();
+        }
+
+        if(name == larryInteractions){
+            inkValue2 = value;
+            unityValue2 = inkValue2.ToString();
         }
     }
  

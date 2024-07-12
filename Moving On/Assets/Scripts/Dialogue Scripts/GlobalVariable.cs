@@ -11,6 +11,7 @@ public class GlobalVariable : MonoBehaviour
     private static GlobalVariable instance;
     public DialogueManager dialogueManager; //originally want
     public string isReadystr = "";
+    public string larryInteractionsstr = "";
    
     public bool is_ready = false;
 
@@ -43,6 +44,7 @@ public class GlobalVariable : MonoBehaviour
         {
             dialogueManager = GameObject.FindWithTag("Dialogue Manager").GetComponent<DialogueManager>();
         }
-        isReadystr = dialogueManager.dialogueVariables.unityValue1;      
+        isReadystr = dialogueManager.dialogueVariables.unityValue1;
+        larryInteractionsstr = dialogueManager.dialogueVariables.unityValue2;      
     }
 }

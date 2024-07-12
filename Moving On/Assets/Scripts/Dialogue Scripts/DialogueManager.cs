@@ -146,6 +146,9 @@ public class DialogueManager : MonoBehaviour
         string final1 = globalVariable.isReadystr;
         currentStory.variablesState["is_ready"] = final1;
 
+        string final2 = globalVariable.larryInteractionsstr;
+        currentStory.variablesState["larry_interactions"] = final2;
+
         //bool final2 = bed.bedTime;
         //currentStory.variablesState["parentBedroom"] = final2;
 
