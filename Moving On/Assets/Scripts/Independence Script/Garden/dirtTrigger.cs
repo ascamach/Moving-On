@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class dirtTrigger : MonoBehaviour
 {
+    [SerializeField] private GameObject dirtBlock;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,18 @@ public class dirtTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(breakFloor());
+        if(collision.tag == "Player")
+        {
+            StartCoroutine(breakFloor());
+        }
+        
     }
 
     IEnumerator breakFloor()
     {
         Debug.Log("Entered the trigger");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         Debug.Log("Breaking the floor...");
+        dirtBlock.SetActive(false);
     }
 }
