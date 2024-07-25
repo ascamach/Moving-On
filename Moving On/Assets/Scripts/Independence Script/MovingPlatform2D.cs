@@ -43,9 +43,9 @@ public class MovingPlatform2D : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector2(GetComponent<Collider2D>().bounds.size.x, 0.1f));
-    }
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireCube(transform.position, new Vector2(GetComponent<Collider2D>().bounds.size.x, 0.1f));
+    // }
 }
