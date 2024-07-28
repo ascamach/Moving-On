@@ -1,30 +1,47 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class MovingPlatformHorizontal : MonoBehaviour
 {
-    public float moveSpeed = 2f;
-    public float minX = -5f;
-    public float maxX = 5f;
+    public float speed = 2.0f;
+    public float width = 3.0f;
+    public LayerMask playerLayer;
 
-    public GameObject Player;
+    private Vector2 startPosition;
+    private bool movingRight = true;
+    private bool playerDetected = false;
+
+    void Start()
+    {
+        startPosition = transform.position;
+    }
 
     void Update()
     {
-        float newPositionX = Mathf.PingPong(Time.time * moveSpeed, maxX - minX) + minX;
-        transform.position = new Vector3(newPositionX, transform.position.y, transform.position.z);
+        playerDetected = Physics2D.OverlapBox(transform.position, new Vector2(0.1f, GetComponent<Collider2D>().bounds.size.y), 0f, playerLayer);
+        if (!playerDetected)
+        {
+            float newX = transform.position.x + (movingRight ? speed : -speed) * Time.deltaTime;
+            if (newX >= startPosition.x + width)
+            {
+                newX = startPosition.x + width;
+                movingRight = false;
+            }
+            else if (newX <= startPosition.x)
+            {
+                newX = startPosition.x;
+                movingRight = true;
+            }
+            transform.position = new Vector2(newX, transform.position.y);
+        }
     }
 
-    private void OnCollisionEnter2D (Collision2D other) {
-        if (other.gameObject.CompareTag("Player")) {
-            Player.transform.parent = transform;
-        }
-    }  
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        collision.transform.SetParent(transform);
+    }
 
-    private void OnCollisionExit2D (Collision2D other) {
-        if (other.gameObject.CompareTag("Player")) {
-            Player.transform.parent = null;
-        }
-    } 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collision.transform.SetParent(null);
+    }
 }
