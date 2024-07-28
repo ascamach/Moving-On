@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using UnityEngine.Localization.Settings;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
@@ -117,6 +116,15 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        // Debug.Log("---------------------------------------------");
+        // Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY WTFFFF");
+        // Debug.Log("---------------------------------------------");
+
+        // Debug.Log("ADDISON");
+
+        // Debug.Log("TRISTYN WTF IS WRONG WITH YOUR UNITY PART 2");
+
+
 
         // Hides Dialogue UI at start of game
         dialoguePlaying = false;
@@ -143,11 +151,8 @@ public class DialogueManager : MonoBehaviour
         // currentStory.variablesState["localeID"] = localeID;
         currentStory.variablesState["localeID"] = "ja";
 
-        string final1 = globalVariable.isReadystr;
-        currentStory.variablesState["is_ready"] = final1;
-
-        string final2 = globalVariable.larryInteractionsstr;
-        currentStory.variablesState["larry_interactions"] = final2;
+        string final = globalVariable.bitch;
+        currentStory.variablesState["is_ready"] = final;
 
         //bool final2 = bed.bedTime;
         //currentStory.variablesState["parentBedroom"] = final2;
@@ -311,12 +316,7 @@ public class DialogueManager : MonoBehaviour
 
         currentStory.BindExternalFunction("fadeImage", (bool fadeAway, string imageID) =>
         {
-            GameObject flashbackImage = GameObject.FindWithTag(imageID);
-
-            // Grab sprite renderer component to change alpha
-            Image image = flashbackImage.GetComponent<Image>();
-
-            StartCoroutine(FadeImage(fadeAway, image));
+            StartCoroutine(FadeImage(fadeAway, imageID));
         });
 
         currentStory.BindExternalFunction("textEffect", (string effect) =>
@@ -569,8 +569,14 @@ public class DialogueManager : MonoBehaviour
            Debug.Log("Hello from test function!");
     }
 
-    IEnumerator FadeImage(bool fadeAway, Image image)
+    IEnumerator FadeImage(bool fadeAway, string imageID)
     {
+        // Find specific using Unity tags
+        GameObject flashbackImage = GameObject.FindWithTag(imageID);
+
+        // Grab sprite renderer component to change alpha
+        SpriteRenderer image = flashbackImage.GetComponent<SpriteRenderer>();
+
         if (fadeAway)
         {
             // Loop over 1 second

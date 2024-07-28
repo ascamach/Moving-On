@@ -12,7 +12,6 @@ TagManager:
   - Dialogue Manager
   - Wrecking Ball
   - Elevator
-
   layers:
   - Default
   - TransparentFX
@@ -85,9 +84,6 @@ TagManager:
     locked: 0
   - name: Flowers
     uniqueID: 3092025625
-    locked: 0
-  - name: Items
-    uniqueID: 1092346149
     locked: 0
   - name: Platforms
     uniqueID: 1187407849

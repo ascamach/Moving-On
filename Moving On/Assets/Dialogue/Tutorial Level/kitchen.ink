@@ -33,7 +33,6 @@ VAR bedReady = false
 }
 
 === log1 ===
-~fadeImage(false, "test tag")
 Oh hey, there’s only a grilled cheese sandwich in there. #speaker: Mom
 
 Perfect. Why don't you have that? #speaker: Mom
