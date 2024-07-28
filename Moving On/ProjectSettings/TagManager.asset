@@ -11,8 +11,7 @@ TagManager:
   - Global Variable
   - Dialogue Manager
   - Wrecking Ball
-  - Elevator
-
+  - test tag
   layers:
   - Default
   - TransparentFX
@@ -64,9 +63,6 @@ TagManager:
     locked: 0
   - name: Buildings
     uniqueID: 1490304677
-    locked: 0
-  - name: general stuff please dont delete
-    uniqueID: 4247135523
     locked: 0
   - name: UI
     uniqueID: 2536743113
