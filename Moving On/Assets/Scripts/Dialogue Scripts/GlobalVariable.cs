@@ -9,9 +9,9 @@ public class GlobalVariable : MonoBehaviour
     public Ink.Runtime.Story currentStory;
 
     private static GlobalVariable instance;
-    public DialogueManager want;
-    public string bitch = "";
-    //public string bitch2 = "";
+    public DialogueManager dialogueManager; //originally want
+    public string isReadystr = "";
+    public string larryInteractionsstr = "";
    
     public bool is_ready = false;
 
@@ -35,20 +35,16 @@ public class GlobalVariable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //result = "";
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!want)
+        if (!dialogueManager)
         {
-            want = GameObject.FindWithTag("Dialogue Manager").GetComponent<DialogueManager>();
+            dialogueManager = GameObject.FindWithTag("Dialogue Manager").GetComponent<DialogueManager>();
         }
-        bitch = want.dialogueVariables.result;
-        //if(bitch != ""){
-            //Debug.Log(bitch);
-        //}
-        //Debug.Log("LOOK AGAIN: " + want.dialogueVariables.result);        
+        isReadystr = dialogueManager.dialogueVariables.unityValue1;
+        larryInteractionsstr = dialogueManager.dialogueVariables.unityValue2;      
     }
 }

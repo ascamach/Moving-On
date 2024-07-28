@@ -48,11 +48,14 @@ EditorBuildSettings:
     path: Assets/Scenes/EndingScene.unity
     guid: b16d84508d3de464bb3d7d3c92c68cbd
   - enabled: 1
+    path: Assets/Scenes/IndependenceGardens/GardenBefore.unity
+    guid: e4b483279e6e84c1f9470fa1bb7680ea
+  - enabled: 1
     path: Assets/Scenes/Independence/Independence.unity
     guid: 23598e52259938246b9fdf9044387cc0
   - enabled: 1
     path: Assets/Scenes/IndependenceGardens/GardenAfter.unity
-    guid: 79967abe30ced439a9f7b354f23d82ee
+    guid: a7de1db82f07f46ae9f2ec95fa381414
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 1024ccb5f30fb470c812b787d57ce45f, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 24adf6e8081b84072b59641551fca512, type: 2}
