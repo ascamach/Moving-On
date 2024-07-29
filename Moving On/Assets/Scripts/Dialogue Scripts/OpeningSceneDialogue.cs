@@ -32,7 +32,7 @@ public class OpeningSceneDialogue : MonoBehaviour
     {
         if (!DialogueManager.GetInstance().dialoguePlaying)
         {
-            //Debug.Log("hello world please work.");
+            Debug.Log("hello world please work.");
             firstCheck = true;
             dialogueUI.SetActive(false);
             SceneManager.LoadScene(scene);
