@@ -11,7 +11,11 @@ TagManager:
   - Global Variable
   - Dialogue Manager
   - Wrecking Ball
+<<<<<<< HEAD
   - test tag
+=======
+  - Elevator
+>>>>>>> parent of 2549167 (Merge branch 'main' into independenceWithUpdates)
   layers:
   - Default
   - TransparentFX
