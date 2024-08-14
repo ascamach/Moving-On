@@ -11,6 +11,8 @@ using Unity.Services.Core;
 using UnityEngine.Localization;
 using UnityEngine.Localization.SmartFormat.Utilities;
 using Unity.Services.Core.Analytics;
+using System;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -26,6 +28,11 @@ public class DialogueManager : MonoBehaviour
     // Variables for flashback scenes
     public Sprite flashbackImage;
     public Image flashbackBackdrop;
+
+    // Variables for Dialogue Log function
+    public string[] dialogueLog;
+
+    public List<string> dialogueLogs;
 
     [SerializeField] private Animator playerAnimator;
 
@@ -270,6 +277,17 @@ public class DialogueManager : MonoBehaviour
 
         mesh.vertices = textVertices;
         textMesh.canvasRenderer.SetMesh(mesh);
+
+        /* --------------------
+        */
+
+        /* Dialogue Log button
+        * -------------------- 
+        */
+
+        if (Input.GetKeyDown(KeyCode.B)) {
+            DisplayDialogueLog();
+        }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -350,12 +368,13 @@ public class DialogueManager : MonoBehaviour
          * UNBINDING THE UNITY FUNCTIONS
          * ------------------------------
          */
-
         currentStory.UnbindExternalFunction("testFunction");
         currentStory.UnbindExternalFunction("fadeImage");
         currentStory.UnbindExternalFunction("textEffect");
-
         // -----------------------------
+
+        // Clear the dialogue log
+        dialogueLogs.Clear();
     }
 
     private void ContinueStory()
@@ -446,6 +465,7 @@ public class DialogueManager : MonoBehaviour
             }
             // Debug.Log("Dialogue Finished");
         }
+        dialogueLogs.Add(nameplateText.text + ": " + line);
 
         continueIcon.SetActive(true);
         // If choices are available, show all available choices
@@ -629,5 +649,18 @@ public class DialogueManager : MonoBehaviour
     Vector2 Shake(float time)
     {
         return new Vector2(Mathf.Sin(time * 50f), Mathf.Cos(time * 50f));
+    }
+
+    public void DisplayDialogueLog()
+    {
+        string[] dialogueLogArray = dialogueLogs.ToArray();
+
+        for (int i = dialogueLogArray.Length; i > 0; i--)
+        {
+            print(dialogueLogArray[i]);
+            // instansiate
+            // set string to line
+            // set position to new instance + whatever value it is
+        }
     }
 }
