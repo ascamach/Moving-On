@@ -23,7 +23,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameplateText;
     [SerializeField] private GameObject continueIcon;
 
+    // Variables for flashback scenes
     public Sprite flashbackImage;
+    public Image flashbackBackdrop;
 
     [SerializeField] private Animator playerAnimator;
 
@@ -577,6 +579,7 @@ public class DialogueManager : MonoBehaviour
             for (float i = 1; i >= 0; i -= Time.deltaTime)
             {
                 // Change alpha
+                flashbackBackdrop.color = new Color(0, 0, 0, i);
                 image.color = new Color(1, 1, 1, i);
                 yield return null;
             }
@@ -588,6 +591,7 @@ public class DialogueManager : MonoBehaviour
             for (float i = 0; i <= 1; i += Time.deltaTime)
             {
                 // Change alpha
+                flashbackBackdrop.color = new Color(0, 0, 0, 0.75f);
                 image.color = new Color(1, 1, 1, i);
                 yield return null;
             }
