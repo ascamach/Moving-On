@@ -13,15 +13,23 @@ public class jacketCollision : MonoBehaviour
     [Header("Jacket Cue")]
     [SerializeField] public GameObject jacketCue;
 
+    [Header("Player GameObject")]
+    [SerializeField] private GameObject player;
+    [Header("New Sprite to change to when jacket is obtained")]
+    [SerializeField] private Sprite jacketSprite;
+
     private int count = 0;
 
     private bool playerInRange;
     public bool jacketCollected = false;
 
+    private SpriteRenderer mySpriteRenderer;
+
     private void Awake()
     {
         playerInRange = false;
         visualCue.SetActive(false);
+        mySpriteRenderer = player.GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -32,6 +40,8 @@ public class jacketCollision : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Destroy(jacketCue);
+                mySpriteRenderer.sprite = jacketSprite;
+                mySpriteRenderer.flipX = true;
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 jacketCollected = true;
             }
