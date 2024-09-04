@@ -19,6 +19,9 @@ VAR depressionFirstDialogue = ""
 VAR depressionRoofDialogue = ""
 VAR depressionMiddleDialogue = ""
 
+// TESTING VARIABLE
+VAR test_variable = 0
+
 // Functions from Unity
 EXTERNAL testFunction()
 EXTERNAL fadeImage(fadeAway, imageName)

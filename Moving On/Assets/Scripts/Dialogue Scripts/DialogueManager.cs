@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Localization.Settings;
+using System.IO;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine.Localization;
@@ -106,6 +107,9 @@ public class DialogueManager : MonoBehaviour
     // Default value for font size
     private int defaultFontSize = 32;
 
+    // Values for data persistence TESTING
+    private TextAsset globalsData;
+
     private void Awake()
     {
         // Checks if there is more than one dialogue manager in the scene
@@ -114,7 +118,21 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("More than one instance of Dialogue Manager found in the scene.");
         }
 
-        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        // Story globalVariables;
+
+        if (File.Exists(DialogueVariables.savePath))
+        {
+            Debug.Log("File Exists, printing the statement here.");
+            Debug.Log("File contents: " +  DialogueVariables.Deserialize());
+            // globalVariables = new Story(globalsData.text);
+            // dialogueVariables = new DialogueVariables(DialogueVariables.Deserialize());
+            dialogueVariables = new DialogueVariables(DialogueVariables.Deserialize());
+        } else
+        {
+            dialogueVariables = new DialogueVariables(loadGlobalsJSON); 
+        }
+      
+        // dialogueVariables = new DialogueVariables(loadGlobalsJSON);
 
         instance = this;
     }
@@ -134,6 +152,9 @@ public class DialogueManager : MonoBehaviour
         //Assigns globalVariable
         globalVariable = GameObject.FindWithTag("Global Variable").GetComponent<GlobalVariable>();
 
+        // Serializes globals Ink file from JSON for data persistence
+        // currentStory = new Story(globalsData.text);
+
         // Gets all choices text
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -144,7 +165,7 @@ public class DialogueManager : MonoBehaviour
             index++;
         }      
 
-        currentStory = new Story(loadGlobalsJSON.text);
+        // currentStory = new Story(loadGlobalsJSON.text);
 
         dialogueVariables.StartListening(currentStory);
 
@@ -352,6 +373,8 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
+        int newTestVariable = (int) currentStory.variablesState["test_variable"] + 1;
+        currentStory.variablesState["test_variable"] = newTestVariable;
         dialogueVariables.StopListening(currentStory);
         // After dialogue is finished, hide the Dialogue UI again
         // and set the dialogue text to nothing.
@@ -375,6 +398,7 @@ public class DialogueManager : MonoBehaviour
 
         // Clear the dialogue log
         dialogueLogs.Clear();
+        dialogueVariables.SaveVariables();
     }
 
     private void ContinueStory()
