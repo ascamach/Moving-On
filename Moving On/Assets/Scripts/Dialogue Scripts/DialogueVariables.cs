@@ -13,7 +13,7 @@ public class DialogueVariables
     public Dictionary<string, Ink.Runtime.Object> variables { get; private set; }
 
     // TESTING DATA PERSISTENCE
-    public static string savePath = Application.persistentDataPath + "/globalsData.json";
+    // public static string savePath = Application.persistentDataPath + "/globalsData.json";
     // Story globalVariablesStory;
 
     private Story globalVariablesStory;
