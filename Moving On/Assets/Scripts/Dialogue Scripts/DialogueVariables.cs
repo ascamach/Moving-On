@@ -4,12 +4,22 @@ using UnityEngine;
 using Ink.Runtime;
 using System.IO;
 using Ink;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 
 public class DialogueVariables
 {
     // Create a dictionary to save key/value pairs
     public Dictionary<string, Ink.Runtime.Object> variables { get; private set; }
 
+    // TESTING DATA PERSISTENCE
+    // public static string savePath = Application.persistentDataPath + "/globalsData.json";
+    // Story globalVariablesStory;
+
+    private Story globalVariablesStory;
+    private const string saveVariablesKey = "INK_VARIABLES";
+
+    // -------------------------------------------
     public string isReady = "is_ready"; //originally lookingForName
     public object inkValue1 = ""; //originally wantValue
     public string unityValue1 = ""; //originally result
@@ -22,8 +32,13 @@ public class DialogueVariables
     // Adds all current variables and compiles when a value is changed
     public DialogueVariables(TextAsset loadGlobalsJSON)
     {
-        // create the story
-        Story globalVariablesStory = new Story(loadGlobalsJSON.text);
+        globalVariablesStory = new Story(loadGlobalsJSON.text);
+
+        if (PlayerPrefs.HasKey(saveVariablesKey))
+        {
+            string jsonState = PlayerPrefs.GetString(saveVariablesKey);
+            globalVariablesStory.state.LoadJson(jsonState);
+        }
 
         // initialize the dictionary
         variables = new Dictionary<string, Ink.Runtime.Object>();
@@ -32,6 +47,15 @@ public class DialogueVariables
             Ink.Runtime.Object value = globalVariablesStory.variablesState.GetVariableWithName(name);
             variables.Add(name, value);
             Debug.Log("Initialized global dialogue variable: " + name + " = " + value);
+        }
+    }
+
+    public void SaveVariables()
+    {
+        if (globalVariablesStory != null)
+        {
+            VariablesToStory(globalVariablesStory);
+            PlayerPrefs.SetString(saveVariablesKey, globalVariablesStory.state.ToJson());
         }
     }
 

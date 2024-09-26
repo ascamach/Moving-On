@@ -6,11 +6,14 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Localization.Settings;
+using System.IO;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine.Localization;
 using UnityEngine.Localization.SmartFormat.Utilities;
 using Unity.Services.Core.Analytics;
+using System;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -23,7 +26,14 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameplateText;
     [SerializeField] private GameObject continueIcon;
 
+    // Variables for flashback scenes
     public Sprite flashbackImage;
+    public Image flashbackBackdrop;
+
+    // Variables for Dialogue Log function
+    public string[] dialogueLog;
+
+    public List<string> dialogueLogs;
 
     [SerializeField] private Animator playerAnimator;
 
@@ -105,6 +115,22 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("More than one instance of Dialogue Manager found in the scene.");
         }
 
+        // Story globalVariables;
+
+        /*
+        if (File.Exists(DialogueVariables.savePath))
+        {
+            Debug.Log("File Exists, printing the statement here.");
+            Debug.Log("File contents: " +  DialogueVariables.Deserialize());
+            // globalVariables = new Story(globalsData.text);
+            // dialogueVariables = new DialogueVariables(DialogueVariables.Deserialize());
+            dialogueVariables = new DialogueVariables(DialogueVariables.Deserialize());
+        } else
+        {
+            dialogueVariables = new DialogueVariables(loadGlobalsJSON); 
+        }
+        */
+      
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
 
         instance = this;
@@ -125,6 +151,9 @@ public class DialogueManager : MonoBehaviour
         //Assigns globalVariable
         globalVariable = GameObject.FindWithTag("Global Variable").GetComponent<GlobalVariable>();
 
+        // Serializes globals Ink file from JSON for data persistence
+        // currentStory = new Story(globalsData.text);
+
         // Gets all choices text
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -135,7 +164,7 @@ public class DialogueManager : MonoBehaviour
             index++;
         }      
 
-        currentStory = new Story(loadGlobalsJSON.text);
+        // currentStory = new Story(loadGlobalsJSON.text);
 
         dialogueVariables.StartListening(currentStory);
 
@@ -268,6 +297,17 @@ public class DialogueManager : MonoBehaviour
 
         mesh.vertices = textVertices;
         textMesh.canvasRenderer.SetMesh(mesh);
+
+        /* --------------------
+        */
+
+        /* Dialogue Log button
+        * -------------------- 
+        */
+
+        if (Input.GetKeyDown(KeyCode.B)) {
+            DisplayDialogueLog();
+        }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -332,6 +372,10 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
+        /*
+        int newTestVariable = (int) currentStory.variablesState["test_variable"] + 1;
+        currentStory.variablesState["test_variable"] = newTestVariable;
+        */
         dialogueVariables.StopListening(currentStory);
         // After dialogue is finished, hide the Dialogue UI again
         // and set the dialogue text to nothing.
@@ -348,12 +392,14 @@ public class DialogueManager : MonoBehaviour
          * UNBINDING THE UNITY FUNCTIONS
          * ------------------------------
          */
-
         currentStory.UnbindExternalFunction("testFunction");
         currentStory.UnbindExternalFunction("fadeImage");
         currentStory.UnbindExternalFunction("textEffect");
-
         // -----------------------------
+
+        // Clear the dialogue log
+        dialogueLogs.Clear();
+        dialogueVariables.SaveVariables();
     }
 
     private void ContinueStory()
@@ -444,6 +490,7 @@ public class DialogueManager : MonoBehaviour
             }
             // Debug.Log("Dialogue Finished");
         }
+        dialogueLogs.Add(nameplateText.text + ": " + line);
 
         continueIcon.SetActive(true);
         // If choices are available, show all available choices
@@ -577,6 +624,7 @@ public class DialogueManager : MonoBehaviour
             for (float i = 1; i >= 0; i -= Time.deltaTime)
             {
                 // Change alpha
+                flashbackBackdrop.color = new Color(0, 0, 0, i);
                 image.color = new Color(1, 1, 1, i);
                 yield return null;
             }
@@ -588,6 +636,7 @@ public class DialogueManager : MonoBehaviour
             for (float i = 0; i <= 1; i += Time.deltaTime)
             {
                 // Change alpha
+                flashbackBackdrop.color = new Color(0, 0, 0, 0.75f);
                 image.color = new Color(1, 1, 1, i);
                 yield return null;
             }
@@ -625,5 +674,18 @@ public class DialogueManager : MonoBehaviour
     Vector2 Shake(float time)
     {
         return new Vector2(Mathf.Sin(time * 50f), Mathf.Cos(time * 50f));
+    }
+
+    public void DisplayDialogueLog()
+    {
+        string[] dialogueLogArray = dialogueLogs.ToArray();
+
+        for (int i = dialogueLogArray.Length; i > 0; i--)
+        {
+            print(dialogueLogArray[i]);
+            // instansiate
+            // set string to line
+            // set position to new instance + whatever value it is
+        }
     }
 }
