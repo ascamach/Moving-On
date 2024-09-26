@@ -33,7 +33,7 @@ VAR bedReady = false
 }
 
 === log1 ===
-~fadeImage(false, "test tag")
+~fadeImage(false, "Flashback Image")
 Oh hey, there’s only a grilled cheese sandwich in there. #speaker: Mom
 
 Perfect. Why don't you have that? #speaker: Mom
@@ -93,7 +93,7 @@ How about we just bring some snacks instead?
     Alright, fine ...I'll go.
     -> DONE
 }
-
+~ fadeImage(true, "Flashback Image")
 -> DONE
 
 === log2 ===

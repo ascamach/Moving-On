@@ -107,9 +107,6 @@ public class DialogueManager : MonoBehaviour
     // Default value for font size
     private int defaultFontSize = 32;
 
-    // Values for data persistence TESTING
-    private TextAsset globalsData;
-
     private void Awake()
     {
         // Checks if there is more than one dialogue manager in the scene
@@ -120,6 +117,7 @@ public class DialogueManager : MonoBehaviour
 
         // Story globalVariables;
 
+        /*
         if (File.Exists(DialogueVariables.savePath))
         {
             Debug.Log("File Exists, printing the statement here.");
@@ -131,8 +129,9 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueVariables = new DialogueVariables(loadGlobalsJSON); 
         }
+        */
       
-        // dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
 
         instance = this;
     }
@@ -373,8 +372,10 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
+        /*
         int newTestVariable = (int) currentStory.variablesState["test_variable"] + 1;
         currentStory.variablesState["test_variable"] = newTestVariable;
+        */
         dialogueVariables.StopListening(currentStory);
         // After dialogue is finished, hide the Dialogue UI again
         // and set the dialogue text to nothing.

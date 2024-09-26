@@ -70,8 +70,6 @@ public class DialogueVariables
     public void StopListening(Story story) 
     {
         story.variablesState.variableChangedEvent -= VariableChanged;
-        Serialize(story);
-        Debug.Log("Variable Listener stopped, serializing story.");
     }
 
     // Changes the variable name and value in the dictionary
@@ -104,20 +102,4 @@ public class DialogueVariables
             story.variablesState.SetGlobal(variable.Key, variable.Value);
         }
     }
-    static public void Serialize(Story story)
-    {
-        File.WriteAllText(savePath, story.ToJson());
-    }
-
-    static public TextAsset Deserialize()
-    {
-        // string JSONContents;
-
-        TextAsset test = new TextAsset(File.ReadAllText(savePath));
-
-        // Debug.Log(File.ReadAllText(savePath));
-        Debug.Log("Contents of TextAsset 'test': " + test);
-
-        return test;
-    } 
 }
