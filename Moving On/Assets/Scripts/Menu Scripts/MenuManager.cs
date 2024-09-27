@@ -42,6 +42,7 @@ public class MenuManager : MonoBehaviour
         disableMenuButton();
         //how2PlayButton.interactable = false;
         dataPersistenceManager.instance.NewGame();
+        PlayerPrefs.DeleteKey("INK_VARIABLES");
         SceneManager.LoadSceneAsync("disclaimerScene");
         
     }
